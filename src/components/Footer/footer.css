@@ -1,0 +1,155 @@
+.footer {
+  background-color: #000; 
+  color: white;
+  padding: 20px;
+  padding:6vh;
+  height: 40vh;
+  font-family: 'Play', sans-serif;
+  text-align:center;
+}
+
+.faicons {
+  margin-bottom: 20px;
+}
+
+.faicons a {
+  color: white;
+  margin-right: 2rem; 
+}
+
+.links {
+  margin-top: 5rem;
+}
+
+.links ul {
+  list-style: none; 
+  padding: 0; 
+  
+}
+
+.links ul li {
+  display: inline;
+  padding: 2rem;
+
+}
+
+.links ul li a {
+  color: white; 
+  text-decoration: none;
+}
+
+.links ul li a:hover {
+  text-decoration: underline;
+}
+
+.text-center {
+  text-align: center; 
+}
+
+.copyright {
+  margin-top: 4rem;
+}
+
+
+#wrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  margin: 0 auto 0 auto;
+  overflow: hidden;
+}
+
+#lightings {
+  bottom: -60px;
+  position: absolute;
+  width: 100%;
+}
+
+@keyframes one {
+  from {
+    box-shadow: 0 0 250px 20px #377043;
+  }
+  to {
+    box-shadow: 0 0 100px 15px #de412d;
+  }
+}
+
+@keyframes two {
+  from {
+    box-shadow: 0 0 250px 20px #377043;
+  }
+  to {
+    box-shadow: 0 0 100px 15px #ffcb51;
+  }
+}
+
+@keyframes three {
+  from {
+    box-shadow: 0 0 250px 20px #ffcb51;
+  }
+  to {
+    box-shadow: 0 0 100px 15px #4ccade;
+  }
+}
+
+@keyframes four {
+  from {
+    box-shadow: 0 0 250px 20px #de412d;
+  }
+  to {
+    box-shadow: 0 0 100px 15px #4ccade;
+  }
+}
+
+@keyframes five {
+  from {
+    box-shadow: 0 0 250px 20px #4ccade;
+  }
+  to {
+    box-shadow: 0 0 100px 15px #ffcb51;
+  }
+}
+
+
+#one {
+  animation: one 5s ease-in-out infinite alternate;
+}
+
+#two {
+  animation: two 4s ease-in-out infinite alternate;
+}
+
+#three {
+  animation: three 3s ease-in-out infinite alternate;
+}
+
+#four {
+  animation: four 2s ease-in-out infinite alternate;
+}
+
+#five {
+  animation: five 1s ease-in-out infinite alternate;
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 10px;
+    height: 35vh;
+  }
+
+  .links ul li {
+    display: block;
+    padding: 0.8rem;
+    margin-bottom: -2rem;
+  }
+
+  .faicons {
+    margin-top: 20px;
+    margin-bottom: -40px;
+  }
+
+  .copyright {
+    margin-top: 3rem;
+    font-size: 10px;
+  }
+}

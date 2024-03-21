@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Barriecito&family=Schoolbell&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap');
+
+
+.headerTitles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Lora", serif;
+    
+}
+
+
+.header-container {
+    position: relative;
+    margin-top: 0rem;
+    height: 100vh;
+}
+
+.headerTitleLg {
+    position: absolute;
+    top: 30%;
+    font-size: 80px;
+    z-index: 3;
+}
+
+.kids {
+  margin-top: 25rem;
+}
+
+@media (max-width: 767px) {
+  .headerTitleLg {
+      font-size: 60px;
+  }
+}
+
+.Typewriter__wrapper {
+    font-size: 2rem ;
+    color: #377043;
+    font-weight: 590 ;
+    z-index: 3;
+    top: 50%;
+    left: 30%
+}
+
+  
+@media (max-width: 767px) {
+  .Typewriter__wrapper {
+      margin-top: 1rem;
+      font-size: 0.8em !important;
+      font-weight: 500 !important;
+      position: absolute !important;
+      margin-left: 6rem;
+  }
+  .Typewriter__cursor {
+      display: none !important;
+  }
+}
+
+#about {   
+    width: 100vw;
+    height: 100vh;
+    background-color: #de412d;
+    color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;    
+      
+}
+
+.main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-link {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#events {
+    width: 100vw;
+    height: 85vh;
+    background-color: #4ccade;
+    color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif; 
+}
+
+
+#planner {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(https://images.unsplash.com/photo-1597407198530-b84dd7206205?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  color: #131313;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif; 
+}
+
+.plaHead {
+ padding: 4rem;
+}
+
+.plaHead h1 {
+  color: #333;
+  font-size: 5em;
+}
+
+.plaHead p {
+  color: #787676;
+  font-size: 1em;
+  
+}
+
+.plancont {
+  margin-top: 13em;
+  display: flex;
+  color: #787676;
+  justify-content: space-around;
+}
+
+.plancont h1 {
+  font-size: 2.5rem;
+  font-weight: 450;
+}
+
+
+.plancont div {
+  text-align: center;
+}
+
+.plancont h3 {
+  font-weight: 750;
+  color: #000;
+  font-size: 1.6rem;
+}
+
+#test {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #fff;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif; 
+}
+
+#venues {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(https://images.unsplash.com/photo-1521332154212-570f03627d4e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif; 
+}
+
+
+.fa {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.icons {
+  position: absolute;
+  fill: #fff;
+  color: #fff;
+  height: 130px;
+  top: 226px;
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.calendar {  
+  text-align: center;
+  width: 60vw;
+  margin: 0 auto;
+
+}
+
+
+.founders {
+  margin-top: 5rem;
+  color: white;
+}
+
+.founders h1 {
+  margin-top: 3rem;
+  padding: 0 10rem;
+  text-decoration: underline;
+}
+
+.founders > div {
+  display: flex;
+  flex-direction: column; /* Stack divs vertically */
+  align-items: center; /* Center items horizontally */
+  margin-top: 3rem;
+}
+
+.founders > div > div {
+  width: 50%;
+  margin-top: 2rem; /* Adjust spacing between stacked divs */
+}
+
+@media (max-width: 767px) {
+  .calendar {
+    margin-left: 1rem;
+  }
+
+  .founders h1 {
+    margin-top: 1.5rem;
+    padding: 0 2rem;
+}
+
+.founders > div {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+}
+
+.founders > div > div {
+    width: 90%;
+    margin-top: 2rem;
+}
+
+#about {
+    padding: 2rem;
+    height: 150vh;
+}
+}
