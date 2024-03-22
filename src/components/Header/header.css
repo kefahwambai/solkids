@@ -2,6 +2,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap');
 
+.video-background {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -3;
+}
+
+.kids {
+  width: 15rem;
+  margin: 0 auto;
+  margin-top: 25rem;
+  z-index: 4;
+  animation: rotate 5s infinite alternate; 
+}
+
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(10deg); 
+  }
+}
+
+
+.overlay {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0,0,0,.4);
+  z-index: -1;
+}
 
 .headerTitles {
     display: flex;
@@ -25,11 +70,22 @@
     z-index: 3;
 }
 
-.kids {
-  margin-top: 25rem;
-}
 
 @media (max-width: 767px) {
+
+  @media (max-width: 767px) {
+    .video {
+      width: 100vw;
+      height: 100vh;
+    }
+  }
+
+  .kids {
+    width: 10rem;
+    margin-top: 23rem;
+    margin-left: 1.5rem;
+  }
+
   .headerTitleLg {
       font-size: 60px;
   }
@@ -42,10 +98,13 @@
     z-index: 3;
     top: 50%;
     left: 30%
+    
 }
+
 
   
 @media (max-width: 767px) {
+
   .Typewriter__wrapper {
       margin-top: 1rem;
       font-size: 0.8em !important;
@@ -200,14 +259,14 @@
 
 .founders > div {
   display: flex;
-  flex-direction: column; /* Stack divs vertically */
-  align-items: center; /* Center items horizontally */
+  flex-direction: column; 
+  align-items: center; 
   margin-top: 3rem;
 }
 
 .founders > div > div {
   width: 50%;
-  margin-top: 2rem; /* Adjust spacing between stacked divs */
+  margin-top: 2rem; 
 }
 
 @media (max-width: 767px) {

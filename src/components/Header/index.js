@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import "./header.css"
 import Typewriter from "typewriter-effect";
 import { Link } from 'react-router-dom';
-import kids from "../../Assets/Homepage/solchick.jpg";
+import kids from "../../Assets/Homepage/solchick.png";
 import format from "date-fns/format";
 import getDay from "date-fns/getDay";
 import parse from "date-fns/parse";
@@ -12,6 +12,7 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import plays from "../../Assets/Homepage/plays.jpeg"
+import introvid from "../../Assets/Homepage/lalalandlq.mp4"
 
 const locales = {
   'en-US': require('date-fns/locale/en-US'),
@@ -45,6 +46,7 @@ const events = [
 ];
 
 export default function CalendarComponent() {
+  const [soundEnabled, setSoundEnabled] = useState(false);  
   const [allEvents, setAllEvents] = useState(events);
   const [newEvent, setNewEvent] = useState({ title: '', start: '', end: '' });
 
@@ -88,41 +90,58 @@ export default function CalendarComponent() {
         break;
       }
     }
-    setAllEvents([...allEvents, newEvent]);
+    setAllEvents([...allEvents, newEvent]);    
   }
+
+
+  const enableSound = () => {
+    setSoundEnabled(true);
+  };
+  
+
+  
 
 
   return (
     <div>
-      <section>
-        <div className='header-container'>
-          <div className="headerTitles">              
+    <section className="video-background">
+      <div className='overlay'></div>
+      <video src={introvid} autoPlay loop muted={!soundEnabled} className="video">
+        <source  type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      {!soundEnabled && (
+        <button onClick={enableSound}>Click to enable sound</button>
+      )}
+      <div className='header-container'>
+        <div className="headerTitles">
           <span className="headerTitleLg">
-              <span style={{ color: '#377043'}}>S</span>
-              <span style={{ color: 'red'}}>O</span>
-              <span style={{ color: '#ffcb51'}}>L</span> 
-              <span style={{ color: 'red'}}>K</span>
-              <span style={{ color: '#ffcb51'}}>I</span>
-              <span style={{ color: 'green'}}>D</span> 
-              <span style={{ color: '#4ccade'}}>S</span>              
-              <span style={{ marginLeft: '1rem', color: 'black', fontSize: '2.5rem', fontFamily: '"Sue Ellen Francisco", cursive', fontWeight: '400', display: 'inline-block' }}>
-                <Typewriter options={{
+            <span style={{ color: '#377043'}}>S</span>
+            <span style={{ color: 'red'}}>O</span>
+            <span style={{ color: '#ffcb51'}}>L</span> 
+            <span style={{ color: 'red'}}>K</span>
+            <span style={{ color: '#ffcb51'}}>I</span>
+            <span style={{ color: 'green'}}>D</span> 
+            <span style={{ color: '#4ccade'}}>S</span>              
+            <span style={{ marginLeft: '1rem', color: 'black', fontSize: '2.5rem', fontFamily: '"Sue Ellen Francisco", cursive', fontWeight: '400', display: 'inline-block' }}>
+              <Typewriter options={{
                 strings: [
-                 "by Sauti sol",                 
+                  "by Sauti sol",                 
                 ],
                 autoStart: true,
                 loop: true,
                 deleteSpeed: 80,
                 delay: 400
-            }} /> 
-              </span>
+              }} /> 
+            </span>
           </span>
-          <div className='kids'>
-            <img style={{ width: '400px'}} src={kids}/>
-          </div>
+          <div >
+            <img className='kids' src={kids} alt="Kids" />
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+
 
       <section id="about">
           <div className="main">          
