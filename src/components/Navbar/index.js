@@ -9,6 +9,8 @@ import {
   AiOutlineHome,
   AiOutlineShoppingCart,
   AiOutlineUser,
+  AiOutlineRead,
+  AiOutlineContacts
 } from "react-icons/ai";
 
 
@@ -35,9 +37,9 @@ function NavBar() {
     >
       <Container>
       <Navbar.Brand as={Link} to="/">
-          <img src={logo} alt="Logo" className="logo" /> {/* Your logo */}
+          <img src={logo} alt="Logo" className="logo" as={Link} to="/" /> {/* Your logo */}
         </Navbar.Brand>
-        <Navbar.Toggle          
+        <Navbar.Toggle      
           aria-controls="responsive-navbar-nav"
           onClick={() => {
             updateExpanded(expand ? false : "expanded");
@@ -49,11 +51,11 @@ function NavBar() {
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto" defaultActiveKey="#home">
-            <Nav.Item>
+            {/* <Nav.Item>
               <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
                 <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
               </Nav.Link>
-            </Nav.Item>
+            </Nav.Item> */}
 
             <Nav.Item>              
               <Nav.Link
@@ -62,6 +64,16 @@ function NavBar() {
                 onClick={() => updateExpanded(false)}
               >
                 <AiOutlineUser style={{ marginBottom: "2px" }} /> About
+              </Nav.Link>             
+            </Nav.Item>
+
+            <Nav.Item>              
+              <Nav.Link
+                as={Link}
+                to="/about"
+                onClick={() => updateExpanded(false)}
+              >
+              <AiOutlineRead style={{ marginBottom: "2px" }} /> News
               </Nav.Link>             
             </Nav.Item>
 
@@ -76,7 +88,21 @@ function NavBar() {
                 />{" "}
                 Cart
               </Nav.Link>
-            </Nav.Item>            
+            </Nav.Item>   
+
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
+                to="/contact"
+                onClick={() => updateExpanded(false)}
+              >
+                <AiOutlineContacts
+                  style={{ marginBottom: "2px" }}
+                />{" "}
+                Contact
+              </Nav.Link>
+            </Nav.Item>   
+                     
           
           </Nav>
         </Navbar.Collapse>
