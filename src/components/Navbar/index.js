@@ -1,61 +1,88 @@
-import React from 'react';
 import "./nav.css";
 import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
+import logo from "../../Assets/Logo/SOL_KIDS_Official_Logo__5_-1-removebg-preview.png"
+import Container from "react-bootstrap/Container";
+import {  
+  AiOutlineHome,
+  AiOutlineShoppingCart,
+  AiOutlineUser,
+} from "react-icons/ai";
 
-export default function Navbar() {
+
+function NavBar() {
+  const [expand, updateExpanded] = useState(false);
+  const [navColour, updateNavbar] = useState(false);
+
+  function scrollHandler() {
+    if (window.scrollY >= 20) {
+      updateNavbar(true);
+    } else {
+      updateNavbar(false);
+    }
+  }
+
+  window.addEventListener("scroll", scrollHandler);
+
   return (
-    <div>        
-      <nav className="navigation navbar navbar-expand-lg bg-body-tertiary">
-        <div className="container-fluid">                
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <Link style={{textDecoration: 'none', fontSize: '4.5rem' }} to="/" className="navbar-brand" >
-              <span style={{ color: '#377043'}}>S</span>
-              <span style={{ color: 'red'}}>O</span>
-              <span style={{ color: '#ffcb51'}}>L</span> 
-              <span style={{ color: 'red'}}>K</span>
-              <span style={{ color: '#ffcb51'}}>I</span>
-              <span style={{ color: 'green'}}>D</span> 
-              <span style={{ color: '#4ccade'}}>S</span>   
-            </Link>
-                
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <Link to="/about" className="nav-link" style={{color: '#377043', textDecoration: 'none'}}> About Us </Link>
-              </li>
-              <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{color: '#377043'}}>
-                  Partnerships
-                </a>
-                <ul className="dropdown-menu" style={{marginTop: '-2.3rem', marginLeft: '4.1rem', borderRadius: '0', zIndex: '-1' }}>
-                  <li><Link className="dropdown-item" style={{ textDecoration: 'none', color: 'black'}} to="/corporate">Our Partners</Link></li>
-                  <li><Link className="dropdown-item" style={{ textDecoration: 'none', color: 'black'}} to="/weddings">Case Studies</Link></li>
-                </ul>
-              </li>
-              <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{color: '#377043'}}>
-                  NewsRoom
-                </a>
-                <ul className="dropdown-menu" style={{marginTop: '-3.2rem', marginLeft: '4.1rem', borderRadius: '0', }} >
-                  <li><a className="dropdown-item" href="#">FAQ</a></li>
-                  <li><a className="dropdown-item" href="#">Gallery</a></li>
-                </ul>
-              </li>                     
-              <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{color: '#377043'}}>
-                  Events
-                </a>
-                <ul className="dropdown-menu" style={{marginTop: '-3.2rem', marginLeft: '4.1rem', borderRadius: '0', }} >
-                  <li><a className="dropdown-item" href="#">FAQ</a></li>
-                  <li><a className="dropdown-item" href="#">Gallery</a></li>
-                </ul>
-              </li> 
-              <li className="nav-item">
-                <Link to="/contact" className="nav-link" style={{color: '#377043', textDecoration: 'none'}}> Shop </Link>
-              </li>               
-            </ul>            
-          </div>
-        </div>
-      </nav>
-    </div>
+    <Navbar
+      expanded={expand}
+      fixed="top"
+      expand="md"
+      className={navColour ? "sticky" : "navbar"}
+    >
+      <Container>
+      <Navbar.Brand as={Link} to="/">
+          <img src={logo} alt="Logo" className="logo" /> {/* Your logo */}
+        </Navbar.Brand>
+        <Navbar.Toggle          
+          aria-controls="responsive-navbar-nav"
+          onClick={() => {
+            updateExpanded(expand ? false : "expanded");
+          }}
+        >
+          <span ></span>
+          <span></span>
+          <span></span>
+        </Navbar.Toggle>
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="ms-auto" defaultActiveKey="#home">
+            <Nav.Item>
+              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
+                <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>              
+              <Nav.Link
+                as={Link}
+                to="/about"
+                onClick={() => updateExpanded(false)}
+              >
+                <AiOutlineUser style={{ marginBottom: "2px" }} /> About
+              </Nav.Link>             
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
+                to="/project"
+                onClick={() => updateExpanded(false)}
+              >
+                <AiOutlineShoppingCart
+                  style={{ marginBottom: "2px" }}
+                />{" "}
+                Cart
+              </Nav.Link>
+            </Nav.Item>            
+          
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
+
+export default NavBar;

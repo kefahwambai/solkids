@@ -11,8 +11,14 @@ import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import plays from "../../Assets/Homepage/plays.jpeg"
 import introvid from "../../Assets/Homepage/lalalandlq.mp4"
+import logo from "../../Assets/Logo/SOL_KIDS_Official_Logo__5_-1-removebg-preview.png"
+import slide1 from "../../Assets/slideshow/WITS-7.jpeg"
+import slide2 from "../../Assets/slideshow/WITS-2-_1_.jpeg"
+import slide3 from "../../Assets/slideshow/WITS-4.jpeg"
+import slide4 from "../../Assets/slideshow/WITS-1.jpeg"
+import sol from "../../Assets/Homepage/sautisol-removebg-preview.png"
+import melissa from "../../Assets/Homepage/melissa-removebg-preview.png"
 
 const locales = {
   'en-US': require('date-fns/locale/en-US'),
@@ -49,8 +55,7 @@ export default function CalendarComponent() {
   const [soundEnabled, setSoundEnabled] = useState(false);  
   const [allEvents, setAllEvents] = useState(events);
   const [newEvent, setNewEvent] = useState({ title: '', start: '', end: '' });
-
-  const playsBackgroundImage = `url(${plays})`;
+  const playsBackgroundImage = `url(${slide1})`;
   const views = ['month'];
 
   const [calendarHeight, setCalendarHeight] = useState(400);
@@ -97,8 +102,24 @@ export default function CalendarComponent() {
   const enableSound = () => {
     setSoundEnabled(true);
   };
+  // useEffect(() => {
+  //   let currentSlide = 0;
+  //   const slides = document.querySelectorAll("#test .mySlide");
   
-
+  //   const showSlide = () => {
+  //     slides.forEach((slide) => {
+  //       slide.classList.remove("active");
+  //     });
+  //     slides[currentSlide].classList.add("active");
+  
+  //     currentSlide = (currentSlide + 1) % slides.length;
+  
+  //     setTimeout(showSlide, 5000); // Change slide every 5 seconds
+  //   };
+  
+  //   showSlide();
+  // }, []);
+  
   
 
 
@@ -106,34 +127,17 @@ export default function CalendarComponent() {
     <div>
     <section className="video-background">
       <div className='overlay'></div>
-      <video src={introvid} autoPlay loop muted={!soundEnabled} className="video">
+      <video src={introvid} autoPlay loop className="video">
         <source  type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      {!soundEnabled && (
-        <button onClick={enableSound}>Click to enable sound</button>
-      )}
+      {/* {!soundEnabled && (
+        <button style={{ marginTop: '8rem'}} onClick={enableSound}>Click to enable sound</button>
+      )} */}
       <div className='header-container'>
         <div className="headerTitles">
           <span className="headerTitleLg">
-            <span style={{ color: '#377043'}}>S</span>
-            <span style={{ color: 'red'}}>O</span>
-            <span style={{ color: '#ffcb51'}}>L</span> 
-            <span style={{ color: 'red'}}>K</span>
-            <span style={{ color: '#ffcb51'}}>I</span>
-            <span style={{ color: 'green'}}>D</span> 
-            <span style={{ color: '#4ccade'}}>S</span>              
-            <span style={{ marginLeft: '1rem', color: 'black', fontSize: '2.5rem', fontFamily: '"Sue Ellen Francisco", cursive', fontWeight: '400', display: 'inline-block' }}>
-              <Typewriter options={{
-                strings: [
-                  "by Sauti sol",                 
-                ],
-                autoStart: true,
-                loop: true,
-                deleteSpeed: 80,
-                delay: 400
-              }} /> 
-            </span>
+              <img className='sollogo' src={logo} />      
           </span>
           <div >
             <img className='kids' src={kids} alt="Kids" />
@@ -149,11 +153,14 @@ export default function CalendarComponent() {
           <div  className='founders'>
             <h1 >Who are we</h1>
             <div>
-                <div>
+              <img className='sautisol' src={sol} />
+                <div>  
                     <p>
                         Sauti Sol is Africa's Grammy-winning music group, comprising Bien-Aimé Baraza, Willis Chimano, Savara Mudigi, and Polycarp Otieno. Renowned for their Afro-pop, R&B, and traditional fusion, they've clinched numerous awards like BET, MTV Europe Music, and Kora Awards since their 2005 inception. With acclaimed albums like "Sol Filosofia" and "Live and Die in Afrika," they've graced global stages like the Global Citizen Festival and One Africa Music Festival. Beyond music, they champion philanthropy and founded Sol Kids Limited, offering accessible Pan African content.
                     </p>
                 </div>
+
+                <img className='melissa' src={melissa} />
                 <div >
                     <p>
                         Melissa Wakhu, a respected author and educator, enriches Pan African narratives. With over 22 years of educational experience, she's authored twelve books, engaging children globally. Her journey from Deloitte to founding Sol Kids Africa showcases her prowess in business strategy, governance, and education. As CEO of Sol Kids Africa, her partnership with Sauti Sol drives the creation of world-class Pan African content, shaping tomorrow's leaders.
@@ -194,10 +201,8 @@ export default function CalendarComponent() {
         </div>
       </section>
 
-      <section id="test" style={{ backgroundImage: playsBackgroundImage }}>
-
-
-
+    <section id="test" style={{ backgroundImage: playsBackgroundImage}} >
+      
       </section>
 
       <section id="venues">
