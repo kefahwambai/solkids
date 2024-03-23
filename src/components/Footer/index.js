@@ -1,5 +1,6 @@
 import React from 'react'
 import "./footer.css"
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
     let date = new Date();
@@ -10,18 +11,18 @@ export default function Footer() {
         <div class="footer">
         <div class="faicons">
             <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.instagram.com/solkidsafrica/?hl=en" target='blank'><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-youtube"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
         </div>
 
         <div class="links">
             <ul>
-                <li><a href="#">Contact us</a></li>
-                <li><a href="#">About Us</a></li>
+                <li><Link to="/contact">Get in touch with us</Link></li>
+                <li><Link to="/about">About us</Link></li>
                 {/* <li><a href="#">Privacy Policy</a></li> */}
                 <li><a href="#">Terms & Conditions</a></li>
-                <li><a href="#">Shop</a></li>
+                <li><Link to="/cart">Shop</Link></li>
             </ul>
         </div>
 
