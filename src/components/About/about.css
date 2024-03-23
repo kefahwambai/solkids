@@ -1,9 +1,45 @@
+#about {   
+    width: 100vw;
+    height: 100vh;
+    margin-top: 1rem;
+    background-color: #fff;    
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;    
+      
+}
+
+#solevents {
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    padding: 20px;  
+
+}
+
+.poly {
+    margin-top: -2rem;
+    z-index: 20;
+    height: 30rem;
+    margin-bottom: -34rem;
+    margin-right: 70rem;
+
+}
+
+.worrm {
+    margin-top: -1rem;
+    z-index: 20;
+    height: 30rem;
+    margin-bottom: -24rem;
+    margin-left: 70rem;
+        
+}
 
 .sautisol {
 margin-top: -8rem;
 z-index: 20;
 height: 30rem;
-margin-bottom: -10rem;
+margin-bottom: -20rem;
 margin-left: 70rem;
 }
 
@@ -25,6 +61,25 @@ margin-bottom: -13rem;
 
 }
 
+.worrm {
+    margin-left: 50rem; 
+    margin-right: 30rem;
+    margin-top: 15rem;
+    height: 40vh;
+    margin-bottom: -26rem;
+
+}
+
+.poly {
+    margin-right: 45rem; 
+    margin-left: 30rem;
+    margin-top: 5rem;
+    height: 40vh;
+    margin-bottom: -25rem;
+    z-index: 4;
+
+}
+
 .melissa{
     margin-left: 30rem; 
     margin-right: 30rem;
@@ -36,10 +91,39 @@ margin-bottom: -13rem;
 }
 
 
+.statement {
+    margin-top: 6rem;
+}
+
+.statement h1 {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    text-decoration: underline;
+
+}
+
+.statement li {
+    margin: 0 auto;
+    width: 50vw;
+}
+
+.statement > div {  
+    display: flex;
+    z-index: 1;
+    flex-direction: column; 
+    align-items: center; 
+    margin-top: -4rem;
+}
+
+.statement > div > div {
+    width: 50%;
+    margin-top: 2rem;     
+}
+
 
 .founders {
     margin-top: 5rem;
-    color: white;
+    color: #de412d
 }
   
 .founders h1 {
@@ -63,6 +147,14 @@ margin-bottom: -13rem;
     
 }
   
+.solment {
+    
+}
+
+.solment li {
+   color: #de412d;
+}
+
 @media (max-width: 767px) {
   .mySlide {
       width: 100vw;
@@ -80,6 +172,15 @@ margin-bottom: -13rem;
   #about {
       padding: 1rem;
       height: 260vh;
+}
+
+#solevents {
+    height: 240vh;
+}
+
+.solment {
+    margin-left: 2rem;
+    z-index: 4;    
 }
   
   
