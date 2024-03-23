@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Flavors&display=swap');
 
 .sticky {
-    background-color: #cddbde !important;
+    background-color: #4ccade!important;
     transition: all 0.3s ease-out 0s !important;
     box-shadow: 0px 10px 10px 0px rgba(9, 5, 29, 0.171) !important;
     backdrop-filter: blur(15px) !important;
@@ -16,67 +16,72 @@
     transition: all 0.3s ease-out 0s !important;
     font-size: 1.2rem !important;
     height: 6rem;
-    background-color: white;  
+    background-color: transparent;  
+    
+   
 
 }
 
 .navbar-toggler {
-position: relative !important;
-background-color: transparent !important;
-border-color: transparent !important;
+    position: relative !important;
+    background-color: transparent !important;
+    border-color: transparent !important;
+   
 
 }
 
 .navbar-toggler span {
-display: block !important;
-background-color: #de412d !important;
-height: 4px !important;
-width: 27px !important;
-margin-top: 5px !important;
-margin-bottom: 5px !important;
-transform: rotate(0deg) !important;
-left: 0 !important;
-opacity: 1 !important;
+    display: block !important;
+    background-color: #de412d !important;
+    height: 4px !important;
+    width: 27px !important;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+    transform: rotate(0deg) !important;
+    left: 0 !important;
+    opacity: 1 !important;
 }
 
 .navbar-toggler:focus,
 .navbar-toggler:active {
-outline: 0 !important;
+    outline: 0 !important;
 }
 
 .navbar-toggler span:nth-child(1),
 .navbar-toggler span:nth-child(3) {
-transition: transform 0.35s ease-in-out !important;
-transition: transform 0.35s ease-in-out !important;
+    transition: transform 0.35s ease-in-out !important;
+    transition: transform 0.35s ease-in-out !important;
 }
 
 .navbar-toggler:not(.collapsed) span:nth-child(1) {
-position: absolute !important;
-left: 12px !important;
-top: 10px !important;
-transform: rotate(135deg) !important;
-opacity: 0.9 !important;
+    position: absolute !important;
+    left: 12px !important;
+    top: 10px !important;
+    transform: rotate(135deg) !important;
+    opacity: 0.9 !important;
+    
 }
 
 .navbar-toggler:not(.collapsed) span:nth-child(2) {
-height: 12px !important;
-visibility: hidden !important;
-background-color: transparent !important;
+    height: 12px !important;
+    visibility: hidden !important;
+    background-color: transparent !important;
 }
 
 .navbar-toggler:not(.collapsed) span:nth-child(3) {
-position: absolute !important;
-left: 12px !important;
-top: 10px !important;
-transform: rotate(-135deg) !important;
-opacity: 0.9 !important;
+    position: absolute !important;
+    left: 12px !important;
+    top: 10px !important;
+    transform: rotate(-135deg) !important;
+    opacity: 0.9 !important;
 }
 
 @media (max-width: 767px) {
 .navbar {
     padding: 1rem 2rem !important;
     font-size: 1.4rem !important;
-    /* background-color: linear-gradient(to left, rgb(4, 154, 149), rgb(11, 11, 11)); */
+    
+
 }
 .navbar-nav .nav-item a::after {
     display: none !important;

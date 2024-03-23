@@ -129,9 +129,9 @@
   }
 }
 
-#about {   
+#aboutt {   
     width: 100vw;
-    height: 100vh;
+    height: 150vh;
     background-color: #de412d;
     color: #fff;
     padding: 20px;
@@ -140,7 +140,7 @@
       
 }
 
-.sautisol {
+.sautisoll {
   margin-top: -8rem;
   z-index: 20;
   height: 30rem;
@@ -148,7 +148,7 @@
   margin-left: 70rem;
 }
 
-.melissa {
+.melissaa {
   height: 20rem;
   margin-top: -4rem;
   margin-right: 70rem;
@@ -157,7 +157,7 @@
 
 
 @media (max-width: 767px) {
-  .sautisol{
+  .sautisoll{
     margin-left: 30rem; 
     margin-right: 30rem;
     margin-top: 1rem;
@@ -166,7 +166,7 @@
 
   }
 
-  .melissa{
+  .melissaa{
     margin-left: 30rem; 
     margin-right: 30rem;
     margin-top: 1rem;
@@ -313,18 +313,19 @@
 }
 
 
-.founders {
+.founderss {
   margin-top: 5rem;
-  color: white;
+  color: #fff;
 }
 
-.founders h1 {
-  margin-top: 3rem;
+.founderss h1 {
+  /* margin-top: 1rem; */
+  margin-bottom: 5rem;
   padding: 0 10rem;
   text-decoration: underline;
 }
 
-.founders > div {
+.founderss > div {
 
   display: flex;
   z-index: 1;
@@ -333,7 +334,7 @@
   margin-top: -4rem;
 }
 
-.founders > div > div {
+.founderss > div > div {
   width: 50%;
   margin-top: 2rem; 
   
@@ -348,14 +349,14 @@
     margin-left: 1rem;
   }
 
-  .founders h1 {
+  .founderss h1 {
     margin-top: 1.5rem;
     padding: 0 2rem;
 }
 
-#about {
+#aboutt {
     padding: 1rem;
-    height: 260vh;
+    height: 270vh;
 }
 
 

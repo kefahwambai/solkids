@@ -127,13 +127,10 @@ export default function CalendarComponent() {
     <div>
     <section className="video-background">
       <div className='overlay'></div>
-      <video src={introvid} autoPlay loop className="video">
+      <video src={introvid} autoPlay muted loop className="video">
         <source  type="video/mp4" />
         Your browser does not support the video tag.
-      </video>
-      {/* {!soundEnabled && (
-        <button style={{ marginTop: '8rem'}} onClick={enableSound}>Click to enable sound</button>
-      )} */}
+      </video>      
       <div className='header-container'>
         <div className="headerTitles">
           <span className="headerTitleLg">
@@ -147,20 +144,20 @@ export default function CalendarComponent() {
     </section>
 
 
-      <section id="about">
+      <section id="aboutt">
           <div className="main">          
           </div>
-          <div  className='founders'>
+          <div  className='founderss'>
             <h1 >Who are we</h1>
             <div>
-              <img className='sautisol' src={sol} />
+              <img className='sautisoll' src={sol} />
                 <div>  
                     <p>
                         Sauti Sol is Africa's Grammy-winning music group, comprising Bien-Aimé Baraza, Willis Chimano, Savara Mudigi, and Polycarp Otieno. Renowned for their Afro-pop, R&B, and traditional fusion, they've clinched numerous awards like BET, MTV Europe Music, and Kora Awards since their 2005 inception. With acclaimed albums like "Sol Filosofia" and "Live and Die in Afrika," they've graced global stages like the Global Citizen Festival and One Africa Music Festival. Beyond music, they champion philanthropy and founded Sol Kids Limited, offering accessible Pan African content.
                     </p>
                 </div>
 
-                <img className='melissa' src={melissa} />
+                <img className='melissaa' src={melissa} />
                 <div >
                     <p>
                         Melissa Wakhu, a respected author and educator, enriches Pan African narratives. With over 22 years of educational experience, she's authored twelve books, engaging children globally. Her journey from Deloitte to founding Sol Kids Africa showcases her prowess in business strategy, governance, and education. As CEO of Sol Kids Africa, her partnership with Sauti Sol drives the creation of world-class Pan African content, shaping tomorrow's leaders.

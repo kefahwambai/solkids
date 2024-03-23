@@ -37,9 +37,9 @@ function NavBar() {
     >
       <Container>
       <Navbar.Brand as={Link} to="/">
-          <img src={logo} alt="Logo" className="logo" as={Link} to="/" /> {/* Your logo */}
+          <img src={logo} alt="Logo" className="logo" as={Link} to="/" /> 
         </Navbar.Brand>
-        <Navbar.Toggle      
+        <Navbar.Toggle  
           aria-controls="responsive-navbar-nav"
           onClick={() => {
             updateExpanded(expand ? false : "expanded");
@@ -49,7 +49,7 @@ function NavBar() {
           <span></span>
           <span></span>
         </Navbar.Toggle>
-        <Navbar.Collapse id="responsive-navbar-nav">
+        <Navbar.Collapse id="responsive-navbar-nav" style={{ marginTop: '0.67rem', marginLeft: '11rem', fontSize:'1rem'}}>
           <Nav className="ms-auto" defaultActiveKey="#home">
             {/* <Nav.Item>
               <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
@@ -60,10 +60,11 @@ function NavBar() {
             <Nav.Item>              
               <Nav.Link
                 as={Link}
+                style={{ color: 'white'}}
                 to="/about"
                 onClick={() => updateExpanded(false)}
               >
-                <AiOutlineUser style={{ marginBottom: "2px" }} /> About
+                <AiOutlineUser style={{ marginBottom: "2px", color: 'white' }} /> About
               </Nav.Link>             
             </Nav.Item>
 
@@ -71,9 +72,10 @@ function NavBar() {
               <Nav.Link
                 as={Link}
                 to="/about"
+                style={{ color: 'white'}}
                 onClick={() => updateExpanded(false)}
               >
-              <AiOutlineRead style={{ marginBottom: "2px" }} /> News
+              <AiOutlineRead style={{ marginBottom: "2px", color: 'white' }} /> News
               </Nav.Link>             
             </Nav.Item>
 
@@ -81,10 +83,11 @@ function NavBar() {
               <Nav.Link
                 as={Link}
                 to="/project"
+                style={{ color: 'white'}}
                 onClick={() => updateExpanded(false)}
               >
                 <AiOutlineShoppingCart
-                  style={{ marginBottom: "2px" }}
+                  style={{ marginBottom: "2px", color: 'white' }}
                 />{" "}
                 Cart
               </Nav.Link>
@@ -94,6 +97,7 @@ function NavBar() {
               <Nav.Link
                 as={Link}
                 to="/contact"
+                style={{ color: 'white'}}
                 onClick={() => updateExpanded(false)}
               >
                 <AiOutlineContacts
