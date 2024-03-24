@@ -3,22 +3,17 @@
 .sticky {
     background-color: #4ccade!important;
     transition: all 0.3s ease-out 0s !important;
-    box-shadow: 0px 10px 10px 0px rgba(9, 5, 29, 0.171) !important;
     backdrop-filter: blur(15px) !important;
 }
 
-/* .Cattogglebtn:hover {
-    background-color: cadetblue;
-} */
+.sticky.scrolled {
+    box-shadow: 0px 10px 10px 0px rgba(9, 5, 29, 0.171) !important;
+}
 
 .navbar {
     position: fixed !important;
     transition: all 0.3s ease-out 0s !important;
     font-size: 1.2rem !important;
-    height: 6rem;
-    background-color: transparent;  
-    
-   
 
 }
 
@@ -143,3 +138,6 @@ transition: all 0.3s ease-out 0s;
 .navbar-nav .nav-item a:hover::after {
 width: 100%;
 }
+
+
+

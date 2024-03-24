@@ -143,7 +143,7 @@ export default function CalendarComponent() {
             <div class="cta__text-column">
               <h2>Funny Fisi</h2>
               <p>Discover the humorous world of hyenas with Nuru in this engaging children's book packed with learning activities.</p>
-              <a><Link className='linkcta' to="/cart">Shop now</Link></a>
+              <Link className='linkcta' to="/cart">Shop now</Link>
             </div>
           </article>
           <article class="cta">
@@ -151,7 +151,7 @@ export default function CalendarComponent() {
             <div class="cta__text-column">
               <h2>Hibsicus Oak</h2>
               <p>Follow Tia on her remarkable journey of growth, teaching children the beauty of embracing their inherent uniqueness and purpose.</p>
-              <a><Link className='linkcta' to="/cart">Shop now</Link></a>
+              <Link className='linkcta' to="/cart">Shop now</Link>
             </div>
           </article>
           <article class="cta">
@@ -159,7 +159,7 @@ export default function CalendarComponent() {
             <div class="cta__text-column">
               <h2>Towering twiga</h2>
               <p>Embark on a giraffe adventure with Nuru and family, filled with fun learning and coloring activities.</p>
-              <a><Link className='linkcta' to="/cart">Shop now</Link></a>
+              <Link className='linkcta' to="/cart">Shop now</Link>
             </div>
           </article>
           <article class="cta">
@@ -167,7 +167,7 @@ export default function CalendarComponent() {
             <div class="cta__text-column">
               <h2>Written in the Stars</h2>
               <p>Embark on a cultural journey exploring the significance of names in African traditions with this enlightening tale of a naming ceremony.</p>
-              <a><Link className='linkcta' to="/cart">Shop now</Link></a>
+              <Link className='linkcta' to="/cart">Shop now</Link>
             </div>
           </article>
         </div>

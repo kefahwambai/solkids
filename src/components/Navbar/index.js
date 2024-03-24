@@ -1,12 +1,11 @@
 import "./nav.css";
 import { Link } from 'react-router-dom';
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import logo from "../../Assets/Logo/SOL_KIDS_Official_Logo__5_-1-removebg-preview.png"
 import Container from "react-bootstrap/Container";
 import {  
-  AiOutlineHome,
   AiOutlineShoppingCart,
   AiOutlineUser,
   AiOutlineRead,
@@ -18,16 +17,21 @@ function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
 
-  function scrollHandler() {
-    if (window.scrollY >= 20) {
-      updateNavbar(true);
-    } else {
-      updateNavbar(false);
-    }
-  }
+  useEffect(() => {
+    const scrollHandler = () => {
+      if (window.scrollY >= 20) {
+        updateNavbar(true);
+      } else {
+        updateNavbar(false);
+      }
+    };
 
-  window.addEventListener("scroll", scrollHandler);
+    window.addEventListener("scroll", scrollHandler);
 
+    return () => {
+      window.removeEventListener("scroll", scrollHandler);
+    };
+  }, []); 
   return (
     <Navbar
       expanded={expand}
@@ -51,12 +55,6 @@ function NavBar() {
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav" style={{ marginTop: '0.67rem', marginLeft: '11rem', fontSize:'1rem'}}>
           <Nav className="ms-auto" defaultActiveKey="#home">
-            {/* <Nav.Item>
-              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
-                <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
-              </Nav.Link>
-            </Nav.Item> */}
-
             <Nav.Item>              
               <Nav.Link
                 as={Link}
@@ -82,7 +80,7 @@ function NavBar() {
             <Nav.Item>
               <Nav.Link
                 as={Link}
-                to="/project"
+                to="/cart"
                 style={{ color: 'white'}}
                 onClick={() => updateExpanded(false)}
               >
