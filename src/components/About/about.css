@@ -1,8 +1,7 @@
 #about {   
     width: 100vw;
     height: 100vh;
-    margin-top: 1rem;
-    background-color: #fff;    
+    background-color: #de412d;   
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-family: 'Arial', sans-serif;    
@@ -10,12 +9,65 @@
 }
 
 #solevents {
+    
     width: 100vw;
-    height: 100vh;
+    height: 120vh;
     background-color: #fff;
     padding: 20px;  
 
 }
+
+#execmess {
+    width: 100vw;
+    height: 200vh;
+    background-color: #fff;
+    padding: 20px;  
+}
+
+.board h2 {
+    font-size: 24px;
+    margin-bottom: 2rem;
+    margin-top: 8rem;
+    margin-left: 5rem;    
+}
+.board p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+    width: 50vw;
+    padding: 20px;
+    margin: 20px;
+    margin-top: -3rem;
+    margin-left: 42rem;
+ }
+   
+.ceo {
+   /* background-color: #f9f9f9; */
+   /* border-radius: 10px; */
+   /* padding: 20px; */
+   /* margin: 20px 0; */
+   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+  
+.ceo h2 {
+   color: #333;
+   font-size: 24px;
+   margin-bottom: 2rem;
+   margin-left: 5rem;
+}
+  
+.ceo p {
+   color: #666;
+   font-size: 16px;
+   line-height: 1.6;
+   width: 50vw;
+   padding: 20px;
+   margin: 20px;
+   margin-top: -3rem;
+   margin-left: 3rem;
+}
+  
+/* Images */
 
 .poly {
     margin-top: -2rem;
@@ -33,6 +85,24 @@
     margin-bottom: -24rem;
     margin-left: 70rem;
         
+}
+
+.ceeopic {
+    margin-top: -5rem;
+    z-index: 20;
+    height: 40rem;
+    margin-bottom: -10rem;
+    margin-left: 60rem;
+
+}
+
+.boardpic {
+    margin-top: 1rem;
+    z-index: 20;
+    height: 30rem;
+    margin-bottom: -1rem;
+    margin-left: 4rem;
+
 }
 
 .sautisol {
@@ -91,8 +161,12 @@ margin-bottom: -13rem;
 }
 
 
+
+
+
+
 .statement {
-    margin-top: 2rem;
+    margin-top: 10rem;
 }
 
 .statement h1 {
@@ -122,8 +196,8 @@ margin-bottom: -13rem;
 
 
 .founders {
-    margin-top: 5rem;
-    color: #de412d
+    margin-top: 7rem;
+    color: #fff
 }
   
 .founders h1 {
@@ -146,32 +220,22 @@ margin-bottom: -13rem;
     margin-top: 2rem; 
     
 }
-  
-.solment {
-    
-}
+
 
 .solment li {
    color: #de412d;
 }
 
 @media (max-width: 767px) {
-  .mySlide {
-      width: 100vw;
-      height: 100vh;
-}
-  .calendar {
-      margin-left: 1rem;
-}
   
-  .founders h1 {
-      margin-top: 1.5rem;
-      padding: 0 2rem;
+.founders h1 {
+    margin-top: 1.5rem;
+    padding: 0 2rem;
  }
   
-  #about {
-      padding: 1rem;
-      height: 260vh;
+#about {
+    padding: 1rem;
+    height: 260vh;
 }
 
 #solevents {
@@ -183,6 +247,9 @@ margin-bottom: -13rem;
     z-index: 4;    
 }
   
+#execmess {
+
+}
   
   
 }

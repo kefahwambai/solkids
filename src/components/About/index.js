@@ -4,6 +4,8 @@ import melissa from "../../Assets/Homepage/melissa-removebg-preview.png"
 import "./about.css"
 import poly from "../../Assets/About/lllo (1).png"
 import worm from "../../Assets/About/Worm.png"
+import ceo from "../../Assets/About/ceo-removebg-preview.png"
+import board from "../../Assets/About/board.png"
 
 
 export default function About() {
@@ -15,14 +17,14 @@ export default function About() {
                     <div  className='founders'>
                     <h1 >Who are we</h1>
                     <div>
-                        <img className='sautisol' src={sol} />
+                        <img className='sautisol' src={sol}  alt="SautiSol"/>
                         <div>  
                             <p>
                                 Sauti Sol is Africa's Grammy-winning music group, comprising Bien-Aimé Baraza, Willis Chimano, Savara Mudigi, and Polycarp Otieno. Renowned for their Afro-pop, R&B, and traditional fusion, they've clinched numerous awards like BET, MTV Europe Music, and Kora Awards since their 2005 inception. With acclaimed albums like "Sol Filosofia" and "Live and Die in Afrika," they've graced global stages like the Global Citizen Festival and One Africa Music Festival. Beyond music, they champion philanthropy and founded Sol Kids Limited, offering accessible Pan African content.
                             </p>
                         </div>
 
-                        <img className='melissa' src={melissa} />
+                        <img className='melissa' src={melissa} alt="Melissa Wakhu" />
                         <div >
                             <p>
                                 Melissa Wakhu, a respected author and educator, enriches Pan African narratives. With over 22 years of educational experience, she's authored twelve books, engaging children globally. Her journey from Deloitte to founding Sol Kids Africa showcases her prowess in business strategy, governance, and education. As CEO of Sol Kids Africa, her partnership with Sauti Sol drives the creation of world-class Pan African content, shaping tomorrow's leaders.
@@ -34,7 +36,7 @@ export default function About() {
             <section id="solevents">
                 <div className='statement'>
                     <div >
-                        <img className='poly' src={poly} />
+                        <img className='poly' src={poly} alt="animatedPolicarp" />
                         <h1> What we do</h1>
                         <ul  className='solment' style={{ listStyle: 'none'}}> 
                             <li  > Sol Kids Africa is dedicated to raising literacy levels and changing attitudes towards learning among African children aged 0 to 21.</li>
@@ -45,7 +47,7 @@ export default function About() {
                         </ul>
                     </div>
                     <div>
-                        <img className='worrm' src={worm} />
+                        <img className='worrm' src={worm} alt="solworm" />
                         <h1> Why we do it</h1>
                         <ul className='solstatment' style={{ listStyle: 'none'}}>
                             <li> Africa boasts the youngest population globally, yet faces significant challenges in education and cultural preservation.</li>
@@ -58,6 +60,20 @@ export default function About() {
                         </ul>
                     </div>                    
                 </div>
+            </section>
+            <section id="execmess">
+                <div className='ceo'>
+                    <h2>Statement from our CEO</h2>
+                    <img className="ceeopic" src={ceo} alt="our CEO" />
+                    <p>"As the CEO of Sol Kids Africa, I am deeply committed to our mission of nurturing a generation of African children who are proud of their heritage, passionate about learning, and equipped with the skills to lead. Our platform is driven by a vision to bridge the gap between education and culture, leveraging world-class content to inspire, empower, and connect young minds across the continent. With a team dedicated to excellence and a strategic focus on innovation and accessibility, we are poised to make a profound impact on the lives of millions of children, transforming challenges into opportunities and shaping a brighter future for Africa."</p>
+                </div>
+                <div className='board'>
+                    <h2> Statement from Our Board </h2>
+                    <img className='boardpic' src={board} alt="Board of Directors" />
+                    <p>"As stewards of Sol Kids Africa, we are proud to support a visionary mission that addresses critical issues facing African children today. Our diverse board brings together expertise in education, technology, content creation, and community engagement, united by a shared commitment to excellence and impact. Through strategic partnerships, innovative initiatives, and a steadfast dedication to quality, we are driving forward our goal of empowering young African leaders and enriching communities through education and inspiration. Together, we are shaping a brighter future for Africa, one child at a time."</p>
+
+                </div>
+
             </section>
         </div>
 

@@ -131,13 +131,28 @@
 
 #aboutt {   
     width: 100vw;
-    height: 150vh;
-    background-color: #de412d;
-    color: #fff;
+    height: 120vh;
+    background-color: #fff;
+    color: #de412d;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-family: 'Arial', sans-serif;    
       
+}
+
+#frontshop {
+  width: 100vw;
+  height: 115vh;
+  background-color: #377043;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;   
+
+}
+
+.frontshop h1 {
+  margin-left: 3rem;
+  color: #ffcb51;
 }
 
 .sautisoll {
@@ -315,7 +330,7 @@
 
 .founderss {
   margin-top: 5rem;
-  color: #fff;
+  color: #de412d;
 }
 
 .founderss h1 {
@@ -359,6 +374,104 @@
     height: 270vh;
 }
 
+#frontshop {
+  height: 275vh;
+}
 
 
+
+}
+
+
+.ctaimg {
+	display: block;
+	width: 10vw;
+  height: 35vh;
+}
+
+.cta h2 {
+	margin: 0;
+	font-size: 1.4rem;
+}
+
+@media (max-width: 767px) {
+  .cta h2 {
+    font-size: 0.9rem;
+    font-weight: 800;
+  }
+  .ctaimg {   
+    height: 20vh;
+  }
+
+  .cta {
+    margin-left: 5rem !important;
+    border-color: #ffcb51;
+    border-width: 0.5rem;
+    height: 55vh !important;
+  }
+
+  .cta p {
+    font-size: 0.7rem;
+    margin-bottom: 1rem !important;
+  }
+  .linkcta {
+    display: inline-block;
+    color: rgb(245, 239, 239)!important;
+    margin-top: -1rem !important;
+    margin-left: 0.5rem;
+  
+  }
+
+  
+}
+
+
+.cta {
+	--shadowColor: 180 60% 40%;
+	display:inline-flex;
+	flex-wrap: wrap;
+	background: #4ccade;
+	width: 40vw;
+  height: 35vh;  
+	box-shadow: -0.65rem 0.65rem 0 hsl(var(--shadowColor) / 1);
+	border-radius: 0.8rem;
+	overflow: hidden;
+  border-color: #ffcb51;
+	/* border: 0.5rem solid; */
+  margin-top: 4rem;
+  margin-left: 3rem;
+}
+
+.cta img {
+	/* aspect-ratio: 3 / 2; */
+	object-fit: cover;
+	flex: 1 1 300px;
+	/* outline: 0.5rem solid; */
+}
+
+.cta__text-column {
+	padding: min(2rem, 5vw) min(2rem, 5vw) min(2.5rem, 5vw);
+	flex: 1 0 50%;
+}
+
+.cta__text-column > * + * {
+	margin: min(1.5rem, 2.5vw) 0 0 0;
+}
+
+.cta a {
+	display: inline-block;
+	color: black;
+	padding: 0.5rem 1rem;
+	text-decoration: none;
+	background: #4ccade;
+	border-radius: 0.6rem;
+	font-weight: 700;
+}
+
+.cta p {
+  margin-bottom: -1rem;
+}
+
+.cta a:hover {
+  background: #ffcb51;
 }

@@ -19,6 +19,10 @@ import slide3 from "../../Assets/slideshow/WITS-4.jpeg"
 import slide4 from "../../Assets/slideshow/WITS-1.jpeg"
 import sol from "../../Assets/Homepage/sautisol-removebg-preview.png"
 import melissa from "../../Assets/Homepage/melissa-removebg-preview.png"
+import oak from "../../Assets/Books/Oak.png"
+import twiga from "../../Assets/Books/Twiga.png"
+import fisi from "../../Assets/Books/fisi.png"
+import stars from "../../Assets/Books/written in stars.png"
 
 const locales = {
   'en-US': require('date-fns/locale/en-US'),
@@ -142,8 +146,6 @@ export default function CalendarComponent() {
         </div>
       </div>
     </section>
-
-
       <section id="aboutt">
           <div className="main">          
           </div>
@@ -164,6 +166,44 @@ export default function CalendarComponent() {
                     </p>
                 </div>
           </div>
+        </div>
+
+      </section>
+      <section id="frontshop">
+        <div className='frontshop'>
+          <h1>Shop Now</h1>
+          <article class="cta">
+            <img className='ctaimg' src={fisi} alt='Hyena'/>
+            <div class="cta__text-column">
+              <h2>Funny Fisi</h2>
+              <p>Discover the humorous world of hyenas with Nuru in this engaging children's book packed with learning activities.</p>
+              <a><Link className='linkcta' to="/cart">Shop now</Link></a>
+            </div>
+          </article>
+          <article class="cta">
+            <img className='ctaimg' src={oak} alt='Hibiscus Oak tree'/>
+            <div class="cta__text-column">
+              <h2>Hibsicus Oak</h2>
+              <p>Follow Tia on her remarkable journey of growth, teaching children the beauty of embracing their inherent uniqueness and purpose.</p>
+              <a><Link className='linkcta' to="/cart">Shop now</Link></a>
+            </div>
+          </article>
+          <article class="cta">
+            <img className='ctaimg' src={twiga} alt='Giraffe'/>
+            <div class="cta__text-column">
+              <h2>Towering twiga</h2>
+              <p>Embark on a giraffe adventure with Nuru and family, filled with fun learning and coloring activities.</p>
+              <a><Link className='linkcta' to="/cart">Shop now</Link></a>
+            </div>
+          </article>
+          <article class="cta">
+            <img className='ctaimg' src={stars} alt='Written in the Stars'/>
+            <div class="cta__text-column">
+              <h2>Written in the Stars</h2>
+              <p>Embark on a cultural journey exploring the significance of names in African traditions with this enlightening tale of a naming ceremony.</p>
+              <a><Link className='linkcta' to="/cart">Shop now</Link></a>
+            </div>
+          </article>
         </div>
 
       </section>
