@@ -130,7 +130,38 @@ margin-bottom: -13rem;
     margin-bottom: -2rem;
 
 }
+.ceeopic {
+    margin-left: 11rem; 
+    margin-top: 1rem;
+    height: 30vh;
+    margin-bottom: -2rem;
 
+}
+
+.boardpic {
+    margin-left: 2rem;
+    margin-top: 1rem;
+    height: 30vh;
+    margin-bottom: -2rem;
+
+}
+
+.ceo p {
+    margin-left: 1rem;
+    font-size: 1rem;
+    margin-top: -8rem;
+    line-height: 1.1rem;
+    margin-bottom: -4rem;
+}
+
+.board p {
+    margin:0 auto;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-top: 2rem;
+    width: 80vw;
+
+}
 .worrm {
     margin-left: 50rem; 
     margin-right: 30rem;
@@ -248,6 +279,7 @@ margin-bottom: -13rem;
 }
   
 #execmess {
+    height: 230vh;
 
 }
   

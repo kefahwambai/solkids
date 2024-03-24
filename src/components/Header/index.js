@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import "./header.css"
-import Typewriter from "typewriter-effect";
 import { Link } from 'react-router-dom';
 import kids from "../../Assets/Homepage/solchick.png";
 import format from "date-fns/format";
@@ -14,15 +13,13 @@ import "react-datepicker/dist/react-datepicker.css";
 import introvid from "../../Assets/Homepage/lalalandlq.mp4"
 import logo from "../../Assets/Logo/SOL_KIDS_Official_Logo__5_-1-removebg-preview.png"
 import slide1 from "../../Assets/slideshow/WITS-7.jpeg"
-import slide2 from "../../Assets/slideshow/WITS-2-_1_.jpeg"
-import slide3 from "../../Assets/slideshow/WITS-4.jpeg"
-import slide4 from "../../Assets/slideshow/WITS-1.jpeg"
-import sol from "../../Assets/Homepage/sautisol-removebg-preview.png"
-import melissa from "../../Assets/Homepage/melissa-removebg-preview.png"
 import oak from "../../Assets/Books/Oak.png"
 import twiga from "../../Assets/Books/Twiga.png"
 import fisi from "../../Assets/Books/fisi.png"
 import stars from "../../Assets/Books/written in stars.png"
+import pizzakids from "../../Assets/definition/pizzakids.png"
+import chick from "../../Assets/definition/chickec.png"
+
 
 const locales = {
   'en-US': require('date-fns/locale/en-US'),
@@ -55,8 +52,7 @@ const events = [
   },
 ];
 
-export default function CalendarComponent() {
-  const [soundEnabled, setSoundEnabled] = useState(false);  
+export default function CalendarComponent() { 
   const [allEvents, setAllEvents] = useState(events);
   const [newEvent, setNewEvent] = useState({ title: '', start: '', end: '' });
   const playsBackgroundImage = `url(${slide1})`;
@@ -103,30 +99,6 @@ export default function CalendarComponent() {
   }
 
 
-  const enableSound = () => {
-    setSoundEnabled(true);
-  };
-  // useEffect(() => {
-  //   let currentSlide = 0;
-  //   const slides = document.querySelectorAll("#test .mySlide");
-  
-  //   const showSlide = () => {
-  //     slides.forEach((slide) => {
-  //       slide.classList.remove("active");
-  //     });
-  //     slides[currentSlide].classList.add("active");
-  
-  //     currentSlide = (currentSlide + 1) % slides.length;
-  
-  //     setTimeout(showSlide, 5000); // Change slide every 5 seconds
-  //   };
-  
-  //   showSlide();
-  // }, []);
-  
-  
-
-
   return (
     <div>
     <section className="video-background">
@@ -150,21 +122,15 @@ export default function CalendarComponent() {
           <div className="main">          
           </div>
           <div  className='founderss'>
-            <h1 >Who are we</h1>
             <div>
-              <img className='sautisoll' src={sol} />
+              <img className='pizza' src={pizzakids} alt="kids making pizza" />
                 <div>  
-                    <p>
-                        Sauti Sol is Africa's Grammy-winning music group, comprising Bien-Aimé Baraza, Willis Chimano, Savara Mudigi, and Polycarp Otieno. Renowned for their Afro-pop, R&B, and traditional fusion, they've clinched numerous awards like BET, MTV Europe Music, and Kora Awards since their 2005 inception. With acclaimed albums like "Sol Filosofia" and "Live and Die in Afrika," they've graced global stages like the Global Citizen Festival and One Africa Music Festival. Beyond music, they champion philanthropy and founded Sol Kids Limited, offering accessible Pan African content.
-                    </p>
+                    <p className='greenp'> Sol Kids is an initiative led by Sauti Sol, offering an innovative platform that curates affordable and award-winning Pan African content.</p>
+                    <p> Our goal is to nurture a generation of children who embrace their African heritage. </p>
+                    <p> With a mantra of "Stories by Us," our mission revolves around L.E.A (Leadership, Empowerment, Accessibility).</p>
+                    <p className='yellowp'> We aim to promote literacy, empowerment, and accessibility through culturally relevant content, empowering children to appreciate their past, present, and future.</p>                   
                 </div>
-
-                <img className='melissaa' src={melissa} />
-                <div >
-                    <p>
-                        Melissa Wakhu, a respected author and educator, enriches Pan African narratives. With over 22 years of educational experience, she's authored twelve books, engaging children globally. Her journey from Deloitte to founding Sol Kids Africa showcases her prowess in business strategy, governance, and education. As CEO of Sol Kids Africa, her partnership with Sauti Sol drives the creation of world-class Pan African content, shaping tomorrow's leaders.
-                    </p>
-                </div>
+                <img className='solhen' src={chick} alt="realsolchick" />
           </div>
         </div>
 

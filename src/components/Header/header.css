@@ -131,7 +131,7 @@
 
 #aboutt {   
     width: 100vw;
-    height: 120vh;
+    height: 160vh;
     background-color: #fff;
     color: #de412d;
     padding: 20px;
@@ -163,6 +163,24 @@
   margin-left: 70rem;
 }
 
+.pizza {
+  margin-top: -13rem;
+  z-index: 20;
+  height: 40rem;
+  width: 32vw;
+  margin-bottom: -10rem;
+  margin-right: 65rem;
+
+}
+
+.solhen {
+  margin-top: -13rem;
+  z-index: 20;
+  height: 40rem;
+  margin-bottom: -10rem;
+  margin-left: 70rem;
+}
+
 .melissaa {
   height: 20rem;
   margin-top: -4rem;
@@ -176,6 +194,25 @@
     margin-left: 30rem; 
     margin-right: 30rem;
     margin-top: 1rem;
+    height: 40vh;
+    margin-bottom: -2rem;
+
+  }
+
+  .pizza {
+    margin-right: 12em;
+    margin-top: 1rem;
+    height: 25vh;
+    width: 40vw;
+    margin-bottom: -2rem;
+    z-index: 2;
+
+  }
+
+  .solhen {
+    margin-left: 30rem; 
+    margin-right: 39rem;
+    margin-top: -10rem;
     height: 40vh;
     margin-bottom: -2rem;
 
@@ -329,49 +366,82 @@
 
 
 .founderss {
-  margin-top: 5rem;
+  margin-top: 20rem;
   color: #de412d;
+  font-size: 1.3rem;
+  line-height: 1.5rem;
+  
+  
+ 
 }
 
-.founderss h1 {
-  /* margin-top: 1rem; */
-  margin-bottom: 5rem;
-  padding: 0 10rem;
-  text-decoration: underline;
+.founderss p {
+  margin-left: 13rem;
 }
 
 .founderss > div {
-
   display: flex;
-  z-index: 1;
   flex-direction: column; 
   align-items: center; 
-  margin-top: -4rem;
+  margin-left: 1rem;
+  
 }
 
 .founderss > div > div {
-  width: 50%;
-  margin-top: 2rem; 
+  width: 50vw;
+  /* margin-top: 2rem;  */
   
 }
 
 @media (max-width: 767px) {
-  .mySlide {
-    width: 100vw;
-    height: 100vh;
-  }
-  .calendar {
-    margin-left: 1rem;
-  }
+.mySlide {
+  width: 100vw;
+  height: 100vh;
+}
+.calendar {
+  margin-left: 1rem;
+}
+.greenp {
+   color: #377043;
+}
 
-  .founderss h1 {
-    margin-top: 1.5rem;
-    padding: 0 2rem;
+.yellowp {
+  color: #ffcb51;
+
+}
+
+.founderss {
+  margin-top: 5rem;
+  color: #de412d;
+  font-size: 1.1rem;
+  line-height: 1rem;
+ 
+ 
+}
+
+.founderss p {
+  margin-top: -1rem;
+  margin-left: 7rem;
+  margin-bottom: 2rem;
+}
+
+.founderss > div {
+  display: flex;
+  z-index: 1;
+  flex-direction: column; 
+  align-items: center; 
+  
+}
+
+.founderss > div > div {
+  width: 65vw;
+  /* margin-top: 2rem;  */
+  
 }
 
 #aboutt {
-    padding: 1rem;
-    height: 270vh;
+  padding: 1rem;
+  height: 140vh;
 }
 
 #frontshop {
@@ -404,7 +474,7 @@
   }
 
   .cta {
-    margin-left: 5rem !important;
+    margin-left: 6rem !important;
     border-color: #ffcb51;
     border-width: 0.5rem;
     height: 55vh !important;
