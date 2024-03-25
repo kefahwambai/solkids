@@ -9,11 +9,12 @@ import {
   AiOutlineShoppingCart,
   AiOutlineUser,
   AiOutlineRead,
-  AiOutlineContacts
+  AiOutlineContacts,
+  AiOutlineShop
 } from "react-icons/ai";
 
 
-function NavBar() {
+function NavBar({ cart, setCart, size }) {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
 
@@ -80,7 +81,24 @@ function NavBar() {
             <Nav.Item>
               <Nav.Link
                 as={Link}
+                to="/shop"
+                style={{ color: 'white'}}
+                onClick={() => updateExpanded(false)}
+              >
+                <AiOutlineShop
+                  style={{ marginBottom: "2px", color: 'white' }}
+                />{" "}
+                Shop
+              </Nav.Link>
+            </Nav.Item>  
+            {size ? (
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
                 to="/cart"
+                onClick={(event) => {
+                  event.preventDefault();
+                }}     
                 style={{ color: 'white'}}
                 onClick={() => updateExpanded(false)}
               >
@@ -90,7 +108,10 @@ function NavBar() {
                 Cart
               </Nav.Link>
             </Nav.Item>   
-
+             ) : (
+              <>
+              </>
+              )} 
             <Nav.Item>
               <Nav.Link
                 as={Link}

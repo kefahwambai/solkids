@@ -1,0 +1,167 @@
+#shopcart {
+  padding: 20px;
+  margin-top: 8rem;
+  margin-bottom: 5rem;
+}
+
+.shoppingcartt {
+  /* background-color: #f8f9fa; */
+  border-radius: 10px;
+  padding: 40px;
+  width: 50vw !important;
+}
+
+.title h4 {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  color: #343a40;
+
+}
+
+.cartcrd {
+  background-color: #fff;
+  padding: 15px;
+}
+
+.cartcrd img {
+  width: 15vw;
+  height: 25vh;
+  border-radius: 5px;
+}
+
+.cartname {
+  padding-left: 15px;
+  margin-left: 13.1rem;
+  font-size: 1.2rem;
+}
+
+.quantity-controls button {
+  font-size: 16px;
+  border-radius: 3px;
+  padding: 5px 10px;
+  margin-top: -6rem;
+  margin-bottom: 1rem;
+  margin-right: 0.3rem;
+}
+
+.quantity-controls button:hover {
+  background-color: #adb5bd;
+  border-color: #adb5bd;
+  color: #212529;
+}
+
+.quantity-display {
+  background-color: #f8f9fa;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+.pricediv {
+  font-weight: bold;
+  margin-top: -1.8rem;
+  margin-left: 5rem;
+}
+
+.rmvbtn {
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  width: 20% !important;
+  margin-left: 35rem;
+  margin-top: -5rem !important;
+}
+
+.rmvbtn:hover {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.summary {
+  padding-left: 20px;
+  margin-top: 3rem !important;
+}
+
+.total-price {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 20px 0;
+}
+
+.checkout-btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.checkout-btn:hover {
+  background-color: #0069d9;
+}
+@media (max-width: 767px) {
+  #shopcart {
+    padding: 10px;
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+    margin-left: 1.5rem;
+  }
+  .carimg {
+    height: 20vh !important;
+    width: 40vw !important;
+    border-radius: 5px;
+  }
+
+  .shoppingcartt {
+    padding: 20px;
+    width: 90vw !important;
+  }
+
+  .title h4 {
+    font-size: 18px;
+  }
+
+  .cartcrd {
+    padding: 10px;
+  }
+
+  .cartname {
+    margin-left: 10rem;
+    margin-top: 1rem !important;
+    font-size: 1rem;
+  }
+
+  .quantity-controls {
+    margin-left: 6rem;
+  }
+
+  .quantity-controls button {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-size: 14px;
+    padding: 3px 8px;
+    margin-right: 0.3rem;
+  }
+
+  .quantity-display {
+    padding: 3px 8px;
+  }
+
+  .pricediv {
+    margin-top: 2rem;
+    margin-left: -2rem;
+  }
+
+  .rmvbtn {
+    font-size: 14px;
+    padding: 3px 8px;
+    width: auto !important;
+    margin-left: 14rem;
+    margin-top: 1rem !important;
+  }
+
+  .summary {
+    padding: 15px;
+    width: 80vw !important;
+    margin-left: 1rem;
+    margin-top: 1.5rem !important;
+  }
+  .form-select {
+    margin-bottom: 1rem;
+  }
+}

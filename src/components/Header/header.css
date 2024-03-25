@@ -448,7 +448,7 @@
   }
 
   .cta {
-    margin-left: 5rem !important;
+    margin-left: 1rem !important;
     border-color: #ffcb51;
     border-width: 0.5rem;
     height: 49vh !important;
@@ -463,7 +463,7 @@
     display: inline-block;
     color: rgb(245, 239, 239)!important;
     margin-top: -1rem !important;
-    margin-left: 2rem !important;
+   
   
   }
 

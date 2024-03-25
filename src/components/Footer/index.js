@@ -22,7 +22,7 @@ export default function Footer() {
                 <li><Link to="/about">About us</Link></li>
                 {/* <li><a href="#">Privacy Policy</a></li> */}
                 <li><a href="#">Terms & Conditions</a></li>
-                <li><Link to="/cart">Shop</Link></li>
+                <li><Link to="/shop">Shop</Link></li>
             </ul>
         </div>
 
