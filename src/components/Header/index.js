@@ -122,12 +122,12 @@ export default function CalendarComponent() {
         </div>
       </div>
     </section>
-      <section id="aboutt">
+      <section  id="aboutt">
           <div className="main">          
           </div>
-          <div  className='founderss'>
+          <div   data-aos="fade-right"  data-aos-duration="3000" className='founderss'>
             <div>
-              <img className='pizza' src={pizzakids} alt="kids making pizza" />
+              <img  className='pizza' src={pizzakids} alt="kids making pizza" />
                 <div>  
                     <p className='greenp'> Sol Kids is an initiative led by Sauti Sol, offering an innovative platform that curates affordable and award-winning Pan African content.</p>
                     <p> Our goal is to nurture a generation of children who embrace their African heritage. </p>
@@ -140,7 +140,11 @@ export default function CalendarComponent() {
 
       </section>
       <section id="frontshop">
-        <div className='frontshop'>
+        <div className='frontshop' 
+              data-aos="fade-down"
+              data-aos-easing="linear"
+              data-aos-duration="1500"
+        >
           <h1>Shop Now</h1>
           <article class="cta">
             <img className='ctaimg' src={fisi} alt='Hyena'/>
@@ -182,7 +186,12 @@ export default function CalendarComponent() {
         <div>
           <h1  style={{ marginTop: '3rem', padding: '0 10rem', textDecoration: 'underline'}}> Our Partners</h1>
         </div> 
-        <div>
+        <div 
+        data-aos="fade-zoom-in"
+        data-aos-easing="ease-in-back"
+        data-aos-delay="300"
+        data-aos-offset="0"
+        >
           <Link className='piclink' to='/about'><img className='knlspic' src={lib} /></Link>          
           <Link className='piclink'><img className="museumpic" src={musuem} /></Link>
           <Link className='piclink stulink'><img className='stupic' src ={stu} /> </Link>
