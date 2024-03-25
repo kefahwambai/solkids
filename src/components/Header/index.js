@@ -20,6 +20,9 @@ import stars from "../../Assets/Books/written in stars.png"
 import pizzakids from "../../Assets/definition/pizzakids.png"
 import chick from "../../Assets/definition/chickec.png"
 import lalapic from "../../Assets/Homepage/lalapic.jpeg"
+import musuem from "../../Assets/Partners/museum.png"
+import lib from "../../Assets/Partners/knls.png"
+import stu from "../../Assets/Partners/fhm.png"
 
 const locales = {
   'en-US': require('date-fns/locale/en-US'),
@@ -178,7 +181,12 @@ export default function CalendarComponent() {
       <section id="events">
         <div>
           <h1  style={{ marginTop: '3rem', padding: '0 10rem', textDecoration: 'underline'}}> Our Partners</h1>
-        </div>      
+        </div> 
+        <div>
+          <Link className='piclink' to='/about'><img className='knlspic' src={lib} /></Link>          
+          <Link className='piclink'><img className="museumpic" src={musuem} /></Link>
+          <Link className='piclink stulink'><img className='stupic' src ={stu} /> </Link>
+        </div>     
       </section>
 
       <section id="planner">
@@ -209,7 +217,7 @@ export default function CalendarComponent() {
       
       </section>
 
-      <section id="venues">
+      {/* <section id="venues">
        <div className='venueHead'>
           <h1>
             Venues
@@ -218,7 +226,7 @@ export default function CalendarComponent() {
           PLAN YOUR EVENT ANYWHERE YOU LIKE
           </p>
         </div>               
-      </section>
+      </section> */}
 
     </div>   
 

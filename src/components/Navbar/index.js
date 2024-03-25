@@ -59,22 +59,20 @@ function NavBar({ cart, setCart, size }) {
             <Nav.Item>              
               <Nav.Link
                 as={Link}
-                style={{ color: 'white'}}
                 to="/about"
                 onClick={() => updateExpanded(false)}
               >
-                <AiOutlineUser style={{ marginBottom: "2px", color: 'white' }} /> About
+                <AiOutlineUser style={{ marginBottom: "2px"}} /> About
               </Nav.Link>             
             </Nav.Item>
 
             <Nav.Item>              
               <Nav.Link
                 as={Link}
-                to="/about"
-                style={{ color: 'white'}}
+                to="/about"                
                 onClick={() => updateExpanded(false)}
               >
-              <AiOutlineRead style={{ marginBottom: "2px", color: 'white' }} /> News
+              <AiOutlineRead style={{ marginBottom: "2px"}} /> News
               </Nav.Link>             
             </Nav.Item>
 
@@ -82,11 +80,11 @@ function NavBar({ cart, setCart, size }) {
               <Nav.Link
                 as={Link}
                 to="/shop"
-                style={{ color: 'white'}}
+                style={{ color: 'black'}}
                 onClick={() => updateExpanded(false)}
               >
                 <AiOutlineShop
-                  style={{ marginBottom: "2px", color: 'white' }}
+                  style={{ marginBottom: "2px" }}
                 />{" "}
                 Shop
               </Nav.Link>
@@ -99,11 +97,10 @@ function NavBar({ cart, setCart, size }) {
                 onClick={(event) => {
                   event.preventDefault();
                 }}     
-                style={{ color: 'white'}}
                 onClick={() => updateExpanded(false)}
               >
                 <AiOutlineShoppingCart
-                  style={{ marginBottom: "2px", color: 'white' }}
+                  style={{ marginBottom: "2px"}}
                 />{" "}
                 Cart
               </Nav.Link>
@@ -116,7 +113,6 @@ function NavBar({ cart, setCart, size }) {
               <Nav.Link
                 as={Link}
                 to="/contact"
-                style={{ color: 'white'}}
                 onClick={() => updateExpanded(false)}
               >
                 <AiOutlineContacts

@@ -136,6 +136,17 @@
   margin-bottom: -10rem;
   margin-left: 70rem;
 }
+.museumpic {
+  margin-top: 7rem;
+  width: 30vw;
+  margin-left: 2rem;
+}
+
+
+.stupic {
+  margin-top: 4rem !important;
+  margin-left: 10rem;
+}
 
 .pizza {
   margin-top: -13rem;
@@ -172,6 +183,29 @@
     margin-bottom: -2rem;
 
   }
+
+  .knlspic {
+    margin-top: 7rem;
+    width: 70vw;
+    margin-left: 2rem;
+    margin-bottom: -1rem;
+
+  }
+
+  .stupic {
+    width: 70vw;
+    margin-left: 2rem;
+    margin-bottom: -1rem;
+
+  }
+
+  .museumpic {
+    margin-top: 7rem;
+    width: 70vw;
+    margin-left: 2rem;
+    margin-bottom: -1rem;
+  }
+  
 
   .pizza {
     margin-right: 12em;
@@ -211,7 +245,7 @@
 
 #events {
     width: 100vw;
-    height: 85vh;
+    height: 80vh;
     background-color: #4ccade;
     color: #fff;
     padding: 20px;
@@ -368,6 +402,31 @@
 }
 
 @media (max-width: 767px) {
+  #test {
+    position: relative; 
+    width: 100vw;
+    height: 100vh;
+    color: #fff;
+    padding: 20px;
+    background-size: cover;
+    background-image: url(../../Assets/slideshow/WITS-7.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Arial', sans-serif; 
+  
+  }
+  
+
+  #events {
+    width: 100vw;
+    height: 130vh;
+    background-color: #4ccade;
+    color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif; 
+}
 .mySlide {
   width: 100vw;
   height: 100vh;
@@ -488,10 +547,8 @@
 }
 
 .cta img {
-	/* aspect-ratio: 3 / 2; */
 	object-fit: cover;
 	flex: 1 1 300px;
-	/* outline: 0.5rem solid; */
 }
 
 .cta__text-column {

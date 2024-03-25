@@ -53,7 +53,7 @@ function App() {
           <Route path="/" element={<Header />} />
           <Route path="/about" element={<About />} />
           <Route path="/shop" element={<Shop handleClick={handleClick} />} />
-          <Route path="/cart" element={<Cart cart={cart} handleChange={handleChange} />} />     
+          <Route path="/cart" element={<Cart cart={cart} setCart={setCart} handleChange={handleChange} />} />     
           <Route path="/contact" element={ <Contact/>} />
         </Routes>
         <Footer />
