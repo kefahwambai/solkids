@@ -6,9 +6,10 @@ import poly from "../../Assets/About/lllo (1).png"
 import worm from "../../Assets/About/Worm.png"
 import ceo from "../../Assets/About/ceo-removebg-preview.png"
 import board from "../../Assets/About/board.png"
-
+import lib from "../../Assets/Partners/knls.png"
 
 export default function About() {
+    const playsBackgroundImage = `url(${lib})`;
   return (
         <div>
             <section id="about">
@@ -71,6 +72,27 @@ export default function About() {
                     <h2> Statement from Our Board </h2>
                     <img className='boardpic' src={board} alt="Board of Directors" />
                     <p>"As stewards of Sol Kids Africa, we are proud to support a visionary mission that addresses critical issues facing African children today. Our diverse board brings together expertise in education, technology, content creation, and community engagement, united by a shared commitment to excellence and impact. Through strategic partnerships, innovative initiatives, and a steadfast dedication to quality, we are driving forward our goal of empowering young African leaders and enriching communities through education and inspiration. Together, we are shaping a brighter future for Africa, one child at a time."</p>
+
+                </div>
+            </section>
+            <section id="partnerspage">
+                    <h2 className='partnerstitle'> Our Partners </h2>                
+                <div className='knlsdiv'>
+                    <p>
+
+                    At Sol Kids Africa, we're dedicated to elevating literacy and fostering cultural pride among African children. Partnering with the <a href="https://www.knls.ac.ke/" traget="blank">Kenya National Library Service</a>(KNLS), we bridge gaps in access to knowledge. KNLS's extensive network and digital resources serve as the backbone of our outreach, ensuring our curated content reaches even the most remote communities. Together, we envision a future where every child can access enriching content that reflects their heritage, nurturing intellect and fostering empowerment. This collaboration amplifies our impact, making quality content accessible to children across Kenya and beyond, nurturing a generation of empowered African leaders.
+                    </p>
+                </div>
+                <div className='museumdiv'>
+                    <p>
+           
+                        Preserving Heritage Through Education: Sol Kids Africa's mission is to elevate literacy and cultural pride among African children, deeply rooted in an understanding of Kenya's heritage. Partnering with the <a href="https://museums.or.ke/">National Museums of Kenya</a> (NMK), we enrich our content with immersive educational experiences, fostering a stronger connection to Kenya's cultural identity. Sol Kids Africa envisions every child celebrating Kenya's cultural richness through engaging journeys of discovery at NMK's museums and sites. Together, NMK and Sol Kids Africa empower African youth, nurturing cultural pride and knowledge for a brighter future.
+                    </p>
+                </div>
+                <div className='studiv'>
+                    <p>                      
+                    In a dynamic partnership, Sol Kids Africa and <a href="https://www.freehandmovement.com/">Freehand Movement</a> unite to empower through art and storytelling. Together, they inspire, educate, and uplift African youth, harnessing art's transformative power for positive change. Through captivating content, including illustrated books, graphic novels, and animations, they fuel critical conversations and drive societal transformation. United in vision, Sol Kids Africa and Freehand Movement empower youth to embrace heritage, amplify voices, and shape a future of hope.
+                    </p>
 
                 </div>
 

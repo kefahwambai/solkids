@@ -10,7 +10,8 @@ import {
   AiOutlineUser,
   AiOutlineRead,
   AiOutlineContacts,
-  AiOutlineShop
+  AiOutlineShop,
+  AiOutlinePlayCircle
 } from "react-icons/ai";
 
 
@@ -72,7 +73,7 @@ function NavBar({ cart, setCart, size }) {
                 to="/about"                
                 onClick={() => updateExpanded(false)}
               >
-              <AiOutlineRead style={{ marginBottom: "2px"}} /> News
+              <AiOutlinePlayCircle style={{ marginBottom: "2px"}} /> Events
               </Nav.Link>             
             </Nav.Item>
 

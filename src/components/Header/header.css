@@ -116,9 +116,9 @@
 
 #frontshop {
   width: 100vw;
-  height: 115vh;
+  height: 120vh;
   background-color: #377043;
-  padding: 20px;
+  padding: 6rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   font-family: 'Arial', sans-serif;   
 
@@ -187,14 +187,14 @@
   .knlspic {
     margin-top: 7rem;
     width: 70vw;
-    margin-left: 2rem;
+    margin-left: -0.4rem !important;
     margin-bottom: -1rem;
 
   }
 
   .stupic {
     width: 70vw;
-    margin-left: 2rem;
+    margin-left: -0.4rem !important;
     margin-bottom: -1rem;
 
   }
@@ -202,7 +202,7 @@
   .museumpic {
     margin-top: 7rem;
     width: 70vw;
-    margin-left: 2rem;
+    margin-left: -0.4rem !important;
     margin-bottom: -1rem;
   }
   
@@ -401,7 +401,30 @@
   
 }
 
+.eventsheader {
+  margin-top: 3rem;
+  padding: 0 10rem;
+  text-decoration: underline;
+}
+
+.fhsopheader {
+  margin-top: 2rem !important;
+}
+
 @media (max-width: 767px) {
+
+  .eventsheader {
+    text-align: center !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-left: -1rem;
+    font-size: 2rem;
+  }
+ .fshopheader {
+  margin-top: 2rem;
+  margin-left: -0.4rem !important;
+ }
+  
   #test {
     position: relative; 
     width: 100vw;
@@ -431,8 +454,9 @@
   width: 100vw;
   height: 100vh;
 }
+
 .calendar {
-  margin-left: 1rem;
+  margin-right: 7rem;
 }
 .greenp {
    color: #377043;
@@ -478,7 +502,7 @@
 }
 
 #frontshop {
-  height: 255vh;
+  height: 275vh;
 }
 
 
@@ -507,7 +531,7 @@
   }
 
   .cta {
-    margin-left: 1rem !important;
+    margin-left: -0.4rem !important;
     border-color: #ffcb51;
     border-width: 0.5rem;
     height: 49vh !important;

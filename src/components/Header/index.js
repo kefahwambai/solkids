@@ -145,7 +145,7 @@ export default function CalendarComponent() {
               data-aos-easing="linear"
               data-aos-duration="1500"
         >
-          <h1>Shop Now</h1>
+          <h1 className='fshopheader'>Shop Now</h1>
           <article class="cta">
             <img className='ctaimg' src={fisi} alt='Hyena'/>
             <div class="cta__text-column">
@@ -184,7 +184,7 @@ export default function CalendarComponent() {
 
       <section id="events">
         <div>
-          <h1  style={{ marginTop: '3rem', padding: '0 10rem', textDecoration: 'underline'}}> Our Partners</h1>
+          <h1 className='eventsheader' > Our Partners</h1>
         </div> 
         <div 
         data-aos="fade-zoom-in"
@@ -193,8 +193,8 @@ export default function CalendarComponent() {
         data-aos-offset="0"
         >
           <Link className='piclink' to='/about'><img className='knlspic' src={lib} /></Link>          
-          <Link className='piclink'><img className="museumpic" src={musuem} /></Link>
-          <Link className='piclink stulink'><img className='stupic' src ={stu} /> </Link>
+          <Link className='piclink' to='/about'><img className="museumpic" src={musuem} /></Link>
+          <Link className='piclink stulink' to='/about'><img className='stupic' src ={stu} /> </Link>
         </div>     
       </section>
 

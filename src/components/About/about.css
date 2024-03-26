@@ -17,12 +17,108 @@
 
 }
 
+
 #execmess {
     width: 100vw;
     height: 200vh;
     background-color: #fff;
     padding: 20px;  
 }
+
+#partnerspage {
+    width: 100vw;
+    height: 200vh;
+    background-color: #377043;
+    padding: 20px; 
+
+}
+
+.partnerstitle {
+    margin-top: 7rem;
+    color: #ffcb51;
+}
+
+.museumdiv {
+    background-image: url(../../Assets/Partners/museum.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+    margin-left: 15rem;
+    color: #ffcb51;
+    z-index: -10;
+    height: 40vh;
+    width: 70vw !important;
+}
+
+.museumdiv p {
+    z-index: 10;
+    line-height: 2rem;
+    margin-top: 12rem;
+
+}
+
+.studiv {
+    background-image: url(../../Assets/Partners/fhm.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+    margin-left: 15rem;
+    color: #ffcb51;
+    z-index: -10;
+    height: 40vh;
+    width: 70vw !important;
+
+}
+
+.studiv p {
+    z-index: 10;
+    line-height: 2rem;
+    margin-top: 4rem;
+}
+
+.knlsdiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    margin-left: 15rem;
+    color: #ffcb51;
+    z-index: -10;
+    height: 40vh;
+    width: 70vw !important;
+    background-image: url(../../Assets/Partners/knls.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+}
+
+.knlsdiv p {
+    z-index: 10;
+    line-height: 2rem;
+    margin-top: 3rem;
+}
+
+.knlsdiv p a {
+    color: white;
+    text-decoration: none;
+}
+
+.museumdiv p a {
+    color: white;
+    text-decoration: none;
+}
+
+.studiv p a {
+    color: white;
+    text-decoration: none;
+}
+
 
 .board h2 {
     font-size: 24px;
@@ -38,7 +134,7 @@
     padding: 20px;
     margin: 20px;
     margin-top: -3rem;
-    margin-left: 42rem;
+    margin-left: 25rem;
 }
 
   
@@ -115,6 +211,66 @@ margin-bottom: -13rem;
 
 
 @media (max-width: 767px) {
+#partnerspage {
+    height: 250vh;
+}
+
+.partnerstitle {
+    margin-top: 3rem;
+    color: #ffcb51;
+}
+
+.museumdiv {
+    margin-left: 1rem;
+    font-size: 1rem;
+    margin-bottom: 20rem;
+
+}
+.studiv {
+    margin-left: 1rem;
+    font-size: 1rem;
+    margin-bottom: -4rem;
+
+}
+.knlsdiv {
+    margin-left: 2.2rem;
+    font-size: 1rem;
+    margin-top: 13rem;
+    height: 20vh;
+    margin-bottom:20rem;
+}
+.knlsdiv p {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    line-height: 1.2rem;
+}
+
+.knlsdiv p a  {
+    color: white;
+    text-decoration: none;
+}
+
+.museumdiv p {
+    margin-top: 5rem; 
+    margin-left: 2rem;
+    line-height: 1.5rem;
+
+}
+
+.museumdiv p a {
+    color: white;
+    text-decoration: none;
+}
+.studiv p {
+    margin-top: 5rem; 
+    margin-left: 2rem;
+    line-height: 1.5rem;
+}
+
+.studiv p a {
+    color: white;
+    text-decoration: none;
+}
 .sautisol{
     margin-left: 30rem; 
     margin-right: 30rem;
@@ -148,11 +304,11 @@ margin-bottom: -13rem;
 }
 
 .board p {
-    margin:0 auto;
     font-size: 1rem;
     line-height: 1.5rem;
     margin-top: 2rem;
     width: 80vw;
+    margin-left: 1rem;
 
 }
 .worrm {
