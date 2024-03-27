@@ -119,16 +119,16 @@ export default function CalendarComponent() {
       <section  id="aboutt">
           <div className="main">          
           </div>
-          <div   data-aos="fade-right"  data-aos-duration="3000" className='founderss'>
+          <div className='founderss'>
             <div>
-              <img  className='pizza' src={pizzakids} alt="kids making pizza" />
-                <div>  
+              <img data-aos="fade-right"  data-aos-duration="3000"   className='pizza' src={pizzakids} alt="kids making pizza" />
+                <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="2000">  
                     <p className='greenp'> Sol Kids is an initiative led by Sauti Sol, offering an innovative platform that curates affordable and award-winning Pan African content.</p>
-                    <p> Our goal is to nurture a generation of children who embrace their African heritage. </p>
-                    <p> With a mantra of "Stories by Us," our mission revolves around L.E.A (Leadership, Empowerment, Accessibility).</p>
+                    <p className='rment'> Our goal is to nurture a generation of children who embrace their African heritage. </p>
+                    <p className='sment'> With a mantra of "Stories by Us," our mission revolves around L.E.A (Leadership, Empowerment, Accessibility).</p>
                     <p className='yellowp'> We aim to promote literacy, empowerment, and accessibility through culturally relevant content, empowering children to appreciate their past, present, and future.</p>                   
                 </div>
-                <img className='solhen' src={chick} alt="realsolchick" />
+                <img data-aos="fade-up" data-aos-duration="2000" className='solhen' src={chick} alt="realsolchick" />
           </div>
         </div>
 
@@ -158,7 +158,7 @@ export default function CalendarComponent() {
 
       <section id="events">
         <div>
-          <h1 className='eventsheader' > Our Partners</h1>
+          <h1 data-aos="flip-down" className='eventsheader' > Our Partners</h1>
         </div> 
         <div 
         data-aos="fade-zoom-in"
@@ -173,15 +173,14 @@ export default function CalendarComponent() {
       </section>
       <section id="planner" >
         <div className="calendar" >
-          <div data-aos="flip-up" >
+          <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" >
             <h1>Previous Events</h1>
           </div>
-          <div className="caaard-container" data-aos="zoom-in-down">
+          <div className="caaard-container" data-aos="zoom-in-down" data-aos-duration="1500">
             {events.map(event => (
               <div key={event.id} className="caaard">
                 <img src={event.image} alt={event.title} />                
-                <Link style={{ textDecoration: 'none'}} to="/events"><h2>{event.title}</h2></Link>                
-                <p className="caaard-footer">{event.date}</p>
+                <Link style={{ textDecoration: 'none'}} to="/events"><h2>{event.title}</h2></Link>                 
               </div>
             ))}
           </div>

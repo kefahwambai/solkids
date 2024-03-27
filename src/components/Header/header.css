@@ -1,6 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Barriecito&family=Schoolbell&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Averia+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dekko&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Margarine&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 .video-background {
   position: relative;
@@ -127,6 +136,10 @@
 .frontshop h1 {
   margin-left: 3rem;
   color: #ffcb51;
+  font-size: 4rem;
+  font-family: "Patrick Hand SC", cursive;
+  font-weight: 700;
+  font-style: normal;
 }
 
 .sautisoll {
@@ -159,7 +172,7 @@
 }
 
 .solhen {
-  margin-top: -13rem;
+  margin-top: -15rem;
   z-index: 20;
   height: 40rem;
   margin-bottom: -10rem;
@@ -175,10 +188,12 @@
 
 .greenp {
   color: #377043;
+  margin-bottom: 2rem !important;
 }
 
 .yellowp {
   color: #ffcb51;
+  margin-top: 2rem;
 
 }
 
@@ -229,7 +244,7 @@
   .solhen {
     margin-left: 30rem; 
     margin-right: 39rem;
-    margin-top: -15rem;
+    margin-top: -20rem;
     height: 40vh;
     margin-bottom: -2rem;
 
@@ -254,7 +269,7 @@
 
 #events {
     width: 100vw;
-    height: 80vh;
+    height: 85vh;
     background-color: #4ccade;
     color: #fff;
     padding: 20px;
@@ -396,7 +411,10 @@
   color: #de412d;
   font-size: 1.3rem;
   line-height: 1.5rem;
-  
+  font-family: "Comfortaa", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+
   
  
 }
@@ -422,7 +440,11 @@
 .eventsheader {
   margin-top: 3rem;
   padding: 0 10rem;
-  text-decoration: underline;
+  font-family: "Londrina Shadow", sans-serif;
+  font-weight: 400;
+  font-size: 5rem !important;
+  font-style: normal;
+  color: #de412d
 }
 
 .fhsopheader {
@@ -437,10 +459,13 @@
 }
 
 .servicecard h3 {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   margin-left: 2rem;
-  font-weight: 750;
+  /* font-weight: 750; */
   margin-top: -1rem;
+  font-family: "Margarine", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .cmage {
@@ -455,6 +480,7 @@
   .servicecard {
     padding: 3rem;
     margin-top: 1rem;
+    margin-left: -0.1rem;
     width: 18rem;
     height: 30rem;
     margin-bottom: -7rem;
@@ -475,11 +501,10 @@
   }
 
   .eventsheader {
-    text-align: center !important;
-    justify-content: center !important;
-    align-items: center !important;
-    margin-left: -1rem;
-    font-size: 2rem;
+    margin-left: -3.5rem;
+    font-size: 3rem !important;
+    margin-top: 2rem;
+    /* margin-left: -0.4rem !important; */
   }
  .fshopheader {
   margin-top: 2rem;
@@ -559,7 +584,7 @@
 
 #aboutt {
   padding: 1rem;
-  height: 120vh;
+  height: 110vh;
 }
 
 #frontshop {
@@ -596,6 +621,23 @@
 
 
 @media (max-width: 767px) {
+  .frontshop h1 {
+    margin-left: -0.1rem !important;
+    color: #ffcb51;
+    font-size: 3.4rem;
+    font-family: "Patrick Hand SC", cursive;
+    font-weight: 700;
+    font-style: normal;
+  }
+  .rment {
+    margin-bottom: 1rem;
+    margin-left: -3rem !important;
+  }
+  .sment {
+    margin-left: -3rem !important;
+    margin-bottom: 3rem !important;
+  }
+
   .cta h2 {
     font-size: 0.9rem;
     font-weight: 800;
@@ -681,7 +723,11 @@
 }
 
 .calendar h1 {
-  margin-top: 3rem;
+  margin-top: 4rem;
+  margin-bottom: -1rem;
+  font-family: "Unbounded", sans-serif;
+  font-optical-sizing: auto;
+  color: white;
 
 }
 
@@ -717,6 +763,9 @@
   font-size: 1rem;
   font-weight: 700;
   color: #de412d;
+  font-family: "Courier Prime", monospace;
+  /* font-weight: 400; */
+  font-style: normal;
 }
 
 .caaard p {
@@ -739,7 +788,7 @@
 
   .caaard {
     width: 100vw !important;
-    height: 40vh;
+    height: 41.5vh;
     margin-left: 3rem;
     margin-top: 1rem;
   }
@@ -751,6 +800,7 @@
   .calendar h1 {
     margin-right: -6rem;
     padding: 2rem;
+    margin-top: 2rem !important;
   
   }
 }
