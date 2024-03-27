@@ -1,0 +1,225 @@
+.tickets {
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff;   
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif; 
+}
+
+ul {
+    list-style: none;
+}
+
+.ticket-details-page {
+    padding: 2rem;
+    margin: 100px 0px;
+}
+
+.ticket-details-page img {
+    width: 30vw;
+    height: 60vh;
+    overflow: hidden;
+}
+
+.ticket-details-page .right-content {
+margin-left: 15px;
+}
+
+.ticket-details-page .right-content h4 {
+font-size: 30px;
+font-weight: 800;
+color: #2a2a2a;
+}
+
+.ticket-details-page .right-content span {
+font-size: 14px;
+font-weight: 700;
+color: #656c74;
+display: inline-block;
+border-bottom: 1px solid #eee;
+width: 100%;
+padding-bottom: 30px;
+margin-top: 15px;
+margin-bottom: 30px;
+}
+
+.ticket-details-page .right-content ul {
+border-bottom: 1px solid #eee;
+width: 100%;
+padding-bottom: 20px;
+margin-bottom: 30px;
+}
+
+.ticket-details-page .right-content ul li {
+font-size: 14px;
+color: #2a2a2a;
+font-weight: 300;
+margin-bottom: 15px;
+}
+
+.ticket-details-page .right-content ul li i {
+color: #7c838b;
+margin-right: 10px;
+width: 15px;
+height: 25px;
+float: left;
+}
+
+.ticket-details-page .right-content .quantity-content {
+border-bottom: 1px solid #eee;
+width: 100%;
+padding-bottom: 30px;
+margin-bottom: 30px;
+}
+
+.ticket-details-page .right-content .quantity-content .left-content {
+float: left;
+margin-right: 30px;
+}
+
+.ticket-details-page .right-content .quantity-content .right-content {
+text-align: right;
+}
+
+.ticket-details-page .right-content .quantity-content .left-content h6 {
+font-size: 14px;
+font-weight: 700;
+color: #2a2a2a;
+}
+
+.ticket-details-page .right-content .total h4 {
+float: left;
+font-size: 20px;
+margin-top: 8px;
+}
+
+.ticket-details-page .right-content .total .main-dark-button {
+text-align: right;
+}
+.ticket-details-page .right-content .warn p {
+margin-top: 45px;
+}
+
+
+.quantity {
+display: inline-block; }
+
+.quantity .input-text.qty {
+width: 35px;
+height: 39px;
+padding: 0 5px;
+text-align: center;
+background-color: transparent;
+border: 1px solid #efefef;
+}
+
+.quantity.buttons_added {
+text-align: left;
+position: relative;
+white-space: nowrap;
+vertical-align: top; }
+
+.quantity.buttons_added input {
+display: inline-block;
+margin: 0;
+vertical-align: top;
+box-shadow: none;
+}
+
+.quantity.buttons_added .minus,
+.quantity.buttons_added .plus {
+padding: 7px 10px 8px;
+height: 39px;
+background-color: #ffffff;
+border: 1px solid #efefef;
+cursor:pointer;}
+
+.quantity.buttons_added .minus {
+border-right: 0; }
+
+.quantity.buttons_added .plus {
+border-left: 0; }
+
+.quantity.buttons_added .minus:hover,
+.quantity.buttons_added .plus:hover {
+background: #eeeeee; }
+
+.quantity input::-webkit-outer-spin-button,
+.quantity input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+-moz-appearance: none;
+margin: 0; }
+
+.quantity.buttons_added .minus:focus,
+.quantity.buttons_added .plus:focus {
+outline: none; }
+
+
+
+#features {
+margin-bottom: 80px;
+}
+
+.feature-item {
+display: inline-block;
+margin-bottom: 60px;
+}
+
+.feature-item .left-icon img {
+float: left;
+margin-right: 30px;
+}
+
+.feature-item .right-content {
+display: inline;
+}
+
+.feature-item .right-content h4 {
+margin-top: 0px;
+margin-bottom:  7px;
+letter-spacing: 0.25px;
+color: #232d39;
+font-size: 19px;
+font-weight: 600;
+text-transform: capitalize;
+}
+
+.feature-item .right-content a.text-button {
+margin-top: 7px;
+display: inline-block;
+font-size: 13px;
+text-transform: uppercase;
+color: #656c74;
+font-weight: 500;
+}
+  
+  
+@media screen and (max-width: 767px) {
+    .solfestimg {
+        height: 70vw !important;
+        width: 70vw !important;
+    }
+
+    .ticketdetails  {
+        margin-left: -0.4rem !important;
+        margin-top: 2rem !important;
+    }
+
+    .ticketdetails ul {
+        margin-left: -1.7rem;
+    }
+
+    .priz {
+        padding: -1rem !important;
+        margin-left: 8.5rem;
+    }
+
+    .prizb {
+        margin-top: 1.5rem !important;
+    }
+
+    .tickets {
+        height: 80vh !important;
+    }
+}

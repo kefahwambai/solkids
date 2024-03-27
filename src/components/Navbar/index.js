@@ -8,7 +8,6 @@ import Container from "react-bootstrap/Container";
 import {  
   AiOutlineShoppingCart,
   AiOutlineUser,
-  AiOutlineRead,
   AiOutlineContacts,
   AiOutlineShop,
   AiOutlinePlayCircle
@@ -42,7 +41,7 @@ function NavBar({ cart, setCart, size }) {
       className={navColour ? "sticky" : "navbar"}
     >
       <Container>
-      <Navbar.Brand as={Link} to="/">
+      <Navbar.Brand as={Link} to="/" >
           <img src={logo} alt="Logo" className="logo" as={Link} to="/" /> 
         </Navbar.Brand>
         <Navbar.Toggle  
@@ -70,7 +69,7 @@ function NavBar({ cart, setCart, size }) {
             <Nav.Item>              
               <Nav.Link
                 as={Link}
-                to="/about"                
+                to="/events"                
                 onClick={() => updateExpanded(false)}
               >
               <AiOutlinePlayCircle style={{ marginBottom: "2px"}} /> Events
@@ -81,7 +80,6 @@ function NavBar({ cart, setCart, size }) {
               <Nav.Link
                 as={Link}
                 to="/shop"
-                style={{ color: 'black'}}
                 onClick={() => updateExpanded(false)}
               >
                 <AiOutlineShop

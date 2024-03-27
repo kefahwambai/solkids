@@ -105,7 +105,7 @@
 
 #aboutt {   
     width: 100vw;
-    height: 160vh;
+    height: 120vh;
     background-color: #fff;
     color: #de412d;
     padding: 20px;
@@ -116,7 +116,7 @@
 
 #frontshop {
   width: 100vw;
-  height: 120vh;
+  height: 75vh;
   background-color: #377043;
   padding: 6rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -153,7 +153,7 @@
   z-index: 20;
   height: 40rem;
   width: 32vw;
-  margin-bottom: -10rem;
+  margin-bottom: -30rem;
   margin-right: 65rem;
 
 }
@@ -171,6 +171,15 @@
   margin-top: -4rem;
   margin-right: 70rem;
   margin-bottom: -13rem;
+}
+
+.greenp {
+  color: #377043;
+}
+
+.yellowp {
+  color: #ffcb51;
+
 }
 
 
@@ -212,7 +221,7 @@
     margin-top: 1rem;
     height: 25vh;
     width: 40vw;
-    margin-bottom: -2rem;
+    margin-bottom: -6rem;
     z-index: 2;
 
   }
@@ -220,7 +229,7 @@
   .solhen {
     margin-left: 30rem; 
     margin-right: 39rem;
-    margin-top: -10rem;
+    margin-top: -15rem;
     height: 40vh;
     margin-bottom: -2rem;
 
@@ -253,11 +262,19 @@
     font-family: 'Arial', sans-serif; 
 }
 
+.crdimg {
+  height: 20vh;
+}
+
 
 #planner {
   width: 100vw;
-  height: 100vh;
-  background-image: url(https://images.unsplash.com/photo-1597407198530-b84dd7206205?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  height: 85vh;
+  background-image: url("../../Assets/slideshow/WITS-7.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: #131313;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -325,6 +342,7 @@
 
 #test {
   position: relative; 
+  background-image: url(../../Assets/slideshow/WITS-7.jpeg);
   width: 100vw;
   height: 100vh;
   color: #fff;
@@ -411,7 +429,50 @@
   margin-top: 2rem !important;
 }
 
+.servicecard {
+  padding: 3rem;
+  margin-top: 1rem;
+  width: 18rem;
+  height: 30rem;
+}
+
+.servicecard h3 {
+  font-size: 1.2rem;
+  margin-left: 2rem;
+  font-weight: 750;
+  margin-top: -1rem;
+}
+
+.cmage {
+  border-radius: 15px;
+  margin-left: -0.5rem;
+  height: 25vh;
+  width: 15vw;
+}
+
 @media (max-width: 767px) {
+
+  .servicecard {
+    padding: 3rem;
+    margin-top: 1rem;
+    width: 18rem;
+    height: 30rem;
+    margin-bottom: -7rem;
+  }
+  
+  .servicecard h3 {
+    font-size: 1.2rem;
+    margin-left: -5rem;
+    font-weight: 750;
+    margin-top: 0.6rem;
+  }
+  
+  .cmage {
+    border-radius: 15px;
+    margin-left: -5rem;
+    height: 25vh;
+    width: 50vw;
+  }
 
   .eventsheader {
     text-align: center !important;
@@ -468,7 +529,7 @@
 }
 
 .founderss {
-  margin-top: 5rem;
+  margin-top: 2rem;
   color: #de412d;
   font-size: 1.1rem;
   line-height: 1rem;
@@ -498,11 +559,11 @@
 
 #aboutt {
   padding: 1rem;
-  height: 140vh;
+  height: 120vh;
 }
 
 #frontshop {
-  height: 275vh;
+  height: 230vh;
 }
 
 
@@ -520,6 +581,19 @@
 	margin: 0;
 	font-size: 1.4rem;
 }
+
+.linkcta {
+  display: inline-block;
+  color: rgb(245, 239, 239)!important;
+  margin-top: 1rem !important;
+  text-decoration: none;
+  margin-left: 2.3rem !important;
+}
+
+.linkcta:hover {
+  color: #ffcb51 !important;
+}
+
 
 @media (max-width: 767px) {
   .cta h2 {
@@ -545,9 +619,13 @@
   .linkcta {
     display: inline-block;
     color: rgb(245, 239, 239)!important;
-    margin-top: -1rem !important;
-   
-  
+    margin-top: -1rem !important; 
+    margin-left: -5rem !important; 
+    margin-bottom: -5rem !;
+  }
+
+  .linkcta:hover {
+    color: #ffcb51 !important;
   }
 
   
@@ -600,4 +678,79 @@
 
 .cta a:hover {
   background: #ffcb51;
+}
+
+.calendar h1 {
+  margin-top: 3rem;
+
+}
+
+.caaard-container {
+  margin-top: 6rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.caaard {
+  width: 50vw !important;
+  height: 40vh;
+  max-width: 300px;
+  flex: 0 0 calc(40% - 20px); /* Adjust the width of each card here */
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(15px);
+}
+
+.caaard img {
+  width: 15vw;
+  height: 30vh;
+  border-radius: 10px;
+}
+
+.caaard h2 {
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #de412d;
+}
+
+.caaard p {
+  margin: 0;
+  font-size: 1rem;
+  color: #666;
+}
+
+.caaard-footer {
+  margin-top: 10px;
+  font-size: 0.65em;
+  color: #446;
+}
+
+@media screen and (max-width: 767px) {
+  #planner {
+    height: 130vh;
+
+  }
+
+  .caaard {
+    width: 100vw !important;
+    height: 40vh;
+    margin-left: 3rem;
+    margin-top: 1rem;
+  }
+  
+  .caaard img {
+    width: 50vw;
+    height: 30vh;
+  }
+  .calendar h1 {
+    margin-right: -6rem;
+    padding: 2rem;
+  
+  }
 }

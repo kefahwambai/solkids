@@ -8,12 +8,10 @@ function CartComponent({ cart, setCart, handleChange }) {
     const updateTotalPrice = () => {
         let total = 0;
         cart.forEach(item => {
-          console.log("Item:", item);
           const price = parseFloat(item.price.replace(/[^\d.-]/g, ''));
           if (!isNaN(price) && typeof item.quantity === 'number' && !isNaN(item.quantity)) {
             total += price * item.quantity;
           }
-          console.log("Total:", total);
         });
         setTotalPrice(total);
     };
@@ -23,9 +21,7 @@ function CartComponent({ cart, setCart, handleChange }) {
 
     const handleQuantityChange = (item, amount) => {
       const updatedCart = [...cart]; 
-      
       const existingItemIndex = updatedCart.findIndex(cartItem => cartItem.id === item.id);
-      
       if (existingItemIndex !== -1) {
         updatedCart[existingItemIndex].quantity += amount;
         if (updatedCart[existingItemIndex].quantity < 1) {
@@ -106,19 +102,18 @@ function CartComponent({ cart, setCart, handleChange }) {
             <form>
                 <p>SHIPPING</p>
                 <select>
-                <option>Select Shipping Options</option>
+                <option disabled hidden selected>Select Shipping Options</option>
                 <option class="text-muted">Standard-Delivery- Ksh 500.00</option>
                 <option class="text-muted">Fast Shipping- Ksh 5000.00</option>
-                </select>
-                
-                <p>GIVE CODE</p>
-                <input id="code" placeholder="Enter your code" />
+                </select>                
+                <p className="promo">Have a Promo CODE?</p>
+                <input id="code" placeholder="Enter your code here" />
             </form>
             <div className="row total-price">
               <div className="col">TOTAL PRICE</div>
               <div className="col text-right">{roundPrice(totalPrice)}</div>
             </div>
-            <button className="btn btn-primary checkout-btn">CHECKOUT</button>
+            <Link to="/checkout" className="btn btn-primary checkout-btn">CHECKOUT</Link>
           </div>
         </div>
       </section>

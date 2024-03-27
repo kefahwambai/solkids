@@ -9,6 +9,10 @@ import Contact from "./components/Contact";
 import Shop from "./components/Shop/shop";
 import Cart from "./components/cart";
 import Preloader from "../src/components/Pre";
+import Events from "./components/Events";
+import Tickets from "./components/Tickets";
+import Checkout from "./components/Checkout";
+
 import "./App.css";
 
 function App() {
@@ -16,13 +20,17 @@ function App() {
   const [cart, setCart] = useState([]);
 
   const handleClick = (product) => {
-    console.log(product);
-    const isProductInCart = cart.indexOf(product) !== -1
-    if (!isProductInCart) {      
-          const updatedProduct = { ...product, quantity: 1 };
-          setCart((prevCart) => [...prevCart, updatedProduct]);
-        }
-  }
+    const existingProductIndex = cart.findIndex((item) => item.id === product.id);
+    if (existingProductIndex !== -1) {
+      const updatedCart = [...cart];
+      updatedCart[existingProductIndex].quantity += 1;
+      setCart(updatedCart);
+    } else {
+      const updatedProduct = { ...product, quantity: 1 };
+      setCart((prevCart) => [...prevCart, updatedProduct]);
+    }
+  };
+  
 
   const handleChange = (selectedProduct, d) => {    
     const updatedCart = cart.map((product) => {
@@ -52,9 +60,13 @@ function App() {
         <Routes>
           <Route path="/" element={<Header />} />
           <Route path="/about" element={<About />} />
+          <Route path="/events" element={ <Events/>} />
           <Route path="/shop" element={<Shop handleClick={handleClick} />} />
           <Route path="/cart" element={<Cart cart={cart} setCart={setCart} handleChange={handleChange} />} />     
           <Route path="/contact" element={ <Contact/>} />
+          <Route path="/ticket" element={ <Tickets  cart={cart} setCart={setCart}/>} /> 
+          <Route path="/checkout" element={<Checkout cart={cart}  setCart={setCart} handleChange={handleChange} handleClick={handleClick}/>} />                   
+          
         </Routes>
         <Footer />
       </div>

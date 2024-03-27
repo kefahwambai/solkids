@@ -1,0 +1,90 @@
+.theads {
+    text-align: left;
+}
+  
+.theads th, .theads td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+  
+.theads th {
+    background-color: #f2f2f2;
+}
+
+.checkoutform {
+margin-top: 8rem;
+margin-bottom: 10rem;
+margin-left: auto;
+margin-right: auto;   
+width: 65%;
+background-color: #ffffff;
+/* border: 1px solid #ddd;
+border-radius: 10px;
+box-shadow: 0 0 30px rgba(1, 1, 0.5, 0.1); */
+
+}
+
+.delidiv {
+    margin-top: 2rem;
+}
+
+.cart-container {
+padding: 20px;
+border-radius: 5px;
+}
+.deliveryfrm {
+    margin-top: 1rem !important;
+}
+
+.cartfrm {
+    width: 45%;
+    float: right;
+    margin-top: -35rem;
+    
+}
+
+.cartnme {
+    margin-bottom: 1rem;
+}
+
+.form-check {
+margin-bottom: 10px;
+}
+
+.badge-primary {
+background-color: #007bff;
+}
+
+.forminpt {
+    border: 1px;
+    border-style: solid !important;
+}
+
+@media (max-width: 767px) {
+.col-md-4 {
+    margin-bottom: 20px;
+}
+
+.cart-container {
+    padding: 10px;
+}
+
+.cartfrm {
+    font-size: 1rem;
+}
+
+.btn-primary {
+    width: 100%;
+}
+}
+
+.Ototal-price {     
+    font-weight: 800;
+    font-size: 25px;
+    
+ }
+ 
+
+
+  
+  

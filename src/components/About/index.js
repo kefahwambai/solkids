@@ -6,17 +6,16 @@ import poly from "../../Assets/About/lllo (1).png"
 import worm from "../../Assets/About/Worm.png"
 import ceo from "../../Assets/About/ceo-removebg-preview.png"
 import board from "../../Assets/About/board.png"
-import lib from "../../Assets/Partners/knls.png"
+
 
 export default function About() {
-    const playsBackgroundImage = `url(${lib})`;
   return (
         <div>
             <section id="about">
                     <div className="main">          
                     </div>
                     <div  className='founders'>
-                    <h1 >Who are we</h1>
+                    <h1 >Who we are</h1>
                     <div>
                         <img className='sautisol' src={sol}  alt="SautiSol"/>
                         <div>  
@@ -36,9 +35,9 @@ export default function About() {
             </section>
             <section id="solevents">
                 <div className='statement'>
-                    <div >
+                    <div>
                         <img className='poly' src={poly} alt="animatedPolicarp" />
-                        <h1> What we do</h1>
+                        <h1 className='stateh1'> What we do</h1>
                         <ul  className='solment' style={{ listStyle: 'none'}}> 
                             <li  > Sol Kids Africa is dedicated to raising literacy levels and changing attitudes towards learning among African children aged 0 to 21.</li>
                             <br/>
@@ -49,7 +48,7 @@ export default function About() {
                     </div>
                     <div>
                         <img className='worrm' src={worm} alt="solworm" />
-                        <h1> Why we do it</h1>
+                        <h1 className='wormh1'> Why we do it</h1>
                         <ul className='solstatment' style={{ listStyle: 'none'}}>
                             <li> Africa boasts the youngest population globally, yet faces significant challenges in education and cultural preservation.</li>
                             <br/>

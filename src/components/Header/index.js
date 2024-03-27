@@ -8,7 +8,7 @@ import parse from "date-fns/parse";
 import startOfWeek from "date-fns/startOfWeek";
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import DatePicker from "react-datepicker";
+// import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import introvid from "../../Assets/Homepage/lalalandlq.mp4"
 import logo from "../../Assets/Logo/SOL_KIDS_Official_Logo__5_-1-removebg-preview.png"
@@ -19,10 +19,11 @@ import fisi from "../../Assets/Books/fisi.png"
 import stars from "../../Assets/Books/written in stars.png"
 import pizzakids from "../../Assets/definition/pizzakids.png"
 import chick from "../../Assets/definition/chickec.png"
-import lalapic from "../../Assets/Homepage/lalapic.jpeg"
 import musuem from "../../Assets/Partners/museum.png"
 import lib from "../../Assets/Partners/knls.png"
 import stu from "../../Assets/Partners/fhm.png"
+import solfest from "../../Assets/Events/dec2022.jpeg"
+import solfest23 from "../../Assets/Events/solfest23.jpeg"
 
 const locales = {
   'en-US': require('date-fns/locale/en-US'),
@@ -35,24 +36,17 @@ const localizer = dateFnsLocalizer({
   getDay,
   locales,
 });
+const products = [
+  { id: 1, name: "Hibiscus Oak", price: "Kshs 700", image: oak },
+  { id: 2, name: "Towering Twiga", price: "Kshs 700", image: twiga },
+  { id: 3, name: "Funny fisi", price: "Kshs 700", image: fisi },
+  { id: 4, name: "Written in the Stars", price: "Kshs 950", image: stars },
+  // { id: 5, name: "Hibiscus Oak", price: "Kshs 700", image: oak },
+];
 
 const events = [
-  {
-    title: 'Big Meeting',
-    allDay: true,
-    start: new Date(2021, 6, 0),
-    end: new Date(2021, 6, 0),
-  },
-  {
-    title: 'Vacation',
-    start: new Date(2021, 6, 7),
-    end: new Date(2021, 6, 10),
-  },
-  {
-    title: 'Conference',
-    start: new Date(2021, 6, 20),
-    end: new Date(2021, 6, 23),
-  },
+  { id: 1, title: 'SolKids Festival 2022', image: solfest },
+  { id: 2, title: 'Solkids Festival 2023', image: solfest23 },
 ];
 
 export default function CalendarComponent() { 
@@ -86,20 +80,20 @@ export default function CalendarComponent() {
     };
   }, []); 
 
-  function handleAddEvent() {
-    for (let i = 0; i < allEvents.length; i++) {
-      const d1 = new Date(allEvents[i].start);
-      const d2 = new Date(newEvent.start);
-      const d3 = new Date(allEvents[i].end);
-      const d4 = new Date(newEvent.end);
+  // function handleAddEvent() {
+  //   for (let i = 0; i < allEvents.length; i++) {
+  //     const d1 = new Date(allEvents[i].start);
+  //     const d2 = new Date(newEvent.start);
+  //     const d3 = new Date(allEvents[i].end);
+  //     const d4 = new Date(newEvent.end);
 
-      if ((d1 <= d2 && d2 <= d3) || (d1 <= d4 && d4 <= d3)) {
-        alert('CLASH');
-        break;
-      }
-    }
-    setAllEvents([...allEvents, newEvent]);    
-  }
+  //     if ((d1 <= d2 && d2 <= d3) || (d1 <= d4 && d4 <= d3)) {
+  //       alert('CLASH');
+  //       break;
+  //     }
+  //   }
+  //   setAllEvents([...allEvents, newEvent]);    
+  // }
 
 
   return (
@@ -114,10 +108,10 @@ export default function CalendarComponent() {
       <div className='header-container'>
         <div className="headerTitles">
           <span className="headerTitleLg">
-              <img className='sollogo' src={logo} />      
+              <img className='sollogo' alt="sologo" src={logo} />      
           </span>
           <div >
-            <img className='kids' src={kids} alt="Kids" />
+            <img className='kids' src={kids} alt="solchick" />
           </div>
         </div>
       </div>
@@ -146,40 +140,20 @@ export default function CalendarComponent() {
               data-aos-duration="1500"
         >
           <h1 className='fshopheader'>Shop Now</h1>
-          <article class="cta">
-            <img className='ctaimg' src={fisi} alt='Hyena'/>
-            <div class="cta__text-column">
-              <h2>Funny Fisi</h2>
-              <p>Discover the humorous world of hyenas with Nuru in this engaging children's book packed with learning activities.</p>
-              <Link className='linkcta' to="/shop">Shop now</Link>
-            </div>
-          </article>
-          <article class="cta">
-            <img className='ctaimg' src={oak} alt='Hibiscus Oak tree'/>
-            <div class="cta__text-column">
-              <h2>Hibsicus Oak</h2>
-              <p>Follow Tia on her remarkable journey of growth, teaching children the beauty of embracing their inherent uniqueness and purpose.</p>
-              <Link className='linkcta' to="/shop">Shop now</Link>
-            </div>
-          </article>
-          <article class="cta">
-            <img className='ctaimg' src={twiga} alt='Giraffe'/>
-            <div class="cta__text-column">
-              <h2>Towering twiga</h2>
-              <p>Embark on a giraffe adventure with Nuru and family, filled with fun learning and coloring activities.</p>
-              <Link className='linkcta' to="/shop">Shop now</Link>
-            </div>
-          </article>
-          <article class="cta">
-            <img className='ctaimg' src={stars} alt='Written in the Stars'/>
-            <div class="cta__text-column">
-              <h2>Written in the Stars</h2>
-              <p>Embark on a cultural journey exploring the significance of names in African traditions with this enlightening tale of a naming ceremony.</p>
-              <Link className='linkcta' to="/shop">Shop now</Link>
-            </div>
-          </article>
+          <div id="servcard" className='row'>
+          {products.map((product) => (
+              <div key={product.id}  className='col-md-3'>
+                    <div class="servicecard" >
+                      <img src={product.image} alt={product.name} class="cmage"/>
+                      <div class="cta__text-column">
+                        <h3>{product.name}</h3>
+                        <Link className='linkcta' to="/shop">Shop now</Link>
+                      </div>
+                    </div>
+              </div> 
+              ))}                          
         </div>
-
+        </div>
       </section>
 
       <section id="events">
@@ -192,50 +166,28 @@ export default function CalendarComponent() {
         data-aos-delay="300"
         data-aos-offset="0"
         >
-          <Link className='piclink' to='/about'><img className='knlspic' src={lib} /></Link>          
-          <Link className='piclink' to='/about'><img className="museumpic" src={musuem} /></Link>
-          <Link className='piclink stulink' to='/about'><img className='stupic' src ={stu} /> </Link>
+          <Link className='piclink' to='/about'><img className='knlspic' alt="knlslogo" src={lib} /></Link>          
+          <Link className='piclink' to='/about'><img className="museumpic" alt="NMKlogo" src={musuem} /></Link>
+          <Link className='piclink stulink' to='/about'><img className='stupic' alt="Logo" src ={stu} /> </Link>
         </div>     
       </section>
-
-      <section id="planner">
-        <div style={{ marginTop: '3rem', padding: '0 10rem', color: 'black' }}>
-          <h1>Calendar of Events</h1>
+      <section id="planner" >
+        <div className="calendar" >
+          <div data-aos="flip-up" >
+            <h1>Previous Events</h1>
+          </div>
+          <div className="caaard-container" data-aos="zoom-in-down">
+            {events.map(event => (
+              <div key={event.id} className="caaard">
+                <img src={event.image} alt={event.title} />                
+                <Link style={{ textDecoration: 'none'}} to="/events"><h2>{event.title}</h2></Link>                
+                <p className="caaard-footer">{event.date}</p>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className='calendar'>
-        {/* <h2>Add New Event</h2>
-            <div>
-                <input type="text" placeholder="Add Title" style={{ width: "20%", marginRight: "10px" }} value={newEvent.title} onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })} />
-                <DatePicker placeholderText="Start Date" style={{ marginRight: "10px" }} selected={newEvent.start} onChange={(start) => setNewEvent({ ...newEvent, start })} />
-                <DatePicker placeholderText="End Date" selected={newEvent.end} onChange={(end) => setNewEvent({ ...newEvent, end })} />
-                <button stlye={{ marginTop: "10px" }} onClick={handleAddEvent}>
-                    Add Event
-                </button>
-            </div> */}
-            <Calendar
-             localizer={localizer}
-              events={allEvents} 
-              views={views}
-              startAccessor="start"
-              endAccessor="end"
-              style={{ height: calendarHeight, width: calendarWidth, margin: '50px' }} />
-        </div>
-      </section>
+        </section>
 
-    <section id="test" style={{ backgroundImage: playsBackgroundImage}} >
-      
-      </section>
-
-      {/* <section id="venues">
-       <div className='venueHead'>
-          <h1>
-            Venues
-          </h1>
-          <p>
-          PLAN YOUR EVENT ANYWHERE YOU LIKE
-          </p>
-        </div>               
-      </section> */}
 
     </div>   
 

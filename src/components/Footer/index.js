@@ -6,49 +6,18 @@ export default function Footer() {
     let date = new Date();
     let year = date.getFullYear();
   return (
-    <div>
-       <footer>        
-        <div class="footer">
-        <div class="faicons">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/solkidsafrica/?hl=en" target='blank'><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-        </div>
-
-        <div class="links">
-            <ul>
-                <li><Link to="/contact">Get in touch with us</Link></li>
-                <li><Link to="/about">About us</Link></li>
-                {/* <li><a href="#">Privacy Policy</a></li> */}
-                <li><a href="#">Terms & Conditions</a></li>
-                <li><Link to="/shop">Shop</Link></li>
+    <div className='footer-basic'>
+        <footer>
+            <div class="social"><a href="https://www.instagram.com/solkidsafrica/"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-snapchat"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-facebook"></i></a></div>
+            <ul class="list-inline">
+                <li class="list-inline-item"><Link to="/about">About</Link></li>
+                <li class="list-inline-item"><Link to="/events">Events</Link></li>
+                <li class="list-inline-item"><Link to="/shop">Shop</Link></li>
+                <li class="list-inline-item"><Link to="contact">Contact</Link></li>
             </ul>
-        </div>
-
-        <div class="copyright">
-                © {year} Copyright:{' '}
-            <a class="text-reset fw-bold" href="https://kefahwambai.com/" target="_blank">
-                kefahwambai.com
-            </a>
-        </div>     
-        </div>
-        <article>
-            <article>
-            <section id="one">
-                    <section id="two">
-                        <section id="three">
-                            <section id="four">
-                                <section id="five">
-                                    
-                                </section>
-                            </section>
-                        </section>
-                    </section>
-            </section>
-            </article>
-        </article>
+            <p className="copyright"><a href="https://kefahwambai.com/" target="_blank">kefahwambai.com</a> © {year}</p>
         </footer>
-    </div>
+    </div>                        
+                      
   )
 }

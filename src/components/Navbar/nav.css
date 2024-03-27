@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Flavors&display=swap');
 
 .sticky {
-    background-color: #4ccade!important;
+    background-color: #738385!important;
     transition: all 0.3s ease-out 0s !important;
     backdrop-filter: blur(15px) !important;
     box-shadow: 0px 10px 10px 0px rgba(9, 5, 29, 0.171) !important;
@@ -17,15 +17,13 @@
 
 .navbar-toggler {
     position: relative !important;
-    background-color: transparent !important;
-    border-color: transparent !important;
-   
-
+    background-color:transparent !important;
 }
+
 
 .navbar-toggler span {
     display: block !important;
-    background-color: #de412d !important;
+    background-color: #377043 !important;
     height: 4px !important;
     width: 27px !important;
     margin-top: 5px !important;
@@ -111,10 +109,14 @@ padding: 0.8rem 1rem !important;
 
 .navbar-nav .nav-item {
     display: flex;
-position: relative;
-margin-left: 20px;
-
+    position: relative;
+    margin-left: 20px;
+    backdrop-filter: blur(5px) !important;
 }
+
+
+
+
 .navbar-nav .nav-item a {
 font-weight: 400;
 transition: all 0.3s ease-out 0s;
@@ -124,6 +126,11 @@ color: rgb(0, 0, 0);
 
 }
 
+
+.navbar-nav .nav-item a:focus {
+    color: #ffcb51 !important;
+}
+
 .navbar-nav .nav-item a::after {
 content: "";
 position: relative;
@@ -131,17 +138,13 @@ display: block;
 height: 5px;
 width: 0;
 border-radius: 16px;
-background: #ffcb51;
+background: #377043;
 bottom: 1px;
 left: 0;
 z-index: -1;
 transition: all 0.3s ease-out 0s;
 }
 
-.navbar-nav .nav-item a:hover::after {
-    
+.navbar-nav .nav-item a:hover::after {    
 width: 100%;
 }
-
-
-

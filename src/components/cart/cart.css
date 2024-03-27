@@ -93,7 +93,16 @@
 .checkout-btn:hover {
   background-color: #0069d9;
 }
+
+.promo {
+  margin-top: 1rem;
+}
 @media (max-width: 767px) {
+  .promo {
+    margin-top: 1rem;
+
+  }
+
   #shopcart {
     padding: 10px;
     margin-top: 6rem;
