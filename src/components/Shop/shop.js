@@ -14,7 +14,6 @@ export default function Shop({ handleClick }) {
     { id: 2, name: "Towering Twiga", price: "Kshs 700", image: twiga },
     { id: 3, name: "Funny fisi", price: "Kshs 700", image: fisi },
     { id: 4, name: "Written in the Stars", price: "Kshs 950", image: stars },
-    { id: 5, name: "Hibiscus Oak", price: "Kshs 700", image: oak },
   ];
 
   return (
@@ -29,9 +28,6 @@ export default function Shop({ handleClick }) {
                     <img src={product.image} alt={product.name} />
                   </div>                        
                   <div className="wsk-cp-text">
-                    <div className="category">
-                      <span>Ethnic</span>
-                    </div>
                     <div className="title-product">
                       <h3>{product.name}</h3>
                     </div>

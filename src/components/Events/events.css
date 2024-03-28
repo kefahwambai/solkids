@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
+
+
 .page-heading-shows-events {
 background-image: url(../../Assets/slideshow/WITS-4.jpeg);
 background-size: 100vw auto; 
@@ -6,6 +9,14 @@ background-repeat: no-repeat;
 background-attachment: fixed;
 padding: 110px 0px;
 text-align: center;
+}
+.container h2 {
+    font-family: "RocknRoll One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.conhead {
+    font-size: 5rem !important;
 }
 
 .page-heading-shows-events h2 {
@@ -367,6 +378,9 @@ margin-left: 8px;
 }
 
 @media screen and (max-width: 767px) {
+    .conhead {
+        font-size: 6rem !important;
+    }
 
 .pasteventimage {
     height: 30vh;

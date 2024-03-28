@@ -9,15 +9,15 @@ const Events = () => {
   return (
     <section id="eventssection">
          <div class="page-heading-shows-events">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2>Our Shows & Events</h2>
-                    <span>Check out upcoming and past shows & events.</span>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 className='conhead '>Fomo Section</h2>
+                        <span>Check out past & upcoming events.</span>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
+             </div>
+         </div>
     <div className="shows-events-tabs">
       <div className="container">
         <div className="row">
