@@ -116,23 +116,27 @@ export default function CalendarComponent() {
         </div>
       </div>
     </section>
-      <section  id="aboutt">
-          <div className="main">          
-          </div>
-          <div className='founderss'>
+    <div class="background"></div>
+    <section id="aboutt">
+        <div class='founderss'>
             <div>
-              <img data-aos="fade-right"  data-aos-duration="3000"   className='pizza' src={pizzakids} alt="kids making pizza" />
+                <img data-aos="fade-right" data-aos-duration="3000" class='pizza' src={pizzakids} alt="kids making pizza" />
                 <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="2000">  
-                    <p className='greenp'> Sol Kids is an initiative led by Sauti Sol, offering an innovative platform that curates affordable and award-winning Pan African content.</p>
-                    <p className='rment'> Our goal is to nurture a generation of children who embrace their African heritage. </p>
-                    <p className='sment'> With a mantra of "Stories by Us," our mission revolves around L.E.A (Leadership, Empowerment, Accessibility).</p>
-                    <p className='yellowp'> We aim to promote literacy, empowerment, and accessibility through culturally relevant content, empowering children to appreciate their past, present, and future.</p>                   
+                    <p class='greenp'> Sol Kids is an initiative led by Sauti Sol, offering an innovative platform that curates affordable and award-winning Pan African content.</p>
+                    <p class='rment'> Our goal is to nurture a generation of children who embrace their African heritage. </p>
+                    <p class='sment'> With a mantra of "Stories by Us," our mission revolves around L.E.A (Leadership, Empowerment, Accessibility).</p>
+                    <p class='yellowp'> We aim to promote literacy, empowerment, and accessibility through culturally relevant content, empowering children to appreciate their past, present, and future.</p>                   
                 </div>
-                <img data-aos="fade-up" data-aos-duration="2000" className='solhen' src={chick} alt="realsolchick" />
-          </div>
+                <img data-aos="fade-up" data-aos-duration="2000" class='solhen' src={chick} alt="realsolchick" />
+            </div>          
         </div>
-
-      </section>
+        <div >
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+    </section>
       <section id="frontshop">
         <div className='frontshop' 
               data-aos="fade-down"
