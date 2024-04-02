@@ -93,6 +93,7 @@ function NavBar({ cart, setCart, size }) {
               <Nav.Link
                 as={Link}
                 to="/cart"
+               
                 onClick={(event) => {
                   event.preventDefault();
                 }}     
@@ -101,8 +102,11 @@ function NavBar({ cart, setCart, size }) {
                 <AiOutlineShoppingCart
                   style={{ marginBottom: "2px"}}
                 />{" "}
-                Cart
+                Cart                
               </Nav.Link>
+              <div className="cartsize">
+              {size}
+              </div>
             </Nav.Item>   
              ) : (
               <>

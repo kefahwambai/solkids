@@ -148,3 +148,8 @@ transition: all 0.3s ease-out 0s;
 .navbar-nav .nav-item a:hover::after {    
 width: 100%;
 }
+
+.cartsize {
+    color: #ffcb51; 
+    margin-left: -0.8rem;
+  }

@@ -41,7 +41,7 @@ const products = [
   { id: 2, name: "Towering Twiga", price: "Kshs 700", image: twiga },
   { id: 3, name: "Funny fisi", price: "Kshs 700", image: fisi },
   { id: 4, name: "Written in the Stars", price: "Kshs 950", image: stars },
-  // { id: 5, name: "Hibiscus Oak", price: "Kshs 700", image: oak },
+ 
 ];
 
 const events = [

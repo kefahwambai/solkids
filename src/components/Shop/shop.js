@@ -5,6 +5,10 @@ import oak from "../../Assets/Books/Oak.png";
 import twiga from "../../Assets/Books/Twiga.png";
 import fisi from "../../Assets/Books/fisi.png";
 import stars from "../../Assets/Books/written in stars.png";
+import lala from "../../Assets/Books/Lalaland.png";
+import monkey from "../../Assets/Books/BududasM.png";
+import pipo from "../../Assets/Books/Pipo.png";
+import pfinger from "../../Assets/Books/Papafingers.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
@@ -14,6 +18,10 @@ export default function Shop({ handleClick }) {
     { id: 2, name: "Towering Twiga", price: "Kshs 700", image: twiga },
     { id: 3, name: "Funny fisi", price: "Kshs 700", image: fisi },
     { id: 4, name: "Written in the Stars", price: "Kshs 950", image: stars },
+    { id: 5, name: "Lala land", price: "Kshs 950", image: lala },
+    { id: 6, name: "Pipo and the Poop Pile", price: "Kshs 950", image: pipo },
+    { id: 7, name: "Papas Fingers", price: "Kshs 950", image: pfinger },
+    { id: 8, name: "Budubas The Colombus Monkey", price: "Kshs 950", image: monkey }
   ];
 
   return (
@@ -39,7 +47,7 @@ export default function Shop({ handleClick }) {
                         <span className="price">{product.price}</span>
                       </div>
                       <div className="wcf-right">
-                        <Link className="buy-btn" onClick={() => handleClick(product)} to="/cart">
+                        <Link className="buy-btn" onClick={() => handleClick(product)} >
                           <FontAwesomeIcon icon={faShoppingCart} />
                         </Link>
                       </div>

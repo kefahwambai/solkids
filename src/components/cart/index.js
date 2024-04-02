@@ -4,6 +4,8 @@ import "./cart.css";
 
 function CartComponent({ cart, setCart, handleChange }) {
     const [totalPrice, setTotalPrice] = useState(0);
+    const [shippingPrice, setShippingPrice] = useState(0);
+
 
     const updateTotalPrice = () => {
         let total = 0;
@@ -13,7 +15,21 @@ function CartComponent({ cart, setCart, handleChange }) {
                 total += price * item.quantity;
             }
         });
+        total += shippingPrice; 
         setTotalPrice(total);
+    };
+
+    const handleShippingChange = (event) => {
+        const selectedShippingOption = event.target.value;
+        // Extract shipping price from selected option
+        const priceRegex = /Ksh (\d+(\.\d+)?)/;
+        const match = selectedShippingOption.match(priceRegex);
+        if (match) {
+            const price = parseFloat(match[1]);
+            setShippingPrice(price);
+        } else {
+            setShippingPrice(0); 
+        }
     };
 
     const handleQuantityChange = (item, amount) => {
@@ -41,16 +57,17 @@ function CartComponent({ cart, setCart, handleChange }) {
 
     useEffect(() => {
         updateTotalPrice();
-    }, [cart]);
+    }, [cart, shippingPrice]);
 
     useEffect(() => {
+        console.log("Saving cart data to session storage:", cart);
         const cartData = JSON.stringify(cart);
         sessionStorage.setItem('cart', cartData);
 
         const clearCartTimeout = setTimeout(() => {
             sessionStorage.removeItem('cart');
             setCart([]);
-        }, 5 * 60 * 1000); // 5 minutes
+        }, 10 * 60 * 1000); 
 
         return () => clearTimeout(clearCartTimeout);
     }, [cart, setCart]);
@@ -98,10 +115,10 @@ function CartComponent({ cart, setCart, handleChange }) {
                     </div>
                     <form>
                         <p>SHIPPING</p>
-                        <select>
+                        <select onChange={handleShippingChange}>
                             <option disabled hidden selected>Select Shipping Options</option>
                             <option className="text-muted">Standard-Delivery- Ksh 500.00</option>
-                            <option className="text-muted">Fast Shipping- Ksh 5000.00</option>
+                            <option className="text-muted">Fast Shipping- Ksh 1000.00</option>
                         </select>
                         <p className="promo">Have a Promo CODE?</p>
                         <input id="code" placeholder="Enter your code here" />
