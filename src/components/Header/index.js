@@ -1,14 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import "./header.css"
 import { Link } from 'react-router-dom';
 import kids from "../../Assets/Homepage/solchick.png";
-import format from "date-fns/format";
-import getDay from "date-fns/getDay";
-import parse from "date-fns/parse";
-import startOfWeek from "date-fns/startOfWeek";
-import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-// import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import introvid from "../../Assets/Homepage/lalalandlq.mp4"
 import logo from "../../Assets/Logo/SOL_KIDS_Official_Logo__5_-1-removebg-preview.png"
@@ -25,17 +19,6 @@ import stu from "../../Assets/Partners/fhm.png"
 import solfest from "../../Assets/Events/dec2022.jpeg"
 import solfest23 from "../../Assets/Events/solfest23.jpeg"
 
-const locales = {
-  'en-US': require('date-fns/locale/en-US'),
-};
-
-const localizer = dateFnsLocalizer({
-  format,
-  parse,
-  startOfWeek,
-  getDay,
-  locales,
-});
 const products = [
   { id: 1, name: "Hibiscus Oak", price: "Kshs 700", image: oak },
   { id: 2, name: "Towering Twiga", price: "Kshs 700", image: twiga },
@@ -50,50 +33,7 @@ const events = [
 ];
 
 export default function CalendarComponent() { 
-  const [allEvents, setAllEvents] = useState(events);
-  const [newEvent, setNewEvent] = useState({ title: '', start: '', end: '' });
   const playsBackgroundImage = `url(${slide1})`;
-  const views = ['month'];
-
-  const [calendarHeight, setCalendarHeight] = useState(400);
-  const [calendarWidth, setCalendarWidth] = useState('100%'); 
-
-  const adjustCalendarDimensions = () => {
-    const width = window.innerWidth;
-    if (width >= 1200) {
-      setCalendarHeight(700);
-      setCalendarWidth('90%');
-    } else if (width >= 768) {
-      setCalendarHeight(600);
-      setCalendarWidth('80%');
-    } else {
-      setCalendarHeight(400);
-      setCalendarWidth('100%');
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener('resize', adjustCalendarDimensions);
-
-    return () => {
-      window.removeEventListener('resize', adjustCalendarDimensions);
-    };
-  }, []); 
-
-  // function handleAddEvent() {
-  //   for (let i = 0; i < allEvents.length; i++) {
-  //     const d1 = new Date(allEvents[i].start);
-  //     const d2 = new Date(newEvent.start);
-  //     const d3 = new Date(allEvents[i].end);
-  //     const d4 = new Date(newEvent.end);
-
-  //     if ((d1 <= d2 && d2 <= d3) || (d1 <= d4 && d4 <= d3)) {
-  //       alert('CLASH');
-  //       break;
-  //     }
-  //   }
-  //   setAllEvents([...allEvents, newEvent]);    
-  // }
 
 
   return (
@@ -116,25 +56,25 @@ export default function CalendarComponent() {
         </div>
       </div>
     </section>
-    <div class="background"></div>
+    <div className="background"></div>
     <section id="aboutt">
-        <div class='founderss'>
+        <div className='founderss'>
             <div>
-                <img data-aos="fade-right" data-aos-duration="3000" class='pizza' src={pizzakids} alt="kids making pizza" />
+                <img data-aos="fade-right" data-aos-duration="3000" className='pizza' src={pizzakids} alt="kids making pizza" />
                 <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="2000">  
-                    <p class='greenp'> Sol Kids is an initiative led by Sauti Sol, offering an innovative platform that curates affordable and award-winning Pan African content.</p>
-                    <p class='rment'> Our goal is to nurture a generation of children who embrace their African heritage. </p>
-                    <p class='sment'> With a mantra of "Stories by Us," our mission revolves around L.E.A (Leadership, Empowerment, Accessibility).</p>
-                    <p class='yellowp'> We aim to promote literacy, empowerment, and accessibility through culturally relevant content, empowering children to appreciate their past, present, and future.</p>                   
+                    <p className='greenp'> Sol Kids is an initiative led by Sauti Sol, offering an innovative platform that curates affordable and award-winning Pan African content.</p>
+                    <p className='rment'> Our goal is to nurture a generation of children who embrace their African heritage. </p>
+                    <p className='sment'> With a mantra of "Stories by Us," our mission revolves around L.E.A (Leadership, Empowerment, Accessibility).</p>
+                    <p className='yellowp'> We aim to promote literacy, empowerment, and accessibility through culturally relevant content, empowering children to appreciate their past, present, and future.</p>                   
                 </div>
-                <img data-aos="fade-up" data-aos-duration="2000" class='solhen' src={chick} alt="realsolchick" />
+                <img data-aos="fade-up" data-aos-duration="2000" className='solhen' src={chick} alt="realsolchick" />
             </div>          
         </div>
         <div >
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
+          <span className="dot"></span>
+          <span className="dot"></span>
+          <span className="dot"></span>
+          <span className="dot"></span>
         </div>
     </section>
       <section id="frontshop">
@@ -147,9 +87,9 @@ export default function CalendarComponent() {
           <div id="servcard" className='row'>
           {products.map((product) => (
               <div key={product.id}  className='col-md-3'>
-                    <div class="servicecard" >
-                      <img src={product.image} alt={product.name} class="cmage"/>
-                      <div class="cta__text-column">
+                    <div className="servicecard" >
+                      <img src={product.image} alt={product.name} className="cmage"/>
+                      <div className="cta__text-column">
                         <h3>{product.name}</h3>
                         <Link className='linkcta' to="/shop">Shop now</Link>
                       </div>
