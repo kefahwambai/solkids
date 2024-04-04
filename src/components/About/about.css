@@ -53,7 +53,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 8.5rem;
+    margin-top: 2rem !important;
+    margin-left: 1.5rem !important;
     color: #ffcb51;
     z-index: -10;
     height: 40vh;
@@ -163,8 +164,7 @@
     font-weight: 400;
     font-style: normal;
     font-size: 1.5rem;
-}
-
+} 
   
 .ceo h2 {
    color: #333;
@@ -249,198 +249,6 @@ margin-bottom: -13rem;
     margin-top: 10rem;
     margin-bottom: -6rem;
 }
-
-@media (max-width: 767px) {
-.stuppic {
-    margin-top: -20rem !important;
-    margin-bottom: -30rem;
-    height: 25vh;
-    margin-left: 1rem;
-}
-.nationalmusuemofk {
-    margin-top: -13rem;
-    margin-left: 0.5rem;
-    width: 70vw;
-}
-.ceo p {
-    color: #666;
-    font-size: 16px;
-    line-height: 1;
-    font-family: "Sen", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-    width: 50vw;
-    padding: 20px;
-    margin: 20px;
-    margin-top: -10rem;
-    margin-left: -1rem;
-    }
-.worrm {
-    margin-left: 43rem !important; 
-    margin-right: 30rem;
-    margin-top: 15rem;
-    height: 40vh;
-    margin-bottom: -26rem;
-
-}
-
-.ceo h2 {
-    margin-left: -1rem;
-    margin-bottom: 1rem;
-}
-
-
-.board h2 {
-    /* margin-left: -1rem; */
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-    margin-top: -4rem;
-
-}
-
-#partnerspage {
-    height: 290vh;
-}
-
-.kenyalibrary {
-    width: 60vw;
-    margin-top: 8rem;
-    margin-bottom: -2rem;
-    margin-left: 2rem;
-}
-
-.partnerstitle {
-    margin-top: 3rem;
-    color: #ffcb51;
-    font-size: 2rem !important;
-}
-
-.museumdiv {
-    margin-left: 2rem;
-    font-size: 1rem;
-    margin-bottom: 20rem;    
-
-}
-.studiv {
-    margin-left: 4.5rem;
-    font-size: 1rem;
-    margin-bottom: -4rem;
-    
-
-}
-.knlsdiv {
-    margin-left: 2.2rem;
-    font-size: 1rem;
-    margin-top: 13rem;
-    height: 20vh;
-    margin-bottom:20rem;
-    background-size: 70vw auto; 
-}
-.knlsdiv p {
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-    line-height: 1rem;
-    margin-left: 1rem;
-}
-
-.knlsdiv p a  {
-    color: white;
-    text-decoration: none;
-}
-
-.museumdiv p {
-    margin-top: 22rem;
-    line-height: 1.5rem;
-    padding: 1rem;
-
-}
-
-.museumdiv p a {
-    color: white;
-    text-decoration: none;
-}
-.studiv p {
-    margin-top: 19rem; 
-    padding: 1rem;
-    line-height: 1.5rem;
-}
-
-.studiv p a {
-    color: white;
-    text-decoration: none;
-}
-.sautisol{
-    margin-left: 30rem; 
-    margin-right: 30rem;
-    margin-top: 1rem;
-    height: 40vh;
-    margin-bottom: -2rem;
-
-}
-.ceeopic {
-    margin-left: 11rem; 
-    margin-top: 1rem;
-    height: 30vh;
-    margin-bottom: -2rem;
-
-}
-
-.board {
-    margin-left: -5rem;
-}
-
-.boardpic {
-    margin-left: 1.7rem;
-    margin-top: 1rem;
-    height: 30vh;
-    margin-bottom: -2rem;
-
-}
-
-
-.board p {
-    font-size: 1rem;
-    line-height: 1.5rem;
-    margin-top: 2rem;
-    width: 80vw;
-    margin-left: 1rem;
-    
-
-}
-.worrm {
-    margin-left: 45rem; 
-    margin-right: 30rem;
-    margin-top: 15rem;
-    height: 40vh;
-    margin-bottom: -26rem;
-
-}
-
-.poly {
-    margin-right: 45rem; 
-    margin-left: 30rem;
-    margin-top: 5rem;
-    height: 40vh;
-    margin-bottom: -25rem;
-    z-index: 4;
-
-}
-
-.melissa{
-    margin-left: 30rem; 
-    margin-right: 30rem;
-    margin-top: 1rem;
-    height: 40vh;
-    margin-bottom: -1rem;
-
-}
-}
-
-
-
-
-
 
 .statement {
     margin-top: 10rem;
@@ -530,12 +338,263 @@ margin-bottom: -13rem;
     text-decoration: none !important;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 321px) {
+.ceo h2 {
+    margin-left: -1rem;
+    margin-bottom: 1rem !important;
+    font-size: 1.4rem !important;
+}
+.solstatment {
+    margin-left: -10rem !important;
+    color: #377043;
+}
+.abt {
+    margin-right: -7rem !important;
+}
+.founders {
+    margin-top: 7rem;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1.2rem;
+}
+    
+.founders h1 {
+    margin-top: 1.5rem;
+    padding: 0 2rem;
+    margin-bottom: -1.3rem;
+    font-size: 2rem !important;
+    }
+    
+#about {
+    padding: 1rem;
+    height: 280vh !important;
+}
+
+#solevents {
+    height: 235vh !important;
+}
+
+.solment {
+    margin-left: 1rem !important;
+    z-index: 4;    
+}
+
+.stateh1 {
+    margin-top: -2rem !important;
+    text-decoration: none !important;
+}
+    
+#execmess {
+    height: 260vh !important;
+
+}
+
+.solstatment {
+    margin-left: -7rem;
+    color: #377043;
+}
+    
+.wormh1 {
+    margin-left: -0.3rem !important;
+    font-weight: 700;
+    text-decoration: none !important;
+}
+
+.stuppic {
+    margin-top: 3rem !important;
+    margin-bottom: -7rem !important;
+    height: 25vh;
+    margin-left: 1rem;
+}
+.nationalmusuemofk {
+    margin-top: -15rem !important;
+    margin-left: 0.5rem;
+    width: 70vw;
+}
+.ceo p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1;
+    font-family: "Sen", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    width: 50vw;
+    padding: 20px;
+    margin: 20px;
+    margin-top: -10rem;
+    margin-left: -1rem;
+}
+
+.worrm {
+    margin-right: 35rem !important; 
+    margin-top: 15rem;
+    height: 40vh;
+    margin-bottom: -26rem;
+
+}
+
+.ceo h2 {
+    margin-left: -1rem;
+    margin-bottom: 1rem;
+}
+
+
+.board h2 {
+    /* margin-left: -1rem; */
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    margin-top: -4rem;
+
+}
+
+#partnerspage {
+    height: 330vh !important;
+}
+
+.kenyalibrary {
+    width: 60vw;
+    margin-top: 8rem;
+    margin-bottom: -2rem;
+    margin-left: -0.2rem !important;
+}
+
+.partnerstitle {
+    margin-top: 3rem;
+    color: #ffcb51;
+    font-size: 2rem !important;
+}
+
+.museumdiv {
+    margin-left: 2rem;
+    font-size: 1rem;
+    margin-bottom: 25rem !important;    
+
+}
+.studiv {
+    margin-left: 4.1rem !important;
+    font-size: 1rem;
+    margin-bottom: -4rem;    
+
+}
+.knlsdiv {
+    margin-left: 1.5rem !important;
+    font-size: 1rem;
+    margin-top: 13rem;
+    height: 20vh;
+    margin-bottom:20rem;
+    background-size: 70vw auto; 
+}
+.knlsdiv p {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    line-height: 1rem;
+    margin-left: 1rem;
+}
+
+.knlsdiv p a  {
+    color: white;
+    text-decoration: none;
+}
+
+.museumdiv p {
+    margin-top: 22rem;
+    line-height: 1.5rem;
+    padding: 1rem;
+
+}
+
+.museumdiv p a {
+    color: white;
+    text-decoration: none;
+}
+.studiv p {
+    margin-top: 19rem; 
+    padding: 1rem;
+    line-height: 1.5rem;
+}
+
+.studiv p a {
+    color: white;
+    text-decoration: none;
+}
+.sautisol{
+    margin-left: 28rem; 
+    margin-right: 30rem;
+    margin-top: 1rem;
+    height: 40vh;
+    margin-bottom: -2rem;
+
+}
+.ceeopic {
+    margin-left: 8.5rem !important; 
+    margin-top: 1rem;
+    height: 30vh;
+    margin-bottom: -2rem;
+
+}
+
+.board {
+    margin-left: -5rem;
+}
+
+.boardpic {
+    margin-left: -0.1rem !important;
+    margin-top: 1rem;
+    height: 30vh;
+    margin-bottom: -2rem;
+
+}
+
+
+.board p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-top: 2rem;
+    width: 80vw;
+    margin-left: 1rem !important;
+}
+
+
+.worrm {
+    margin-left: 45rem; 
+    margin-right: 30rem;
+    margin-top: 15rem;
+    height: 40vh;
+    margin-bottom: -26rem;
+
+}
+
+.poly {
+    margin-right: 41.5rem !important; 
+    margin-left: 30rem;
+    margin-top: 5rem;
+    height: 40vh;
+    margin-bottom: -25rem;
+    z-index: 4;
+
+}
+
+.melissa{
+    margin-left: 30rem; 
+    margin-right: 30rem;
+    margin-top: 1rem;
+    height: 40vh;
+    margin-bottom: -1rem;
+
+}
+}
+
+@media (min-width: 322px) and (max-width:376px) {
+
     .ceo h2 {
         margin-left: -1rem;
         margin-bottom: 1rem;
         font-size: 1.8rem !important;
     }
+    
     .solstatment {
         margin-left: -10rem !important;
         color: #377043;
@@ -551,6 +610,506 @@ margin-bottom: -13rem;
         font-style: normal;
         line-height: 1.2rem;
     }
+      
+    .founders h1 {
+        margin-top: 1.5rem;
+        padding: 0 2rem;
+        margin-bottom: -1.3rem;
+        font-size: 2rem !important;
+     }
+      
+    #about {
+        padding: 1rem;
+        height: 250vh !important;
+    }
+    
+    #solevents {
+        height: 220vh;
+    }
+    
+    .solment {
+        margin-left: 1rem;
+        z-index: 4;    
+    }
+    
+    .stateh1 {
+        margin-top: -2rem !important;
+        text-decoration: none !important;
+    }
+      
+    #execmess {
+        height: 220vh;
+    
+    }
+    
+    .solstatment {
+        margin-left: -7rem;
+        color: #377043;
+    }
+      
+    .wormh1 {
+        margin-left: -2rem;
+        font-weight: 700;
+        margin-top: 1.3rem !important;
+        margin-bottom: 2rem !important;
+        text-decoration: none !important;
+    }
+    
+    .stuppic {
+        margin-top: -20rem !important;
+        margin-bottom: -30rem;
+        height: 25vh;
+        margin-left: 1rem;
+    }
+    .nationalmusuemofk {
+        margin-top: -13rem;
+        margin-left: 0.5rem;
+        width: 65vw;
+    }
+    .ceo p {
+        color: #666;
+        font-size: 16px;
+        line-height: 1;
+        font-family: "Sen", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-style: normal;
+        width: 50vw;
+        padding: 20px;
+        margin: 20px;
+        margin-top: -10rem;
+        margin-left: -0.5rem;
+        }
+    .worrm {
+        margin-left: 43rem !important; 
+        margin-top: 15rem;
+        height: 40vh;
+        margin-bottom: -26rem;
+    
+    }
+  
+    
+    .board h2 {
+        margin-left: 7rem;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        margin-top: -4rem;
+    
+    }
+    
+    #partnerspage {
+        height: 266vh;
+    }
+    
+    .kenyalibrary {
+        width: 70vw;
+        margin-top: 5rem;
+        margin-bottom: 4rem;
+        margin-left: 2rem;
+    }
+    
+    .partnerstitle {
+        margin-top: 3rem;
+        color: #ffcb51;
+        font-size: 2rem !important;
+    }
+    
+    .museumdiv {
+        margin-left: 2rem !important;
+        margin-top: -5rem !important;
+        font-size: 1rem;
+        margin-bottom: 13rem;    
+    
+    }
+    .studiv {
+        margin-left: 4.5rem;
+        font-size: 1rem;
+        margin-bottom: -4rem;
+        margin-top: 2rem;
+        
+    
+    }
+    .knlsdiv {
+        margin-left: 2rem;
+        font-size: 1rem;
+        margin-top: 5rem !important;
+        line-height: 1rem !important;
+        margin-top: 8rem;
+        height: 20vh;
+        margin-bottom:20rem;
+        background-size: 70vw auto; 
+    }
+    .knlsdiv p {
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+        line-height: 1rem;
+        margin-left: 1rem;
+    }
+    
+    .knlsdiv p a  {
+        color: white;
+        text-decoration: none;
+    }
+    
+    .museumdiv p {
+        margin-top: 22rem;
+        line-height: 1rem !important;
+        padding: 1rem;
+    
+    }
+    
+    .museumdiv p a {
+        color: white;
+        text-decoration: none;
+    }
+    .studiv p {
+        margin-top: 19rem; 
+        padding: 1rem;
+        line-height: 1.5rem;
+    }
+    
+    .studiv p a {
+        color: white;
+        text-decoration: none;
+    }
+    .sautisol{
+        margin-left: 30rem; 
+        margin-right: 30rem;
+        margin-top: 1rem;
+        height: 40vh;
+        margin-bottom: -2rem;
+    
+    }
+    .ceeopic {
+        margin-left: 11rem; 
+        margin-top: 1rem;
+        height: 35vh;
+        margin-bottom: -2rem;
+    
+    }
+    
+    .board {
+        margin-left: -5rem;
+    }
+    
+    .boardpic {
+        margin-left: 2.5rem;
+        margin-top: 1rem;
+        height: 30vh;
+        margin-bottom: -2rem;
+    
+    }
+    
+    
+    .board p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        margin-top: 2rem;
+        width: 80vw;
+        margin-left: 1.4rem;
+        
+    
+    }
+    .worrm {
+        margin-left: 45rem; 
+        margin-right: 30rem;
+        margin-top: 15rem;
+        height: 40vh;
+        margin-bottom: -26rem;
+    
+    }
+    
+    .poly {
+        margin-right: 15rem; 
+        margin-top: 5rem;
+        height: 40vh;
+        margin-bottom: -22rem;
+        z-index: 4;
+    
+    }
+    
+    .melissa{
+        margin-left: 30rem; 
+        margin-right: 30rem;
+        margin-top: 1rem;
+        height: 40vh;
+        margin-bottom: -1rem;
+    
+    }
+}
+
+@media (min-width: 377px) and (max-width:426px) {
+
+    .ceo h2 {
+        margin-left: -1rem;
+        margin-bottom: 1rem;
+        font-size: 1.8rem !important;
+    }
+    
+    .solstatment {
+        margin-left: -10rem !important;
+        color: #377043;
+    }
+    .abt {
+        margin-right: -7rem !important;
+    }
+    .founders {
+        margin-top: 7rem;
+        color: #fff;
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        line-height: 1.2rem;
+    }
+      
+    .founders h1 {
+        margin-top: 1.5rem;
+        padding: 0 2rem;
+        margin-bottom: -1.3rem;
+        font-size: 2rem !important;
+     }
+      
+    #about {
+        padding: 1rem;
+        height: 250vh !important;
+    }
+    
+    #solevents {
+        height: 220vh;
+    }
+    
+    .solment {
+        margin-left: 1rem;
+        z-index: 4;    
+    }
+    
+    .stateh1 {
+        margin-top: -2rem !important;
+        text-decoration: none !important;
+    }
+      
+    #execmess {
+        height: 220vh;
+    
+    }
+    
+    .solstatment {
+        margin-left: -7rem;
+        color: #377043;
+    }
+      
+    .wormh1 {
+        margin-left: -2rem;
+        font-weight: 700;
+        margin-top: 1.3rem !important;
+        margin-bottom: 2rem !important;
+        text-decoration: none !important;
+    }
+    
+    .stuppic {
+        margin-top: -20rem !important;
+        margin-bottom: -30rem;
+        height: 25vh;
+        margin-left: 1rem;
+    }
+    .nationalmusuemofk {
+        margin-top: -13rem;
+        margin-left: 0.5rem;
+        width: 65vw;
+    }
+    .ceo p {
+        color: #666;
+        font-size: 16px;
+        line-height: 1;
+        font-family: "Sen", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-style: normal;
+        width: 50vw;
+        padding: 20px;
+        margin: 20px;
+        margin-top: -10rem;
+        margin-left: -0.5rem;
+        }
+    .worrm {
+        margin-left: 43rem !important; 
+        margin-top: 15rem;
+        height: 40vh;
+        margin-bottom: -26rem;
+    
+    }
+  
+    
+    .board h2 {
+        margin-left: 7rem;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        margin-top: -4rem;
+    
+    }
+    
+    #partnerspage {
+        height: 266vh;
+    }
+    
+    .kenyalibrary {
+        width: 70vw;
+        margin-top: 5rem;
+        margin-bottom: 4rem;
+        margin-left: 2rem;
+    }
+    
+    .partnerstitle {
+        margin-top: 3rem;
+        color: #ffcb51;
+        font-size: 2rem !important;
+    }
+    
+    .museumdiv {
+        margin-left: 2rem !important;
+        margin-top: -5rem !important;
+        font-size: 1rem;
+        margin-bottom: 13rem;    
+    
+    }
+    .studiv {
+        margin-left: 4.5rem;
+        font-size: 1rem;
+        margin-bottom: -4rem;
+        margin-top: 2rem;
+        
+    
+    }
+    .knlsdiv {
+        margin-left: 2rem;
+        font-size: 1rem;
+        margin-top: 5rem !important;
+        line-height: 1rem !important;
+        margin-top: 8rem;
+        height: 20vh;
+        margin-bottom:20rem;
+        background-size: 70vw auto; 
+    }
+    .knlsdiv p {
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+        line-height: 1rem;
+        margin-left: 1rem;
+    }
+    
+    .knlsdiv p a  {
+        color: white;
+        text-decoration: none;
+    }
+    
+    .museumdiv p {
+        margin-top: 22rem;
+        line-height: 1rem !important;
+        padding: 1rem;
+    
+    }
+    
+    .museumdiv p a {
+        color: white;
+        text-decoration: none;
+    }
+    .studiv p {
+        margin-top: 19rem; 
+        padding: 1rem;
+        line-height: 1.5rem;
+    }
+    
+    .studiv p a {
+        color: white;
+        text-decoration: none;
+    }
+    .sautisol{
+        margin-left: 30rem; 
+        margin-right: 30rem;
+        margin-top: 1rem;
+        height: 40vh;
+        margin-bottom: -2rem;
+    
+    }
+    .ceeopic {
+        margin-left: 11rem; 
+        margin-top: 1rem;
+        height: 35vh;
+        margin-bottom: -2rem;
+    
+    }
+    
+    .board {
+        margin-left: -5rem;
+    }
+    
+    .boardpic {
+        margin-left: 2.5rem;
+        margin-top: 1rem;
+        height: 30vh;
+        margin-bottom: -2rem;
+    
+    }
+    
+    
+    .board p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        margin-top: 2rem;
+        width: 80vw;
+        margin-left: 1.4rem;
+        
+    
+    }
+    .worrm {
+        margin-left: 45rem; 
+        margin-right: 30rem;
+        margin-top: 15rem;
+        height: 40vh;
+        margin-bottom: -26rem;
+    
+    }
+    
+    .poly {
+        margin-right: 15rem; 
+        margin-top: 5rem;
+        height: 40vh;
+        margin-bottom: -22rem;
+        z-index: 4;
+    
+    }
+    
+    .melissa{
+        margin-left: 30rem; 
+        margin-right: 30rem;
+        margin-top: 1rem;
+        height: 40vh;
+        margin-bottom: -1rem;
+    
+    }
+}
+
+@media (min-width: 427px) and (max-width: 769px) {
+.ceo h2 {
+    margin-left: -1rem;
+    margin-bottom: 1rem;
+    font-size: 1.8rem !important;
+}
+.solstatment {
+    margin-left: -10rem !important;
+    color: #377043;
+}
+.abt {
+    margin-right: -7rem !important;
+}
+.founders {
+    margin-top: 7rem;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1.2rem;
+}
   
 .founders h1 {
     margin-top: 1.5rem;
@@ -561,11 +1120,11 @@ margin-bottom: -13rem;
   
 #about {
     padding: 1rem;
-    height: 250vh;
+    height: 180vh !important;
 }
 
 #solevents {
-    height: 220vh;
+    height: 145vh;
 }
 
 .solment {
@@ -579,7 +1138,7 @@ margin-bottom: -13rem;
 }
   
 #execmess {
-    height: 210vh;
+    height: 145vh;
 
 }
 
@@ -595,5 +1154,190 @@ margin-bottom: -13rem;
     margin-bottom: 2rem !important;
     text-decoration: none !important;
 }
-  
+
+.stuppic {
+    margin-top: -20rem !important;
+    margin-bottom: -30rem;
+    height: 25vh;
+    margin-left: 1rem;
+}
+.nationalmusuemofk {
+    margin-top: -13rem;
+    margin-left: 0.5rem;
+    width: 50vw;
+}
+.ceo p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1;
+    font-family: "Sen", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    width: 50vw;
+    padding: 20px;
+    margin: 20px;
+    margin-top: -10rem;
+    margin-left: 3rem;
+    }
+.worrm {
+    margin-left: 60rem !important; 
+    margin-top: 15rem;
+    height: 40vh;
+    margin-bottom: -26rem;
+
+}
+
+.ceo h2 {
+    margin-left: -1rem;
+    margin-bottom: 1rem;
+}
+
+
+.board h2 {
+    margin-left: 4rem;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    margin-top: -4rem;
+
+}
+
+#partnerspage {
+    height: 250vh;
+}
+
+.kenyalibrary {
+    width: 45vw;
+    margin-top: 8rem;
+    margin-bottom: -2rem;
+    margin-left: 2rem;
+}
+
+.partnerstitle {
+    margin-top: 3rem;
+    color: #ffcb51;
+    font-size: 2.8rem !important;
+}
+
+.museumdiv {
+    margin-left: 5.5rem !important;
+    margin-top: -5rem !important;
+    font-size: 1rem;
+    margin-bottom: 13rem;    
+
+}
+.studiv {
+    margin-left: 8rem;
+    font-size: 1rem;
+    margin-bottom: -4rem;
+    margin-top: -1rem;
+    
+
+}
+.knlsdiv {
+    margin-left: 6rem;
+    font-size: 1.3rem;
+    line-height: 2rem !important;
+    margin-top: 8rem;
+    height: 20vh;
+    margin-bottom:20rem;
+    background-size: 70vw auto; 
+}
+.knlsdiv p {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    line-height: 1rem;
+    margin-left: 1rem;
+}
+
+.knlsdiv p a  {
+    color: white;
+    text-decoration: none;
+}
+
+.museumdiv p {
+    margin-top: 22rem;
+    line-height: 1.5rem;
+    padding: 1rem;
+
+}
+
+.museumdiv p a {
+    color: white;
+    text-decoration: none;
+}
+.studiv p {
+    margin-top: 19rem; 
+    padding: 1rem;
+    line-height: 1.5rem;
+}
+
+.studiv p a {
+    color: white;
+    text-decoration: none;
+}
+.sautisol{
+    margin-left: 30rem; 
+    margin-right: 30rem;
+    margin-top: 1rem;
+    height: 40vh;
+    margin-bottom: -2rem;
+
+}
+.ceeopic {
+    margin-left: 28rem; 
+    margin-top: 1rem;
+    height: 40vh;
+    margin-bottom: -6rem;
+
+}
+
+.board {
+    margin-left: -5rem;
+}
+
+.boardpic {
+    margin-left: 5rem;
+    margin-top: 1rem;
+    height: 30vh;
+    margin-bottom: -2rem;
+
+}
+
+
+.board p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-top: 2rem;
+    width: 80vw;
+    margin-left: 3.4rem;
+    
+
+}
+.worrm {
+    margin-left: 45rem; 
+    margin-right: 30rem;
+    margin-top: 15rem;
+    height: 40vh;
+    margin-bottom: -26rem;
+
+}
+
+.poly {
+    margin-right: 30rem; 
+    margin-top: 5rem;
+    height: 40vh;
+    margin-bottom: -22rem;
+    z-index: 4;
+
+}
+
+.melissa{
+    margin-left: 30rem; 
+    margin-right: 30rem;
+    margin-top: 1rem;
+    height: 40vh;
+    margin-bottom: -1rem;
+
+}
 }

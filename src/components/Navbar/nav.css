@@ -69,17 +69,7 @@
     background-color: white !important;
 }
 
-@media (max-width: 767px) {
-.navbar {
-    padding: 1rem 2rem !important;
-    font-size: 1.4rem !important;
-    
 
-}
-.navbar-nav .nav-item a::after {
-    display: none !important;
-}
-}
 .navbar-brand {
 color: rgb(250, 250, 250) !important;
 }
@@ -100,21 +90,12 @@ padding: 0.8rem 1rem !important;
 
 }
 
-@media (max-width: 767px) {
-.nav-link {
-    padding: 0.7rem 1rem !important;
-    
-}
-}
 
 .navbar-nav .nav-item {
     display: flex;
     position: relative;
     margin-left: 20px;
-    /* backdrop-filter: blur(5px) !important; */
 }
-
-
 
 
 .navbar-nav .nav-item a {
@@ -152,4 +133,22 @@ width: 100%;
 .cartsize {
     color: #ffcb51; 
     margin-left: -0.8rem;
+}
+
+
+@media (max-width: 769px) {
+.navbar {
+    padding: 1rem 1rem !important;
+    font-size: 1.4rem !important;
+    height: 5.5rem !important;   
+
+}
+.navbar-nav .nav-item a::after {
+    display: none !important;
+}
+
+.nav-link {
+    padding: 0.7rem 1rem !important;
+    
+}
 }
