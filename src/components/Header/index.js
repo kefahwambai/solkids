@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState} from 'react';
 import "./header.css"
 import { Link } from 'react-router-dom';
 import kids from "../../Assets/Homepage/solchick.png";
@@ -6,35 +6,41 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import "react-datepicker/dist/react-datepicker.css";
 import introvid from "../../Assets/Homepage/lalalandlq.mp4"
 import logo from "../../Assets/Logo/SOL_KIDS_Official_Logo__5_-1-removebg-preview.png"
-import slide1 from "../../Assets/slideshow/WITS-7.jpeg"
 import oak from "../../Assets/Books/Oak.png"
 import twiga from "../../Assets/Books/Twiga.png"
 import fisi from "../../Assets/Books/fisi.png"
 import stars from "../../Assets/Books/written in stars.png"
 import pizzakids from "../../Assets/definition/pizzakids.png"
 import chick from "../../Assets/definition/chickec.png"
-import musuem from "../../Assets/Partners/museum.png"
-import lib from "../../Assets/Partners/knls.png"
-import stu from "../../Assets/Partners/fhm.png"
+import galo from "../../Assets/slideshow/DSC02924.png"
+import galt from "../../Assets/slideshow/DSC02941.png"
+import galtr from "../../Assets/slideshow/DSC02942.png"
+import galf from "../../Assets/slideshow/DSC02969.png"
+import galfv from "../../Assets/slideshow/DSC02970.png"
+import gals from "../../Assets/slideshow/DSC02979.png"
+import galsv from "../../Assets/slideshow/DSC02996.png"
+import gale from "../../Assets/slideshow/DSC03029.png"
 import solfest from "../../Assets/Events/dec2022.jpeg"
 import solfest23 from "../../Assets/Events/solfest23.jpeg"
 
-const products = [
-  { id: 1, name: "Hibiscus Oak", price: "Kshs 700", image: oak },
-  { id: 2, name: "Towering Twiga", price: "Kshs 700", image: twiga },
-  { id: 3, name: "Funny fisi", price: "Kshs 700", image: fisi },
-  { id: 4, name: "Written in the Stars", price: "Kshs 950", image: stars },
- 
-];
 
 const events = [
   { id: 1, title: 'SolKids Festival 2022', image: solfest },
   { id: 2, title: 'Solkids Festival 2023', image: solfest23 },
 ];
+const products = [
+  { id: 1, name: "Hibiscus Oak", category: "Best seller", price: "Kshs 700", image: oak },
+  { id: 2, name: "Towering Twiga", price: "Kshs 700", image: twiga },
+  { id: 3, name: "Funny fisi",category: "Top featured", price: "Kshs 700", image: fisi },
+  { id: 4, name: "Written in the Stars", category: "Best Seller", price: "Kshs 950", image: stars }
+];
 
-export default function CalendarComponent() { 
-  const playsBackgroundImage = `url(${slide1})`;
+export default function CalendarComponent({ handleClick }) { 
+  const [filter, setFilter] = useState('*'); 
 
+  const handleFilterClick = (filterValue) => {
+    setFilter(filterValue);
+  };
 
   return (
     <div>
@@ -78,43 +84,80 @@ export default function CalendarComponent() {
         </div>
     </section>
       <section id="frontshop">
-        <div className='frontshop' 
-              data-aos="fade-down"
-              data-aos-easing="linear"
-              data-aos-duration="1500"
-        >
-          <h1 className='fshopheader'>Shop Now</h1>
-          <div id="servcard" className='row'>
-          {products.map((product) => (
-              <div key={product.id}  className='col-md-3'>
-                    <div className="servicecard" >
-                      <img src={product.image} alt={product.name} className="cmage"/>
-                      <div className="cta__text-column">
-                        <h3>{product.name}</h3>
-                        <Link className='linkcta' to="/shop">Shop now</Link>
+      <div className="products-box">
+        <div className="container">
+            <div className="row">
+                <div className="col-lg-12">
+                    <div className="title-all text-center">
+                        <h1>Duka Letu</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
+                    </div>
+                </div>
+            </div>
+            <div className="row">
+                <div className="col-lg-12">
+                    <div className="special-menu text-center">
+                    <div className="button-group filter-button-group">
+                      <button className={filter === '*' ? 'active' : ''} onClick={() => handleFilterClick('*')}>All</button>
+                      <button className={filter === 'Top featured' ? 'active' : ''} onClick={() => handleFilterClick('Top featured')}>Top featured</button>
+                      <button className={filter === 'Best seller' ? 'active' : ''} onClick={() => handleFilterClick('Best seller')}>Best seller</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="row special-list">
+              {products.map((product) => (
+                (filter === '*' || (product.category && filter.toLowerCase() === product.category.toLowerCase())) && 
+                (
+                  <div key={product.id} className="col-lg-3 col-md-6 special-grid ">
+                    <div className="products-single fix">
+                      <div className="box-img-hover">
+                        <div className="type-lb">
+                          <p className="sale">Sale</p>
+                        </div>
+                        <img src={product.image} className="img-fluid" alt={product.name} />
+                        <div className="mask-icon">
+                          <ul>
+                            <li><Link to="/shop" data-toggle="tooltip" data-placement="right" title="View"><i className="fas fa-eye"></i></Link></li>
+                          </ul>
+                          <Link className="cart" onClick={() => handleClick(product)}>Add to Cart</Link>
+                        </div>
+                      </div>
+                      <div className="why-text">
+                        <h4>{product.name}</h4>
+                        <h5>{product.price}</h5>
                       </div>
                     </div>
-              </div> 
-              ))}                          
-        </div>
-        </div>
-      </section>
+                  </div>
+                )
+              ))}
+            </div>
 
-      <section id="events">
-        <div>
-          <h1 data-aos="flip-down" className='eventsheader' > Our Partners</h1>
-        </div> 
-        <div 
-        data-aos="fade-zoom-in"
-        data-aos-easing="ease-in-back"
-        data-aos-delay="300"
-        data-aos-offset="0"
-        >
-          <Link className='piclink' to='/about'><img className='knlspic' alt="knlslogo" src={lib} /></Link>          
-          <Link className='piclink' to='/about'><img className="museumpic" alt="NMKlogo" src={musuem} /></Link>
-          <Link className='piclink stulink' to='/about'><img className='stupic' alt="Logo" src ={stu} /> </Link>
-        </div>     
-      </section>
+        </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="wow fadeInUp">
+
+    <div className="container">
+      <div className="section-header">
+        <h2>Gallery</h2>
+        <p>Check our gallery from the recent events</p>
+      </div>
+    </div>
+    <div className="owl-carousel gallery-carousel">
+      <a href="../../Assets/slideshow/DSC02924.png" className="venobox" data-gall="gallery-carousel"><img src={galo} alt=""/></a>
+      <a href="../../Assets/slideshow/DSC02941.png" className="venobox" data-gall="gallery-carousel"><img src={galt} alt=""/></a>
+      <a href="../../Assets/slideshow/DSC03029.png" className="venobox" data-gall="gallery-carousel"><img src={gale} alt=""/></a>
+      <a href="../../Assets/slideshow/DSC02969.png" className="venobox" data-gall="gallery-carousel"><img src={galf} alt=""/></a>
+      <a href="../../Assets/slideshow/DSC02970.png" className="venobox" data-gall="gallery-carousel"><img src={galfv} alt=""/></a>
+      <a href="../../Assets/slideshow/DSC02979.png" className="venobox" data-gall="gallery-carousel"><img src={gals} alt=""/></a>
+      <a href="../../Assets/slideshow/DSC02996.png" className="venobox" data-gall="gallery-carousel"><img src={galsv} alt=""/></a>
+      <a href="../../Assets/slideshow/DSC02942.png" className="venobox" data-gall="gallery-carousel"><img src={galtr} alt=""/></a>
+    </div>
+
+    </section>
       <section id="planner" >
         <div className="calendar" >
           <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" >

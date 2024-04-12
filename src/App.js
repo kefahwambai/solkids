@@ -58,7 +58,7 @@ function App() {
         <Navbar size={cart.length}/>
         <ScrollToTop />
         <Routes>
-          <Route path="/" element={<Header />} />
+          <Route path="/" element={<Header handleClick={handleClick} />} />
           <Route path="/about" element={<About />} />
           <Route path="/events" element={ <Events/>} />
           <Route path="/shop" element={<Shop handleClick={handleClick} />} />
