@@ -22,7 +22,7 @@ import chick from "../../Assets/definition/chickec.png"
 // import gale from "../../Assets/slideshow/DSC03029.png"
 import solfest from "../../Assets/Events/dec2022.jpeg"
 import solfest23 from "../../Assets/Events/solfest23.jpeg"
-
+import Scrollspy from 'react-scrollspy';
 
 const events = [
   { id: 1, title: 'SolKids Festival 2022', image: solfest },
@@ -37,6 +37,7 @@ const products = [
 
 export default function CalendarComponent({ handleClick }) { 
   const [filter, setFilter] = useState('*'); 
+  
 
   const handleFilterClick = (filterValue) => {
     setFilter(filterValue);
@@ -221,7 +222,58 @@ export default function CalendarComponent({ handleClick }) {
 
     </section>
       <section id="planner" >
-        <div className="calendar" >
+    <section className="our-facts">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-6">
+            <div className="row">
+              <div className="col-lg-12">
+                <h2>Fun solfact</h2>
+              </div>
+              <div className="col-lg-6">
+                <div className="row">
+                  <div className="col-12">
+                    <div className="count-area-content percentage">
+                      <div className="count-digit">4</div>
+                      <div className="count-title">Children reached</div>
+                    </div>
+                  </div>
+                  <div className="col-12">
+                    <div className="count-area-content">
+                      <div className="count-digit">40+</div>
+                      <div className="count-title">Current Solkids members</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-6">
+                <div className="row">
+                  <div className="col-12">
+                    <div className="count-area-content new-students">
+                      <div className="count-digit">20+</div>
+                      <div className="count-title">Content Catalogue </div>
+                    </div>
+                  </div>
+                  <div className="col-12">
+                    <div className="count-area-content">
+                      <div className="count-digit">2</div>
+                      <div className="count-title">Awards</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+          <div className="col-lg-6 align-self-center">
+            <div className="video">
+              <a href="https://www.youtube.com/watch?v=HndV87XpkWg" target="_blank"><img src="assets/images/play-icon.png" alt="" /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+        
+        {/* <div className="calendar" >
           <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" >
             <h1>Previous Events</h1>
           </div>
@@ -233,7 +285,7 @@ export default function CalendarComponent({ handleClick }) {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
         </section>
 
 
