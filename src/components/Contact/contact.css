@@ -6,6 +6,10 @@ textarea {
 overflow: auto;
 }
 
+.cform {
+    background-color: rgb(251, 181, 155);
+    border-radius: 10px !important;
+}
 #contactcontainer {
 margin-top: 10rem !important;
 border: solid 3px #474544;

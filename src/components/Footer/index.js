@@ -61,7 +61,7 @@ export default function Footer() {
         </div>
         <div className="col-lg-3 col-md-6">
           <h3 className="text-white mb-4">Newsletter</h3>
-          <p>Sign up for our newsletter to be up to date on our future book releases and other exciting projects BTS</p>
+          <p>Sign up for our newsletter to be up to date on our future book releases and other exciting projects we are working on BTS</p>
           <div className="position-relative mx-auto" style={{ maxWidth: "400px" }}>
             <input className="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email" />
             <button type="button" className="btn btn-primary py-2 position-absolute  end-0 me-2" >SignUp</button>

@@ -4,7 +4,7 @@ import "./cart.css";
 
 function CartComponent({ cart, setCart, handleChange }) {
     const [totalPrice, setTotalPrice] = useState(0);
-    const [shippingPrice, setShippingPrice] = useState(0);
+   
 
 
     const updateTotalPrice = () => {
@@ -15,22 +15,9 @@ function CartComponent({ cart, setCart, handleChange }) {
                 total += price * item.quantity;
             }
         });
-        total += shippingPrice; 
         setTotalPrice(total);
     };
 
-    const handleShippingChange = (event) => {
-        const selectedShippingOption = event.target.value;
-        // Extract shipping price from selected option
-        const priceRegex = /Ksh (\d+(\.\d+)?)/;
-        const match = selectedShippingOption.match(priceRegex);
-        if (match) {
-            const price = parseFloat(match[1]);
-            setShippingPrice(price);
-        } else {
-            setShippingPrice(0); 
-        }
-    };
 
     const handleQuantityChange = (item, amount) => {
         const updatedCart = [...cart];
@@ -57,7 +44,7 @@ function CartComponent({ cart, setCart, handleChange }) {
 
     useEffect(() => {
         updateTotalPrice();
-    }, [cart, shippingPrice]);
+    }, [cart]);
 
     useEffect(() => {
         console.log("Saving cart data to session storage:", cart);
@@ -112,18 +99,7 @@ function CartComponent({ cart, setCart, handleChange }) {
                     <div className="row">
                         <div className="col" style={{ paddingLeft: 0 }}>{cart.length} ITEMS</div>
                         <div className="col text-right">{roundPrice(totalPrice)}</div>
-                    </div>
-                    <form>
-                        <p>SHIPPING</p>
-                        <select onChange={handleShippingChange}>
-                            <option disabled hidden selected>Select Shipping Options</option>
-                            <option className="text-muted">Standard-Delivery - 0.00</option>
-                            <option className="text-muted">Fast-Shipping - Ksh 500.00</option>
-                            <option className="text-muted">Same Day Delivery - Ksh 1500.00</option>
-                        </select>
-                        <p className="promo">Have a Promo CODE?</p>
-                        <input id="code" placeholder="Enter your code here" />
-                    </form>
+                    </div>                   
                     {cart.length > 0 && (
                         <div className="row total-price">
                             <div className="col">TOTAL PRICE</div>
