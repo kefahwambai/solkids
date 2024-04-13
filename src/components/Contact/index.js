@@ -5,6 +5,15 @@ export default function Contact() {
 return (
 <div>  
     <section id="contactsec">
+    <div class="page-heading-shows-events">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 className='conhead'>Reach Out to us</h2>
+                    </div>
+                </div>
+             </div>
+         </div>
     <div  className="contactcont" id="contactcontainer">
         <h1>&bull; Keep in Touch &bull;</h1>
         <div class="underline">
