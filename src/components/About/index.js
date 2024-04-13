@@ -9,8 +9,19 @@ import stu from "../../Assets/Partners/fhm.png"
 
 export default function About() {
   return (
+    <>
+     <div class="page-heading-shows-events">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 className='conhead '>About Us</h2>
+                        {/* <span>Check out past & upcoming events.</span> */}
+                    </div>
+                </div>
+             </div>
+         </div>
     <div className="about-box-main">
-    <div className="container">
+     <div className="container">
       <div className="row">
         <div className="col-lg-6">
           <h2 className="noo-sh-title">SOLKIDS AFRICA</h2>
@@ -144,6 +155,8 @@ export default function About() {
     </div>
     
   </div>
+    </>
+  
         // <div>
         //     <section id="about">
         //             <div  className='founders'>

@@ -117,8 +117,9 @@ function CartComponent({ cart, setCart, handleChange }) {
                         <p>SHIPPING</p>
                         <select onChange={handleShippingChange}>
                             <option disabled hidden selected>Select Shipping Options</option>
-                            <option className="text-muted">Standard-Delivery- Ksh 500.00</option>
-                            <option className="text-muted">Fast Shipping- Ksh 1000.00</option>
+                            <option className="text-muted">Standard-Delivery - 0.00</option>
+                            <option className="text-muted">Fast-Shipping - Ksh 500.00</option>
+                            <option className="text-muted">Same Day Delivery - Ksh 1500.00</option>
                         </select>
                         <p className="promo">Have a Promo CODE?</p>
                         <input id="code" placeholder="Enter your code here" />

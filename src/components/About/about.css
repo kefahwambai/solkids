@@ -6,6 +6,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
 
+
 .panam {
  margin-top: 5rem !important;
 }
@@ -787,6 +788,9 @@ margin-bottom: -13rem;
     z-index: 4;
 
 }
+.noo-sh-title {
+    margin-top: -3rem;
+}
 
 .melissa{
     margin-left: 30rem; 
@@ -876,6 +880,10 @@ margin-bottom: -13rem;
         margin-top: -13rem;
         margin-left: 0.5rem;
         width: 65vw;
+    }
+
+    .noo-sh-title {
+        margin-top: -3rem;
     }
     .ceo p {
         color: #666;
@@ -1071,6 +1079,9 @@ margin-bottom: -13rem;
         font-weight: 500;
         font-style: normal;
         line-height: 1.2rem;
+    }
+    .noo-sh-title {
+        margin-top: -3rem;
     }
       
     .founders h1 {
@@ -1312,6 +1323,9 @@ margin-bottom: -13rem;
 }
 .abt {
     margin-right: -7rem !important;
+}
+.noo-sh-title {
+    margin-top: -3rem;
 }
 .founders {
     margin-top: 7rem;

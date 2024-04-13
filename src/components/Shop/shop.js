@@ -26,6 +26,16 @@ export default function Shop({ handleClick }) {
 
   return (
     <section>
+           <div class="page-heading-shows-events">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 className='conhead '>Karibu Dukani</h2>
+                        {/* <span>Check out past & upcoming events.</span> */}
+                    </div>
+                </div>
+             </div>
+         </div>
       <div className="shell">
         <div className="headcon container">
           <div className="row">

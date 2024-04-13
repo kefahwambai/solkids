@@ -12,14 +12,14 @@ import fisi from "../../Assets/Books/fisi.png"
 import stars from "../../Assets/Books/written in stars.png"
 import pizzakids from "../../Assets/definition/pizzakids.png"
 import chick from "../../Assets/definition/chickec.png"
-import galo from "../../Assets/slideshow/DSC02924.png"
-import galt from "../../Assets/slideshow/DSC02941.png"
-import galtr from "../../Assets/slideshow/DSC02942.png"
-import galf from "../../Assets/slideshow/DSC02969.png"
-import galfv from "../../Assets/slideshow/DSC02970.png"
-import gals from "../../Assets/slideshow/DSC02979.png"
-import galsv from "../../Assets/slideshow/DSC02996.png"
-import gale from "../../Assets/slideshow/DSC03029.png"
+// import galo from "../../Assets/slideshow/DSC02924.png"
+// import galt from "../../Assets/slideshow/DSC02941.png"
+// import galtr from "../../Assets/slideshow/DSC02942.png"
+// import galf from "../../Assets/slideshow/DSC02969.png"
+// import galfv from "../../Assets/slideshow/DSC02970.png"
+// import gals from "../../Assets/slideshow/DSC02979.png"
+// import galsv from "../../Assets/slideshow/DSC02996.png"
+// import gale from "../../Assets/slideshow/DSC03029.png"
 import solfest from "../../Assets/Events/dec2022.jpeg"
 import solfest23 from "../../Assets/Events/solfest23.jpeg"
 
@@ -90,7 +90,7 @@ export default function CalendarComponent({ handleClick }) {
                 <div className="col-lg-12">
                     <div className="title-all text-center">
                         <h1>Duka Letu</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
+                        <p>Some of our best sellers.</p>
                     </div>
                 </div>
             </div>
@@ -147,14 +147,14 @@ export default function CalendarComponent({ handleClick }) {
       </div>
     </div>
     <div className="owl-carousel gallery-carousel">
-      <a href="../../Assets/slideshow/DSC02924.png" className="venobox" data-gall="gallery-carousel"><img src={galo} alt=""/></a>
+      {/* <a href="../../Assets/slideshow/DSC02924.png" className="venobox" data-gall="gallery-carousel"><img src={galo} alt=""/></a>
       <a href="../../Assets/slideshow/DSC02941.png" className="venobox" data-gall="gallery-carousel"><img src={galt} alt=""/></a>
       <a href="../../Assets/slideshow/DSC03029.png" className="venobox" data-gall="gallery-carousel"><img src={gale} alt=""/></a>
       <a href="../../Assets/slideshow/DSC02969.png" className="venobox" data-gall="gallery-carousel"><img src={galf} alt=""/></a>
       <a href="../../Assets/slideshow/DSC02970.png" className="venobox" data-gall="gallery-carousel"><img src={galfv} alt=""/></a>
       <a href="../../Assets/slideshow/DSC02979.png" className="venobox" data-gall="gallery-carousel"><img src={gals} alt=""/></a>
       <a href="../../Assets/slideshow/DSC02996.png" className="venobox" data-gall="gallery-carousel"><img src={galsv} alt=""/></a>
-      <a href="../../Assets/slideshow/DSC02942.png" className="venobox" data-gall="gallery-carousel"><img src={galtr} alt=""/></a>
+      <a href="../../Assets/slideshow/DSC02942.png" className="venobox" data-gall="gallery-carousel"><img src={galtr} alt=""/></a> */}
     </div>
 
     </section>

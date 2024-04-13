@@ -85,7 +85,7 @@ function NavBar({ cart, setCart, size }) {
                 <AiOutlineShop
                   style={{ marginBottom: "2px" }}
                 />{" "}
-                Shop
+                Duka
               </Nav.Link>
             </Nav.Item>  
             {size ? (
