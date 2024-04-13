@@ -18,9 +18,9 @@ export default function Footer() {
       <div className="row g-5">
         <div className="col-lg-3 col-md-6">
           <h3 className="text-white mb-4">Get In Touch</h3>
-          <p className="mb-2"><i className="fab fa-map-marker-alt me-3"></i>123 Street, SolCenter, Nairobi</p>
-          <p className="mb-2"><i className="fab fa-phone me-3"></i>+012 345 67890</p>
-          <p className="mb-2"><i className="fab fa-envelope me-3"></i>info@solkidsafrica.com</p>
+          <p className="mb-2"><i className="fas fa-map-marker-alt me-3"></i>123 Street, SolCenter, Nairobi</p>
+          <p className="mb-2"><i className="fas fa-phone me-3"></i>+012 345 67890</p>
+          <p className="mb-2"><i className="fas fa-envelope me-3"></i>info@solkidsafrica.com</p>
           <div className="ico d-flex pt-2 ">
             <a className="btn btn-outline-light btn-social" href="https://twitter.com/solkidsafrica"><i className="fab fa-twitter"></i></a>
             <a className="btn btn-outline-light btn-social" href=""><i className="fab fa-facebook-f"></i></a>

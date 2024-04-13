@@ -64,7 +64,69 @@ export default function CalendarComponent({ handleClick }) {
     </section>
     <div className="background"></div>
     <section id="aboutt">
-        <div className='founderss'>
+          <div className="container-xxl py-5">
+            <div className="container">
+              <div className="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style={{ maxWidth: "600px" }}>
+                <h1 className="mb-3">About us</h1>
+                {/* <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p> */}
+              </div>
+              <div className="row g-4">
+                <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                  <div className="facility-item">
+                    <div className="facility-icon bg-primary">
+                      <span className="bg-primary"></span>
+                      <i className="fas fa-child fa-3x text-primary"></i>
+                      <span className="bg-primary"></span>
+                    </div>
+                    <div className="facility-text bg-primary">
+                      <h3 className="text-primary mb-3">Variety of Kid content</h3>
+                      <p className="mb-0"> We champion Afro-futuristic sci-fi narratives that address pollution and climate change, amplifying African voices worldwide through engaging storytelling.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                  <div className="facility-item">
+                    <div className="facility-icon bg-success">
+                      <span className="bg-success"></span>
+                      <i className="fas fa-futbol fa-3x text-success"></i>
+                      <span className="bg-success"></span>
+                    </div>
+                    <div className="facility-text bg-success">
+                      <h3 className="text-success mb-3">Children Empowerment</h3>
+                      <p className="mb-0">Relatable context that empowers through content that is inclusive, representative and diverse.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                  <div className="facility-item">
+                    <div className="facility-icon bg-warning">
+                      <span className="bg-warning"></span>
+                      <i className="fa-solid fa-users fa-3x text-warning"></i>
+                      <span className="bg-warning"></span>
+                    </div>
+                    <div className="facility-text bg-warning">
+                      <h3 className="text-warning mb-3">Leadership</h3>
+                      <p className="mb-0">Raising leaders through content, books and stories that inspire and motivate.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                  <div className="facility-item">
+                    <div className="facility-icon bg-info">
+                      <span className="bg-info"></span>
+                      <i className="fas fa-chalkboard-teacher fa-3x text-info"></i>
+                      <span className="bg-info"></span>
+                    </div>
+                    <div className="facility-text bg-info">
+                      <h3 className="text-info mb-3">Positive Learning</h3>
+                      <p className="mb-0">High quality content that is accessible to all children on all platforms translated into Kiswahili, French and local languages.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {/* <div className='founderss'>
             <div>
                 <img data-aos="fade-right" data-aos-duration="3000" className='pizza' src={pizzakids} alt="kids making pizza" />
                 <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="2000">  
@@ -81,7 +143,7 @@ export default function CalendarComponent({ handleClick }) {
           <span className="dot"></span>
           <span className="dot"></span>
           <span className="dot"></span>
-        </div>
+        </div> */}
     </section>
       <section id="frontshop">
       <div className="products-box">

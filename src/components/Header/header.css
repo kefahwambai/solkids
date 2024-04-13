@@ -373,6 +373,90 @@ right: 0;
   }
 }
 
+.facility-item .facility-icon {
+  position: relative;
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.facility-item .facility-icon::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, .9);
+  transition: .5s;
+  z-index: 1;
+}
+
+.facility-item .facility-icon span {
+  position: absolute;
+  content: "";
+  width: 15px;
+  height: 30px;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+}
+
+.facility-item .facility-icon span:last-child {
+  left: auto;
+  right: 0;
+}
+
+.facility-item .facility-icon i {
+  position: relative;
+  z-index: 2;
+}
+
+.facility-item .facility-text {
+  position: relative;
+  min-height: 250px;
+  padding: 30px;
+  border-radius: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.facility-item .facility-text::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, .9);
+  transition: .5s;
+  z-index: 1;
+}
+
+.facility-item .facility-text * {
+  position: relative;
+  z-index: 2;
+}
+
+.facility-item:hover .facility-icon::before,
+.facility-item:hover .facility-text::before {
+  background: transparent;
+}
+
+.facility-item * {
+  transition: .5s;
+}
+
+.facility-item:hover * {
+  color: #FFFFFF !important;
+}
+
 
 .overlay {
   position: absolute;
@@ -409,7 +493,7 @@ right: 0;
 
 #aboutt {   
     width: 100vw;
-    height: 120vh;
+    height: 85vh;
     background-color: #fff;
     color: #de412d;
     padding: 20px;
@@ -942,7 +1026,7 @@ right: 0;
 
   #aboutt {
     padding: 1rem;
-    height: 110vh !important;
+    height: 250vh !important;
   }
 
   #frontshop {
@@ -1195,11 +1279,11 @@ right: 0;
 
   #aboutt {
     padding: 1rem;
-    height: 100vh !important;
+    height: 235vh !important;
   }
 
   #frontshop {
-    height: 265vh !important;
+    height: 245vh !important;
   }
 
   .frontshop h1 {
@@ -1253,258 +1337,8 @@ right: 0;
   
 }
 
-@media screen and (min-width: 377px) and ( max-width: 427px) {
-  #planner {
-    height: 130vh;
 
-  }
-
-  .caaard {
-    width: 100vw !important;
-    height: 41.5vh;
-    margin-left: 3rem;
-    margin-top: -1rem !important;
-  }
-  
-  .caaard img {
-    width: 50vw;
-    height: 30vh;
-  }
-  .calendar h1 {
-    margin-right: -6rem;
-    padding: 2rem;
-    margin-top: 2rem !important;
-  
-  }
-  
-  .video {
-    width: 100vw;
-    height: 100vh;
-  }
-
-
-  .sollogo {
-    height: 20vh;
-    width: 30vh;
-    margin-top: -4rem;
-  }
-
-  .kids {
-    width: 10rem;
-    margin-top: 23rem;
-    margin-left: 1.5rem;
-  }
-
-  .headerTitleLg {
-      font-size: 60px;
-  }
-
-  .sautisoll{
-    margin-left: 30rem; 
-    margin-right: 30rem;
-    margin-top: 1rem;
-    height: 40vh;
-    margin-bottom: -2rem;
-
-  }
-
-  .knlspic {
-    margin-top: 7rem;
-    width: 70vw;
-    margin-left: 0.4rem !important;
-    margin-bottom: -1rem;
-
-  }
-
-  .stupic {
-    width: 70vw;
-    margin-left: -0.4rem !important;
-    margin-bottom: -1rem;
-
-  }
-
-  .museumpic {
-    margin-top: 7rem;
-    width: 70vw;
-    margin-left: -0.4rem !important;
-    margin-bottom: -1rem;
-  }
-  
-
-  .pizza {
-    margin-right: 14rem !important;
-    margin-top: 1rem;
-    height: 25vh;
-    width: 35vw !important;
-    margin-bottom: -7rem !important;
-    z-index: 2;
-
-  }
-
-  .solhen {
-    margin-left: 30rem; 
-    margin-right: 43rem !important;
-    margin-top: -15rem !important;
-    height: 40vh;
-    margin-bottom: -2rem;
-
-  }
-
-  .melissaa{
-    margin-left: 30rem; 
-    margin-right: 30rem;
-    margin-top: 1rem;
-    height: 40vh;
-    margin-bottom: -1rem;
-
-  }
-
-  .servicecard {
-    padding: 3rem;
-    margin-top: -1rem;
-    margin-left: 1.5rem !important;
-    width: 18rem;
-    height: 30rem;
-    margin-bottom: -7rem;
-  }
-  
-  .servicecard h3 {
-    font-size: 1.2rem;
-    margin-left: -5rem;
-    font-weight: 750;
-    margin-top: 0.6rem;
-  }
-  
-  .cmage {
-    border-radius: 15px;
-    margin-left: -5rem;
-    height: 25vh;
-    width: 50vw;
-  }
-
-  .eventsheader {
-    margin-left: -3.5rem !important;
-    font-size: 4rem !important;
-    justify-content: center !important;
-    margin-top: 2rem;
-  }
-
- .fshopheader {
-  margin-top: 2rem;
-  margin-left: -0.4rem !important;
- }
-
-  #events {
-    width: 100vw;
-    height: 140vh !important;
-    background-color: #070707;
-    color: #fff;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: 'Arial', sans-serif; 
-  }
-
-  .calendar {
-    margin-right: 7rem;
-  }
-  .greenp {
-    color: #377043;
-  }
-
-  .yellowp {
-    color: #ffcb51;
-
-  }
-
-  .founderss {
-    margin-top: 2rem;
-    color: #de412d;
-    font-size: 1.1rem;
-    line-height: 1rem;
-  
-  
-  }
-
-  .founderss p {
-    margin-top: -1rem;
-    margin-left: 7rem;
-    margin-bottom: 2rem;
-  }
-
-  .founderss > div {
-    display: flex;
-    z-index: 1;
-    flex-direction: column; 
-    align-items: center; 
-    
-  }
-
-  .founderss > div > div {
-    width: 65vw;
-    
-  }
-
-  #aboutt {
-    padding: 1rem;
-    height: 100vh !important;
-  }
-
-  #frontshop {
-    height: 120vh !important;
-  }
-
-  .frontshop h1 {
-    margin-top: -1rem !important;
-    color: #ffcb51;
-    font-size: 3.4rem;
-    font-family: "Patrick Hand SC", cursive;
-    font-weight: 700;
-    font-style: normal;
-  }
-  .rment {
-    margin-bottom: 1rem;
-    margin-left: -3rem !important;
-  }
-  .sment {
-    margin-left: -3rem !important;
-    margin-bottom: 3rem !important;
-  }
-
-  .cta h2 {
-    font-size: 0.9rem;
-    font-weight: 800;
-  }
-  .ctaimg {   
-    height: 23vh;
-  }
-
-  .cta {
-    margin-left: -0.4rem !important;
-    border-color: #ffcb51;
-    border-width: 0.5rem;
-    height: 49vh !important;
-    width: 55vw !important;
-  }
-
-  .cta p {
-    font-size: 0.7rem;
-    margin-bottom: 1rem !important;
-  }
-  .linkcta {
-    display: inline-block;
-    color: rgb(245, 239, 239)!important;
-    margin-top: -1rem !important; 
-    margin-left: -5rem !important; 
-    margin-bottom: -5rem !;
-  }
-
-  .linkcta:hover {
-    color: #ffcb51 !important;
-  }
-  
-}
-
-@media screen and (min-width: 377px) and ( max-width: 427px) {
+@media screen and (min-width: 377px) and ( max-width: 426px) {
   #planner {
     height: 130vh;
 
@@ -1697,11 +1531,11 @@ right: 0;
 
   #aboutt {
     padding: 1rem;
-    height: 100vh !important;
+    height: 250vh !important;
   }
 
   #frontshop {
-    height: 230vh !important;
+    height: 275vh !important;
   }
 
   .frontshop h1 {
@@ -1755,7 +1589,7 @@ right: 0;
   
 }
 
-@media screen and (min-width: 377px) and ( max-width: 691px) {
+@media screen and (min-width: 427px) and ( max-width: 691px) {
   #planner {
     height: 130vh;
 
@@ -2204,7 +2038,7 @@ right: 0;
   }
 
   #frontshop {
-    height: 230vh;
+    height: 145vh;
   }
 
   .frontshop h1 {
