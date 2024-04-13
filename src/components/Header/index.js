@@ -10,8 +10,6 @@ import oak from "../../Assets/Books/Oak.png"
 import twiga from "../../Assets/Books/Twiga.png"
 import fisi from "../../Assets/Books/fisi.png"
 import stars from "../../Assets/Books/written in stars.png"
-import pizzakids from "../../Assets/definition/pizzakids.png"
-import chick from "../../Assets/definition/chickec.png"
 // import galo from "../../Assets/slideshow/DSC02924.png"
 // import galt from "../../Assets/slideshow/DSC02941.png"
 // import galtr from "../../Assets/slideshow/DSC02942.png"
@@ -20,14 +18,14 @@ import chick from "../../Assets/definition/chickec.png"
 // import gals from "../../Assets/slideshow/DSC02979.png"
 // import galsv from "../../Assets/slideshow/DSC02996.png"
 // import gale from "../../Assets/slideshow/DSC03029.png"
-import solfest from "../../Assets/Events/dec2022.jpeg"
-import solfest23 from "../../Assets/Events/solfest23.jpeg"
-import Scrollspy from 'react-scrollspy';
+// import solfest from "../../Assets/Events/dec2022.jpeg"
+// import solfest23 from "../../Assets/Events/solfest23.jpeg"
 
-const events = [
-  { id: 1, title: 'SolKids Festival 2022', image: solfest },
-  { id: 2, title: 'Solkids Festival 2023', image: solfest23 },
-];
+
+// const events = [
+//   { id: 1, title: 'SolKids Festival 2022', image: solfest },
+//   { id: 2, title: 'Solkids Festival 2023', image: solfest23 },
+// ];
 const products = [
   { id: 1, name: "Hibiscus Oak", category: "Best seller", price: "Kshs 700", image: oak },
   { id: 2, name: "Towering Twiga", price: "Kshs 700", image: twiga },
@@ -266,7 +264,7 @@ export default function CalendarComponent({ handleClick }) {
           </div> 
           <div className="col-lg-6 align-self-center">
             <div className="video">
-              <a href="https://www.youtube.com/watch?v=HndV87XpkWg" target="_blank"><img src="assets/images/play-icon.png" alt="" /></a>
+              <a href="https://www.youtube.com/watch?v=HndV87XpkWg" rel="noreferrer" target="_blank"><img src="assets/images/play-icon.png" alt="" /></a>
             </div>
           </div>
         </div>
