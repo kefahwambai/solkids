@@ -10,6 +10,7 @@ import oak from "../../Assets/Books/Oak.png"
 import twiga from "../../Assets/Books/Twiga.png"
 import fisi from "../../Assets/Books/fisi.png"
 import stars from "../../Assets/Books/written in stars.png"
+import solmic from "../../Assets/Homepage/solmic.PNG"
 // import galo from "../../Assets/slideshow/DSC02924.png"
 // import galt from "../../Assets/slideshow/DSC02941.png"
 // import galtr from "../../Assets/slideshow/DSC02942.png"
@@ -49,7 +50,6 @@ export default function CalendarComponent({ handleClick }) {
         <source  type="video/mp4" />
         Your browser does not support the video tag.
       </video>      
-      {/* <img src={lalapic} /> */}
       <div className='header-container'>
         <div className="headerTitles">
           <span className="headerTitleLg">
@@ -263,8 +263,8 @@ export default function CalendarComponent({ handleClick }) {
             </div>
           </div> 
           <div className="col-lg-6 align-self-center">
-            <div className="video">
-              <a href="https://www.youtube.com/watch?v=HndV87XpkWg" rel="noreferrer" target="_blank"><img src="assets/images/play-icon.png" alt="" /></a>
+            <div className="videoo">
+              <a href="#" rel="noreferrer" target="_blank"><img src={solmic} alt="" /></a>
             </div>
           </div>
         </div>

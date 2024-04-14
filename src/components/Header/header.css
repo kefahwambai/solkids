@@ -58,7 +58,7 @@ section.our-facts h2 {
   margin-top: 45px;
 }
 
-section.our-facts .video {
+section.our-facts .videoo {
   text-align: center;
   /* margin-left: 70px; */
   /* background-image: url(../images/video-item-bg.jpg); */
@@ -68,9 +68,11 @@ section.our-facts .video {
   border-radius: 20px;
 }
 
-section.our-facts .video img {
-  padding: 170px 0px;
-  max-width: 56px;
+section.our-facts .videoo img {
+  /* padding: 170px 0px; */
+  height: 70vh;
+  margin-top: 4rem;
+  width: 26vw;
 }
 
 
@@ -898,8 +900,15 @@ right: 0;
 
 
 @media screen and (max-width: 320px) {
+  section.our-facts .videoo img {
+    height: 50vh;
+    margin-top: 1rem;
+    width: 80vw;
+  }
+
+
   #planner {
-    height: 160vh;
+    height: 200vh;
 
   }
 
@@ -1150,8 +1159,15 @@ right: 0;
 
 
 @media screen and (min-width: 321px) and ( max-width: 376px) {
+
+  section.our-facts .videoo img {
+    height: 50vh;
+    margin-top: 1rem;
+    width: 80vw;
+  }
+
   #planner {
-    height: 160vh;
+    height: 200vh;
 
   }
 
@@ -1402,8 +1418,15 @@ right: 0;
 
 
 @media screen and (min-width: 377px) and ( max-width: 426px) {
+
+  section.our-facts .videoo img {
+    height: 55vh;
+    margin-top: 1rem;
+    width: 80vw;
+  }
+
   #planner {
-    height: 145vh;
+    height: 200vh;
 
   }
 
@@ -1906,8 +1929,15 @@ right: 0;
 
 
 @media screen and (min-width: 428px) and (max-width: 769px) {
+
+  section.our-facts .videoo img {
+    height: 56vh;
+    margin-top: 1rem;
+    width: 60vw;
+  }
+
   #planner {
-    height: 110vh;
+    height: 170vh;
 
   }
 

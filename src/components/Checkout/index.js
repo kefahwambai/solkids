@@ -110,9 +110,6 @@ function Checkout({ setCart, cart }) {
                 required
               />
             </div>
-            <div className="Ototal-price">
-              Total Price: Ksh {totalPrice}/-
-            </div>
             <hr />
             <div className="form-group">
               <p className="formp">Payment Method:</p>
