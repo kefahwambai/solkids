@@ -316,11 +316,11 @@ function Checkout({ setCart, cart }) {
     </div>
     
        <div className="col-md-12 col-lg-12"> 
-       {cart.map((product) => (   
-         <div  key={product.id}  className="odr-box">
-            <div className="title-left">
+       <div className="title-left">
                   <h3>Shopping cart</h3>
-            </div>
+        </div>
+       {cart.map((product) => (   
+         <div  key={product.id}  className="odr-box">         
            <div className="rounded p-2 bg-light">
               <div className="media mb-2 border-bottom">
                   <div className="media-body">
