@@ -38,35 +38,33 @@ export default function Shop({ handleClick }) {
          </div>
       <div className="shell">
         <div className="headcon container">
-          <div className="row">
-            {products.map((product) => (
-              <div key={product.id} className="col-md-3">
-                <div className="shopcd wsk-cp-product">
-                  <div className="wsk-cp-img">
-                    <img src={product.image} alt={product.name} />
-                  </div>                        
-                  <div className="wsk-cp-text">
-                    <div className="title-product">
-                      <h3>{product.name}</h3>
+        <div className="row">
+         {products.map((product) => (
+            <div className="col-md-6 col-lg-3 ftco-animate">
+                <div className="product">
+                    <a href="#" className="img-prod"><img className="img-fluid" src={product.image} alt={product.name}  />
+                        {/* <span className="status">30%</span> */}
+                        <div className="overlay"></div>
+                    </a>
+                    <div className="text py-3 pb-4 px-3 text-center">
+                        <h3><a href="#">{product.name}</a></h3>
+                        <div className="d-flex">
+                            <div className="pricing">
+                                <p className="price"><span className="price-sale">{product.price}</span></p>
+                            </div>
+                        </div>
+                        <div className="bottom-area d-flex px-3">
+                            <div className="m-auto d-flex">
+                                <a href="#" className="buy-now d-flex justify-content-center align-items-center mx-1" onClick={() => handleClick(product)}>
+                                <span><FontAwesomeIcon icon={faShoppingCart} /></span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <div className="description-prod">
-                      <p>Lorem Ipsum</p>
-                    </div>
-                    <div className="card-footer">
-                      <div className="wcf-left">
-                        <span className="price">{product.price}</span>
-                      </div>
-                      <div className="wcf-right">
-                        <Link className="buy-btn" onClick={() => handleClick(product)} >
-                          <FontAwesomeIcon icon={faShoppingCart} />
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
                 </div>
-              </div> 
-            ))}
-          </div>
+            </div>
+          ))}
+        </div>          
         </div>
       </div>
     </section>

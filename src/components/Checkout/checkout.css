@@ -1,7 +1,53 @@
 .cart-box-main{
     padding: 170px 0px;
 }
+.new-account-login h5 {
+    font-size: 18px;
+    color:#b0b435;
+    font-weight: 600;
+}
+.new-account-login h5 a:hover{
+    color: #b0b435;
+}
+.title-left{
+    font-size: 16px;
+    border-bottom: 3px solid #000000;
+    margin-bottom: 20px;
+}
+.title-left h3{
+    font-weight: 700;
+}
 
+.review-form-box .form-control{
+    min-height: 40px;
+    border-radius: 0px;
+    border: 1px solid #e8e8e8;
+    box-shadow: none !important;
+    font-size: 14px;
+}
+.needs-validation label {
+    font-size: 16px;
+    margin-bottom: 0px;
+    line-height: 24px;
+}
+.needs-validation .form-control {
+    min-height: 40px;
+    border-radius: 0px;
+    border: 1px solid #e8e8e8;
+    box-shadow: none !important;
+    font-size: 14px;
+}
+.needs-validation .form-control:focus {
+    border: 1px solid #b0b435 !important;
+}
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #b0b435;
+    box-shadow: none;
+}
+.custom-radio .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #b0b435;
+    box-shadow: none;
+}
 .order-box h3{
     font-size: 16px;
     color: #222222;
@@ -23,29 +69,12 @@
     width: 20%;
     float: left;
 }
-.needs-validation label {
-    font-size: 16px;
-    margin-bottom: 0px;
-    line-height: 24px;
+.shopping-box a{
+    font-size: 18px;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
 }
-.needs-validation .form-control {
-    min-height: 40px;
-    border-radius: 0px;
-    border: 1px solid #e8e8e8;
-    box-shadow: none !important;
-    font-size: 14px;
-}
-.needs-validation .form-control:focus {
-    border: 1px solid #b0b435 !important;
-}
-.review-form-box .form-control{
-    min-height: 40px;
-    border-radius: 0px;
-    border: 1px solid #e8e8e8;
-    box-shadow: none !important;
-    font-size: 14px;
-}
-
 
 
 
@@ -64,20 +93,8 @@
     background-color: #f2f2f2;
 }
 
-.checkoutform {
-margin-top: 8rem;
-margin-bottom: 10rem;
-margin-left: auto;
-margin-right: auto;   
-width: 65%;
-background-color: #ffffff;
-/* border: 1px solid #ddd;
-border-radius: 10px;
-box-shadow: 0 0 30px rgba(1, 1, 0.5, 0.1); */
 
-}
-
-.delidiv {
+/* .delidiv {
     margin-top: 2rem;
 }
 
@@ -137,7 +154,7 @@ background-color: #007bff;
     
  }
  
-
+ */
 
   
   

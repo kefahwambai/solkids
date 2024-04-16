@@ -43,6 +43,7 @@ export default function CalendarComponent({ handleClick }) {
   };
 
   return (
+
     <div>
     <section className="video-background">
       <div className='overlay'></div>

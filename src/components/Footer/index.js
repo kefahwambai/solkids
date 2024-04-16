@@ -37,27 +37,7 @@ export default function Footer() {
           <Link className="btn btn-link text-white-50" href="">Terms & Condition</Link>
         </div>
         <div className="col-lg-3 col-md-6">
-          <h3 className="text-white mb-4">Photo Gallery</h3>
-          <div className="row g-2 pt-2">
-            <div className="col-4">
-              <img className="img-fluid rounded bg-light p-1" src={pic} alt="" />
-            </div>
-            <div className="col-4">
-              <img className="img-fluid rounded bg-light p-1" src={pic2} alt="" />
-            </div>
-            <div className="col-4">
-              <img className="img-fluid rounded bg-light p-1" src={pic3} alt="" />
-            </div>
-            <div className="col-4">
-              <img className="img-fluid rounded bg-light p-1" src={pic4} alt="" />
-            </div>
-            <div className="col-4">
-              <img className="img-fluid rounded bg-light p-1" src={pic5} alt="" />
-            </div>
-            <div className="col-4">
-              <img className="img-fluid rounded bg-light p-1" src={pic6} alt="" />
-            </div>
-          </div>
+          
         </div>
         <div className="col-lg-3 col-md-6">
           <h3 className="text-white mb-4">Newsletter</h3>

@@ -13,6 +13,9 @@ function Checkout({ setCart, cart }) {
   const location = useLocation();
   const [shippingPrice, setShippingPrice] = useState(0);
   const totalPriceFromTickets = location.state ? location.state.totalPrice : 0;
+  const [showLoginForm, setShowLoginForm] = useState(false);
+  const [showRegisterForm, setShowRegisterForm] = useState(false);
+
 
   useEffect(() => {
     setTotalPrice(totalPriceFromTickets);
@@ -62,124 +65,308 @@ function Checkout({ setCart, cart }) {
 
   return (
     <div className="checkoutform">
-      <div className="cart-container">
-        <h2 className="my-5 text-center">Checkout form</h2>
+        <div class="page-heading-shows-events">
+            <div class="container">
+                <div class="row">
+                <div class="col-lg-12">
+                <h2 className='conhead '>Checkout</h2>
+                </div>
+            </div>
+        </div>
+      </div>      
+  <div className="cart-box-main">
+    <div className="container">
+        <div className="row new-account-login">
+            <div className="col-sm-6 col-lg-6 mb-3">
+                <div className="title-left">
+                    <h3>Account Login</h3>
+                </div>
+                <h5><a data-toggle="collapse" role="button" aria-expanded="false" onClick={() => { setShowLoginForm(!showLoginForm); setShowRegisterForm(false) }}>Click here to Login</a></h5>
+                {showLoginForm && (
+                <form className="mt-3 collapse review-form-box" id="formLogin">
+                    <div className="form-row">
+                        <div className="form-group col-md-6">
+                            <label htmlFor="InputEmail" className="mb-0">Email Address</label>
+                            <input type="email" className="form-control" id="InputEmail" placeholder="Enter Email" /> </div>
+                        <div className="form-group col-md-6">
+                            <label htmlFor="InputPassword" className="mb-0">Password</label>
+                            <input type="password" className="form-control" id="InputPassword" placeholder="Password" /> </div>
+                    </div>
+                    <button type="submit" className="btn hvr-hover">Login</button>
+                </form>
+              )}
+            </div>
+            <div className="col-sm-6 col-lg-6 mb-3">
+                <div className="title-left">
+                    <h3>Create New Account</h3>
+                </div>
+                <h5><a data-toggle="collapse" role="button" aria-expanded="false" onClick={() => {setShowRegisterForm(!showRegisterForm); setShowLoginForm(false); }}>Click here to Register</a></h5>
+                {showRegisterForm && (
+                <form className="mt-3 collapse review-form-box" id="formRegister">
+                    <div className="form-row">
+                        <div className="form-group col-md-6">
+                            <label htmlFor="InputName" className="mb-0">Name</label>
+                            <input type="text" className="form-control" id="InputName" placeholder="First Name" /> </div>
+                        <div className="form-group col-md-6">
+                            <label htmlFor="InputEmail1" className="mb-0">Email Address</label>
+                            <input type="email" className="form-control" id="InputEmail1" placeholder="Enter Email" /> </div>
+                        <div className="form-group col-md-6">
+                            <label htmlFor="InputPassword1" className="mb-0">Password</label>
+                            <input type="password" className="form-control" id="InputPassword1" placeholder="Password" /> </div>
+                    </div>
+                    <button type="submit" className="btn hvr-hover">Register</button>
+                </form>
+                 )}
+            </div>
+        </div>
         <div className="row">
-          <div className="col-md-6 mb-3">
-            <div className="form-group">
-              <label htmlFor="customerName">Customer Name*</label>
-              <input
-                type="text"
-                id="customerName"
-                className="form-control"
-                value={customer_name}
-                onChange={(e) => setCustomerName(e.target.value)}
-                required
-              />
+            <div className="col-sm-6 col-lg-6 mb-3">
+                <div className="checkout-address">
+                    <div className="title-left">
+                        <h3>Billing address</h3>
+                    </div>
+                    <form className="needs-validation" noValidate>
+                        <div className="row">
+                            <div className="mb-3">
+                                <label htmlFor="firstName">Customer name *</label>
+                                <input type="text" className="form-control" id="customerName" placeholder="" value={customer_name} onChange={(e) => setCustomerName(e.target.value)} required />
+                                <div className="invalid-feedback"> Valid first name is required. </div>
+                            </div>
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="username">Username *</label>
+                            <div className="input-group">
+                                <input type="text" className="form-control" id="username" placeholder="" required />
+                                <div className="invalid-feedback" style={{ width: '100%' }}> Your username is required. </div>
+                            </div>
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="email">Email Address *</label>
+                            <input type="email" className="form-control" id="email" placeholder="" />
+                            <div className="invalid-feedback"> Please enter a valid email address for shipping updates. </div>
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="address">Address *</label>
+                            <input type="text" className="form-control" id="address" placeholder="" required />
+                            <div className="invalid-feedback"> Please enter your shipping address. </div>
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="address2">Address 2 *</label>
+                            <input type="text" className="form-control" id="address2" placeholder="" /> </div>
+                        <div className="row">
+                            <div className="col-md-5 mb-3">
+                                <label htmlFor="country">Country *</label>
+                                <select className="wide w-100" id="country">
+                                    <option value="Choose..." data-display="Select">Choose...</option>
+                                    <option>Algeria</option>
+                                      <option>Angola</option>
+                                      <option>Benin</option>
+                                      <option>Botswana</option>
+                                      <option>Burkina Faso</option>
+                                      <option>Burundi</option>
+                                      <option>Cabo Verde</option>
+                                      <option>Cameroon</option>
+                                      <option>Central African Republic</option>
+                                      <option>Chad</option>
+                                      <option>Comoros</option>
+                                      <option>Congo</option>
+                                      <option>Democratic Republic of the Congo</option>
+                                      <option>Djibouti</option>
+                                      <option>Egypt</option>
+                                      <option>Equatorial Guinea</option>
+                                      <option>Eritrea</option>
+                                      <option>Eswatini</option>
+                                      <option>Ethiopia</option>
+                                      <option>Gabon</option>
+                                      <option>Gambia</option>
+                                      <option>Ghana</option>
+                                      <option>Guinea</option>
+                                      <option>Guinea-Bissau</option>
+                                      <option>Ivory Coast</option>
+                                      <option>Kenya</option>
+                                      <option>Lesotho</option>
+                                      <option>Liberia</option>
+                                      <option>Libya</option>
+                                      <option>Madagascar</option>
+                                      <option>Malawi</option>
+                                      <option>Mali</option>
+                                      <option>Mauritania</option>
+                                      <option>Mauritius</option>
+                                      <option>Morocco</option>
+                                      <option>Mozambique</option>
+                                      <option>Namibia</option>
+                                      <option>Niger</option>
+                                      <option>Nigeria</option>
+                                      <option>Rwanda</option>
+                                      <option>Sao Tome and Principe</option>
+                                      <option>Senegal</option>
+                                      <option>Seychelles</option>
+                                      <option>Sierra Leone</option>
+                                      <option>Somalia</option>
+                                      <option>South Africa</option>
+                                      <option>South Sudan</option>
+                                      <option>Sudan</option>
+                                      <option>Tanzania</option>
+                                      <option>Togo</option>
+                                      <option>Tunisia</option>
+                                      <option>Uganda</option>
+                                      <option>Zambia</option>
+                                      <option>Zimbabwe</option>
+
+                                </select>
+                                <div className="invalid-feedback"> Please select a valid country. </div>
+                            </div>
+                            <div className="col-md-4 mb-3">
+                                <label htmlFor="state">State *</label>
+                                <select className="wide w-100" id="state">
+                                    <option data-display="Select">Choose...</option>
+                                    
+                                </select>
+                                <div className="invalid-feedback"> Please provide a valid state. </div>
+                            </div>
+                            <div className="col-md-3 mb-3">
+                                <label htmlFor="zip">Zip *</label>
+                                <input type="text" className="form-control" id="zip" placeholder="" required />
+                                <div className="invalid-feedback"> Zip code required. </div>
+                            </div>
+                        </div>
+                        <hr className="mb-4" />
+                        <div className="custom-control custom-checkbox">
+                            <input type="checkbox" className="custom-control-input" id="same-address" />
+                            <label className="custom-control-label" htmlFor="same-address">Shipping address is the same as my billing address</label>
+                        </div>
+                        <div className="custom-control custom-checkbox">
+                            <input type="checkbox" className="custom-control-input" id="save-info" />
+                            <label className="custom-control-label" htmlFor="save-info">Save this information for next time</label>
+                        </div>
+                        <hr className="mb-4" />
+                        <div className="title"> <span>Payment</span> </div>
+                        <div className="d-block my-3">
+                            <div className="custom-control custom-radio">
+                                <input id="paypal" name="paymentMethod" type="radio" className="custom-control-input" required />
+                                <label className="custom-control-label" htmlFor="paypal">Paypal</label>
+                            </div>
+
+                            <div className="custom-control custom-radio">
+                                <input id="paypal" name="paymentMethod" type="radio" className="custom-control-input" required />
+                                <label className="custom-control-label" htmlFor="paypal">Mpesa</label>
+                            </div>
+                        </div>
+                        
+                        <hr className="mb-1" /> </form>
+                </div>
             </div>
-            <div className="form-group">
-              <label htmlFor="customerEmail">Email*</label>
-              <input
-                type="email"
-                id="customerEmail"
-                className="form-control"
-                value={customer_email}
-                onChange={(e) => setCustomerEmail(e.target.value)}
-                required
-              />
+            <div className="col-sm-6 col-lg-6 mb-3">
+    <div className="col-md-12 col-lg-12">
+        <div className="shipping-method-box">
+            <div className="title-left">
+                <h3>Shipping Method</h3>
             </div>
-            <div className="form-group">
-              <label htmlFor="customerPhoneNumber">Phone Number</label>
-              <input
-                type="tel"
-                id="customerPhoneNumber"
-                className="form-control"
-                value={customer_phonenumber}
-                onChange={(e) => setCustomerPhonenumber(e.target.value)}
-                required
-              />
+            <div className="mb-4">
+              <div className="custom-control custom-radio">
+                <input
+                  id="shippingOption1"
+                  name="shipping-option"
+                  className="custom-control-input"
+                  value="Standard Delivery - FREE"
+                  type="radio"
+                  onChange={handleShippingChange}
+                  checked={shippingPrice === 0}
+                />
+                <label className="custom-control-label" htmlFor="shippingOption1">
+                  Standard Delivery
+                </label>{" "}
+                <span className="float-right font-weight-bold">- FREE</span>{" "}
+              </div>
+              <div className="ml-4 mb-2 small">(3-7 business days)</div>
+              <div className="custom-control custom-radio">
+                <input
+                  id="shippingOption2"
+                  name="shipping-option"
+                  className="custom-control-input"
+                  value="Express Delivery - Ksh 500.00"
+                  type="radio"
+                  onChange={handleShippingChange}
+                  checked={shippingPrice === 500}
+                />
+                <label className="custom-control-label" htmlFor="shippingOption2">
+                  Express Delivery
+                </label>{" "}
+                <span className="float-right font-weight-bold">- Ksh500.00</span>{" "}
+              </div>
+              <div className="ml-4 mb-2 small">(2-4 business days)</div>
+              <div className="custom-control custom-radio">
+                <input
+                  id="shippingOption3"
+                  name="shipping-option"
+                  className="custom-control-input"
+                  value="Next Business day - Ksh 1000.00"
+                  type="radio"
+                  onChange={handleShippingChange}
+                  checked={shippingPrice === 1000}
+                />
+                <label className="custom-control-label" htmlFor="shippingOption3">
+                  Next Business day
+                </label>{" "}
+                <span className="float-right font-weight-bold">- Ksh 1000.00</span>{" "}
+              </div>
             </div>
-            <div className="delidiv form-group">
-              <label htmlFor="deliveryAddress">Delivery Address*</label>
-              <input
-                type="text"
-                id="deliveryAddress"
-                className="form-control"
-                value={delivery_address}
-                onChange={(e) => setDeliveryAddress(e.target.value)}
-                required
-              />
+
+        </div>
+    </div>
+    
+       <div className="col-md-12 col-lg-12"> 
+       {cart.map((product) => (   
+         <div  key={product.id}  className="odr-box">
+            <div className="title-left">
+                  <h3>Shopping cart</h3>
+            </div>
+           <div className="rounded p-2 bg-light">
+              <div className="media mb-2 border-bottom">
+                  <div className="media-body">
+                      <a href="detail.html"> {product.name}</a>
+                      <div className="small text-muted">{`${product.price}`} Subtotal: $80.00</div>
+                  </div>
+              </div>
+            </div>
+          </div>
+            ))}
+        </div>
+   
+
+    <div className="col-md-12 col-lg-12">   
+        <div className="order-box">       
+            <div className="title-left">
+                <h3>Your order</h3>
+            </div>
+            <div className="d-flex">
+                <div className="font-weight-bold">Product</div>
+                <div className="ml-auto font-weight-bold">Total</div>
+            </div>
+            <hr className="my-1" />
+            <div className="d-flex">
+                <h4>Sub Total</h4>
+                <div className="ml-auto font-weight-bold"> {totalPrice} </div>
+            </div>
+            <hr className="my-1" />
+            <div className="d-flex">
+                <h4>Shipping Cost</h4>
+                <div className="ml-auto font-weight-bold"> {shippingPrice} </div>
             </div>
             <hr />
-            <div className="form-group">
-              <p className="formp">Payment Method:</p>
-              <div className="form-check">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  name="paymentMethod"
-                  id="mpesa"
-                  value="mpesa"
-                />
-                <label className="form-check-label" htmlFor="mpesa">
-                  Mpesa
-                </label>
-              </div>
-              <div className="form-check">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  name="paymentMethod"
-                  id="disabledPaymentMethod"
-                  value="disabled"
-                  disabled
-                />
-                <label className="form-check-label" htmlFor="disabledPaymentMethod">
-                  Visa / MasterCard (coming soon)
-                </label>
-              </div>
+            <div className="d-flex gr-total">
+                <h5>Grand Total</h5>
+                <div className="ml-auto h5"> Kshs {totalPrice + shippingPrice}/-</div>
             </div>
-            <Button onClick={handleSubmit} className="place-order-btn" variant="primary">
-              Make Order
-            </Button>
-          </div>
-          <div className="col cartfrm">
-          <form>
-                        <p>SHIPPING</p>
-                        <select onChange={handleShippingChange}>
-                            <option disabled hidden selected>Select Shipping Options</option>
-                            <option className="text-muted">Standard-Delivery - 0.00</option>
-                            <option className="text-muted">Fast-Shipping - Ksh 500.00</option>
-                            <option className="text-muted">Same Day Delivery - Ksh 1500.00</option>
-                        </select>
-                        <p className="promo">Have a Promo CODE?</p>
-                        <input id="code" placeholder="Enter your code here" />
-                    </form>
-            <h4 className="cartnme d-flex justify-content-between align-items-center mb-3">
-              <span className="text-muted">Your cart</span>
-              <span className="badge rounded-pill badge-primary">{cart.length}</span>
-            </h4>
-            <ul className="list-group mb-3">
-              {cart.map((product) => (
-                <li key={product.id} className="list-group-item d-flex justify-content-between">
-                  <div>
-                    <h6 className="my-0">{product.name}</h6>
-                  </div>
-                  <span className="text-muted">{`${product.price}`}</span>
-                  <AiFillDelete
-                    style={{ marginBottom: "2px" }}
-                    onClick={() => handleRemove(product.id)}
-                  />
-                </li>
-              ))}
-              <li className="list-group-item d-flex justify-content-between">
-                <span>Your Total is: </span>
-                <strong>Kshs {totalPrice + shippingPrice}/-</strong>
-              </li>
-            </ul>
-          </div>
+            <hr />
+            
         </div>
-      </div>
+    </div>
+    <div className="col-12 d-flex shopping-box"> <a href="checkout.html" className="ml-auto btn hvr-hover">Place Order</a> </div>
+        </div>
+        </div>
+          </div>
+    </div>
     </div>
   );
 }
