@@ -325,7 +325,7 @@ function Checkout({ setCart, cart }) {
               <div className="media mb-2 border-bottom">
                   <div className="media-body">
                       <a href="detail.html"> {product.name}</a>
-                      <div className="small text-muted">{`${product.price}`} Subtotal: $80.00</div>
+                      <div className="small text-muted"> Subtotal: {`${product.price}`}</div>
                   </div>
               </div>
             </div>
