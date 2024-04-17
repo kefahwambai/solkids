@@ -36,10 +36,24 @@ const products = [
 
 export default function CalendarComponent({ handleClick }) { 
   const [filter, setFilter] = useState('*'); 
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [quantity, setQuantity] = useState(0);
+
+  const handleQuantityChange = (event) => {
+    setQuantity(event.target.value);
+  };
+
+  const handleAddToCart = () => {
+    handleClick({ ...selectedProduct, quantity: parseInt(quantity) });
+  };
+
   
 
   const handleFilterClick = (filterValue) => {
     setFilter(filterValue);
+  };
+  const handleProductClick = (product) => {
+    setSelectedProduct(product);
   };
 
   return (
@@ -181,9 +195,9 @@ export default function CalendarComponent({ handleClick }) {
                         <img src={product.image} className="img-fluid" alt={product.name} />
                         <div className="mask-icon">
                           <ul>
-                            <li><Link to="/shop" data-toggle="tooltip" data-placement="right" title="View"><i className="fas fa-eye"></i></Link></li>
+                            <li type="button" data-toggle="modal" data-target="#exampleModalCenter" onClick={() => handleProductClick(product)} ><Link ><i className="fas fa-eye"></i></Link></li>
                           </ul>
-                          <Link className="cart" onClick={() => handleClick(product)}>Add to Cart</Link>
+                           <li style={{listStyle:'none'}}><Link className="cart" onClick={() => handleClick(product)}><i class="fas fa-shopping-cart"></i></Link></li>
                         </div>
                       </div>
                       <div className="why-text">
@@ -195,8 +209,46 @@ export default function CalendarComponent({ handleClick }) {
                 )
               ))}
             </div>
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 className="modal-title" id="exampleModalLongTitle">{selectedProduct && selectedProduct.name}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  {selectedProduct &&
+                    <div class="modal-body">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <img style={{ height: '15vh' }} src={selectedProduct.image} alt={selectedProduct.name} />
+                          <h3>{selectedProduct.name}</h3>
+                        </div>
+                        <div class="col-md-6">
+                          <p>{selectedProduct.description}</p>
+                          <h4>Short Description:</h4>
+                          <p>Nam sagittis a augue eget </p>
+                          {/* <ul>
+                            <li>
+                              <div class="form-group quantity-box">
+                              <input class="form-control" value={quantity} min="0" max="20" type="number" onChange={handleQuantityChange} />
+                              </div>
+                            </li>
+                          </ul> */}
+                        </div>
+                      </div>
+                    </div>
+                  }
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onClick={() => handleClick(selectedProduct)}>Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-        </div>
+              </div>
+           
     </div>
   </section>
 
