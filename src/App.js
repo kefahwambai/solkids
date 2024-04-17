@@ -12,6 +12,8 @@ import Preloader from "../src/components/Pre";
 import Events from "./components/Events";
 import Tickets from "./components/Tickets";
 import Checkout from "./components/Checkout";
+import Gallery from "./components/Gallery";
+
 
 import "./App.css";
 
@@ -61,6 +63,7 @@ function App() {
           <Route path="/" element={<Header handleClick={handleClick} />} />
           <Route path="/about" element={<About />} />
           <Route path="/events" element={ <Events/>} />
+          <Route path="/gallery" element={<Gallery/>} />
           <Route path="/shop" element={<Shop handleClick={handleClick} />} />
           <Route path="/cart" element={<Cart cart={cart} setCart={setCart} handleChange={handleChange} />} />     
           <Route path="/contact" element={ <Contact/>} />

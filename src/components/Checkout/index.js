@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Button } from "react-bootstrap";
-import { AiFillDelete } from "react-icons/ai";
 import "./checkout.css";
 import { useLocation } from "react-router-dom";
 
@@ -276,7 +274,7 @@ function Checkout({ setCart, cart }) {
                 <label className="custom-control-label" htmlFor="shippingOption1">
                   Standard Delivery
                 </label>{" "}
-                <span className="float-right font-weight-bold">- FREE</span>{" "}
+                <span className="float-right font-weight-bold">FREE</span>{" "}
               </div>
               <div className="ml-4 mb-2 small">(3-7 business days)</div>
               <div className="custom-control custom-radio">
@@ -292,7 +290,7 @@ function Checkout({ setCart, cart }) {
                 <label className="custom-control-label" htmlFor="shippingOption2">
                   Express Delivery
                 </label>{" "}
-                <span className="float-right font-weight-bold">- Ksh500.00</span>{" "}
+                <span className="float-right font-weight-bold">Ksh500.00</span>{" "}
               </div>
               <div className="ml-4 mb-2 small">(2-4 business days)</div>
               <div className="custom-control custom-radio">
@@ -308,7 +306,7 @@ function Checkout({ setCart, cart }) {
                 <label className="custom-control-label" htmlFor="shippingOption3">
                   Next Business day
                 </label>{" "}
-                <span className="float-right font-weight-bold">- Ksh 1000.00</span>{" "}
+                <span className="float-right font-weight-bold">Ksh 1000.00</span>{" "}
               </div>
             </div>
 

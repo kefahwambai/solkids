@@ -96,7 +96,7 @@ const Events = () => {
                                   {filter === 'Upcoming' ? (
                                     <div className="main-dark-button"><Link to="/ticket">Buy Tickets</Link></div>
                                   ) : (
-                                    <div className="main-dark-button"><Link >See What You Missed</Link></div>
+                                    <div className="main-dark-button"><Link to="/gallery" >See What You Missed</Link></div>
                                   )}
                                 </div>
                               </div>

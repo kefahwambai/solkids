@@ -108,9 +108,9 @@ export default function About() {
       <div className="container-fluid pt-5">
       <div className="container">
         <div className="text-center pb-2">
-          <p className="section-title px-5">
-            <span className="px-2">Our Partners</span>
-          </p>
+          <div className="col-12">
+            <h2 className="noo-sh-title">Meet Our Partners</h2>
+          </div>
         </div>
         <div className="row justify-content-center">
           <div className="col-md-6 col-lg-3 text-center team mb-5">
