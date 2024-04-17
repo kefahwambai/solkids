@@ -132,11 +132,11 @@ function CartComponent({ cart, setCart }) {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-lg-6 col-sm-6">
+                                {/* <div className="col-lg-6 col-sm-6">
                                     <div className="update-box">
                                         <input value="Update Cart" type="submit" />
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
 
                             <div className="row my-5">

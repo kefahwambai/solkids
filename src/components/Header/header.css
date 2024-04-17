@@ -11,7 +11,75 @@
 @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.d-flex {
+  display: flex !important;
+}
 
+.btm {
+  display: inline-block;
+  font-weight: 400;
+  color: #666666;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 30px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.container-fluid .container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.shadow-sm {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+[class^=flaticon-]:before,
+[class*=" flaticon-"]:before,
+[class^=flaticon-]:after,
+[class*=" flaticon-"]:after {
+  font-size: inherit;
+  margin-left: 0;
+}
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+.section-title {
+  position: relative;
+  display: inline-block;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #17a2b8;
+}
+
+.section-title span {
+  position: relative;
+  background: #ffffff;
+  z-index: 1;
+}
+
+.section-title::before {
+  position: absolute;
+  content: "";
+  top: 10px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #17a2b8;
+}
 
 section.our-facts {
   background-position: center center;
@@ -560,7 +628,7 @@ right: 0;
 
 #aboutt {   
     width: 100vw;
-    height: 85vh;
+    height: 150vh;
     background-color: #fff;
     color: #de412d;
     padding: 20px;
@@ -1100,7 +1168,7 @@ right: 0;
 
   #aboutt {
     padding: 1rem;
-    height: 250vh !important;
+    height: 285vh !important;
   }
 
   #frontshop {
@@ -1360,7 +1428,7 @@ right: 0;
 
   #aboutt {
     padding: 1rem;
-    height: 235vh !important;
+    height: 260vh !important;
   }
 
   #frontshop {
@@ -1619,7 +1687,7 @@ right: 0;
 
   #aboutt {
     padding: 1rem;
-    height: 250vh !important;
+    height: 280vh !important;
   }
 
   #frontshop {
@@ -2129,7 +2197,7 @@ right: 0;
 
   #aboutt {
     padding: 1rem;
-    height: 110vh;
+    height: 200vh;
   }
 
   #frontshop {

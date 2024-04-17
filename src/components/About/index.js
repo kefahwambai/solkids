@@ -105,7 +105,49 @@ export default function About() {
             <hr className="my-0" /> </div>
         </div>
       </div>
-       <div className="row my-4 justify-content-center">
+      <div className="container-fluid pt-5">
+      <div className="container">
+        <div className="text-center pb-2">
+          <p className="section-title px-5">
+            <span className="px-2">Our Partners</span>
+          </p>
+        </div>
+        <div className="row justify-content-center">
+          <div className="col-md-6 col-lg-3 text-center team mb-5">
+            <div className="position-relative overflow-hidden mb-4" style={{ borderRadius: '50%', width: '200px', height: '200px', marginLeft: '3rem' }}>
+              <img className="img-fluid w-100 h-100" src={museum} alt=""  />
+              <div className="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
+                <a className="btn btn-outline-light text-center mr-2 px-0" style={{ width: '38px', height: '38px' }} href="https://museums.or.ke/"><i className="fas fa-globe"></i></a>
+              </div>
+            </div>
+            <h4 className="mb-0">The National Museum of Kenya</h4>
+            <i>Partner</i>
+          </div>
+          <div className="col-md-6 col-lg-3 text-center team mb-5">
+            <div className="position-relative overflow-hidden mb-4" style={{ borderRadius: '50%', width: '200px', height: '200px', marginLeft: '3rem' }}>
+              <img className="img-fluid w-100 h-100" src={knlh} alt="" />
+              <div className="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
+                <a className="btn btn-outline-light text-center mr-2 px-0" style={{ width: '48px', height: '48px' }} href="https://www.knls.ac.ke/"><i className="fas fa-globe"></i></a>
+              </div>
+            </div>
+            <h4 className="mb-0">Kenya National Library Service</h4>
+            <i>Partner</i>
+          </div>
+          <div className="col-md-6 col-lg-3 text-center team mb-5">
+            <div className="position-relative overflow-hidden mb-4" style={{ borderRadius: '50%', width: '200px', height: '200px', marginLeft: '3rem' }}>
+              <img className="img-fluid w-100 h-100" src={stu} alt="" />
+              <div className="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
+                <a className="btn btn-outline-light text-center mr-2 px-0" style={{ width: '38px', height: '38px' }} href="https://www.freehandmovement.com/"><i className="fas fa-globe"></i></a>
+                <a className="btn btn-outline-light text-center mr-2 px-0" style={{ width: '38px', height: '38px' }} href="https://www.instagram.com/freehandstudioske/"><i className="fab fa-instagram"></i></a>
+              </div>
+            </div>
+            <h4 className="mb-0">Freehand Studios</h4>
+            <i>Partner</i>
+          </div>
+        </div>
+      </div>
+    </div>
+       {/* <div className="row my-4 justify-content-center">
         <div className="col-12">
           <h2 className="noo-sh-title">Meet Our Partners</h2>
         </div>
@@ -151,7 +193,7 @@ export default function About() {
               <div className="icon"> <i className="fab fa-plus" aria-hidden="true"></i> </div>
             </div></div>
         </div>
-      </div>
+      </div> */}
     </div>
     
   </div>

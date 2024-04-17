@@ -11,6 +11,8 @@ import twiga from "../../Assets/Books/Twiga.png"
 import fisi from "../../Assets/Books/fisi.png"
 import stars from "../../Assets/Books/written in stars.png"
 import solmic from "../../Assets/Homepage/solmic.PNG"
+import pizza from "../../Assets/definition/pizzakids.png"
+import kich from "../../Assets/Homepage/solchick.png"
 // import galo from "../../Assets/slideshow/DSC02924.png"
 // import galt from "../../Assets/slideshow/DSC02941.png"
 // import galtr from "../../Assets/slideshow/DSC02942.png"
@@ -78,11 +80,84 @@ export default function CalendarComponent({ handleClick }) {
     </section>
     <div className="background"></div>
     <section id="aboutt">
-          <div className="container-xxl py-5">
+    <div className="container-fluid pt-5">
+        <div className="container pb-3">
+          <div className="row">
+            <div className="col-lg-4 col-md-6 pb-1">
+              <div className="d-flex bg-light shadow-sm border-top rounded mb-4" style={{ padding: '30px' }}>              
+                <div className="pl-4">
+                <i className="fas fa-child fa-3x"></i>               
+                <h3 className="text-primary mb-3">Variety of Kid content</h3>
+                <p className="mb-0"> We champion Afro-futuristic sci-fi narratives that address pollution and climate change, amplifying African voices worldwide through engaging storytelling.</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-4 col-md-6 pb-1">
+              <div className="d-flex bg-light shadow-sm border-top rounded mb-4" style={{ padding: '30px' }}>
+                <i className="flaticon-050-fence h1 font-weight-normal text-primary mb-3"></i>
+                <div className="pl-4">
+                <i className="fas fa-futbol fa-3x text-success"></i>
+                <h3 className="text-success mb-3">Children Empowerment</h3>
+                <p className="mb-0">Relatable context that empowers through content that is inclusive, representative and diverse.</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-4 col-md-6 pb-1">
+              <div className="d-flex bg-light shadow-sm border-top rounded mb-4" style={{ padding: '30px' }}>
+                <i className="flaticon-050-fence h1 font-weight-normal text-primary mb-3"></i>
+                <div className="pl-4">
+                 <i className="fa-solid fa-users fa-3x text-warning"></i>
+                 <h3 className="text-warning mb-3">Leadership</h3>
+                 <p className="mb-0">Raising leaders through content, books and stories that inspire and motivate.</p>
+                </div>
+              </div>
+            </div>            
+          </div>
+        </div>
+      </div>
+      <div className="container-fluid py-5">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-lg-5">
+              <img className="img-fluid rounded mb-5 mb-lg-0" src={pizza} alt="" />
+            </div>
+            <div className="col-lg-7">
+              <p className="section-title pr-5">
+                <span className="pr-2">Learn more About Us</span>
+              </p>
+              <p>
+              Learn more about our journey, values, and commitment to raising leaders and promoting positive learning experiences for all children.
+              </p>
+              <div className="row pt-2 pb-4">
+                <div className="col-6 col-md-4">
+                <img className="img-fluid rounded" style={{ transform: 'scaleX(-1)' }} src={kich} alt="" />
+
+
+                </div>
+                <div className="col-6 col-md-8">
+                  <ul className="list-inline m-0">
+                    <li className="py-2 border-top border-bottom">
+                      Who we are   <i className="fas fa-question text-primary mr-3"></i>
+                    </li>
+                    <li className="py-2 border-bottom">
+                      Why we do it   <i className="fas fa-question text-primary mr-3"></i>
+                    </li>
+                    <li className="py-2 border-bottom">
+                      Our Impact   <i className="fas fa-question text-primary mr-3"></i>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <Link to="/about"><a href="" className="btm btn-primary mt-2 py-2 px-4">Learn More</a></Link>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+          {/* <div className="container-xxl py-5">
             <div className="container">
               <div className="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style={{ maxWidth: "600px" }}>
                 <h1 className="mb-3">About us</h1>
-                {/* <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p> */}
               </div>
               <div className="row g-4">
                 <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -139,7 +214,7 @@ export default function CalendarComponent({ handleClick }) {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         {/* <div className='founderss'>
             <div>
                 <img data-aos="fade-right" data-aos-duration="3000" className='pizza' src={pizzakids} alt="kids making pizza" />

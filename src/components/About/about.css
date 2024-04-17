@@ -6,6 +6,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
 
+.position-relative {
+    position: relative !important;
+}
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+.team .team-social {
+    top: 0;
+    background: rgba(23, 162, 184, 0.8);
+    opacity: 0;
+    z-index: 1;
+    transition: .5s;
+}
+
+.team:hover .team-social {
+opacity: 1;
+}
+
 
 .panam {
  margin-top: 5rem !important;

@@ -249,7 +249,7 @@ function Checkout({ setCart, cart }) {
 
                             <div className="custom-control custom-radio">
                                 <input id="paypal" name="paymentMethod" type="radio" className="custom-control-input" required />
-                                <label className="custom-control-label" htmlFor="paypal">Mpesa</label>
+                                <label className="custom-control-label" htmlFor="Mpesa">Mpesa</label>
                             </div>
                         </div>
                         
@@ -339,11 +339,6 @@ function Checkout({ setCart, cart }) {
             <div className="title-left">
                 <h3>Your order</h3>
             </div>
-            <div className="d-flex">
-                <div className="font-weight-bold">Product</div>
-                <div className="ml-auto font-weight-bold">Total</div>
-            </div>
-            <hr className="my-1" />
             <div className="d-flex">
                 <h4>Sub Total</h4>
                 <div className="ml-auto font-weight-bold"> {totalPrice} </div>
