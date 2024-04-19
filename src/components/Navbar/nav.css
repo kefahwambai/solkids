@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Flavors&display=swap');
 
 .sticky {
-    background-color: rgba(29, 133, 112, 0.663) !important;
     transition: all 0.3s ease-out 0s !important;
     backdrop-filter: blur(15px) !important;
     box-shadow: 0px 10px 10px 0px rgba(9, 5, 29, 0.171) !important;
