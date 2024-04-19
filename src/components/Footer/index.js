@@ -13,10 +13,10 @@ export default function Footer() {
     let date = new Date();
     let year = date.getFullYear();
   return (
-    <div className="container-fluid bg-dark text-white-50 footer pt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div className="container-fluid text-white-50 footer pt-5 wow fadeIn" data-wow-delay="0.1s" style={{ backgroundColor: 'silver'}}>
     <div className="container py-5">
       <div className="row g-5">
-        <div className="col-lg-3 col-md-6">
+        <div className="col-lg-7 col-md-6">
           <h3 className="text-white mb-4">Get In Touch</h3>
           <p className="mb-2"><i className="fas fa-map-marker-alt me-3"></i>123 Street, SolCenter, Nairobi</p>
           <p className="mb-2"><i className="fas fa-phone me-3"></i>+012 345 67890</p>
@@ -28,25 +28,14 @@ export default function Footer() {
             <a className="btn btn-outline-light btn-social" href="https://www.instagram.com/solkidsafrica/"><i className="fab fa-instagram"></i></a>
           </div>
         </div>
-        <div className="col-lg-3 col-md-6">
+        <div className="col-lg-2 col-md-6">
           <h3 className="text-white mb-4">Quick Links</h3>
           <Link to="/about" className="btn btn-link text-white-50" href="">About Us</Link>
           <Link to="/contact" className="btn btn-link text-white-50" href="">Contact Us</Link>
           <Link to="/shop" className="btn btn-link text-white-50" href="">Shop</Link>
           <Link className="btn btn-link text-white-50" href="">Privacy Policy</Link>
           <Link className="btn btn-link text-white-50" href="">Terms & Condition</Link>
-        </div>
-        <div className="col-lg-3 col-md-6">
-          
-        </div>
-        <div className="col-lg-3 col-md-6">
-          <h3 className="text-white mb-4">Newsletter</h3>
-          <p>Sign up for our newsletter to be up to date on our future book releases and other exciting projects we are working on BTS</p>
-          <div className="position-relative mx-auto" style={{ maxWidth: "400px" }}>
-            <input className="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email" />
-            <button type="button" className="btn btn-primary py-2 position-absolute  end-0 me-2" >SignUp</button>
-          </div>
-        </div>
+        </div> 
       </div>
     </div>
     <div className="container">

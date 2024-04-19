@@ -248,13 +248,23 @@ export default function CalendarComponent({ handleClick }) {
   </section>
 
   <section id="gallery" class="wow fadeInUp">
-
-    <div className="container">
-      <div className="section-header">
-        <h2>Gallery</h2>
-        <p>Check our gallery from the recent events</p>
-      </div>
-    </div>
+  <div className='booksecont'>
+          <h3 className="text-white mb-4">Newsletter</h3>
+          <p>Sign up for our newsletter to be up to date on our future book releases and other exciting projects we are working on BTS</p>
+          <div className="position-relative mx-auto" style={{ maxWidth: "400px" }}>
+            <input className="form-control bg-transparent w-100 py-2 ps-4 pe-5" type="text" placeholder="Your email" />            
+            <div class="conta">
+                <a href="#" class="button type--A">
+                    <div class="button__line"></div>
+                    <div class="button__line"></div>
+                    <span class="button__text">SignUp</span>
+                    <div class="button__drow1"></div>
+                    <div class="button__drow2"></div>
+                </a>
+                </div>
+          </div>
+            
+        </div>
 
     </section>
       <section id="planner" >
@@ -268,14 +278,14 @@ export default function CalendarComponent({ handleClick }) {
               </div>
               <div className="col-lg-6">
                 <div className="row">
-                  <div className="col-12">
-                    <div className="count-area-content percentage" ref={childrenReachedRef}>
+                  <div className="col-12 ">
+                    <div className="count-area-content percentage shadow-sm" ref={childrenReachedRef}>
                       <div className="count-digit">{countkids}</div>
                       <div className="count-title">Children reached</div>
                     </div>
                   </div>
                   <div className="col-12">
-                    <div className="count-area-content" ref={solkidsMembersRef}>
+                    <div className="count-area-content shadow-sm" ref={solkidsMembersRef}>
                       <div className="count-digit">{count}+</div>
                       <div className="count-title">Current Solkids members</div>
                     </div>
@@ -285,13 +295,13 @@ export default function CalendarComponent({ handleClick }) {
               <div className="col-lg-6">
                 <div className="row">
                   <div className="col-12">
-                    <div className="count-area-content new-students" ref={contentCatalogueRef}>
+                    <div className="count-area-content new-students shadow-sm" ref={contentCatalogueRef}>
                       <div className="count-digit">{countcont}+</div>
                       <div className="count-title">Content Catalogue </div>
                     </div>
                   </div>
                   <div className="col-12">
-                    <div className="count-area-content" ref={awardsRef}>
+                    <div className="count-area-content shadow-sm" ref={awardsRef}>
                       <div className="count-digit">{awardcount}</div>
                       <div className="count-title">Awards</div>
                     </div>
