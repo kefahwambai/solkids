@@ -26,10 +26,10 @@ export default function Tickets() {
 
   return (
     <section id="tickets">
-      <div class="page-heading-shows-events">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
+      <div className="page-heading-shows-events">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
               <h2 className='conhead'>Beat the Fomo</h2>
             </div>
           </div>

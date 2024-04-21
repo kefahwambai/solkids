@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./checkout.css";
 import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Checkout({ setCart, cart }) {
   const [customer_name, setCustomerName] = useState('');
@@ -13,7 +14,6 @@ function Checkout({ setCart, cart }) {
   const totalPriceFromTickets = location.state ? location.state.totalPrice : 0;
   const [showLoginForm, setShowLoginForm] = useState(false);
   const [showRegisterForm, setShowRegisterForm] = useState(false);
-
 
   useEffect(() => {
     setTotalPrice(totalPriceFromTickets);
@@ -38,7 +38,8 @@ function Checkout({ setCart, cart }) {
 
     useEffect(() => {
     handlePrice();
-    });
+    injectMpesaScript();
+  }, [cart]); 
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -48,6 +49,21 @@ function Checkout({ setCart, cart }) {
           return;
         }
     };
+
+    function handleMpesa(e) {
+      e.preventDefault() 
+      const formData = {
+          phoneNumber:  "",
+          amount: cart[0].amount
+      }
+      fetch('http://localhost:3000/stkpush', {
+          method: 'POST',
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(formData)
+      })
+      .then((res) => res.json())
+      .then((data) => console.log("Mpesa Successful", data))
+  }
 
     const handleShippingChange = (event) => {
       const selectedShippingOption = event.target.value;
@@ -61,12 +77,18 @@ function Checkout({ setCart, cart }) {
       }
   };
 
+  const injectMpesaScript = () => {
+    const script = document.createElement("script");
+    script.src = "https://cdn.jsdelivr.net/gh/muaad/mpesa_button@master/src/button.min.js";
+    script.async = true;
+    document.body.appendChild(script);
+  };
   return (
     <div className="checkoutform">
-        <div class="page-heading-shows-events">
-            <div class="container">
-                <div class="row">
-                <div class="col-lg-12">
+        <div className="page-heading-shows-events">
+            <div className="container">
+                <div className="row">
+                <div className="col-lg-12">
                 <h2 className='conhead '>Checkout</h2>
                 </div>
             </div>
@@ -79,49 +101,21 @@ function Checkout({ setCart, cart }) {
                 <div className="title-left">
                     <h3>Account Login</h3>
                 </div>
-                <h5><a data-toggle="collapse" role="button" aria-expanded="false" onClick={() => { setShowLoginForm(!showLoginForm); setShowRegisterForm(false) }}>Click here to Login</a></h5>
-                {showLoginForm && (
-                <form className="mt-3 collapse review-form-box" id="formLogin">
-                    <div className="form-row">
-                        <div className="form-group col-md-6">
-                            <label htmlFor="InputEmail" className="mb-0">Email Address</label>
-                            <input type="email" className="form-control" id="InputEmail" placeholder="Enter Email" /> </div>
-                        <div className="form-group col-md-6">
-                            <label htmlFor="InputPassword" className="mb-0">Password</label>
-                            <input type="password" className="form-control" id="InputPassword" placeholder="Password" /> </div>
-                    </div>
-                    <button type="submit" className="btn hvr-hover">Login</button>
-                </form>
-              )}
+                <h5><Link to="/login">Click here to Login</Link></h5>
+               
             </div>
             <div className="col-sm-6 col-lg-6 mb-3">
                 <div className="title-left">
                     <h3>Create New Account</h3>
                 </div>
-                <h5><a data-toggle="collapse" role="button" aria-expanded="false" onClick={() => {setShowRegisterForm(!showRegisterForm); setShowLoginForm(false); }}>Click here to Register</a></h5>
-                {showRegisterForm && (
-                <form className="mt-3 collapse review-form-box" id="formRegister">
-                    <div className="form-row">
-                        <div className="form-group col-md-6">
-                            <label htmlFor="InputName" className="mb-0">Name</label>
-                            <input type="text" className="form-control" id="InputName" placeholder="First Name" /> </div>
-                        <div className="form-group col-md-6">
-                            <label htmlFor="InputEmail1" className="mb-0">Email Address</label>
-                            <input type="email" className="form-control" id="InputEmail1" placeholder="Enter Email" /> </div>
-                        <div className="form-group col-md-6">
-                            <label htmlFor="InputPassword1" className="mb-0">Password</label>
-                            <input type="password" className="form-control" id="InputPassword1" placeholder="Password" /> </div>
-                    </div>
-                    <button type="submit" className="btn hvr-hover">Register</button>
-                </form>
-                 )}
+                <h5><Link  to="/register">Click here to Register</Link></h5>            
             </div>
         </div>
         <div className="row">
             <div className="col-sm-6 col-lg-6 mb-3">
                 <div className="checkout-address">
                     <div className="title-left">
-                        <h3>Billing address</h3>
+                        <h3>Deliveryaddress</h3>
                     </div>
                     <form className="needs-validation" noValidate>
                         <div className="row">
@@ -145,15 +139,12 @@ function Checkout({ setCart, cart }) {
                         </div>
                         <div className="mb-3">
                             <label htmlFor="address">Address *</label>
-                            <input type="text" className="form-control" id="address" placeholder="" required />
+                            <input type="text" className="form-control" id="address" placeholder="If outside Kenya Please specify" required />
                             <div className="invalid-feedback"> Please enter your shipping address. </div>
                         </div>
-                        <div className="mb-3">
-                            <label htmlFor="address2">Address 2 *</label>
-                            <input type="text" className="form-control" id="address2" placeholder="" /> </div>
                         <div className="row">
                             <div className="col-md-5 mb-3">
-                                <label htmlFor="country">Country *</label>
+                                <label htmlFor="country">Country/Region *</label>
                                 <select className="wide w-100" id="country">
                                     <option value="Choose..." data-display="Select">Choose...</option>
                                     <option>Algeria</option>
@@ -215,17 +206,177 @@ function Checkout({ setCart, cart }) {
                                 <div className="invalid-feedback"> Please select a valid country. </div>
                             </div>
                             <div className="col-md-4 mb-3">
-                                <label htmlFor="state">State *</label>
+                                <label htmlFor="state">City/Town *</label>
                                 <select className="wide w-100" id="state">
                                     <option data-display="Select">Choose...</option>
-                                    
+                                        <option>Algiers</option>
+                                        <option>Oran</option>
+                                        <option>Constantine</option>
+                                        <option>Luanda</option>
+                                        <option>Huambo</option>
+                                        <option>Lobito</option>
+                                        <option>Cotonou</option>
+                                        <option>Porto-Novo</option>
+                                        <option>Parakou</option>
+                                        <option>Gaborone</option>
+                                        <option>Francistown</option>
+                                        <option>Molepolole</option>
+                                        <option>Ouagadougou</option>
+                                        <option>Bobo-Dioulasso</option>
+                                        <option>Koudougou</option>
+                                        <option>Bujumbura</option>
+                                        <option>Gitega</option>
+                                        <option>Rumonge</option>
+                                        <option>Praia</option>
+                                        <option>Assomada</option>
+                                        <option>Mindelo</option>
+                                        <option>Yaoundé</option>
+                                        <option>Douala</option>
+                                        <option>Bamenda</option>
+                                        <option>Bangui</option>
+                                        <option>Bimbo</option>
+                                        <option>Berbérati</option>
+                                        <option>N'Djamena</option>
+                                        <option>Moundou</option>
+                                        <option>Sarh</option>
+                                        <option>Moroni</option>
+                                        <option>Mutsamudu</option>
+                                        <option>Fomboni</option>
+                                        <option>Pointe-Noire</option>
+                                        <option>Dolisie</option>
+                                        <option>Kinshasa</option>
+                                        <option>Lubumbashi</option>
+                                        <option>Mbuji-Mayi</option>
+                                        <option>Djibouti City</option>
+                                        <option>Ali Sabieh</option>
+                                        <option>Tadjoura</option>
+                                        <option>Cairo</option>
+                                        <option>Alexandria</option>
+                                        <option>Giza</option>
+                                        <option>Malabo</option>
+                                        <option>Bata</option>
+                                        <option>Ebebiyin</option>
+                                        <option>Asmara</option>
+                                        <option>Keren</option>
+                                        <option>Massawa</option>
+                                        <option>Mbabane</option>
+                                        <option>Manzini</option>
+                                        <option>Big Bend</option>
+                                        <option>Addis Ababa</option>
+                                        <option>Adama</option>
+                                        <option>Mekele</option>
+                                        <option>Libreville</option>
+                                        <option>Port-Gentil</option>
+                                        <option>Franceville</option>
+                                        <option>Banjul</option>
+                                        <option>Serekunda</option>
+                                        <option>Bakau</option>
+                                        <option>Accra</option>
+                                        <option>Kumasi</option>
+                                        <option>Tamale</option>
+                                        <option>Conakry</option>
+                                        <option>Nzérékoré</option>
+                                        <option>Kankan</option>
+                                        <option>Bissau</option>
+                                        <option>Bafatá</option>
+                                        <option>Gabú</option>
+                                        <option>Abidjan</option>
+                                        <option>Yamoussoukro</option>
+                                        <option>Bouaké</option>
+                                        <option>Nairobi</option>
+                                        <option>Mombasa</option>
+                                        <option>Kisumu</option>
+                                        <option>Maseru</option>
+                                        <option>Teyateyaneng</option>
+                                        <option>Mafeteng</option>
+                                        <option>Monrovia</option>
+                                        <option>Gbarnga</option>
+                                        <option>Bensonville</option>
+                                        <option>Tripoli</option>
+                                        <option>Benghazi</option>
+                                        <option>Misrata</option>
+                                        <option>Antananarivo</option>
+                                        <option>Toamasina</option>
+                                        <option>Fianarantsoa</option>
+                                        <option>Lilongwe</option>
+                                        <option>Blantyre</option>
+                                        <option>Mzuzu</option>
+                                        <option>Bamako</option>
+                                        <option>Sikasso</option>
+                                        <option>Mopti</option>
+                                        <option>Nouakchott</option>
+                                        <option>Nouadhibou</option>
+                                        <option>Kaédi</option>
+                                        <option>Port Louis</option>
+                                        <option>Beau Bassin-Rose Hill</option>
+                                        <option>Vacoas-Phoenix</option>
+                                        <option>Casablanca</option>
+                                        <option>Rabat</option>
+                                        <option>Fès</option>
+                                        <option>Maputo</option>
+                                        <option>Beira</option>
+                                        <option>Nampula</option>
+                                        <option>Windhoek</option>
+                                        <option>Swakopmund</option>
+                                        <option>Oshakati</option>
+                                        <option>Niamey</option>
+                                        <option>Zinder</option>
+                                        <option>Maradi</option>
+                                        <option>Lagos</option>
+                                        <option>Kano</option>
+                                        <option>Ibadan</option>
+                                        <option>Kigali</option>
+                                        <option>Butare</option>
+                                        <option>Ruhengeri</option>
+                                        <option>São Tomé</option>
+                                        <option>Santo António</option>
+                                        <option>São João dos Angolares</option>
+                                        <option>Dakar</option>
+                                        <option>Touba</option>
+                                        <option>Thiès</option>
+                                        <option>Victoria</option>
+                                        <option>Anse Boileau</option>
+                                        <option>Beau Vallon</option>
+                                        <option>Freetown</option>
+                                        <option>Bo</option>
+                                        <option>Kenema</option>
+                                        <option>Mogadishu</option>
+                                        <option>Hargeisa</option>
+                                        <option>Kismayo</option>
+                                        <option>Johannesburg</option>
+                                        <option>Cape Town</option>
+                                        <option>Durban</option>
+                                        <option>Juba</option>
+                                        <option>Wau</option>
+                                        <option>Malakal</option>
+                                        <option>Khartoum</option>
+                                        <option>Omdurman</option>
+                                        <option>Port Sudan</option>
+                                        <option>Dar es Salaam</option>
+                                        <option>Mwanza</option>
+                                        <option>Arusha</option>
+                                        <option>Lomé</option>
+                                        <option>Sokodé</option>
+                                        <option>Kara</option>
+                                        <option>Tunis</option>
+                                        <option>Sfax</option>
+                                        <option>Sousse</option>
+                                        <option>Kampala</option>
+                                        <option>Entebbe</option>
+                                        <option>Jinja</option>
+                                        <option>Lusaka</option>
+                                        <option>Kitwe</option>
+                                        <option>Ndola</option>
+                                        <option>Harare</option>
+                                        <option>Bulawayo</option>
+                                        <option>Chitungwiza</option>                                    
                                 </select>
                                 <div className="invalid-feedback"> Please provide a valid state. </div>
                             </div>
                             <div className="col-md-3 mb-3">
-                                <label htmlFor="zip">Zip *</label>
-                                <input type="text" className="form-control" id="zip" placeholder="" required />
-                                <div className="invalid-feedback"> Zip code required. </div>
+                                <label htmlFor="zip">Postal *</label>
+                                <input type="number" className="form-control" id="zip" placeholder="" required />
+                                <div className="invalid-feedback"> Postal code required. </div>
                             </div>
                         </div>
                         <hr className="mb-4" />
@@ -235,7 +386,7 @@ function Checkout({ setCart, cart }) {
                         </div>
                         <div className="custom-control custom-checkbox">
                             <input type="checkbox" className="custom-control-input" id="save-info" />
-                            <label className="custom-control-label" htmlFor="save-info">Save this information for next time</label>
+                            <label className="custom-control-label" htmlFor="save-info">Save this information for fast chechout next time</label>
                         </div>
                         <hr className="mb-4" />
                         <div className="title"> <span>Payment</span> </div>
@@ -244,13 +395,10 @@ function Checkout({ setCart, cart }) {
                                 <input id="paypal" name="paymentMethod" type="radio" className="custom-control-input" required />
                                 <label className="custom-control-label" htmlFor="paypal">Paypal</label>
                             </div>
-
-                            <div className="custom-control custom-radio">
-                                <input id="paypal" name="paymentMethod" type="radio" className="custom-control-input" required />
-                                <label className="custom-control-label" htmlFor="Mpesa">Mpesa</label>
-                            </div>
+                        {/* <div style={{marginTop:'1rem'}} id='mpesaButton' ></div> */}
+                            
                         </div>
-                        
+                        <br/>                        
                         <hr className="mb-1" /> </form>
                 </div>
             </div>
