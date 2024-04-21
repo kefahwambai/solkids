@@ -72,12 +72,12 @@ export default function Login({ setUser }) {
           {loginError}
         </Alert>
       )}
-      <form className="loginForm">
+      <form className="loginForm" onSubmit={handleSubmit}>
         <label>Email</label>
         <input className="form-control" type="text"  placeholder="Enter your email..." value={email} required onChange={(e) => setEmail(e.target.value)} />
         <label>Password</label>
         <input className="form-control" type="password" placeholder="Enter your password..." value={password} required onChange={(e) => setPassword(e.target.value)}/>
-        <button className="loginButton" onClick={handleSubmit}>Login</button>
+        <button className="loginButton"type="submit">Login</button>
         <p style={{marginTop: '1rem'}}> Don't have an account? <Link to="/register">Register</Link></p>
       </form>
     </div>
