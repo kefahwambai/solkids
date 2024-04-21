@@ -196,6 +196,7 @@ function NavBar({ cart, setCart, size, handleLogout, setUser, user }) {
               <Nav.Link
                 as={Link}
                 to="/login"
+                
                 // type="button"
                 // data-toggle="modal"
                 // data-target="#loginModal"
