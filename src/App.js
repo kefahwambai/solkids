@@ -8,6 +8,7 @@ import ScrollToTop from "./components/scrollToTop";
 import Contact from "./components/Contact";
 import Shop from "./components/Shop/shop";
 import Cart from "./components/cart";
+import Orders from "./components/Order/orders";
 import Preloader from "../src/components/Pre";
 import Events from "./components/Events";
 import Tickets from "./components/Tickets";
@@ -112,14 +113,15 @@ function App() {
           <Route path="/events" element={ <Events/>} />
           <Route path="/gallery" element={<Gallery/>} />
           <Route path="/shop" element={<Shop handleClick={handleClick} />} />
-          <Route path="/cart" element={<Cart cart={cart} setCart={setCart} handleChange={handleChange} />} />     
+          <Route path="/cart" element={<Cart cart={cart} user={user} setUser={setUser} setCart={setCart} handleChange={handleChange} />} />     
           <Route path="/contact" element={ <Contact/>} />
           <Route path="/ticket" element={ <Tickets  cart={cart} setCart={setCart}/>} /> 
-          <Route path="/checkout" element={<Checkout cart={cart}  setCart={setCart} handleChange={handleChange} handleClick={handleClick}/>} />          
+          <Route path="/checkout" element={<Checkout cart={cart} user={user} setUser={setUser}  setCart={setCart} handleChange={handleChange} handleClick={handleClick}/>} />          
           <Route path="/register" element={<Register setUser={setUser} />} />
           <Route path="/login" element={<Login setUser={setUser} />} />      
           <Route path="/profile" element={<Dashboard user={user} setUser={setUser} />} />   
           <Route path="/user" element={<Profile user={user} setUser={setUser} />} />
+          <Route path="/orders" element={<Orders user={user} setUser={setUser} />} />
         </Routes>
         <Footer />
       </div>    

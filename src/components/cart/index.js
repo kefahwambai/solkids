@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import "./cart.css";
 
-function CartComponent({ cart, setCart }) {
+function CartComponent({ cart, setCart, user }) {
     const [totalPrice, setTotalPrice] = useState(0);
 
     const updateTotalPrice = () => {
@@ -35,21 +35,31 @@ function CartComponent({ cart, setCart }) {
         updateTotalPrice();
     };
 
-    useEffect(() => {
+    useEffect(() => {    
+    if (!user) {
+        sessionStorage.setItem("cart_last_updated", JSON.stringify(cart));
+        
+        }
+    }, [cart, user]);
+    
+    useEffect(() => {    
         updateTotalPrice();
     }, [cart]);
 
     useEffect(() => {
-        const cartData = JSON.stringify(cart);
-        sessionStorage.setItem('cart', cartData);
+        if (user) {
+            const storedCartData = sessionStorage.getItem(`cart_${user.user_id}`);
+            if (storedCartData) {
+                setCart(JSON.parse(storedCartData));
+            }
+        }
+    }, [user]);
 
-        const clearCartTimeout = setTimeout(() => {
-            sessionStorage.removeItem('cart');
-            setCart([]);
-        }, 10 * 60 * 1000); 
-
-        return () => clearTimeout(clearCartTimeout);
-    }, [cart, setCart]);
+    useEffect(() => {
+        if (user) {
+            sessionStorage.setItem(`cart_${user.user_id}`, JSON.stringify(cart));
+        }
+    }, [user, cart]);
 
     const roundPrice = (price) => {
         const roundedPrice = Math.round(price * 100) / 100;

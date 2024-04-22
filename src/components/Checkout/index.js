@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import "./checkout.css";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
+import Payment from "./Payment";
 
-function Checkout({ setCart, cart }) {
+
+function Checkout({ setCart, cart, user  }) {
   const [customer_name, setCustomerName] = useState('');
   const [customer_email, setCustomerEmail] = useState('');
   const [customer_phonenumber, setCustomerPhonenumber] = useState('');
@@ -12,8 +14,7 @@ function Checkout({ setCart, cart }) {
   const location = useLocation();
   const [shippingPrice, setShippingPrice] = useState(0);
   const totalPriceFromTickets = location.state ? location.state.totalPrice : 0;
-  const [showLoginForm, setShowLoginForm] = useState(false);
-  const [showRegisterForm, setShowRegisterForm] = useState(false);
+
 
   useEffect(() => {
     setTotalPrice(totalPriceFromTickets);
@@ -36,45 +37,46 @@ function Checkout({ setCart, cart }) {
     setTotalPrice(ans);
     };
 
-    useEffect(() => {
+  useEffect(() => {
     handlePrice();
     injectMpesaScript();
   }, [cart]); 
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-      
-        if (!customer_name.trim() || !customer_email.trim() || !delivery_address.trim()) {
-          alert('Please fill in all required fields *');
-          return;
-        }
-    };
 
-    function handleMpesa(e) {
-      e.preventDefault() 
-      const formData = {
-          phoneNumber:  "",
-          amount: cart[0].amount
+  const handleSubmit = (e) => {
+      e.preventDefault();
+    
+      if (!customer_name.trim() || !customer_email.trim() || !delivery_address.trim()) {
+        alert('Please fill in all required fields *');
+        return;
       }
-      fetch('http://localhost:3000/stkpush', {
-          method: 'POST',
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify(formData)
-      })
-      .then((res) => res.json())
-      .then((data) => console.log("Mpesa Successful", data))
+  };
+
+  function handleMpesa(e) {
+    e.preventDefault() 
+    const formData = {
+        phoneNumber:  "",
+        amount: cart[0].amount
+    }
+    fetch('http://localhost:3000/stkpush', {
+        method: 'POST',
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(formData)
+    })
+    .then((res) => res.json())
+    .then((data) => console.log("Mpesa Successful", data))
   }
 
-    const handleShippingChange = (event) => {
-      const selectedShippingOption = event.target.value;
-      const priceRegex = /Ksh (\d+(\.\d+)?)/;
-      const match = selectedShippingOption.match(priceRegex);
-      if (match) {
-          const price = parseFloat(match[1]);
-          setShippingPrice(price);
-      } else {
-          setShippingPrice(0); 
-      }
+  const handleShippingChange = (event) => {
+    const selectedShippingOption = event.target.value;
+    const priceRegex = /Ksh (\d+(\.\d+)?)/;
+    const match = selectedShippingOption.match(priceRegex);
+    if (match) {
+        const price = parseFloat(match[1]);
+        setShippingPrice(price);
+    } else {
+        setShippingPrice(0); 
+    }
   };
 
   const injectMpesaScript = () => {
@@ -83,6 +85,21 @@ function Checkout({ setCart, cart }) {
     script.async = true;
     document.body.appendChild(script);
   };
+  useEffect(() => {
+    if (user) {
+        const storedCartData = sessionStorage.getItem(`checkout_${user.user_id}`);
+        if (storedCartData) {
+            setCart(JSON.parse(storedCartData));
+        }
+    }
+}, [user]);
+
+useEffect(() => {
+    if (user) {
+        sessionStorage.setItem(`checkout_${user.user_id}`, JSON.stringify(cart));
+    }
+}, [user, cart]);
+
   return (
     <div className="checkoutform">
         <div className="page-heading-shows-events">
@@ -123,13 +140,6 @@ function Checkout({ setCart, cart }) {
                                 <label htmlFor="firstName">Customer name *</label>
                                 <input type="text" className="form-control" id="customerName" placeholder="" value={customer_name} onChange={(e) => setCustomerName(e.target.value)} required />
                                 <div className="invalid-feedback"> Valid first name is required. </div>
-                            </div>
-                        </div>
-                        <div className="mb-3">
-                            <label htmlFor="username">Username *</label>
-                            <div className="input-group">
-                                <input type="text" className="form-control" id="username" placeholder="" required />
-                                <div className="invalid-feedback" style={{ width: '100%' }}> Your username is required. </div>
                             </div>
                         </div>
                         <div className="mb-3">
@@ -388,18 +398,17 @@ function Checkout({ setCart, cart }) {
                             <input type="checkbox" className="custom-control-input" id="save-info" />
                             <label className="custom-control-label" htmlFor="save-info">Save this information for fast chechout next time</label>
                         </div>
+                      </form>
                         <hr className="mb-4" />
-                        <div className="title"> <span>Payment</span> </div>
+                        <div className="title"> <h4>Payment</h4> </div>
                         <div className="d-block my-3">
                             <div className="custom-control custom-radio">
-                                <input id="paypal" name="paymentMethod" type="radio" className="custom-control-input" required />
-                                <label className="custom-control-label" htmlFor="paypal">Paypal</label>
-                            </div>
-                        {/* <div style={{marginTop:'1rem'}} id='mpesaButton' ></div> */}
-                            
-                        </div>
-                        <br/>                        
-                        <hr className="mb-1" /> </form>
+                              <div disable="true" style={{marginTop:'2rem'}} id='mpesaButton' ></div>
+                              <Payment/>                                
+                            </div>                            
+                        </div>                      
+                        <hr className="mb-1" />
+                      
                 </div>
             </div>
             <div className="col-sm-6 col-lg-6 mb-3">
@@ -424,7 +433,7 @@ function Checkout({ setCart, cart }) {
                 </label>{" "}
                 <span className="float-right font-weight-bold">FREE</span>{" "}
               </div>
-              <div className="ml-4 mb-2 small">(3-7 business days)</div>
+              <div className="ml-4 mb-2 small">(2-5 business days)</div>
               <div className="custom-control custom-radio">
                 <input
                   id="shippingOption2"
@@ -440,7 +449,7 @@ function Checkout({ setCart, cart }) {
                 </label>{" "}
                 <span className="float-right font-weight-bold">Ksh500.00</span>{" "}
               </div>
-              <div className="ml-4 mb-2 small">(2-4 business days)</div>
+              <div className="ml-4 mb-2 small">(1-2 business days)</div>
               <div className="custom-control custom-radio">
                 <input
                   id="shippingOption3"
@@ -503,7 +512,7 @@ function Checkout({ setCart, cart }) {
             
         </div>
     </div>
-    <div className="col-12 d-flex shopping-box"> <a href="checkout.html" className="ml-auto btn hvr-hover">Place Order</a> </div>
+           <Link to='/profile' className="btn btn-primary checkout-btn" onClick={handleSubmit}>Place Order</Link>
         </div>
         </div>
           </div>
