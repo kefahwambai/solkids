@@ -399,76 +399,67 @@ useEffect(() => {
                             <label className="custom-control-label" htmlFor="save-info">Save this information for fast chechout next time</label>
                         </div>
                       </form>
-                        <hr className="mb-4" />
-                        <div className="title"> <h4>Payment</h4> </div>
-                        <div className="d-block my-3">
-                            <div className="custom-control custom-radio">
-                              <div disable="true" style={{marginTop:'2rem'}} id='mpesaButton' ></div>
-                              <Payment/>                                
-                            </div>                            
-                        </div>                      
-                        <hr className="mb-1" />
-                      
+                    <hr className="mb-1" />                      
                 </div>
             </div>
             <div className="col-sm-6 col-lg-6 mb-3">
-    <div className="col-md-12 col-lg-12">
-        <div className="shipping-method-box">
-            <div className="title-left">
-                <h3>Shipping Method</h3>
-            </div>
-            <div className="mb-4">
-              <div className="custom-control custom-radio">
-                <input
-                  id="shippingOption1"
-                  name="shipping-option"
-                  className="custom-control-input"
-                  value="Standard Delivery - FREE"
-                  type="radio"
-                  onChange={handleShippingChange}
-                  checked={shippingPrice === 0}
-                />
-                <label className="custom-control-label" htmlFor="shippingOption1">
-                  Standard Delivery
-                </label>{" "}
-                <span className="float-right font-weight-bold">FREE</span>{" "}
-              </div>
-              <div className="ml-4 mb-2 small">(2-5 business days)</div>
-              <div className="custom-control custom-radio">
-                <input
-                  id="shippingOption2"
-                  name="shipping-option"
-                  className="custom-control-input"
-                  value="Express Delivery - Ksh 500.00"
-                  type="radio"
-                  onChange={handleShippingChange}
-                  checked={shippingPrice === 500}
-                />
-                <label className="custom-control-label" htmlFor="shippingOption2">
-                  Express Delivery
-                </label>{" "}
-                <span className="float-right font-weight-bold">Ksh500.00</span>{" "}
-              </div>
-              <div className="ml-4 mb-2 small">(1-2 business days)</div>
-              <div className="custom-control custom-radio">
-                <input
-                  id="shippingOption3"
-                  name="shipping-option"
-                  className="custom-control-input"
-                  value="Next Business day - Ksh 1000.00"
-                  type="radio"
-                  onChange={handleShippingChange}
-                  checked={shippingPrice === 1000}
-                />
-                <label className="custom-control-label" htmlFor="shippingOption3">
-                  Next Business day
-                </label>{" "}
-                <span className="float-right font-weight-bold">Ksh 1000.00</span>{" "}
-              </div>
-            </div>
+        <div className="col-md-12 col-lg-12">
+            <div className="shipping-method-box">
+                <div className="title-left">
+                    <h3>Shipping Method</h3>
+                </div>
+                <div className="mb-4">
+                  <div className="custom-control custom-radio">
+                    <input
+                      id="shippingOption1"
+                      name="shipping-option"
+                      className="custom-control-input"
+                      value="Standard Delivery - FREE"
+                      type="radio"
+                      onChange={handleShippingChange}
+                      checked={shippingPrice === 0}
+                    />
+                    <label className="custom-control-label" htmlFor="shippingOption1">
+                      Standard Delivery
+                    </label>{" "}
+                    <span className="float-right font-weight-bold">FREE</span>{" "}
+                  </div>
+                  <div className="ml-4 mb-2 small">(2-5 business days)</div>
+                  <div className="custom-control custom-radio">
+                    <input
+                      id="shippingOption2"
+                      name="shipping-option"
+                      className="custom-control-input"
+                      value="Express Delivery - Ksh 500.00"
+                      type="radio"
+                      onChange={handleShippingChange}
+                      checked={shippingPrice === 500}
+                    />
+                    <label className="custom-control-label" htmlFor="shippingOption2">
+                      Express Delivery
+                    </label>{" "}
+                    <span className="float-right font-weight-bold">Ksh500.00</span>{" "}
+                  </div>
+                  <div className="ml-4 mb-2 small">(1-2 business days)</div>
+                  <div className="custom-control custom-radio">
+                    <input
+                      id="shippingOption3"
+                      name="shipping-option"
+                      className="custom-control-input"
+                      value="Next Business day - Ksh 1000.00"
+                      type="radio"
+                      onChange={handleShippingChange}
+                      checked={shippingPrice === 1000}
+                    />
+                    <label className="custom-control-label" htmlFor="shippingOption3">
+                      Next Business day
+                    </label>{" "}
+                    <span className="float-right font-weight-bold">Ksh 1000.00</span>{" "}
+                  </div>
+                </div>
 
+            </div>
         </div>
-    </div>
     
        <div className="col-md-12 col-lg-12"> 
        <div className="title-left">
@@ -487,13 +478,51 @@ useEffect(() => {
           </div>
             ))}
         </div>
-   
+        <div className="title"> <h4>Payment</h4> </div>
+        <div className="d-block my-3">
+            <div  className="col-md-12 col-lg-12 accordion" id="accordionExample">
+              <div className="accordion-item">
+                <h2 className="accordion-header">
+                  <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Mpesa
+                  </button>
+                </h2>
+                <div id="collapseOne" className="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div className="accordion-body">
+                  <form className="loginForm">
+                    <div>
+                      <label for="phonenumber" className="form-label">Phone Number</label>
+                      <input className="form-control" type="number" placeholder="+***-********* " id="phonenumber"  label="Phonenumber" />
+
+                    </div>
+                    <div className="mb-3">
+                      <label for="Amount" className="form-label">Amount</label>
+                      <div className="ml-auto h5"> Kshs {totalPrice + shippingPrice}/-</div>
+                    </div>
+                    <button type="submit" className="btn btn-primary">Pay</button>
+                  </form>
+                </div>
+                </div>
+              </div>
+              <div className="accordion-item">
+                <h2 className="accordion-header">
+                  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Visa/MasterCard
+                  </button>
+                </h2>
+                <div id="collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                  <div className="accordion-body">
+                  <Payment/> 
+                  </div>
+                </div>
+              </div>                              
+            </div>                   
+                                              
+        </div>                      
+
 
     <div className="col-md-12 col-lg-12">   
-        <div className="order-box">       
-            <div className="title-left">
-                <h3>Your order</h3>
-            </div>
+        <div className="order-box">  
             <div className="d-flex">
                 <h4>Sub Total</h4>
                 <div className="ml-auto font-weight-bold"> {totalPrice} </div>
