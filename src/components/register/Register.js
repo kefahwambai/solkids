@@ -33,7 +33,7 @@ export default function Register({ setUser }) {
     };
     
     
-    const response = fetch('http://localhost:3000/signup', {
+    const response = fetch('https://solkids-api.onrender.com/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ export default function Register({ setUser }) {
           setUser(user)                    
           setMessage('Account Created');
           setTimeout(() => {
-            navigate('/login');
+            navigate('/');
           }, 1234);
         } else {
           setSignupError(user.error);

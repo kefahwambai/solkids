@@ -22,7 +22,7 @@ export default function Login({ setUser }) {
     };
   
     try {
-      const response = await fetch('http://localhost:3000/login', {
+      const response = await fetch('https://solkids-api.onrender.com/login', {
         method: 'POST',
         headers: {
           'Content-type': 'application/json',
@@ -65,18 +65,18 @@ export default function Login({ setUser }) {
     </div>
     </div> 
     <div className="login">
-      <span className="loginTitle">Login</span>
       {message && (<Alert severity='success' sx={{ mb:2 }}>{message}</Alert>)}
       {loginError && (
         <Alert severity="error" sx={{ mb: 2 }}>
           {loginError}
         </Alert>
       )}
+      <span className="loginTitle">Login</span>
       <form className="loginForm" onSubmit={handleSubmit}>
         <label>Email</label>
-        <input className="form-control" type="text"  placeholder="Enter your email..." value={email} required onChange={(e) => setEmail(e.target.value)} />
+        <input className="form-control" type="text" name="emailfield"  placeholder="Enter your email..." value={email} required onChange={(e) => setEmail(e.target.value)} />
         <label>Password</label>
-        <input className="form-control" type="password" placeholder="Enter your password..." value={password} required onChange={(e) => setPassword(e.target.value)}/>
+        <input className="form-control" type="password" name="passwordfield" placeholder="Enter your password..." value={password} required onChange={(e) => setPassword(e.target.value)}/>
         <button className="loginButton"type="submit">Login</button>
         <p style={{marginTop: '1rem'}}> Don't have an account? <Link to="/register">Register</Link></p>
       </form>

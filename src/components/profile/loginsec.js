@@ -50,7 +50,7 @@ export default function Profile({ user }) {
       event.preventDefault();
   
       try {
-        const response = await fetch(`http://localhost:3000/users/${user.id}`, {
+        const response = await fetch(`https://solkids-api.onrender.com/users/${user.id}`, {
           method: 'PATCH', 
           headers: {
             'Content-Type': 'application/json',
