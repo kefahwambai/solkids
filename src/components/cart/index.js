@@ -67,7 +67,7 @@ function CartComponent({ cart, setCart, user }) {
     };
 
     return (
-        <section id="shopcart">
+        <section id="shopcart">            
         <div class="page-heading-shows-events">
             <div class="container">
                 <div class="row">
@@ -96,7 +96,13 @@ function CartComponent({ cart, setCart, user }) {
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                {cart.map((item, index) => (
+                                            {cart.length === 0 ? (
+                                                <div class="container">
+                                                    <p>Your cart is empty.</p>
+                                                    <Link style={{color: '#ffcb51'}} to="/shop">Continue shopping </Link>
+                                                </div>
+                                                    ) : (
+                                                cart.map((item, index) => (
                                                     <tr key={index}>
                                                         <td className="thumbnail-img">
                                                             <a href="#">
@@ -123,7 +129,8 @@ function CartComponent({ cart, setCart, user }) {
                                                             </a>
                                                         </td>
                                                     </tr>
-                                                ))}
+                                                ))
+                                            )}
                                             </tbody>
                                         </table>
                                     </div>

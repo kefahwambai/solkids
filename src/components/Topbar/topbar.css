@@ -1,0 +1,46 @@
+.tbar {
+    z-index: 10;
+    position: fixed;
+    width: 100vw;
+}
+
+
+.no-gutters {
+    margin-right: 0;
+    margin-left: 0; 
+}
+.no-gutters > .col,
+.no-gutters > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0; 
+}
+.topper {
+    font-size: 11px;
+    width: 100%;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+@media (min-width: 322px) and (max-width: 376px) {
+
+    .topper {
+        margin-left: 2rem;
+    }
+}
+  
+@media (max-width: 767.98px) {
+    .topper {
+    margin-bottom: 10px; 
+} 
+}
+.text {
+    width: calc(100% - 30px);
+    color: white; 
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.text:hover {
+    text-decoration: none !important;
+    transition: text-decoration 0.3s ease-in-out !important;
+}

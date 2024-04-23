@@ -19,6 +19,9 @@ import Register from "./components/register/Register"
 import Login from "./components/login/Login"
 import Profile from "./components/profile/loginsec";
 import Done from "./components/Checkout/Done";
+import Topbar from "./components/Topbar";
+// import Navbar from "./components/navbar";
+
 import "./App.css";
 
 function App() {
@@ -106,6 +109,8 @@ function App() {
     
       <div className="App" id={load ? "no-scroll" : "scroll"}>
       <Preloader load={load} />
+        <Topbar/>
+        {/* <Navbar/> */}
         <Navbar size={cart.length} user={user} setUser={setUser} handleLogout={handleLogout}/>
         <ScrollToTop />
         <Routes>
@@ -113,7 +118,6 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/events" element={ <Events/>} />
           <Route path="/gallery" element={<Gallery/>} />
-
           <Route path="/shop" element={<Shop handleClick={handleClick} />} />
           <Route path="/cart" element={<Cart cart={cart} user={user} setUser={setUser} setCart={setCart} handleChange={handleChange} />} />     
           <Route path="/contact" element={ <Contact/>} />

@@ -1,4 +1,4 @@
-import "./nav.css";
+import "./Nav.css";
 import "../login/login.css"
 import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from "react";
@@ -82,166 +82,43 @@ function NavBar({ cart, setCart, size, handleLogout, setUser, user }) {
     };
   }, []); 
   return (
-    <Navbar
-      expanded={expand}
-      fixed="top"
-      expand="md"
-      className={navColour ? "sticky" : "navbar"}
-    >
-      <Container>
-      <Navbar.Brand as={Link} to="/" >
-          <img src={logo} alt="Logo" className="logo" as={Link} to="/" /> 
-        </Navbar.Brand>
-        <Navbar.Toggle  
-          aria-controls="responsive-navbar-nav"
-          onClick={() => {
-            updateExpanded(expand ? false : "expanded");
-          }}
-        >
-          <span ></span>
-          <span></span>
-          <span></span>
-        </Navbar.Toggle>
-        <Navbar.Collapse id="responsive-navbar-nav" style={{ marginTop: '0.67rem', marginLeft: '11rem', fontSize:'1rem'}}>
-          <Nav className="ms-auto" defaultActiveKey="#home">
-            <Nav.Item>              
-              <Nav.Link
-                as={Link}
-                to="/about"
-                onClick={() => updateExpanded(false)}
-              >
-                 About
-              </Nav.Link>             
-            </Nav.Item>
-
-            <Nav.Item>              
-              <Nav.Link
-                as={Link}
-                to="/events"                
-                onClick={() => updateExpanded(false)}
-              >
-               Events
-              </Nav.Link>             
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/shop"
-                onClick={() => updateExpanded(false)}
-              >
-                Canteen
-              </Nav.Link>
-            </Nav.Item>  
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/contact"
-                onClick={() => updateExpanded(false)}
-              >
-                Contact
-              </Nav.Link>
-            </Nav.Item> 
+    <div className="container-fluid bg-light position-relative shadow">
+      <nav className="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
+        <a href="/" className="navbar-brand font-weight-bold text-secondary" style={{ fontSize: "50px" }}>
+        <img src={logo} alt="Logo" className="logo" as={Link} to="/" /> 
+        </a>
+        <button type="button" className="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+          <div className="navbar-nav font-weight-bold mx-auto py-0">
+            <a href="/" className="nav-item nav-link active">Home</a>
+            <a href="/about" className="nav-item nav-link">About</a>
+            <a href="/events" className="nav-item nav-link">Events</a>
+            <a href="/shop" className="nav-item nav-link">Shop</a>
+            <a href="/gallery" className="nav-item nav-link">Gallery</a>
+            <a href="/contact" className="nav-item nav-link">Contact</a>
             {size ? (
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/cart"             
-                onClick={(event) => {
-                  event.preventDefault();
-                }}     
-
-                onClick={() => updateExpanded(false)}  
-              >
-                <AiOutlineShoppingCart
-                  style={{ marginBottom: "2px"}}
-                />{" "}         
-              </Nav.Link>
-              <div className="cartsize">
-              {size}
-              </div>
-            </Nav.Item>   
-             ) : (
-              <>
-              </>
-              )} 
-            
+               <a href="/cart" className="nav-item nav-link" onClick={(event) => {event.preventDefault();}} onClick={() => updateExpanded(false)}  ><AiOutlineShoppingCart /><div className="cartsize">{size}</div></a>
+              ) : (
+                  <>
+                  </>
+            )}   
             {user ? (
-              <>
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/profile"
-                onClick={() => updateExpanded(false)}
-              >
-                <AiOutlineUser
-                  style={{ marginBottom: "2px" }}
-                />{" "}
-              </Nav.Link>
-            </Nav.Item> 
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/"
-                onClick={handleLogout}>
-                <AiOutlineLogout
-                  style={{ marginBottom: "2px" }}
-                />{" "}
-              </Nav.Link>
-            </Nav.Item> 
+              <>  
+              <a href="/profile" onClick={() => updateExpanded(false)} className="nav-item nav-link"><AiOutlineUser style={{ marginBottom: "2px" }}   /></a>
+              <a href="" className="nav-item nav-link" onClick={handleLogout}><AiOutlineLogout style={{ marginBottom: "2px"}} /></a>
               </>
-        ) : (
-          <>
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/login"
-                
-                // type="button"
-                // data-toggle="modal"
-                // data-target="#loginModal"
-                onClick={() => updateExpanded(false)}
-              >
-                <AiOutlineLogin
-                  style={{ marginBottom: "2px" }}
-                />{" "}
-                
-              </Nav.Link>
-            </Nav.Item>            
-            {/* <div  class="modal fade" id="loginModal"  role="dialog" aria-labelledby="loginTitle" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div className="login">
-                      <span className="loginTitle">Login</span>
-                      {message && (<Alert severity='success' sx={{ mb:2 }}>{message}</Alert>)}
-                      {loginError && (
-                        <Alert severity="error" sx={{ mb: 2 }}>
-                          {loginError}
-                        </Alert>
-                      )}
-                      <form className="loginForm">
-                        <label>Email</label>
-                        <input className="form-control" type="text"  placeholder="Enter your email..." value={email} required onChange={(e) => setEmail(e.target.value)} />
-                        <label>Password</label>
-                        <input className="form-control" type="password" placeholder="Enter your password..." value={password} required onChange={(e) => setPassword(e.target.value)}/>
-                        <button className="loginButton" onClick={handleSubmit}>Login</button>
-                        <p style={{marginTop: '1rem'}}> Don't have an account? <Link to="/register">Register</Link></p>
-                      </form>
-                    </div>
-                </div>
-              </div>
-            </div>             */}
-          </>
-        )}           
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+              ) : (
+                <>
+              <a href="/login " className="nav-item nav-link"><AiOutlineLogin style={{ marginBottom: "2px"}} /></a>
+              </>
+            )}    
+
+          </div>
+        </div>
+      </nav>
+    </div>
   );
 }
 

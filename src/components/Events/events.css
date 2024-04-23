@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
 
-
+/* @media screen and (min-width: 321px) and ( max-width: 376px) {
+    .page-heading-shows-events  {
+      margin-top: 7rem !important;
+    }
+} */
 .page-heading-shows-events {
 background-image: url(../../Assets/slideshow/WITS-4.jpeg);
 background-size: 100vw auto; 

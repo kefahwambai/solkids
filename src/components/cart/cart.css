@@ -1,6 +1,14 @@
 .cart-box-main{
   padding: 70px 0px;
 }
+.empty-cart {
+  font-size: 1.5rem;
+  font-weight: 600;
+  align-items: center !important;
+
+}
+
+
 .table-main thead{
   background: #b0b435 !important;
   color: #ffffff;
