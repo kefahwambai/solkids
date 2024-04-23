@@ -18,6 +18,7 @@ import Dashboard from "./components/profile/profile";
 import Register from "./components/register/Register"
 import Login from "./components/login/Login"
 import Profile from "./components/profile/loginsec";
+import Done from "./components/Checkout/Done";
 import "./App.css";
 
 function App() {
@@ -112,6 +113,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/events" element={ <Events/>} />
           <Route path="/gallery" element={<Gallery/>} />
+
           <Route path="/shop" element={<Shop handleClick={handleClick} />} />
           <Route path="/cart" element={<Cart cart={cart} user={user} setUser={setUser} setCart={setCart} handleChange={handleChange} />} />     
           <Route path="/contact" element={ <Contact/>} />
@@ -122,6 +124,7 @@ function App() {
           <Route path="/profile" element={<Dashboard user={user} setUser={setUser} />} />   
           <Route path="/user" element={<Profile user={user} setUser={setUser} />} />
           <Route path="/orders" element={<Orders user={user} setUser={setUser} />} />
+          <Route path="/success" element={<Done/>} />
         </Routes>
         <Footer />
       </div>    

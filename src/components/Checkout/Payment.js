@@ -3,12 +3,12 @@ import { Elements } from "@stripe/react-stripe-js";
 import CheckoutForm from "./CheckoutForm";
 import { loadStripe } from "@stripe/stripe-js";
 
-function Payment() {
+function Payment({ totalPrice }) {
   const [stripePromise, setStripePromise] = useState(null);
   const [clientSecret, setClientSecret] = useState("");
 
   useEffect(() => {
-    fetch("https://solserve.vercel.app/config")
+    fetch("http://localhost:4242/config")
       .then(async (r) => {
         const { publishableKey } = await r.json();
         setStripePromise(loadStripe(publishableKey));
@@ -17,22 +17,27 @@ function Payment() {
         console.error("Error fetching publishableKey:", error);
       });
   }, []);
-  
+
   useEffect(() => {
-    fetch("https://solserve.vercel.app/create-payment-intent", {
+    fetch("http://localhost:4242/create-payment-intent", {
       method: "POST",
-      body: JSON.stringify({}),
+      headers: {
+        "Content-Type": "application/json", 
+      },
+      body: JSON.stringify({ amount: totalPrice }), 
+
     }).then(async (result) => {
       const { clientSecret } = await result.json();
       setClientSecret(clientSecret);
     });
-  }, []);
+  },  [totalPrice]);
+  
 
   return (
     <>
       {clientSecret && stripePromise && (
         <Elements stripe={stripePromise} options={{ clientSecret }}>
-          <CheckoutForm />
+          <CheckoutForm  />
         </Elements>
       )}
     </>

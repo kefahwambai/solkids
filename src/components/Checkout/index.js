@@ -39,7 +39,6 @@ function Checkout({ setCart, cart, user  }) {
 
   useEffect(() => {
     handlePrice();
-    injectMpesaScript();
   }, [cart]); 
 
 
@@ -53,15 +52,15 @@ function Checkout({ setCart, cart, user  }) {
   };
 
   function handleMpesa(e) {
+    const Price = totalPrice + shippingPrice
     e.preventDefault() 
-    const formData = {
-        phoneNumber:  "",
-        amount: cart[0].amount
-    }
-    fetch('http://localhost:3000/stkpush', {
+    fetch('http://localhost:4242/api/stkPush', {
         method: 'POST',
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(formData)
+        headers: { 
+           "Content-Type": "application/json",
+           "Authorization": "HGA3VIEa85yA2KbljFWf0MIX41T7"
+       },
+        body: JSON.stringify({ amount: Price }), 
     })
     .then((res) => res.json())
     .then((data) => console.log("Mpesa Successful", data))
@@ -79,12 +78,6 @@ function Checkout({ setCart, cart, user  }) {
     }
   };
 
-  const injectMpesaScript = () => {
-    const script = document.createElement("script");
-    script.src = "https://cdn.jsdelivr.net/gh/muaad/mpesa_button@master/src/button.min.js";
-    script.async = true;
-    document.body.appendChild(script);
-  };
   useEffect(() => {
     if (user) {
         const storedCartData = sessionStorage.getItem(`checkout_${user.user_id}`);
@@ -483,13 +476,13 @@ useEffect(() => {
             <div  className="col-md-12 col-lg-12 accordion" id="accordionExample">
               <div className="accordion-item">
                 <h2 className="accordion-header">
-                  <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                     Mpesa
                   </button>
                 </h2>
-                <div id="collapseOne" className="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div id="collapseOne" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                 <div className="accordion-body">
-                  <form className="loginForm">
+                  <form className="loginForm" onSubmit={handleMpesa}>
                     <div>
                       <label for="phonenumber" className="form-label">Phone Number</label>
                       <input className="form-control" type="number" placeholder="+***-********* " id="phonenumber"  label="Phonenumber" />
@@ -512,7 +505,7 @@ useEffect(() => {
                 </h2>
                 <div id="collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                   <div className="accordion-body">
-                  <Payment/> 
+                  <Payment totalPrice={totalPrice + shippingPrice} /> 
                   </div>
                 </div>
               </div>                              
