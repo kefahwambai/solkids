@@ -8,7 +8,7 @@ function Payment({ totalPrice }) {
   const [clientSecret, setClientSecret] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:4242/config")
+    fetch("https://solserve.vercel.app/config")
       .then(async (r) => {
         const { publishableKey } = await r.json();
         setStripePromise(loadStripe(publishableKey));
@@ -19,7 +19,7 @@ function Payment({ totalPrice }) {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:4242/create-payment-intent", {
+    fetch("https://solserve.vercel.app/create-payment-intent", {
       method: "POST",
       headers: {
         "Content-Type": "application/json", 

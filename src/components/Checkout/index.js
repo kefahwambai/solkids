@@ -54,7 +54,7 @@ function Checkout({ setCart, cart, user  }) {
   function handleMpesa(e) {
     const Price = totalPrice + shippingPrice
     e.preventDefault() 
-    fetch('http://localhost:4242/api/stkPush', {
+    fetch('https://solserve.vercel.app/api/stkPush', {
         method: 'POST',
         headers: { 
            "Content-Type": "application/json",
