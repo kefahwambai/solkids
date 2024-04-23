@@ -92,26 +92,26 @@ function NavBar({ cart, setCart, size, handleLogout, setUser, user }) {
         </button>
         <div className="collapse navbar-collapse justify-content-between" id="navbarCollapse">
           <div className="navbar-nav font-weight-bold mx-auto py-0">
-            <a href="/" className="nav-item nav-link active">Home</a>
-            <a href="/about" className="nav-item nav-link">About</a>
-            <a href="/events" className="nav-item nav-link">Events</a>
-            <a href="/shop" className="nav-item nav-link">Shop</a>
-            <a href="/gallery" className="nav-item nav-link">Gallery</a>
-            <a href="/contact" className="nav-item nav-link">Contact</a>
+            <Link to="/"><a href="" className="nav-item nav-link active">Home</a></Link>
+            <Link to="/about"><a href="" className="nav-item nav-link">About</a></Link>
+            <Link to="/events"><a href="" className="nav-item nav-link">Events</a></Link>
+            <Link to="/shop"><a href="" className="nav-item nav-link">Shop</a></Link>
+            <Link to="/gallery"><a href="" className="nav-item nav-link">Gallery</a></Link>
+            <Link to="/contact"><a href="" className="nav-item nav-link">Contact</a></Link>
             {size ? (
-               <a href="/cart" className="nav-item nav-link" onClick={(event) => {event.preventDefault();}} onClick={() => updateExpanded(false)}  ><AiOutlineShoppingCart /><div className="cartsize">{size}</div></a>
+              <Link to="/cart"><a href="/cart" className="nav-item nav-link" onClick={(event) => {event.preventDefault();}} onClick={() => updateExpanded(false)}  ><AiOutlineShoppingCart /><div className="cartsize">{size}</div></a></Link>               
               ) : (
                   <>
                   </>
             )}   
             {user ? (
               <>  
-              <a href="/profile" onClick={() => updateExpanded(false)} className="nav-item nav-link"><AiOutlineUser style={{ marginBottom: "2px" }}   /></a>
-              <a href="" className="nav-item nav-link" onClick={handleLogout}><AiOutlineLogout style={{ marginBottom: "2px"}} /></a>
+              <Link to="/profile" ><a href="/profile" onClick={() => updateExpanded(false)} className="nav-item nav-link"><AiOutlineUser style={{ marginBottom: "2px" }}   /></a></Link>
+              <Link><a href="" className="nav-item nav-link" onClick={handleLogout}><AiOutlineLogout style={{ marginBottom: "2px"}} /></a></Link>              
               </>
               ) : (
                 <>
-              <a href="/login " className="nav-item nav-link"><AiOutlineLogin style={{ marginBottom: "2px"}} /></a>
+                <Link to="/login"><a href="/login " className="nav-item nav-link"><AiOutlineLogin style={{ marginBottom: "2px"}} /></a></Link>              
               </>
             )}    
 

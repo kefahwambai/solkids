@@ -10,7 +10,7 @@ export default function Topbar() {
 	    		<div className="col-lg-12 d-block">
 		    		<div className="row d-flex">
 					    <div className="col-md pr-4 d-flex topper align-items-center">
-						    <span className="text">Free Delivery on orders within Nairobi*</span>
+						    <span className="texxt">Free Delivery on orders within Nairobi*</span>
 					    </div>
 				    </div>
 			    </div>
