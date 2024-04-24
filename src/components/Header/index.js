@@ -1,4 +1,5 @@
-import React, { useState, useRef} from 'react';
+import $ from 'jquery'; 
+import React, { useState, useRef, useEffect} from 'react';
 import "./header.css"
 import { Link } from 'react-router-dom';
 import kids from "../../Assets/Homepage/solchick.png";
@@ -14,15 +15,11 @@ import solmic from "../../Assets/Homepage/solmic.PNG"
 import pizza from "../../Assets/definition/pizzakids.png"
 import kich from "../../Assets/Homepage/solchick.png"
 import useScrollTriggeredCountUp from './useScrollTriggeredCountUp';
-
-const products = [
-  { id: 1, name: "Hibiscus Oak", category: "Best seller", price: "Kshs 700", image: oak },
-  { id: 2, name: "Towering Twiga", price: "Kshs 700", image: twiga },
-  { id: 3, name: "Funny fisi",category: "Top featured", price: "Kshs 700", image: fisi },
-  { id: 4, name: "Written in the Stars", category: "Best Seller", price: "Kshs 950", image: stars }
-];
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel';
 
 export default function CalendarComponent({ handleClick }) { 
+
   const [filter, setFilter] = useState('*'); 
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [quantity, setQuantity] = useState(0);
@@ -34,21 +31,23 @@ export default function CalendarComponent({ handleClick }) {
   const countkids = useScrollTriggeredCountUp(childrenReachedRef, 4);
   const countcont = useScrollTriggeredCountUp(contentCatalogueRef, 20);
   const awardcount = useScrollTriggeredCountUp(awardsRef, 2);
-
+  const products = [
+    { id: 1, name: "Hibiscus Oak",  price: "Kshs 700", image: oak, category: 'prdkt3' },
+    { id: 2, name: "Towering Twiga", price: "Kshs 700", image: twiga, category: 'prdkt2' },
+    { id: 3, name: "Funny fisi",  price: "Kshs 700", image: fisi, category: 'prdkt1' }
+  ];
+  
   useScrollTriggeredCountUp(childrenReachedRef, 4);
   useScrollTriggeredCountUp(solkidsMembersRef, 40);
   useScrollTriggeredCountUp(contentCatalogueRef, 20);
   useScrollTriggeredCountUp(awardsRef, 2);
-
   const handleQuantityChange = (event) => {
     setQuantity(event.target.value);
   };
 
   const handleAddToCart = () => {
     handleClick({ ...selectedProduct, quantity: parseInt(quantity) });
-  };
-
-  
+  };  
 
   const handleFilterClick = (filterValue) => {
     setFilter(filterValue);
@@ -57,10 +56,12 @@ export default function CalendarComponent({ handleClick }) {
     setSelectedProduct(product);
   };
 
+
   return (
 
     <div>
     <section className="video-background">
+      
       <div className='overlay'></div>
       <video src={introvid} autoPlay muted loop className="video">
         <source  type="video/mp4" />
@@ -87,7 +88,7 @@ export default function CalendarComponent({ handleClick }) {
                 <div className="pl-4">
                 <i className="fas fa-child fa-3x"></i>               
                 <h3 className="text-primary mb-3">Variety of Kid content</h3>
-                <p className="mb-0"> We champion Afro-futuristic sci-fi narratives that address pollution and climate change, amplifying African voices worldwide through engaging storytelling.</p>
+                <p className="mb-0"> We promote Afro-futuristic sci-fi stories addressing pollution and climate change.</p>
                 </div>
               </div>
             </div>
@@ -154,57 +155,44 @@ export default function CalendarComponent({ handleClick }) {
         </div>
       </div>
     </section>
-      <section id="frontshop">
-      <div className="products-box">
-        <div className="container">
-            <div className="row">
-                <div className="col-lg-12">
+    <section id="frontshop">
+    <div id="fh5co-product">
+      <div className="container">
+        <div className="row animate-box">
+           <div className="col-lg-12">
                     <div className="title-all text-center">
-                        <h1>Duka Letu</h1>
-                        <p>Some of our best sellers.</p>
+                        <h2>Duka Letu</h2>
                     </div>
-                </div>
             </div>
-            <div className="row">
-                <div className="col-lg-12">
-                    <div className="special-menu text-center">
-                    <div className="button-group filter-button-group">
-                      <button className={filter === '*' ? 'active' : ''} onClick={() => handleFilterClick('*')}>All</button>
-                      <button className={filter === 'Top featured' ? 'active' : ''} onClick={() => handleFilterClick('Top featured')}>Top featured</button>
-                      <button className={filter === 'Best seller' ? 'active' : ''} onClick={() => handleFilterClick('Best seller')}>Best seller</button>
-                    </div>
-                    </div>
+        </div>
+        <div className="row">
+        {products.map((product) => (
+          <div className="col-md-4 text-center animate-box">
+            <div key={product.id} className="product">
+            <div className={`product-grid ${product.category === "prdkt2" ? "prdkt2" : (product.category === "prdkt1" ? "prdkt1" : "prdkt3")}`}>
+                <div className="inner">
+                  <p>
+                    <Link className="icon" onClick={() => handleClick(product)}>
+                      <i className="fas fa-shopping-cart" style={{marginTop: '1rem'}} ></i>
+                    </Link>
+                    <Link type="button" data-toggle="modal" data-target="#exampleModalCenter" className="icon" onClick={() => handleProductClick(product)}>
+                      <i className="fas fa-eye" style={{marginTop: '1rem'}}></i>
+                    </Link>
+                  </p>
                 </div>
+              </div>
+              <div className="desc">
+                <h3>
+                  <a href="single.html">{product.name}</a>
+                </h3>
+                <span className="price">{product.price}</span>
+              </div>
             </div>
+          </div> 
 
-            <div className="row special-list">
-              {products.map((product) => (
-                (filter === '*' || (product.category && filter.toLowerCase() === product.category.toLowerCase())) && 
-                (
-                  <div key={product.id} className="col-lg-3 col-md-6 special-grid ">
-                    <div className="products-single fix">
-                      <div className="box-img-hover">
-                        <div className="type-lb">
-                          <p className="sale">Sale</p>
-                        </div>
-                        <img src={product.image} className="img-fluid" alt={product.name} />
-                        <div className="mask-icon">
-                          <ul>
-                            <li type="button" data-toggle="modal" data-target="#exampleModalCenter" onClick={() => handleProductClick(product)} ><Link ><i className="fas fa-eye"></i></Link></li>
-                          </ul>
-                           <li style={{listStyle:'none'}}><Link className="cart" onClick={() => handleClick(product)}><i class="fas fa-shopping-cart"></i></Link></li>
-                        </div>
-                      </div>
-                      <div className="why-text">
-                        <h4>{product.name}</h4>
-                        <h5>{product.price}</h5>
-                      </div>
-                    </div>
-                  </div>
-                )
-              ))}
-            </div>
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          ))}                  
+        </div>
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -241,11 +229,10 @@ export default function CalendarComponent({ handleClick }) {
                 </div>
               </div>
             </div>
-
-              </div>
-           
+      </div>
     </div>
-  </section>
+    
+    </section>
 
   <section id="gallery" class="wow fadeInUp">
   <div className='booksecont'>
@@ -267,7 +254,7 @@ export default function CalendarComponent({ handleClick }) {
         </div>
 
     </section>
-      <section id="planner" >
+  <section id="planner" >
     <section className="our-facts">
       <div className="container">
         <div className="row">
@@ -317,25 +304,10 @@ export default function CalendarComponent({ handleClick }) {
           </div>
         </div>
       </div>
+      
     </section>
-        
-        {/* <div className="calendar" >
-          <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" >
-            <h1>Previous Events</h1>
-          </div>
-          <div className="caaard-container" data-aos="zoom-in-down" data-aos-duration="1500">
-            {events.map(event => (
-              <div key={event.id} className="caaard">
-                <img src={event.image} alt={event.title} />                
-                <Link style={{ textDecoration: 'none'}} to="/events"><h2>{event.title}</h2></Link>                 
-              </div>
-            ))}
-          </div>
-        </div> */}
-        </section>
-
-
-    </div>   
+  </section>
+  </div>   
 
   );
 }

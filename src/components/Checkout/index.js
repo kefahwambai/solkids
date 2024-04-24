@@ -20,27 +20,26 @@ function Checkout({ setCart, cart, user  }) {
     setTotalPrice(totalPriceFromTickets);
   }, [totalPriceFromTickets]);
 
+  useEffect(() => {
+    handlePrice();
+  }, [cart]); 
+
   const handleRemove = (id) => {
     const updatedCart = cart.filter((product) => product.id !== id);
     setCart(updatedCart);
   };
 
   const handlePrice = () => {
-    let ans = 0;
-    cart.forEach(item => {
-        const price = parseFloat(item.price.replace(/[^\d.-]/g, ''));
-        if (!isNaN(price) && typeof item.quantity === 'number' && !isNaN(item.quantity)) {
-          ans += price * item.quantity;
-        }
-      });
-      setTotalPrice(ans);
+  let ans = 0;
+  cart.forEach(item => {
+      const price = parseFloat(item.price.replace(/[^\d.-]/g, ''));
+      if (!isNaN(price) && typeof item.quantity === 'number' && !isNaN(item.quantity)) {
+        ans += price * item.quantity;
+      }
+    });
     setTotalPrice(ans);
-    };
-
-  useEffect(() => {
-    handlePrice();
-  }, [cart]); 
-
+  setTotalPrice(ans);
+  };
 
   const handleSubmit = (e) => {
       e.preventDefault();

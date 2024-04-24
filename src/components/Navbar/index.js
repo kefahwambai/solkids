@@ -106,12 +106,12 @@ function NavBar({ cart, setCart, size, handleLogout, setUser, user }) {
             )}   
             {user ? (
               <>  
-              <Link to="/profile" ><a href="/profile" onClick={() => updateExpanded(false)} className="nav-item nav-link"><AiOutlineUser style={{ marginBottom: "2px" }}   /></a></Link>
-              <Link><a href="" className="nav-item nav-link" onClick={handleLogout}><AiOutlineLogout style={{ marginBottom: "2px"}} /></a></Link>              
+              <Link to="/profile" ><a href="/profile"  onClick={() => updateExpanded(false)} className="nav-item nav-link"><AiOutlineUser style={{ marginBottom: "2px" }}   /></a></Link>
+              <Link><a href="" title="Logout" className="nav-item nav-link" onClick={handleLogout}><AiOutlineLogout style={{ marginBottom: "2px"}} /></a></Link>              
               </>
               ) : (
                 <>
-                <Link to="/login"><a href="/login " className="nav-item nav-link"><AiOutlineLogin style={{ marginBottom: "2px"}} /></a></Link>              
+                <Link to="/login"><a href="/login " title="Login" className="nav-item nav-link"><AiOutlineLogin style={{ marginBottom: "2px"}} /></a></Link>              
               </>
             )}    
 

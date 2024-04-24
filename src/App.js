@@ -20,7 +20,7 @@ import Login from "./components/login/Login"
 import Profile from "./components/profile/loginsec";
 import Done from "./components/Checkout/Done";
 import Topbar from "./components/Topbar";
-// import Navbar from "./components/navbar";
+import Backtotop from "./components/Backtotop";
 
 import "./App.css";
 
@@ -106,11 +106,10 @@ function App() {
 
 
   return (
-    
+          
       <div className="App" id={load ? "no-scroll" : "scroll"}>
       <Preloader load={load} />
         <Topbar/>
-        {/* <Navbar/> */}
         <Navbar size={cart.length} user={user} setUser={setUser} handleLogout={handleLogout}/>
         <ScrollToTop />
         <Routes>
@@ -130,6 +129,7 @@ function App() {
           <Route path="/orders" element={<Orders user={user} setUser={setUser} />} />
           <Route path="/success" element={<Done/>} />
         </Routes>
+        <Backtotop/>
         <Footer />
       </div>    
   );
