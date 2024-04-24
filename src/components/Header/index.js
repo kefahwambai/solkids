@@ -3,8 +3,6 @@ import React, { useState, useRef, useEffect} from 'react';
 import "./header.css"
 import { Link } from 'react-router-dom';
 import kids from "../../Assets/Homepage/solchick.png";
-import "react-big-calendar/lib/css/react-big-calendar.css";
-import "react-datepicker/dist/react-datepicker.css";
 import introvid from "../../Assets/Homepage/lalalandlq.mp4"
 import logo from "../../Assets/Logo/SOL_KIDS_Official_Logo__5_-1-removebg-preview.png"
 import oak from "../../Assets/Books/Oak.png"
@@ -15,8 +13,6 @@ import solmic from "../../Assets/Homepage/solmic.PNG"
 import pizza from "../../Assets/definition/pizzakids.png"
 import kich from "../../Assets/Homepage/solchick.png"
 import useScrollTriggeredCountUp from './useScrollTriggeredCountUp';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel';
 
 export default function CalendarComponent({ handleClick }) { 
 
