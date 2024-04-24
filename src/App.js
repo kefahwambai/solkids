@@ -106,9 +106,9 @@ function App() {
 
 
   return (
-          
+    
       <div className="App" id={load ? "no-scroll" : "scroll"}>
-      <Preloader load={load} />
+        <Preloader load={load} />
         <Topbar/>
         <Navbar size={cart.length} user={user} setUser={setUser} handleLogout={handleLogout}/>
         <ScrollToTop />
@@ -131,9 +131,8 @@ function App() {
         </Routes>
         <Backtotop/>
         <Footer />
-      </div>    
+      </div>  
   );
 }
 
 export default App;
-

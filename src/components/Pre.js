@@ -2,6 +2,8 @@ import React from "react";
 import sologo from "../Assets/Homepage/solchick.png"
 
 function Pre(props) {
+
+  console.log('Load:', props.load);
   return (
     <div id={props.load ? "preloader" : "preloader-none"}>
       <div id="preloader-active">
