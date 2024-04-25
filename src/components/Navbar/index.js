@@ -92,7 +92,7 @@ function NavBar({ cart, setCart, size, handleLogout, setUser, user }) {
         </button>
         <div className="collapse navbar-collapse justify-content-between" id="navbarCollapse">
           <div className="navbar-nav font-weight-bold mx-auto py-0">
-            <Link to="/"><a href="" className="nav-item nav-link active">Home</a></Link>
+            {/* <Link to="/"><a href="" className="nav-item nav-link active">Home</a></Link> */}
             <Link to="/about"><a href="" className="nav-item nav-link">About</a></Link>
             <Link to="/events"><a href="" className="nav-item nav-link">Events</a></Link>
             <Link to="/shop"><a href="" className="nav-item nav-link">Shop</a></Link>

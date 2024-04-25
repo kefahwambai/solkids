@@ -2,13 +2,19 @@ import $ from 'jquery';
 import React, { useState, useRef, useEffect} from 'react';
 import "./header.css"
 import { Link } from 'react-router-dom';
+import sol1 from "../../Assets/Homepage/sol1.png"
+import sol2 from "../../Assets/Homepage/sol2.png"
+import sol3 from "../../Assets/Homepage/sol3.png"
+import sol4 from "../../Assets/Homepage/sol4.png"
+import sol5 from "../../Assets/Homepage/sol5.png"
+import sol6 from "../../Assets/Homepage/sol6.png"
+import sol7 from "../../Assets/Homepage/sol7.png"
+import sol8 from "../../Assets/Homepage/sol8.png"
 import kids from "../../Assets/Homepage/solchick.png";
-import introvid from "../../Assets/Homepage/lalalandlq.mp4"
 import logo from "../../Assets/Logo/SOL_KIDS_Official_Logo__5_-1-removebg-preview.png"
 import oak from "../../Assets/Books/Oak.png"
 import twiga from "../../Assets/Books/Twiga.png"
 import fisi from "../../Assets/Books/fisi.png"
-import stars from "../../Assets/Books/written in stars.png"
 import solmic from "../../Assets/Homepage/solmic.PNG"
 import pizza from "../../Assets/definition/pizzakids.png"
 import kich from "../../Assets/Homepage/solchick.png"
@@ -51,29 +57,52 @@ export default function CalendarComponent({ handleClick }) {
   const handleProductClick = (product) => {
     setSelectedProduct(product);
   };
+  useEffect(() => {
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+        var x = document.getElementsByClassName("mySlide");
+  
+        if (x.length > 0) {
+          for (var i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+          }
+  
+          myIndex++;
+          if (myIndex > x.length) {
+            myIndex = 1;
+          }
+  
+          x[myIndex - 1].style.display = "block";
+  
+          x[myIndex - 1].classList.add('zoom-out');
+  
+          setTimeout(() => {
+            x[myIndex - 1].classList.remove('zoom-out');
+          }, 350);
+  
+          setTimeout(carousel, 6500);
+        }
+      }
+    }, []);
 
 
   return (
 
-    <div>
-    <section className="video-background">
-      
-      <div className='overlay'></div>
-      <video src={introvid} autoPlay muted loop className="video">
-        <source  type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>      
-      <div className='header-container'>
-        <div className="headerTitles">
-          <span className="headerTitleLg">
-              <img className='sollogo' alt="sologo" src={logo} />      
-          </span>
-          <div >
-            <img className='kids' src={kids} alt="solchick" />
+    <div>    
+     <section>
+     <div className='overlay'></div>
+        <div className='header-container'>
+          <div className="headerTitles">          
+          </div>
+          <div className="slidez">
+            <img className="mySlide" src={sol1} />
+            <img className="mySlide" src={sol3} />
+            <img className="mySlide" src={sol5} />
           </div>
         </div>
-      </div>
-    </section>
+      </section>
     <div className="background"></div>
     <section id="aboutt">
     <div className="container-fluid pt-5">
