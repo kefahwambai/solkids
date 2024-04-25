@@ -81,43 +81,46 @@ const Events = () => {
                         <div className="col-lg-12">
                           <div className="heading"><h2>{filter}</h2></div>
                         </div>
-                        {events.filter(filterEvents).map((event, index) => (
-                          <div className="event-item" key={index}>
-                            <div className="row">
-                              <div className="col-lg-4">
-                                <div className="thumb">
-                                  <img className='pasteventimage' src={event.image} alt={event.name} />
+                        {events.filter(filterEvents).length === 0 ? (
+                          <div className="no-events-message">No upcoming events yet.</div>
+                        ) : (
+                          events.filter(filterEvents).map((event, index) => (
+                            <div className="event-item" key={index}>
+                              <div className="row">
+                                <div className="col-lg-4">
+                                  <div className="thumb">
+                                    <img className='pasteventimage' src={event.image} alt={event.name} />
+                                  </div>
                                 </div>
-                              </div>
-                              <div className="col-lg-4">
-                                <div className="left-content">
-                                  <h4>{event.name}</h4>
-                                  <p>{event.description}</p>
-                                  {filter === 'Upcoming' ? (
-                                    <div className="main-dark-button"><Link to="/ticket">Buy Tickets</Link></div>
-                                  ) : (
-                                    <div className="main-dark-button"><Link to="/gallery" >See What You Missed</Link></div>
-                                  )}
+                                <div className="col-lg-4">
+                                  <div className="left-content">
+                                    <h4>{event.name}</h4>
+                                    <p>{event.description}</p>
+                                    {filter === 'Upcoming' ? (
+                                      <div className="main-dark-button"><Link to="/ticket">Buy Tickets</Link></div>
+                                    ) : (
+                                      <div className="main-dark-button"><Link to="/gallery" >See What You Missed</Link></div>
+                                    )}
+                                  </div>
                                 </div>
-                              </div>
-                              <div className="col-lg-4">
-                                <div className="right-content">
-                                  <ul>
-                                    <li>
-                                      <i className="fa fa-clock-o"></i>
-                                      <h6>{new Date(event.date).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}<br />12:00 AM - 12:00 PM</h6>
-                                    </li>
-                                    <li>
-                                      <i className="fa fa-map-marker"></i>
-                                      <span>{event.location}</span>
-                                    </li>
-                                  </ul>
+                                <div className="col-lg-4">
+                                  <div className="right-content">
+                                    <ul>
+                                      <li>
+                                        <i className="fa fa-clock-o"></i>
+                                        <h6>{new Date(event.date).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}<br />12:00 AM - 12:00 PM</h6>
+                                      </li>
+                                      <li>
+                                        <i className="fa fa-map-marker"></i>
+                                        <span>{event.location}</span>
+                                      </li>
+                                    </ul>
+                                  </div>
                                 </div>
                               </div>
                             </div>
-                          </div>
-                        ))}
-
+                          ))
+                        )}
                       </div>
                     </article>
                   </section>

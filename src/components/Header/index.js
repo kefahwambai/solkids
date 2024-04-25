@@ -5,10 +5,7 @@ import { Link } from 'react-router-dom';
 import sol1 from "../../Assets/Homepage/sol1.png"
 import sol2 from "../../Assets/Homepage/sol2.png"
 import sol3 from "../../Assets/Homepage/sol3.png"
-import sol4 from "../../Assets/Homepage/sol4.png"
 import sol5 from "../../Assets/Homepage/sol5.png"
-import sol6 from "../../Assets/Homepage/sol6.png"
-import sol7 from "../../Assets/Homepage/sol7.png"
 import sol8 from "../../Assets/Homepage/sol8.png"
 import kids from "../../Assets/Homepage/solchick.png";
 import logo from "../../Assets/Logo/SOL_KIDS_Official_Logo__5_-1-removebg-preview.png"
@@ -97,9 +94,10 @@ export default function CalendarComponent({ handleClick }) {
           <div className="headerTitles">          
           </div>
           <div className="slidez">
-            <img className="mySlide" src={sol1} />
-            <img className="mySlide" src={sol3} />
-            <img className="mySlide" src={sol5} />
+            <img className="mySlide" alt="slider1img" src={sol1} />
+            <img className="mySlide" alt="slider2img" src={sol3} />
+            <img className="mySlide" alt="slider3img" src={sol5} />
+            <img className="mySlide" alt="slider8img" src={sol8} />
           </div>
         </div>
       </section>
