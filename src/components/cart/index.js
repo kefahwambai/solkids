@@ -1,61 +1,75 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { IncreaseQuantity, DecreaseQuantity, DeleteCart } from '../../actions/actions';
 import "./cart.css";
 
-function CartComponent({ cart, setCart, user }) {
+function CartComponent({ products, cart, IncreaseQuantity, DecreaseQuantity, DeleteCart }) {
     const [totalPrice, setTotalPrice] = useState(0);
 
-    const updateTotalPrice = () => {
-        let total = 0;
-        cart.forEach(item => {
-            const price = parseFloat(item.price.replace(/[^\d.-]/g, ''));
-            if (!isNaN(price) && typeof item.quantity === 'number' && !isNaN(item.quantity)) {
-                total += price * item.quantity;
-            }
-        });
-        setTotalPrice(total);
-    };
-
+    let ListCart = [];
+    let TotalCart=0;
+    Object.keys(products.Carts).forEach(function(item){
+        TotalCart+=products.Carts[item].quantity * products.Carts[item].price;
+        ListCart.push(products.Carts[item]);
+    });
     const handleQuantityChange = (item, quantity) => {
+        if (!Array.isArray(cart)) {
+            console.error("Cart is not an array:", cart);
+            return;
+        }
+    
         const updatedCart = cart.map(cartItem => {
+            console.log(cart)
             if (cartItem.id === item.id) {
                 const newQuantity = Math.max(1, quantity);
                 return { ...cartItem, quantity: newQuantity };
             }
             return cartItem;
         });
-
-        setCart(updatedCart);
+    
         updateTotalPrice();
     };
-
-    const handleRemove = (id) => {
-        const updatedCart = cart.filter((item) => item.id !== id);
-        setCart(updatedCart);
-        updateTotalPrice();
-    };
-
+    
+       
+    const updateTotalPrice = () => {
+        let total = 0;
+        const tproducts = products.products
+        console.log(tproducts)
+        if (Array.isArray(tproducts)) {
+            console.log("Inside if statement");
+            tproducts.forEach(item => {
+                console.log("Item:", item);
+                const price = parseFloat(item.product?.price?.replace(/[^\d.-]/g, ''));
+                console.log("Parsed Price:", item.price);
+                if (item.hasOwnProperty('quantity')) {
+                    console.log("Quantity:", item.quantity);
+                    const itemTotal = price * item.quantity;
+                    console.log("Item Total:", itemTotal);
+                    if (!isNaN(price) && typeof item.quantity === 'number' && !isNaN(item.quantity)) {
+                        total += itemTotal;
+                    }
+                } else {
+                    console.log("Quantity property is missing for this item.");
+                    handleQuantityChange(item, 1);
+                }
+            });
+        } else {
+            console.log("Cart is not an array or is empty.");
+        }
+        console.log("Total Price:", total);
+        setTotalPrice(total);
+    };    
+    
+    
+    
     useEffect(() => {
         updateTotalPrice();
     }, [cart]);
 
     useEffect(() => {
-        const storedCartData = user ? sessionStorage.getItem(`cart_${user.user_id}`) : localStorage.getItem("cartData");
-        console.log("Retrieved cart data:", {storedCartData});
-        if ({storedCartData}) {
-            setCart(JSON.parse(storedCartData));
-        }
-    }, [user]);
-    
-    useEffect(() => {
-        if (user) {
-            sessionStorage.setItem(`cart_${user.user_id}`, JSON.stringify(cart));
-        } else {
-            localStorage.setItem("cartData", JSON.stringify(cart));
-        }
-        console.log("Updated cart data:", cart);
-    }, [user, cart]);
-    
+        console.log(totalPrice);
+    }, [totalPrice]);
 
     const roundPrice = (price) => {
         const roundedPrice = Math.round(price * 100) / 100;
@@ -85,7 +99,7 @@ function CartComponent({ cart, setCart, user }) {
                                                 <tr>
                                                     <th>Images</th>
                                                     <th>Product Name</th>
-                                                    <th>Price</th>
+                                                    {/* <th>Price</th> */}
                                                     <th>Quantity</th>
                                                     <th>Total</th>
                                                     <th>Remove</th>
@@ -98,35 +112,37 @@ function CartComponent({ cart, setCart, user }) {
                                                         <Link style={{ color: '#ffcb51' }} to="/shop">Continue shopping </Link>
                                                     </div>
                                                 ) : (
-                                                        cart.map((item, index) => (
-                                                            <tr key={index}>
-                                                                <td className="thumbnail-img">
-                                                                    <a href="#">
-                                                                        <img className="img-fluid" src={item.image} alt={item.name} />
-                                                                    </a>
-                                                                </td>
-                                                                <td className="name-pr">
-                                                                    <a href="#">
-                                                                        {item.name}
-                                                                    </a>
-                                                                </td>
-                                                                <td className="price-pr">
-                                                                    <p>{item.price}</p>
-                                                                </td>
-                                                                <td className="quantity-box">
-                                                                    <input type="number" value={item.quantity} min="1" step="1" className="c-input-text qty text" onChange={(e) => handleQuantityChange(item, parseInt(e.target.value))} />
-                                                                </td>
-                                                                <td className="total-pr">
-                                                                    <p>{item.quantity < 1 ? '-' : roundPrice(parseFloat(item.price.replace(/[^\d.-]/g, '')) * item.quantity)}</p>
-                                                                </td>
-                                                                <td className="remove-pr">
-                                                                    <a onClick={() => handleRemove(item.id)}>
-                                                                        <i className="fas fa-times"></i>
-                                                                    </a>
-                                                                </td>
-                                                            </tr>
-                                                        ))
-                                                    )}
+                                                    ListCart.map((item, key) => (
+                                                        <tr key={key}>
+                                                            <td className="thumbnail-img">
+                                                                <a href="#">
+                                                                    <img className="img-fluid" src={item.image} alt={item.name} />
+                                                                </a>
+                                                            </td>
+                                                            <td className="name-pr">
+                                                                <a href="#">
+                                                                    {item.name}
+                                                                </a>
+                                                            </td>
+                                                            {/* <td className="price-pr">
+                                                                <p>{item.price}</p>
+                                                            </td> */}
+                                                            <td className="quantity-box">
+                                                                <span style={{ margin: '2px', marginRight: '1rem', cursor: 'pointer' }} onClick={() => DecreaseQuantity(key)}>-</span>
+                                                                <input type="number" value={item.quantity} min="1" step="1" className="c-input-text qty text" readOnly onChange={(e) => handleQuantityChange(item, parseInt(e.target.value))}  />
+                                                                <span style={{ margin: '2px', marginLeft: '1rem', cursor: 'pointer' }} onClick={() => IncreaseQuantity(key)}>+</span>
+                                                            </td>
+                                                            <td className="total-pr">
+                                                                <p>{item.quantity < 1 ? '-' : roundPrice(parseFloat(item.price.replace(/[^\d.-]/g, '')) * item.quantity)}</p>
+                                                            </td>
+                                                            <td className="remove-pr">
+                                                                <a onClick={() => DeleteCart(key)}>
+                                                                    <i className="fas fa-times"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    ))
+                                                )}
                                             </tbody>
                                         </table>
                                     </div>
@@ -175,4 +191,10 @@ function CartComponent({ cart, setCart, user }) {
     );
 }
 
-export default CartComponent;
+const mapStateToProps = state => {
+    return {
+        products: state.todoProduct
+    };
+};
+
+export default connect(mapStateToProps, { IncreaseQuantity, DecreaseQuantity, DeleteCart })(CartComponent);

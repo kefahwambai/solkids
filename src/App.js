@@ -21,12 +21,13 @@ import Profile from "./components/profile/loginsec";
 import Done from "./components/Checkout/Done";
 import Topbar from "./components/Topbar";
 import Backtotop from "./components/Backtotop";
-
+import Success from "./components/success";
 import "./App.css";
+import { connect } from 'react-redux'; 
+import { AddCart } from './actions/actions'; 
 
-function App() {
+function App({ cart, addToCart }) {
   const [load, updateLoad] = useState(true);
-  const [cart, setCart] = useState([]);
   const navigate = useNavigate();  
   const [user, setUser] = useState(null)
 
@@ -67,34 +68,14 @@ function App() {
       sessionStorage.removeItem("jwt");
       setUser(null);   
       navigate("/");
-      console.log("Logout successful");
     } catch (error) {
       console.error("Logout failed", error);
     }
   };
 
-  const handleClick = (product) => {
-    const existingProductIndex = cart.findIndex((item) => item.id === product.id);
-    if (existingProductIndex !== -1) {
-      const updatedCart = [...cart];
-      updatedCart[existingProductIndex].quantity += 1;
-      setCart(updatedCart);
-    } else {
-      const updatedProduct = { ...product, quantity: 1 };
-      setCart((prevCart) => [...prevCart, updatedProduct]);
-    }
-  };
   
 
-  const handleChange = (selectedProduct, d) => {    
-    const updatedCart = cart.map((product) => {
-      return product.id === selectedProduct.id ? {
-        ...product,
-        quantity: Math.max(1, (product.quantity || 0) + d),
-      } : product;
-    });
-    setCart(updatedCart);
-  };
+
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -113,21 +94,21 @@ function App() {
         <Navbar size={cart.length} user={user} setUser={setUser} handleLogout={handleLogout}/>
         <ScrollToTop />
         <Routes>
-          <Route path="/" element={<Header handleClick={handleClick} />} />
+          <Route path="/" element={<Header />} />
           <Route path="/about" element={<About />} />
           <Route path="/events" element={ <Events/>} />
           <Route path="/gallery" element={<Gallery/>} />
-          <Route path="/shop" element={<Shop handleClick={handleClick} />} />
-          <Route path="/cart" element={<Cart cart={cart} user={user} setUser={setUser} setCart={setCart} handleChange={handleChange} />} />     
+          <Route path="/shop" element={<Shop  />} />
+          <Route path="/cart" element={<Cart cart={cart} user={user} setUser={setUser}  />} />     
           <Route path="/contact" element={ <Contact/>} />
-          <Route path="/ticket" element={ <Tickets  cart={cart} setCart={setCart}/>} /> 
-          <Route path="/checkout" element={<Checkout cart={cart} user={user} setUser={setUser}  setCart={setCart} handleChange={handleChange} handleClick={handleClick}/>} />          
+          <Route path="/ticket" element={ <Tickets  cart={cart} />} /> 
+          <Route path="/checkout" element={<Checkout cart={cart} user={user} setUser={setUser} />} />          
           <Route path="/register" element={<Register setUser={setUser} />} />
           <Route path="/login" element={<Login setUser={setUser} />} />      
           <Route path="/profile" element={<Dashboard user={user} setUser={setUser} />} />   
           <Route path="/user" element={<Profile user={user} setUser={setUser} />} />
           <Route path="/orders" element={<Orders user={user} setUser={setUser} />} />
-          <Route path="/success" element={<Done/>} />
+          <Route path="/success" element={<Success/>} />
         </Routes>
         <Backtotop/>
         <Footer />
@@ -135,4 +116,14 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = state => ({
+  cart: state.todoProduct.numberCart,
+  cartItems: state.todoProduct.Carts
+});
+
+
+const mapDispatchToProps = dispatch => ({
+  addToCart: (product) => dispatch(AddCart(product)) 
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

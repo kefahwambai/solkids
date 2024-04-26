@@ -8,6 +8,8 @@ import 'react-html5video/dist/styles.css'
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/react"
 import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './stores/index';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -16,7 +18,9 @@ root.render(
     <Analytics/>
     <SpeedInsights/>
     < BrowserRouter> 
+    <Provider store={store}>
     <App />
+    </Provider>
     </BrowserRouter>
   </React.StrictMode>
 );

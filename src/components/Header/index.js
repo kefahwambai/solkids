@@ -1,4 +1,3 @@
-import $ from 'jquery'; 
 import React, { useState, useRef, useEffect} from 'react';
 import "./header.css"
 import { Link } from 'react-router-dom';
@@ -16,6 +15,8 @@ import solmic from "../../Assets/Homepage/solmic.PNG"
 import pizza from "../../Assets/definition/pizzakids.png"
 import kich from "../../Assets/Homepage/solchick.png"
 import useScrollTriggeredCountUp from './useScrollTriggeredCountUp';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 export default function CalendarComponent({ handleClick }) { 
 
@@ -192,26 +193,27 @@ export default function CalendarComponent({ handleClick }) {
         {products.map((product) => (
           <div className="col-md-4 text-center animate-box">
             <div key={product.id} className="product">
-            <div className={`product-grid ${product.category === "prdkt2" ? "prdkt2" : (product.category === "prdkt1" ? "prdkt1" : "prdkt3")}`}>
-                <div className="inner">
-                  <p>
-                    <Link className="icon" onClick={() => handleClick(product)}>
-                      <i className="fas fa-shopping-cart" style={{marginTop: '1rem'}} ></i>
-                    </Link>
-                    <Link type="button" data-toggle="modal" data-target="#exampleModalCenter" className="icon" onClick={() => handleProductClick(product)}>
-                      <i className="fas fa-eye" style={{marginTop: '1rem'}}></i>
-                    </Link>
-                  </p>
-                </div>
-              </div>
-              <div className="desc">
-                <h3>
-                  <a href="single.html">{product.name}</a>
-                </h3>
-                <span className="price">{product.price}</span>
-              </div>
+                  <a href="#" className="img-prod">
+                      <img className="img-fluid" src={product.image} alt={product.name} />
+                      <div className="overlay"></div>
+                  </a>
+                  <div className="text py-3 pb-4 px-3 text-center">
+                      <h3><a href="#">{product.name}</a></h3>
+                      <div className="d-flex">
+                          <div className="pricing">
+                          </div>
+                      </div>
+                      <div className="bottom-area d-flex px-3">
+                          <div className="m-auto d-flex">
+                            
+                              <Link type="button" data-toggle="modal" data-target="#exampleModalCenter" className="icon" onClick={() => handleProductClick(product)}>
+                                <i className="fas fa-eye" style={{marginTop: '0.8rem'}}></i>
+                              </Link>
+                          </div>
+                      </div>
+                  </div>
             </div>
-          </div> 
+            </div> 
 
           ))}                  
         </div>
@@ -235,13 +237,6 @@ export default function CalendarComponent({ handleClick }) {
                           <p>{selectedProduct.description}</p>
                           <h4>Short Description:</h4>
                           <p>Nam sagittis a augue eget </p>
-                          {/* <ul>
-                            <li>
-                              <div class="form-group quantity-box">
-                              <input class="form-control" value={quantity} min="0" max="20" type="number" onChange={handleQuantityChange} />
-                              </div>
-                            </li>
-                          </ul> */}
                         </div>
                       </div>
                     </div>
