@@ -13,54 +13,75 @@ export default function Footer() {
     let date = new Date();
     let year = date.getFullYear();
   return (
-    <div className="container-fluid text-white-50 footer pt-5 wow fadeIn" data-wow-delay="0.1s" style={{ backgroundColor: 'silver'}}>
-    <div className="container py-5">
-      <div className="row g-5">
-        <div className="col-lg-7 col-md-6">
-          <h3 className="text-white mb-4">Get In Touch</h3>
-          <p className="mb-2"><i className="fas fa-map-marker-alt me-3"></i>123 Street, SolCenter, Nairobi</p>
-          <p className="mb-2"><i className="fas fa-phone me-3"></i>+012 345 67890</p>
-          <p className="mb-2"><i className="fas fa-envelope me-3"></i>info@solkidsafrica.com</p>
-          <div className="ico d-flex pt-2 ">
-            <a className="btn btn-outline-light btn-social" href="https://twitter.com/solkidsafrica"><i className="fab fa-twitter"></i></a>
-            <a className="btn btn-outline-light btn-social" href=""><i className="fab fa-facebook-f"></i></a>
-            <a className="btn btn-outline-light btn-social" href="https://www.youtube.com/@solkidsafrica7265"><i className="fab fa-youtube"></i></a>
-            <a className="btn btn-outline-light btn-social" href="https://www.instagram.com/solkidsafrica/"><i className="fab fa-instagram"></i></a>
+<footer className="ftco-footer ftco-section">
+      <div className="container">
+        <div className="row">
+          <div className="mouse">
+            <a href="#" className="mouse-icon">
+              <div className="mouse-wheel"><span className="ion-ios-arrow-up"></span></div>
+            </a>
           </div>
         </div>
-        <div className="col-lg-2 col-md-6">
-          <h3 className="text-white mb-4">Quick Links</h3>
-          <Link to="/about" className="btn btn-link text-white-50" href="">About Us</Link>
-          <Link to="/contact" className="btn btn-link text-white-50" href="">Contact Us</Link>
-          <Link to="/shop" className="btn btn-link text-white-50" href="">Shop</Link>
-          <Link className="btn btn-link text-white-50" href="">Privacy Policy</Link>
-          <Link className="btn btn-link text-white-50" href="">Terms & Condition</Link>
-        </div> 
-      </div>
-    </div>
-    <div className="container">
-      <div className="copyright">
+        <div className="row mb-5">
+          <div className="col-md">
+            <div className="ftco-footer-widget mb-4">
+              <h2 className="ftco-heading-2">Solkids</h2>
+              <p>Far far away, behind the word mountains, far from the bustling city life and amidst the serene African wilderness....</p>
+              <ul className="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                <li className="ftco-animate"><a href="#"><i style={{fontSize: '2rem'}} class="fab fa-youtube" aria-hidden="true"></i></a></li>
+                <li className="ftco-animate"><a href="#"><i style={{fontSize: '2rem'}} class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                <li className="ftco-animate"><a href="#"><i style={{fontSize: '2rem'}} class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                <li className="ftco-animate"><a href="#"><i style={{fontSize: '2rem'}} class="fab fa-twitter" aria-hidden="true"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div className="col-md">
+            <div className="ftco-footer-widget mb-4 ml-md-5">
+              <h2 className="ftco-heading-2">Menu</h2>
+              <ul className="list-unstyled">
+                <li><a href="#" className="py-2 d-block">Shop</a></li>
+                <li><a href="#" className="py-2 d-block">About</a></li>
+                <li><a href="#" className="py-2 d-block">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+          <div className="col-md-4">
+            <div className="ftco-footer-widget mb-4">
+              <h2 className="ftco-heading-2">Help</h2>
+              <div className="d-flex">
+                <ul className="list-unstyled mr-l-5 pr-l-3 mr-4">
+                  <li><a href="#" className="py-2 d-block">Shipping Information</a></li>
+                  <li><a href="#" className="py-2 d-block">Returns &amp; Exchange</a></li>
+                  <li><a href="#" className="py-2 d-block">Terms &amp; Conditions</a></li>
+                  <li><a href="#" className="py-2 d-block">Privacy Policy</a></li>
+                </ul>
+                <ul className="list-unstyled">
+                  <li><a href="#" className="py-2 d-block">FAQs</a></li>
+                  <li><a href="#" className="py-2 d-block">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="col-md">
+            <div className="ftco-footer-widget mb-4">
+              <h2 className="ftco-heading-2">Have a Questions?</h2>
+              <div className="block-23 mb-3">
+                <ul>
+                  <li><i style={{fontSize: '1.5rem'}} class="fas fa-map-marker" aria-hidden="true"></i> <span className="text">SolCenter, Nairobi, Kenya</span></li>
+                  <li><i style={{fontSize: '1.5rem'}} class="fas fa-phone" aria-hidden="true"></i> <span className="text">+254 7254 25425</span></li>
+                  <li><i style={{fontSize: '1.5rem'}} class="fa-solid fa-envelope"></i> <span className="text">info@solafrica.com</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="row">
-          <div className="col-md-6 text-center text-md-start mb-3 mb-md-0">
+        <div className="col-md-6 text-center text-md-start mb-3 mb-md-0">
             &copy;<a href="https://kefahwambai.com/" target="_blank">kefahwambai.com</a> {year}, All Right Reserved.
 
-          </div>          
+          </div>  
         </div>
       </div>
-    </div>
-  </div>
-    // <div className='footer-basic'>
-    //     <footer>
-    //         <div class="social"><a href="https://www.instagram.com/solkidsafrica/"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-snapchat"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-facebook"></i></a></div>
-    //         <ul class="list-inline">
-    //             <li class="list-inline-item"><Link to="/about">About</Link></li>
-    //             <li class="list-inline-item"><Link to="/events">Events</Link></li>
-    //             <li class="list-inline-item"><Link to="/shop">Shop</Link></li>
-    //             <li class="list-inline-item"><Link to="contact">Contact</Link></li>
-    //         </ul>
-    //         <p className="copyright"><a href="https://kefahwambai.com/" target="_blank">kefahwambai.com</a> © {year}</p>
-    //     </footer>
-    // </div>                        
-                      
+    </footer>
   )
 }

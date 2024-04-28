@@ -9,7 +9,8 @@ import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/react"
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import store from './stores/index';
+import { store, persistor } from './stores/index';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

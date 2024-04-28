@@ -3,9 +3,11 @@ import "./checkout.css";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Payment from "./Payment";
+import { useSelector, useDispatch } from "react-redux";
+// import { removeFromCart } from "../actions/actions";
 
 
-function Checkout({ setCart, cart, user  }) {
+function Checkout({ setCart, user  }) {
   const [customer_name, setCustomerName] = useState('');
   const [customer_email, setCustomerEmail] = useState('');
   const [customer_phonenumber, setCustomerPhonenumber] = useState('');
@@ -14,6 +16,8 @@ function Checkout({ setCart, cart, user  }) {
   const location = useLocation();
   const [shippingPrice, setShippingPrice] = useState(0);
   const totalPriceFromTickets = location.state ? location.state.totalPrice : 0;
+  const cart = useSelector((state) => state.todoProduct.Carts); // Access cart state from Redux
+  const dispatch = useDispatch
 
 
   useEffect(() => {
@@ -24,10 +28,10 @@ function Checkout({ setCart, cart, user  }) {
     handlePrice();
   }, [cart]); 
 
-  const handleRemove = (id) => {
-    const updatedCart = cart.filter((product) => product.id !== id);
-    setCart(updatedCart);
-  };
+  // const handleRemove = (id) => {
+  //   // Dispatch removeFromCart action to remove item from cart in Redux store
+  //   dispatch(removeFromCart(id));
+  // };
 
   const handlePrice = () => {
   let ans = 0;
@@ -84,13 +88,13 @@ function Checkout({ setCart, cart, user  }) {
             setCart(JSON.parse(storedCartData));
         }
     }
-}, [user]);
+  }, [user]);
 
-useEffect(() => {
+  useEffect(() => {
     if (user) {
         sessionStorage.setItem(`checkout_${user.user_id}`, JSON.stringify(cart));
     }
-}, [user, cart]);
+  }, [user, cart]);
 
   return (
     <div className="checkoutform">

@@ -14,56 +14,53 @@ function CartComponent({ products, cart, IncreaseQuantity, DecreaseQuantity, Del
         ListCart.push(products.Carts[item]);
     });
     const handleQuantityChange = (item, quantity) => {
-        if (!Array.isArray(cart)) {
-            console.error("Cart is not an array:", cart);
-            return;
+    if (!Array.isArray(cart)) {
+        console.error("Cart is not an array:", cart);
+        return;
+    }
+
+    const updatedCart = cart.map(cartItem => {
+        console.log(cart)
+        if (cartItem.id === item.id) {
+            const newQuantity = Math.max(1, quantity);
+            return { ...cartItem, quantity: newQuantity };
         }
-    
-        const updatedCart = cart.map(cartItem => {
-            console.log(cart)
-            if (cartItem.id === item.id) {
-                const newQuantity = Math.max(1, quantity);
-                return { ...cartItem, quantity: newQuantity };
-            }
-            return cartItem;
-        });
-    
-        updateTotalPrice();
-    };
+        return cartItem;
+    });
+
+    updateTotalPrice();
+};
     
        
-    const updateTotalPrice = () => {
-        let total = 0;
-        const tproducts = products.products
-        console.log(tproducts)
-        if (Array.isArray(tproducts)) {
-            console.log("Inside if statement");
-            tproducts.forEach(item => {
-                console.log("Item:", item);
-                const price = parseFloat(item.product?.price?.replace(/[^\d.-]/g, ''));
-                console.log("Parsed Price:", item.price);
-                if (item.hasOwnProperty('quantity')) {
-                    console.log("Quantity:", item.quantity);
-                    const itemTotal = price * item.quantity;
-                    console.log("Item Total:", itemTotal);
-                    if (!isNaN(price) && typeof item.quantity === 'number' && !isNaN(item.quantity)) {
-                        total += itemTotal;
-                    }
-                } else {
-                    console.log("Quantity property is missing for this item.");
-                    handleQuantityChange(item, 1);
+const updateTotalPrice = () => {
+    let total = 0;
+    if (Array.isArray(cart)) {
+        cart.forEach(item => {
+            console.log("Item:", item);
+            const price = parseFloat(item.price?.replace(/[^\d.-]/g, ''));
+            console.log("Parsed Price:", price);
+            if (item.hasOwnProperty('quantity')) {
+                console.log("Quantity:", item.quantity);
+                const itemTotal = price * item.quantity;
+                console.log("Item Total:", itemTotal);
+                if (!isNaN(price) && typeof item.quantity === 'number' && !isNaN(item.quantity)) {
+                    total += itemTotal;
                 }
-            });
-        } else {
-            console.log("Cart is not an array or is empty.");
-        }
-        console.log("Total Price:", total);
-        setTotalPrice(total);
-    };    
-    
-    
+            } else {
+                console.log("Quantity property is missing for this item.");
+                handleQuantityChange(item, 1);
+            }
+        });
+    } else {
+        console.log("Cart is not an array or is empty.");
+    }
+    console.log("Total Price:", total);
+    setTotalPrice(total);
+};
+ 
     
     useEffect(() => {
+        console.log("Cart:", cart); 
         updateTotalPrice();
     }, [cart]);
 
@@ -193,7 +190,8 @@ function CartComponent({ products, cart, IncreaseQuantity, DecreaseQuantity, Del
 
 const mapStateToProps = state => {
     return {
-        products: state.todoProduct
+        products: state.todoProduct,
+        cart: state.todoProduct.Carts 
     };
 };
 

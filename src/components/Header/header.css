@@ -12,7 +12,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800');
 @import url('https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
 
 
@@ -454,6 +454,9 @@
 }
 .section-title {
   position: relative;
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 1.2rem;
   display: inline-block;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -1129,7 +1132,6 @@ section.our-facts .videoo img {
   height: 90vh;
   color: #131313;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   font-family: 'Arial', sans-serif; 
 }
 
