@@ -2,9 +2,9 @@ import React, {useState} from 'react'
 
 
 
-export default function success() {
+export default function success(props) {
   return (
-    <div className="modal">
+    <div className="modal" style={{marginTop: '5rem'}}>
           <div className="modal-content">
             <span className="close">
               &times;

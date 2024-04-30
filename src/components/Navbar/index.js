@@ -67,11 +67,6 @@ class NavBar extends Component {
                   Shop
                 </a>
               </Link>
-              <Link to="/gallery">
-                <a href="" className="nav-item nav-link">
-                  Gallery
-                </a>
-              </Link>
               <Link to="/contact">
                 <a href="" className="nav-item nav-link">
                   Contact

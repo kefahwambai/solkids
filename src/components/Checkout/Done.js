@@ -7,7 +7,7 @@
  
  export default function Done(props) {
    return (
-    <h1>Payment Successful, Thank you for your business! 🎉</h1>
+    <h1 style={{marginTop: '5rem'}}>Payment Successful, Thank you for your business! 🎉</h1>
    )
  }
  

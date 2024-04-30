@@ -4,7 +4,6 @@ import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Payment from "./Payment";
 import { useSelector, useDispatch } from "react-redux";
-// import { removeFromCart } from "../actions/actions";
 
 
 function Checkout({ setCart, user  }) {
@@ -16,7 +15,7 @@ function Checkout({ setCart, user  }) {
   const location = useLocation();
   const [shippingPrice, setShippingPrice] = useState(0);
   const totalPriceFromTickets = location.state ? location.state.totalPrice : 0;
-  const cart = useSelector((state) => state.todoProduct.Carts); // Access cart state from Redux
+  const cart = useSelector((state) => state.todoProduct.Carts);
   const dispatch = useDispatch
 
 
@@ -27,11 +26,6 @@ function Checkout({ setCart, user  }) {
   useEffect(() => {
     handlePrice();
   }, [cart]); 
-
-  // const handleRemove = (id) => {
-  //   // Dispatch removeFromCart action to remove item from cart in Redux store
-  //   dispatch(removeFromCart(id));
-  // };
 
   const handlePrice = () => {
   let ans = 0;
