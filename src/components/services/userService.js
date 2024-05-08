@@ -13,7 +13,11 @@ export const login = async (email, password) => {
 
 export const register = async registerData => {
   console.log(registerData)
-  const { data } = await axios.post('/users/register', registerData);
+  const { data } = await axios.post('/users/register', registerData, {
+    headers: {
+      'Content-Type': 'application/json',
+    }
+  });
   localStorage.setItem('user', JSON.stringify(data));
   return data;
 };
