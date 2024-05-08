@@ -5,6 +5,7 @@ export const GET_NUMBER_CART = 'GET_NUMBER_CART';
 export const ADD_CART = 'ADD_CART';
 export const UPDATE_CART = 'UPDATE_CART';
 export const DELETE_CART = 'DELETE_CART';
+export const CLEAR_CART = 'CLEAR_CART';
 
 export const actFetchProductsRequest = () => {
     return {
@@ -60,5 +61,11 @@ export const DecreaseQuantity = (productId) => {
     return {
         type: DECREASE_QUANTITY,
         productId
+    };
+};
+
+export const clearCart = () => {
+    return {
+        type: CLEAR_CART
     };
 };

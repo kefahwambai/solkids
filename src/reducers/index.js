@@ -1,4 +1,3 @@
-// reducers/index.js
 import { combineReducers } from 'redux';
 import { GET_ALL_PRODUCT, GET_NUMBER_CART, ADD_CART, DECREASE_QUANTITY, INCREASE_QUANTITY, DELETE_CART } from '../actions/actions';
 

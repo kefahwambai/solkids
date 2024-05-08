@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { IncreaseQuantity, DecreaseQuantity, DeleteCart } from '../../actions/actions';
 import "./cart.css";
+import NotFound from '../NotFound/NotFound';
 
 function CartComponent({ products, cart, IncreaseQuantity, DecreaseQuantity, DeleteCart }) {
     const [totalPrice, setTotalPrice] = useState(0);
@@ -20,7 +21,6 @@ function CartComponent({ products, cart, IncreaseQuantity, DecreaseQuantity, Del
     }
 
     const updatedCart = cart.map(cartItem => {
-        console.log(cart)
         if (cartItem.id === item.id) {
             const newQuantity = Math.max(1, quantity);
             return { ...cartItem, quantity: newQuantity };
@@ -36,13 +36,9 @@ const updateTotalPrice = () => {
     let total = 0;
     if (Array.isArray(cart)) {
         cart.forEach(item => {
-            console.log("Item:", item);
             const price = parseFloat(item.price?.replace(/[^\d.-]/g, ''));
-            console.log("Parsed Price:", price);
             if (item.hasOwnProperty('quantity')) {
-                console.log("Quantity:", item.quantity);
                 const itemTotal = price * item.quantity;
-                console.log("Item Total:", itemTotal);
                 if (!isNaN(price) && typeof item.quantity === 'number' && !isNaN(item.quantity)) {
                     total += itemTotal;
                 }
@@ -54,18 +50,15 @@ const updateTotalPrice = () => {
     } else {
         console.log("Cart is not an array or is empty.");
     }
-    console.log("Total Price:", total);
     setTotalPrice(total);
 };
  
     
     useEffect(() => {
-        console.log("Cart:", cart); 
         updateTotalPrice();
     }, [cart]);
 
     useEffect(() => {
-        console.log(totalPrice);
     }, [totalPrice]);
 
     const roundPrice = (price) => {
@@ -96,7 +89,6 @@ const updateTotalPrice = () => {
                                                 <tr>
                                                     <th>Images</th>
                                                     <th>Product Name</th>
-                                                    {/* <th>Price</th> */}
                                                     <th>Quantity</th>
                                                     <th>Total</th>
                                                     <th>Remove</th>
@@ -105,8 +97,7 @@ const updateTotalPrice = () => {
                                             <tbody>
                                                 {cart.length === 0 ? (
                                                     <div className="container">
-                                                        <p>Your cart is empty.</p>
-                                                        <Link style={{ color: '#ffcb51' }} to="/shop">Continue shopping </Link>
+                                                        <NotFound message="Cart Is Empty!" />
                                                     </div>
                                                 ) : (
                                                     ListCart.map((item, key) => (
@@ -148,6 +139,7 @@ const updateTotalPrice = () => {
                             <div className="row my-5">
                                 <div className="col-lg-6 col-sm-6">
                                     <div className="coupon-box">
+                                        
                                         <div className="input-group input-group-sm">
                                             <input className="form-control" placeholder="Enter your coupon code" aria-label="Coupon code" type="text" />
                                             <div className="input-group-append">

@@ -14,68 +14,29 @@ import Events from "./components/Events";
 import Tickets from "./components/Tickets";
 import Checkout from "./components/Checkout";
 import Gallery from "./components/Gallery";
-import Dashboard from "./components/profile/profile";
+import ProfilePage from "./components/profile/profilepage";
 import Register from "./components/register/Register"
 import Login from "./components/login/Login"
 import Profile from "./components/profile/loginsec";
-import Done from "./components/Checkout/Done";
+import Payment from "./components/Payment/PaymentPage";
 import Topbar from "./components/Topbar";
 import Backtotop from "./components/Backtotop";
 import Success from "./components/success";
 import "./App.css";
+import OrderTrackPage from './components/OrderTrack/OrderTrackPage';
 import { connect } from 'react-redux'; 
 import { AddCart } from './actions/actions'; 
+import Dashboard from "./components/Dashboard/Dashboard";
+import AuthRoute from "./components/AuthRoute/AuthRoute"
+import AdminRoute from "./components/AdminRoute/AdminRoute"
+import { useAuth } from "./components/useAuth";
+
+
 
 function App({ cart, addToCart }) {
   const [load, updateLoad] = useState(true);
   const navigate = useNavigate();  
-  const [user, setUser] = useState(null)
-
-  useEffect(() => {
-    const storedToken = sessionStorage.getItem('jwt');
-
-    if (storedToken) {
-      const [, payloadBase64] = storedToken.split('.');
-      try {
-        const decodedPayload = atob(payloadBase64);
-        const parsedPayload = JSON.parse(decodedPayload);
-
-        const expirationTime = parsedPayload.exp * 1000; 
-        const currentTime = new Date().getTime();
-
-        if (currentTime > expirationTime) {
-          setUser(null);
-          sessionStorage.removeItem('jwt');
-          navigate('/login');
-        } else {
-          setUser(parsedPayload);
-        }
-      } catch (error) {
-        console.error('Error parsing token payload:', error);
-      }
-    } else {
-      console.log('User not found');
-    }
-  }, [navigate]);
-  
-  const handleLogout = async () => {
-    try {
-      const token = sessionStorage.getItem("jwt");
-      if (!token) {
-        console.error("No JWT token found in local storage.");
-        return;
-      }
-      sessionStorage.removeItem("jwt");
-      setUser(null);   
-      navigate("/");
-    } catch (error) {
-      console.error("Logout failed", error);
-    }
-  };
-
-  
-
-
+  const { user } = useAuth(); 
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -85,13 +46,12 @@ function App({ cart, addToCart }) {
     return () => clearTimeout(timer);
   }, []);
 
-
   return (
     
       <div className="App" id={load ? "no-scroll" : "scroll"}>
-        <Preloader load={load} />
+        {/* <Preloader load={load} /> */}
         <Topbar/>
-        <Navbar size={cart.length} user={user} setUser={setUser} handleLogout={handleLogout}/>
+        <Navbar size={cart.length} user={user} />
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Header />} />
@@ -99,16 +59,19 @@ function App({ cart, addToCart }) {
           <Route path="/events" element={ <Events/>} />
           <Route path="/gallery" element={<Gallery/>} />
           <Route path="/shop" element={<Shop  />} />
-          <Route path="/cart" element={<Cart cart={cart} user={user} setUser={setUser}  />} />     
+          <Route path="/cart" element={<Cart cart={cart} user={user}   />} />     
           <Route path="/contact" element={ <Contact/>} />
           <Route path="/ticket" element={ <Tickets  cart={cart} />} /> 
-          <Route path="/checkout" element={<Checkout cart={cart} user={user} setUser={setUser} />} />          
-          <Route path="/register" element={<Register setUser={setUser} />} />
-          <Route path="/login" element={<Login setUser={setUser} />} />      
-          <Route path="/profile" element={<Dashboard user={user} setUser={setUser} />} />   
-          <Route path="/user" element={<Profile user={user} setUser={setUser} />} />
-          <Route path="/orders" element={<Orders user={user} setUser={setUser} />} />
+          <Route path="/checkout" element={<Checkout cart={cart} user={user} />} />          
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />      
+          <Route path="/profile" element={<AuthRoute><ProfilePage /></AuthRoute>}   />
+          <Route path="/dashboard" element={ <AuthRoute>  <Dashboard /> </AuthRoute> } />   
+          <Route path="/user" element={<Profile user={user}  />} />
+          <Route path="/orders" element={<Orders user={user}  />} />
           <Route path="/success" element={<Success/>} />
+          <Route path="/payment" element={ <AuthRoute> <Payment /> </AuthRoute>} />   
+          <Route path="/track/:orderId" element={<AuthRoute><OrderTrackPage /></AuthRoute>}   />       
         </Routes>
         <Backtotop/>
         <Footer />

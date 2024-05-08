@@ -1,63 +1,33 @@
 import "./register.css"
-import { useState } from "react"
+import { useForm } from 'react-hook-form';
+import { useState, useEffect } from "react"
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-import Alert from '@mui/material/Alert';
+import { useSearchParams, useNavigate } from 'react-router-dom';
+import { useAuth } from '../useAuth';
+import { EMAIL } from '../patterns';
 
 
-export default function Register({ setUser }) {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [passwordConfirmation, setPasswordConfirmation] = useState(''); 
-  const [signupError, setSignupError] = useState('');
+export default function Register() {
+  const auth = useAuth();
+  const { user } = auth;
   const navigate = useNavigate();
-  const [message, setMessage] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
+  const [params] = useSearchParams();
+  const returnUrl = params.get('returnUrl');
  
+  useEffect(() => {
+    if (!user) return;
+    returnUrl ? navigate(returnUrl) : navigate('/');
+  }, [user]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const {
+    handleSubmit,
+    register,
+    getValues,
+    formState: { errors },
+  } = useForm();
 
-    if (password !== passwordConfirmation) {
-      setSignupError('Password and confirmation do not match.');
-      return;
-    }
-
-    const formData = {      
-        name: name,
-        email: email,
-        password: password,
-        passwordConfirmation: passwordConfirmation,    
-      
-    };
-    
-    
-    const response = fetch('https://solkids-api.onrender.com/signup', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        "accept": "application/json"        
-      },
-      body: JSON.stringify(formData),
-    })
-      .then((response) => response.json())
-      .then((user) => {    
-        
-        if (user) {     
-          setUser(user)                    
-          setMessage('Account Created');
-          setTimeout(() => {
-            navigate('/');
-          }, 1234);
-        } else {
-          setSignupError(user.error);
-        }
-      })
-      .catch((error) => {
-        setSignupError('Signup failed');
-        console.error(error);
-      });
+  const submit = async data => {
+    await auth.register(data);
   };
 
 
@@ -72,26 +42,20 @@ export default function Register({ setUser }) {
         </div>
     </div>
     </div> 
-         <div className="register">      
-      {message && (<Alert severity='success' sx={{ mb:2 }}>{message}</Alert>)}
-            {signupError && (
-              <Alert severity="error" sx={{ mb: 2 }}>
-                {signupError}
-              </Alert>
-            )}
-      <form className="registerForm">
+         <div className="register"> 
+      <form className="registerForm" onSubmit={handleSubmit(submit)}>
         <label>Username</label>
-        <input className="form-control" type="text" placeholder="Enter your username..." id="name"  label="Username" value={name} required onChange={(e) => setName(e.target.value)} />
+        <input className="form-control" type="text" placeholder="Enter your username..." id="name"  label="Name"   {...register('name', {required: true, minLength: 5,})} error={errors.name} />
         <label>Email</label>
-        <input className="form-control" type="text" placeholder="youremail@example.com" value={email} required onChange={(e) => setEmail(e.target.value)}/>
-        <label>Phonenumber</label>
-        <input className="form-control" type="number" placeholder="+***-********* " id="phonenumber"  label="Phonenumber" value={phoneNumber} required onChange={(e) => setPhoneNumber(e.target.value)} />
-
+        <input className="form-control" type="email" placeholder="youremail@example.com" {...register('email', { required: true, pattern: EMAIL, })}  error={errors.email}/>
         <label>Password</label>
-        <input className="form-control" type="password" placeholder="Enter your password..." name="password" label="Password" id="password" autoComplete="new-password" value={password} required onChange={(e) => setPassword(e.target.value)} />
+        <input className="form-control" type="password" placeholder="Enter your password..." name="password" label="Password" id="password" autoComplete="new-password"    {...register('password', {required: true, minLength: 8, })}   error={errors.password} />
         <label>Password Confirmation</label>
-        <input className="form-control" type="password" name="passwordConfirmation" placeholder="Confirm your password..."label="Confirm Password" id="passwordConfirmation" autoComplete="new-password-confirmation" value={passwordConfirmation} required onChange={(e) => setPasswordConfirmation(e.target.value)} />
-        <button className="registerButton" onClick={handleSubmit}>Register</button>
+        <input className="form-control" type="password" name="passwordConfirmation" placeholder="Confirm your password..."label="Confirm Password" id="passwordConfirmation" autoComplete="new-password-confirmation"  {...register('confirmPassword', {required: true,  validate: value => value !== getValues('password')? 'Passwords Do No Match': true,})}  error={errors.confirmPassword} />
+        <label>Address</label>
+        <input className="form-control" type="text" placeholder="address"    {...register('address', {required: true,  minLength: 10,})} error={errors.address}/>
+       
+        <button className="registerButton" >Register</button>
         <p style={{marginTop: '1rem'}}> Already have an account? <Link to="/login">Login</Link> </p>
       </form>
     </div>
