@@ -13,7 +13,7 @@ export const login = async (email, password) => {
 
 export const register = async registerData => {
   console.log(registerData)
-  const { data } = await axios.post('https://solserve.vercel.app//users/register', registerData);
+  const { data } = await axios.post('https://solserve.vercel.app/users/register', registerData);
   localStorage.setItem('user', JSON.stringify(data));
   return data;
 };
