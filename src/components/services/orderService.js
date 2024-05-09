@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const createOrder = async order => {
   try {
-    const { data } = await axios.post('/orders/create', order);
+    const { data } = await axios.post('https://solserve.vercel.app/orders/create', order);
     return data;
   } catch (error) {
     console.error('Error creating order:', error);
@@ -11,28 +11,28 @@ export const createOrder = async order => {
 };
 
 export const getNewOrderForCurrentUser = async () => {
-  const { data } = await axios.get('/orders/newOrderForCurrentUser');
+  const { data } = await axios.get('https://solserve.vercel.app/orders/newOrderForCurrentUser');
   return data;
 };
 
 export const pay = async paymentId => {
   try {
-    const { data } = await axios.put('/orders/pay', { paymentId });
+    const { data } = await axios.put('https://solserve.vercel.app/orders/pay', { paymentId });
     return data;
   } catch (error) {}
 };
 
 export const trackOrderById = async orderId => {
-  const { data } = await axios.get('/orders/track/' + orderId);
+  const { data } = await axios.get('https://solserve.vercel.app/orders/track/' + orderId);
   return data;
 };
 
 export const getAll = async state => {
-  const { data } = await axios.get(`/orders/${state ?? ''}`);
+  const { data } = await axios.get(`https://solserve.vercel.app/orders/${state ?? ''}`);
   return data;
 };
 
 export const getAllStatus = async () => {
-  const { data } = await axios.get(`/orders/allstatus`);
+  const { data } = await axios.get(`https://solserve.vercel.app/orders/allstatus`);
   return data;
 };

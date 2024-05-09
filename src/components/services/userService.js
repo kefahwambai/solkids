@@ -6,7 +6,7 @@ export const getUser = () =>
     : null;
 
 export const login = async (email, password) => {
-  const { data } = await axios.post('/users/login', { email, password });
+  const { data } = await axios.post('https://solserve.vercel.app/users/login', { email, password });
   localStorage.setItem('user', JSON.stringify(data));
   return data;
 };
@@ -23,7 +23,7 @@ export const logout = () => {
 };
 
 export const updateProfile = async user => {
-  const { data } = await axios.put('/users/updateProfile', user);
+  const { data } = await axios.put('https://solserve.vercel.app/users/updateProfile', user);
   localStorage.setItem('user', JSON.stringify(data));
   return data;
 };
@@ -33,21 +33,21 @@ export const changePassword = async passwords => {
 };
 
 export const getAll = async searchTerm => {
-  const { data } = await axios.get('/users/getAll/' + (searchTerm ?? ''));
+  const { data } = await axios.get('https://solserve.vercel.app/users/getAll/' + (searchTerm ?? ''));
   return data;
 };
 
 export const toggleBlock = async userId => {
-  const { data } = await axios.put('/users/toggleBlock/' + userId);
+  const { data } = await axios.put('https://solserve.vercel.app/users/toggleBlock/' + userId);
   return data;
 };
 
 export const getById = async userId => {
-  const { data } = await axios.get('/users/getById/' + userId);
+  const { data } = await axios.get('https://solserve.vercel.app/users/getById/' + userId);
   return data;
 };
 
 export const updateUser = async userData => {
-  const { data } = await axios.put('/users/update', userData);
+  const { data } = await axios.put('https://solserve.vercel.app/users/update', userData);
   return data;
 };

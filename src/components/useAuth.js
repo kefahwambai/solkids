@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
   const login = async (email, password) => {
     try {
       const user = await userService.login(email, password);
-      console.log(user)
+      // console.log(user)
       setUser(user);
       toast.success('Login Successful');
     } catch (err) {
@@ -21,7 +21,7 @@ export const AuthProvider = ({ children }) => {
   const register = async data => {
     try {
       const user = await userService.register(data);
-      console.log(user)
+      // console.log(user)
       setUser(user);
       toast.success('Register Successful');
     } catch (err) {
