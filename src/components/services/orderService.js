@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 export const createOrder = async order => {
+  console.log(order)
   try {
     const { data } = await axios.post('https://solserve.vercel.app/orders/create', order);
     return data;

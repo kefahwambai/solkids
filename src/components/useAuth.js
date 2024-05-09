@@ -1,4 +1,4 @@
-import { useState, createContext, useContext } from 'react';
+import { useState, useEffect, createContext, useContext } from 'react';
 import * as userService from './services/userService';
 import { toast } from 'react-toastify';
 
@@ -6,11 +6,41 @@ const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(userService.getUser());
+  const [logoutTimer, setLogoutTimer] = useState(null);
+
+  useEffect(() => {
+    const startLogoutTimer = () => {
+      const timer = setTimeout(() => {
+        logout();
+        toast.info('You have been logged out due to inactivity.');
+      }, 10 * 60 * 1000); 
+      setLogoutTimer(timer);
+    };
+
+    const resetLogoutTimer = () => {
+      clearTimeout(logoutTimer);
+      startLogoutTimer();
+    };
+
+    const handleUserActivity = () => {
+      resetLogoutTimer();
+    };
+
+    window.addEventListener('mousemove', handleUserActivity);
+    window.addEventListener('keypress', handleUserActivity);
+
+    startLogoutTimer();
+
+    return () => {
+      window.removeEventListener('mousemove', handleUserActivity);
+      window.removeEventListener('keypress', handleUserActivity);
+      clearTimeout(logoutTimer);
+    };
+  }, [logoutTimer]);
 
   const login = async (email, password) => {
     try {
       const user = await userService.login(email, password);
-      // console.log(user)
       setUser(user);
       toast.success('Login Successful');
     } catch (err) {
@@ -21,7 +51,6 @@ export const AuthProvider = ({ children }) => {
   const register = async data => {
     try {
       const user = await userService.register(data);
-      // console.log(user)
       setUser(user);
       toast.success('Register Successful');
     } catch (err) {
@@ -32,6 +61,8 @@ export const AuthProvider = ({ children }) => {
   const logout = () => {
     userService.logout();
     setUser(null);
+    clearTimeout(logoutTimer);
+    setLogoutTimer(null);
     toast.success('Logout Successful');
   };
 
