@@ -2,6 +2,9 @@ import React from 'react';
 import { useAuth } from '../useAuth';
 import classes from './dashboard.module.css';
 import { Link } from 'react-router-dom';
+import orderIcon from "../../Assets/icons/orders.svg"
+import profIcon from "../../Assets/icons/profile.svg"
+import userIcon from "../../Assets/icons/users.svg"
 
 export default function Dashboard() {
   const { user } = useAuth();
@@ -44,21 +47,21 @@ export default function Dashboard() {
 const allItems = [
   {
     title: 'Orders',
-    imageUrl: '../../Assets/icons/orders.svg',
+    imageUrl: orderIcon,
     url: '/orders',
     bgColor: '#ec407a',
     color: 'white',
   },
   {
     title: 'Profile',
-    imageUrl: '../../Assets/icons/profile.svg',
+    imageUrl: profIcon,
     url: '/profile',
     bgColor: '#1565c0',
     color: 'white',
   },
   {
     title: 'Users',
-    imageUrl: '/icons/users.svg',
+    imageUrl: userIcon,
     url: '/admin/users',
     forAdmin: true,
     bgColor: '#00bfa5',
