@@ -106,7 +106,16 @@ function Checkout({ setCart  }) {
                 </div>
             </div>
         </div>
-      </div>      
+      </div>     
+      <div class="breadcrumbs">
+                <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <p class="bread"><span><Link to="/">Home</Link></span> / <span><Link to="/shop">Shop</Link></span>/ <span><Link to="/cart">Cart</Link></span> /<span>Checkout</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
   <div className="cart-box-main">
     <div className="container">
         <div className="row">

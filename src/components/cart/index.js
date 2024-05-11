@@ -77,6 +77,15 @@ const updateTotalPrice = () => {
                     </div>
                 </div>
             </div>
+            <div class="breadcrumbs">
+                <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <p class="bread"><span><Link to="/">Home</Link></span> / <span><Link to="/shop">Shop</Link></span> /<span>Cart</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             <div className="row">
                 <div className="col-md-8 shoppingcartt">
                     <div className="cart-box-main">

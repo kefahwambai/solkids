@@ -2,6 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useAuth } from '../useAuth';
 import classes from './profilePage.module.css';
+import { Link } from 'react-router-dom';
 
 
 export default function ProfilePage() {
@@ -28,6 +29,15 @@ export default function ProfilePage() {
           </div>
         </div>
       </div>
+      <div class="breadcrumbs">
+        <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <p class="bread"><span><Link to="/">Home</Link></span> / <span><Link to="/dashboard">Dashboard</Link></span> /<span>Profile</span></p>
+                    </div>
+                </div>
+            </div>
+        </div> 
       <div className="container">
         <div className="row">
           <div className="col-lg-6 mx-auto">

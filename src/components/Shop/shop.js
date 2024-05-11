@@ -1,4 +1,3 @@
-// components/Shop.js
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
@@ -6,6 +5,7 @@ import { connect } from 'react-redux';
 import { actFetchProductsRequest, AddCart } from '../../actions/actions';
 import Pre from '../Pre';
 import "./index.css";
+import { Link } from 'react-router-dom';
 
 export class Shop extends Component {
     componentDidMount() {
@@ -28,6 +28,15 @@ export class Shop extends Component {
                             <div className="row">
                                 <div className="col-lg-12">
                                     <h2 className='conhead '>Karibu Dukani</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="breadcrumbs">
+                    <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <p class="bread"><span><Link to="/">Home</Link></span> / <span>Shop</span></p>
                                 </div>
                             </div>
                         </div>

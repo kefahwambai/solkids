@@ -42,6 +42,15 @@ export default function OrdersPage() {
             </div>
         </div>
     </div>
+    <div class="breadcrumbs">
+      <div class="container">
+              <div class="row">
+                  <div class="col">
+                      <p class="bread"><span><Link to="/">Home</Link></span> / <span><Link to="/dashboard">Dashboard</Link></span>/ <span>Orders</span></p>
+                  </div>
+              </div>
+          </div>
+      </div> 
     <div className={classes.container}>
 
       {allStatus && (

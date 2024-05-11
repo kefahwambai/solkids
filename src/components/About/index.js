@@ -6,11 +6,12 @@ import "./about.css"
 import knlh from "../../Assets/Partners/knls.png"
 import museum from "../../Assets/Partners/museum.png"
 import stu from "../../Assets/Partners/fhm.png"
+import { Link } from 'react-router-dom'
 
 export default function About() {
   return (
     <>
-     <div className="page-heading-shows-events">
+      <div className="page-heading-shows-events">
             <div className="container">
                 <div className="row">
                     <div className="col-lg-12">
@@ -18,7 +19,16 @@ export default function About() {
                     </div>
                 </div>
              </div>
-         </div>
+      </div>
+  <div class="breadcrumbs">
+		<div class="container">
+				<div class="row">
+					<div class="col">
+						<p class="bread"><span><Link to="/">Home</Link></span> / <span>About</span></p>
+					</div>
+				</div>
+			</div>
+		</div>
     <div className="about-box-main">
      <div className="container">
       <div className="row">

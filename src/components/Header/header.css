@@ -16,10 +16,62 @@
 
 
 
+.colorlib-intro,
+.colorlib-product {
+  padding: 7em 0;
+  clear: both; }
+
+.colorlib-intro {
+  padding-bottom: 0; }
+
+.intro {
+  font-size: 40px;
+  font-weight: 700;
+  font-family: "Montserrat", Arial, sans-serif;
+  margin-bottom: 0; }
+
+.featured {
+  width: 100%; }
+  .featured .featured-img {
+    height: 500px;
+    display: block;
+    margin-bottom: 20px;
+    padding: 2em 1em; }
+    .featured .featured-img h2 {
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 40px; }
+    .featured .featured-img.featured-img-2 {
+      height: 400px; }
+  .featured .desc h2 {
+    font-size: 40px; }
+    .featured .desc h2 a {
+      color: #000; }
+
+.product-entry {
+  display: block;
+  height: 100% !important; }
+  .product-entry .prod-img {
+    display: block; }
+  .product-entry .desc {
+    padding: 1.5em; }
+    .product-entry .desc h2 {
+      text-transform: uppercase;
+      font-size: 18px; }
+      .product-entry .desc h2 a {
+        color: #000; }
+    .product-entry .desc span.price {
+      display: block;
+      font-family: "Rokkitt", Georgia, serif;
+      font-size: 18px;
+      color: #000;
+      font-weight: 400; }
+
+
 .header-container {
   position: relative;
   margin-top: 0rem;
-  height: 100vh;
+  height: 80vh;
 }
 .slidez {
   max-width: 100vw; 
@@ -27,12 +79,16 @@
   
 }
 
+.introsection{
+  height: 80vh;
+}
+
 .mySlide {
   position: relative;
   background-size: cover;
   transition: transform 5.5s ease-in-out;
   overflow: hidden; 
-  height: 100vh;
+  height: 80vh;
   width: 100vw;
 }
 
@@ -993,7 +1049,7 @@ section.our-facts .videoo img {
   top: 0%;
   left: 0%;
   width: 100%;
-  height: 100vh;
+  height: 80vh;
   background-color: rgb(0,0,0,.5);
   z-index: 5;
   /* margin-top: 1rem; */

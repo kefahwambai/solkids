@@ -6,6 +6,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
 
+
+.breadcrumbs {
+    clear: both;
+    padding: 1em 0;
+    margin-bottom: -5rem !important; 
+ }
+.breadcrumbs .bread {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 12px;
+}
+.breadcrumbs .bread span {
+    padding: 0 7px; 
+}
+.breadcrumbs .bread span:first-child {
+    padding-left: 0; 
+}
+.breadcrumbs .bread span a {
+    color: #88c8bc; 
+}
+  
 .position-relative {
     position: relative !important;
 }

@@ -19,7 +19,16 @@ export default function Dashboard() {
                 </div>
             </div>
         </div>
-      </div>   
+      </div>
+      <div class="breadcrumbs">
+        <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <p class="bread"><span><Link to="/">Home</Link></span> /<span>Dashboard</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>    
       <div className={classes.container}>
       <div className={classes.menu}>
         {allItems

@@ -1,5 +1,6 @@
 import React from 'react'
 import "./contact.css"
+import { Link } from 'react-router-dom'
 
 export default function Contact() {
 return (
@@ -14,10 +15,19 @@ return (
                 </div>
              </div>
     </div>
+    <div class="breadcrumbs">
+    <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p class="bread"><span><Link to="/">Home</Link></span> /<span>Contact</span></p>
+                </div>
+            </div>
+        </div>
+    </div> 
     <div className="container-xxl py-5">
             <div className="container">
                 <div className="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style={{ maxWidth: "600px" }}>
-                    <h1 className="mb-3">Get In Touch</h1>
+                    <h1 className="mb-3 mt-5">Get In Touch</h1>
                     <p>We would like to hear from you on how we can improve ourself. You can also reach out to us if you want to partner with us</p>
                 </div>
                 <div className="row g-4 mb-5">

@@ -55,138 +55,44 @@ export default function CalendarComponent({ handleClick }) {
   const handleProductClick = (product) => {
     setSelectedProduct(product);
   };
-  useEffect(() => {
-    var myIndex = 0;
-    carousel();
-
-    function carousel() {
-        var x = document.getElementsByClassName("mySlide");
-  
-        if (x.length > 0) {
-          for (var i = 0; i < x.length; i++) {
-            x[i].style.display = "none";
-          }
-  
-          myIndex++;
-          if (myIndex > x.length) {
-            myIndex = 1;
-          }
-  
-          x[myIndex - 1].style.display = "block";
-  
-          x[myIndex - 1].classList.add('zoom-out');
-  
-          setTimeout(() => {
-            x[myIndex - 1].classList.remove('zoom-out');
-          }, 350);
-  
-          setTimeout(carousel, 6500);
-        }
-      }
-    }, []);
 
 
   return (
 
-    <div>    
-     <section>
+    <div>        
+    <section className="introsection">
      <div className='overlay'></div>
         <div className='header-container'>
           <div className="headerTitles">          
           </div>
           <div className="slidez">
             <img className="mySlide" alt="slider1img" src={sol1} />
-            <img className="mySlide" alt="slider2img" src={sol3} />
+            {/* <img className="mySlide" alt="slider2img" src={sol3} />
             <img className="mySlide" alt="slider3img" src={sol5} />
-            <img className="mySlide" alt="slider8img" src={sol8} />
+            <img className="mySlide" alt="slider8img" src={sol8} /> */}
           </div>
         </div>
-      </section>
-    <div className="background"></div>
-    <section id="aboutt">
-    <div className="container-fluid pt-5">
-        <div className="container pb-3">
-          <div className="row">
-            <div className="col-lg-4 col-md-6 pb-1">
-              <div className="d-flex bg-light shadow-sm border-top rounded mb-4" style={{ padding: '30px' }}>              
-                <div className="pl-4">
-                <i className="fas fa-child fa-3x"></i>               
-                <h3 className="text-primary mb-3">Variety of Kid content</h3>
-                <p className="mb-0"> We promote Afro-futuristic sci-fi stories addressing pollution and climate change.</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6 pb-1">
-              <div className="d-flex bg-light shadow-sm border-top rounded mb-4" style={{ padding: '30px' }}>
-                <i className="flaticon-050-fence h1 font-weight-normal text-primary mb-3"></i>
-                <div className="pl-4">
-                <i className="fas fa-futbol fa-3x text-success"></i>
-                <h3 className="text-success mb-3">Children Empowerment</h3>
-                <p className="mb-0">Relatable context that empowers through content that is inclusive, representative and diverse.</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6 pb-1">
-              <div className="d-flex bg-light shadow-sm border-top rounded mb-4" style={{ padding: '30px' }}>
-                <i className="flaticon-050-fence h1 font-weight-normal text-primary mb-3"></i>
-                <div className="pl-4">
-                 <i className="fa-solid fa-users fa-3x text-warning"></i>
-                 <h3 className="text-warning mb-3">Leadership</h3>
-                 <p className="mb-0">Raising leaders through content, books and stories that inspire and motivate.</p>
-                </div>
-              </div>
-            </div>            
-          </div>
-        </div>
+      </section> 
+<div className="colorlib-intro">
+  <div className="container">
+    <div className="row">
+      <div className="col-sm-12 text-center">
+        <h2 className="intro">It started with a simple idea: Create quality, well-designed products that my 4yr/old self would have enjoyed.</h2>
       </div>
-      <div className="container-fluid py-5">
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col-lg-5">
-              <img className="img-fluid rounded mb-5 mb-lg-0" src={pizza} alt="" />
-            </div>
-            <div className="col-lg-7">
-              <p className="section-title pr-5">
-                <span className="pr-2">Learn more About Us</span>
-              </p>
-              <p>
-              Learn more about our journey, values, and commitment to raising leaders and promoting positive learning experiences for all children.
-              </p>
-              <div className="row pt-2 pb-4">
-                <div className="col-6 col-md-4">
-                <img className="img-fluid rounded" style={{ transform: 'scaleX(-1)' }} src={kich} alt="" />
-
-
-                </div>
-                <div className="col-6 col-md-8">
-                  <ul className="list-inline m-0">
-                    <li className="py-2 border-top border-bottom">
-                      Who we are   <i className="fas fa-question text-primary mr-3"></i>
-                    </li>
-                    <li className="py-2 border-bottom">
-                      Why we do it   <i className="fas fa-question text-primary mr-3"></i>
-                    </li>
-                    <li className="py-2 border-bottom">
-                      Our Impact   <i className="fas fa-question text-primary mr-3"></i>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <Link to="/about"><a href="" className="btm btn-primary mt-2 py-2 px-4">Learn More</a></Link>
-              
-            </div>
-          </div>
-        </div>
+    </div>
+  </div>
+</div>
+<div className="colorlib-product">
+  <div className="container">
+    <div className="row">
+      <div className="col-sm-8 offset-sm-2 text-center colorlib-heading">
+        <h2>Best Sellers</h2>
       </div>
-    </section>
-    <section id="frontshop">
+    </div>
     <div id="fh5co-product">
       <div className="container">
         <div className="row animate-box">
            <div className="col-lg-12">
-                    <div className="title-all text-center">
-                        <h2>Duka Letu</h2>
-                    </div>
             </div>
         </div>
         <div className="row">
@@ -249,29 +155,13 @@ export default function CalendarComponent({ handleClick }) {
             </div>
       </div>
     </div>
-    
-    </section>
-
-  <section id="gallery" class="wow fadeInUp">
-  <div className='booksecont'>
-          <h3 className="text-white mb-4">Newsletter</h3>
-          <p>Sign up for our newsletter to be up to date on our future book releases and other exciting projects we are working on BTS</p>
-          <div className="position-relative mx-auto" style={{ maxWidth: "400px" }}>
-            <input className="form-control bg-transparent w-100 py-2 ps-4 pe-5" type="text" placeholder="Your email" />            
-            <div class="conta">
-                <a href="#" class="button type--A">
-                    <div class="button__line"></div>
-                    <div class="button__line"></div>
-                    <span class="button__text">SignUp</span>
-                    <div class="button__drow1"></div>
-                    <div class="button__drow2"></div>
-                </a>
-                </div>
-          </div>
-            
-        </div>
-
-    </section>
+    <div className="row">
+      <div className="col-md-12 text-center">
+        <p><Link to='/shop' className="btm btn-primary btn-lg">Shop All Products</Link></p>
+      </div>
+    </div>
+  </div>
+</div>
   <section id="planner" >
     <section className="our-facts">
       <div className="container">
