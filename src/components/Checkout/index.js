@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./checkout.css";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
-import Payment from "./Payment";
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
 import { createOrder } from '../services/orderService';

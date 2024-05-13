@@ -29,7 +29,8 @@ export default function Dashboard() {
                 </div>
             </div>
         </div>    
-      <div className={classes.container}>
+      <div className={classes.container} style={{ marginTop:'1rem'}}
+      >
       <div className={classes.menu}>
         {allItems
           .filter(item => user.isAdmin || !item.forAdmin)
