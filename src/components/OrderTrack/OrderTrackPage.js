@@ -13,6 +13,7 @@ export default function OrderTrackPage() {
   useEffect(() => {
     order_id && trackOrderById(order_id).then(order => {
       setOrder(order);
+      console.log(order)
     });
   }, []);
 
@@ -22,6 +23,15 @@ export default function OrderTrackPage() {
   return (
     order && (
       <>
+      <div className="page-heading-shows-events">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <h2 className="conhead">Track your Order</h2>
+            </div>
+          </div>
+        </div>
+      </div>
         <div className="page-heading-shows-events">
           <div className="container">
             <div className="row">
