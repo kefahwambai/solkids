@@ -11,9 +11,9 @@ export default function PaymentPage() {
   const dispatch = useDispatch(); 
   useEffect(() => {
     getNewOrderForCurrentUser().then((data) => {
-      console.log(data)
+      // console.log(data)
       setOrder(data);
-      console.log(order)
+      // console.log(order)
     });
   }, []);
 
@@ -58,7 +58,7 @@ export default function PaymentPage() {
             </div>
           </div>
           <div className="col-lg-6 mt-5">
-            <Map readonly={true} location={{ lat: order.addressLat, lng: order.addressLng }} />
+            <Map readonly={true} location={{ lat: order.address_lat, lng: order.address_lng }} />
           </div>
         </div>
         <div className="m-5 mt-4 col-lg-4">
