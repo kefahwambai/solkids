@@ -43,7 +43,8 @@ export default function CalendarComponent({ handleClick }) {
         <div className='header-container'>
           <div className="headerTitles">          
           </div>
-          <link rel="preload" as="image" href={sol1} />
+          <link rel="preload" as="image" href={sol1} 
+          />
           <div className="slidez">
             <img className="mySlide" alt="slider1img" src={sol1} />
             {/* <img className="mySlide" alt="slider2img" src={sol3} />
