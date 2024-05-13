@@ -29,7 +29,6 @@ function Payment({ totalPrice }) {
     }).then(async (result) => {
       const { clientSecret } = await result.json();
       setClientSecret(clientSecret);
-      // console.log(clientSecret)
     });
   },  [totalPrice]);
   
