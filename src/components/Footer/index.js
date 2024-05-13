@@ -1,12 +1,6 @@
 import React from 'react'
 import "./footer.css"
-import { Link } from 'react-router-dom';
-import pic from "../../Assets/slideshow/DSC02941.png"
-import pic2 from "../../Assets/slideshow/DSC02924.png"
-import pic3 from "../../Assets/slideshow/DSC02942.png"
-import pic4 from "../../Assets/slideshow/DSC02969.png"
-import pic5 from "../../Assets/slideshow/DSC02970.png"
-import pic6 from "../../Assets/slideshow/DSC02979.png"
+
 
 
 export default function Footer() {

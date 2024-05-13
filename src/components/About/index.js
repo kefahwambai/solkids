@@ -1,5 +1,5 @@
 import React from 'react'
-import sol from "../../Assets/About/solkidsbanner.png"
+import sol from "../../Assets/About/solkidsbanner.jpg"
 import solband from "../../Assets/Homepage/sautisol-removebg-preview.png"
 import melissa from "../../Assets/Homepage/melissa-removebg-preview.png"
 import "./about.css"

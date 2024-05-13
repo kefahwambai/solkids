@@ -4,6 +4,7 @@ import './events.css';
 import dec from "../../Assets/Events/dec2022.jpeg";
 import splash from "../../Assets/Events/solkids.jpeg";
 import solfest23 from "../../Assets/Events/solfest23.jpeg";
+import NotFound from "../NotFound/NotFound"
 
 const Events = () => {
   const [filter, setFilter] = useState('Upcoming');
@@ -57,6 +58,15 @@ const Events = () => {
           </div>
         </div>
       </div>
+      {/* <div class="breadcrumbs">
+        <div class="container">
+          <div class="row">
+              <div class="col">
+                  <p class="bread"><span><Link to="/">Home</Link></span> / <span><Link to="/shop">Shop</Link></span> /<span>Cart</span></p>
+              </div>
+          </div>
+        </div>
+      </div> */}
       <div className="shows-events-tabs">
         <div className="container">
           <div className="row">
@@ -82,7 +92,10 @@ const Events = () => {
                           <div className="heading"><h2>{filter}</h2></div>
                         </div>
                         {events.filter(filterEvents).length === 0 ? (
-                          <div className="no-events-message">No upcoming events yet.</div>
+                           <NotFound
+                          //  linkRoute={filter ? '/orders' : '/'}
+                           linkText={filter ? 'Go Shop' : 'Go To Home Page'}
+                         />
                         ) : (
                           events.filter(filterEvents).map((event, index) => (
                             <div className="event-item" key={index}>

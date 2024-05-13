@@ -1,28 +1,16 @@
-import React, { useState, useRef, useEffect} from 'react';
+import React, { useState, useRef } from 'react';
 import "./header.css"
 import { Link } from 'react-router-dom';
 import sol1 from "../../Assets/Homepage/sol1.png"
-import sol2 from "../../Assets/Homepage/sol2.png"
-import sol3 from "../../Assets/Homepage/sol3.png"
-import sol5 from "../../Assets/Homepage/sol5.png"
-import sol8 from "../../Assets/Homepage/sol8.png"
-import kids from "../../Assets/Homepage/solchick.png";
-import logo from "../../Assets/Logo/SOL_KIDS_Official_Logo__5_-1-removebg-preview.png"
 import oak from "../../Assets/Books/Oak.png"
 import twiga from "../../Assets/Books/Twiga.png"
 import fisi from "../../Assets/Books/fisi.png"
 import solmic from "../../Assets/Homepage/solmic.PNG"
-import pizza from "../../Assets/definition/pizzakids.png"
-import kich from "../../Assets/Homepage/solchick.png"
 import useScrollTriggeredCountUp from './useScrollTriggeredCountUp';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 export default function CalendarComponent({ handleClick }) { 
 
-  const [filter, setFilter] = useState('*'); 
   const [selectedProduct, setSelectedProduct] = useState(null);
-  const [quantity, setQuantity] = useState(0);
   const childrenReachedRef = useRef(null);
   const solkidsMembersRef = useRef(null);
   const contentCatalogueRef = useRef(null);
@@ -41,17 +29,7 @@ export default function CalendarComponent({ handleClick }) {
   useScrollTriggeredCountUp(solkidsMembersRef, 40);
   useScrollTriggeredCountUp(contentCatalogueRef, 20);
   useScrollTriggeredCountUp(awardsRef, 2);
-  const handleQuantityChange = (event) => {
-    setQuantity(event.target.value);
-  };
 
-  const handleAddToCart = () => {
-    handleClick({ ...selectedProduct, quantity: parseInt(quantity) });
-  };  
-
-  const handleFilterClick = (filterValue) => {
-    setFilter(filterValue);
-  };
   const handleProductClick = (product) => {
     setSelectedProduct(product);
   };
@@ -65,6 +43,7 @@ export default function CalendarComponent({ handleClick }) {
         <div className='header-container'>
           <div className="headerTitles">          
           </div>
+          <link rel="preload" as="image" href={sol1} />
           <div className="slidez">
             <img className="mySlide" alt="slider1img" src={sol1} />
             {/* <img className="mySlide" alt="slider2img" src={sol3} />

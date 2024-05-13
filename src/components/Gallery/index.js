@@ -1,12 +1,12 @@
 import React , {useState} from 'react'
 import "./gallery.css"
-import solfest2 from "../../Assets/slideshow/DSC02924.png"
-import solfest3 from "../../Assets/slideshow/DSC02941.png"
-import solfest4 from "../../Assets/slideshow/DSC02942.png"
-import solfest5 from "../../Assets/slideshow/DSC02969.png"
-import solfest6 from "../../Assets/slideshow/DSC02970.png"
-import solfest from "../../Assets/slideshow/DSC02979.png"
-import solfest7 from "../../Assets/slideshow/DSC02996.png"
+import solfest2 from "../../Assets/slideshow/DSC02924.jpg"
+import solfest3 from "../../Assets/slideshow/DSC02941.jpg"
+import solfest4 from "../../Assets/slideshow/DSC02942.jpg"
+import solfest5 from "../../Assets/slideshow/DSC02969.jpg"
+import solfest6 from "../../Assets/slideshow/DSC02970.jpg"
+import solfest from "../../Assets/slideshow/DSC02979.jpg"
+import solfest7 from "../../Assets/slideshow/DSC02924.jpg"
 
 export default function Gallery() {
     const allImages = [solfest7, solfest3, solfest4,solfest5, solfest, solfest6]
