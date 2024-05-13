@@ -56,7 +56,7 @@ function Checkout({ setCart  }) {
     const totalPriceWithShipping = totalPrice + shippingPrice;
   
     try {
-      await createOrder({ ...order, id: data.id, name: data.name, address: data.address, totalPrice: totalPriceWithShipping, });
+      await createOrder({ ...order, id: user.id, name: data.name, address: data.address, totalPrice: totalPriceWithShipping, });
      
       navigate('/payment');
       toast.success('Order placed successfully!');
