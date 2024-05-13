@@ -43,7 +43,7 @@ function FindButtonAndMarker({ readonly, location, onChange }) {
   const mapRef = useRef(null);
 
   useEffect(() => {
-    if (!mapRef.current) return; // Ensuring mapRef is initialized
+    if (!mapRef.current) return;
     if (readonly) {
       mapRef.current.setView(position, 13);
       return;
