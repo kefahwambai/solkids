@@ -62,13 +62,13 @@ function App({ cart, addToCart }) {
           <Route path="/cart" element={<Cart cart={cart} user={user}   />} />     
           <Route path="/contact" element={ <Contact/>} />
           <Route path="/ticket" element={ <Tickets  cart={cart} />} /> 
-          <Route path="/checkout" element={<Checkout cart={cart} user={user} />} />          
+          <Route path="/checkout" element={<AuthRoute><Checkout cart={cart} user={user} /></AuthRoute>} />          
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />      
           <Route path="/profile" element={<AuthRoute><ProfilePage /></AuthRoute>}   />
           <Route path="/dashboard" element={ <AuthRoute>  <Dashboard /> </AuthRoute> } />   
-          <Route path="/user" element={<Profile user={user}  />} />
-          <Route path="/orders" element={<Orders user={user}  />} />
+          <Route path="/user" element={<AuthRoute><Profile user={user}  /></AuthRoute> } />
+          <Route path="/orders" element={<AuthRoute><Orders user={user}  /></AuthRoute>} />
           <Route path="/success" element={<Success/>} />
           <Route path="/payment" element={ <AuthRoute> <Payment /> </AuthRoute>} />   
           <Route path="/track/:orderId" element={<AuthRoute><OrderTrackPage /></AuthRoute>}   />       
