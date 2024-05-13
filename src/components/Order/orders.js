@@ -51,7 +51,7 @@ export default function OrdersPage() {
               </div>
           </div>
       </div> 
-    <div className={classes.container} style={{ marginTop:'1rem'}}>
+    <div className={classes.container} style={{ marginTop:'4rem'}}>
       {allStatus && (
         <div className={classes.all_status}>
           <Link to="/orders" className={!filter ? classes.selected : ''}>

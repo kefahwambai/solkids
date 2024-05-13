@@ -29,7 +29,7 @@ export default function Dashboard() {
                 </div>
             </div>
         </div>    
-      <div className={classes.container} style={{ marginTop:'1rem'}}
+      <div className={classes.container} style={{ marginTop:'3rem'}}
       >
       <div className={classes.menu}>
         {allItems
