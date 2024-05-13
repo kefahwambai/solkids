@@ -23,8 +23,8 @@ export const pay = async paymentId => {
   } catch (error) {}
 };
 
-export const trackOrderById = async order_id => {
-  const { data } = await axios.get('https://solserve.vercel.app/orders/track/' + order_id);
+export const trackOrderById = async id => {
+  const { data } = await axios.get('https://solserve.vercel.app/orders/track/' + id);
   return data;
 };
 
