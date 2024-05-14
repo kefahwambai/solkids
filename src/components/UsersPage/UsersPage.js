@@ -29,7 +29,17 @@ export default function UsersPage() {
   };
 
   return (
-    <div className={classes.container}>
+    <>
+       <div className="page-heading-shows-events">
+            <div className="container">
+                <div className="row">
+                <div className="col-lg-12">
+                <h2 className='conhead '>Users</h2>
+                </div>
+            </div>
+        </div>
+      </div>
+     <div className={classes.container}>
       <div className={classes.list}>
         {/* <Title title="Manage Users" /> */}
         <Search
@@ -64,5 +74,7 @@ export default function UsersPage() {
           ))}
       </div>
     </div>
-  );
+
+    </>
+     );
 }
