@@ -5,8 +5,8 @@ export const getUser = () =>
     ? JSON.parse(localStorage.getItem('user'))
     : null;
 
-export const login = async (email, password) => {
-  const { data } = await axios.post('https://solserve.vercel.app/users/login', { email, password });
+export const login = async (email, password, isAdmin ) => {
+  const { data } = await axios.post('https://solserve.vercel.app/users/login', { email, password, isAdmin });
   localStorage.setItem('user', JSON.stringify(data));
   return data;
 };

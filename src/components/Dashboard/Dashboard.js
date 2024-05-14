@@ -8,6 +8,7 @@ import userIcon from "../../Assets/icons/users.svg"
 
 export default function Dashboard() {
   const { user } = useAuth();
+  console.log(user)
 
   return (
     <>
@@ -40,7 +41,7 @@ export default function Dashboard() {
               to={item.url}
               style={{
                 backgroundColor: item.bgColor,
-                color: item.color,
+                color: item.color,                
               }}
             >
               <img src={item.imageUrl} alt={item.title} />

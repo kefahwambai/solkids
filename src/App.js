@@ -9,7 +9,8 @@ import Contact from "./components/Contact";
 import Shop from "./components/Shop/shop";
 import Cart from "./components/cart";
 import Orders from "./components/Order/orders";
-import Preloader from "../src/components/Pre";
+import UsersPage from "./components/UsersPage/UsersPage";
+import UserEditPage from "./components/UserEdit/UserEditPage";
 import Events from "./components/Events";
 import Tickets from "./components/Tickets";
 import Checkout from "./components/Checkout";
@@ -70,12 +71,14 @@ function App({ cart, addToCart }) {
           <Route path="/user" element={<AuthRoute><Profile user={user}  /></AuthRoute> } />
           <Route path="/orders" element={<AuthRoute><Orders user={user}  /></AuthRoute>} />
           <Route path="/success" element={<Success/>} />
-          <Route path="/payment" element={ <AuthRoute> <Payment /> </AuthRoute>} />   
-          <Route path="/track/:orderId" element={<AuthRoute><OrderTrackPage /></AuthRoute>}   />       
+          <Route path="/payment" element={ <AuthRoute><Payment /></AuthRoute>} />   
+          <Route path="/track/:orderId" element={<AuthRoute><OrderTrackPage /></AuthRoute>}   />     
+          <Route path="/admin/users/:searchTerm?" element={<AdminRoute><UsersPage /></AdminRoute> }  />
+          <Route path="/admin/editUser/:userId"   element={<AdminRoute><UserEditPage /></AdminRoute> }   />  
         </Routes>
         <Backtotop/>
         <Footer />
-      </div>  
+          </div>  
   );
 }
 
