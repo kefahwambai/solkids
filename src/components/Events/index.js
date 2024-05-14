@@ -58,15 +58,15 @@ const Events = () => {
           </div>
         </div>
       </div>
-      {/* <div class="breadcrumbs">
+      <div class="breadcrumbs" style={{marginBottom: '4rem'}}>
         <div class="container">
           <div class="row">
               <div class="col">
-                  <p class="bread"><span><Link to="/">Home</Link></span> / <span><Link to="/shop">Shop</Link></span> /<span>Cart</span></p>
+                  <p class="bread"><span><Link to="/">Home</Link></span> /<span>Fomo Section</span></p>
               </div>
           </div>
         </div>
-      </div> */}
+      </div>
       <div className="shows-events-tabs">
         <div className="container">
           <div className="row">

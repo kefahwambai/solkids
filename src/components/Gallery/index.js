@@ -35,15 +35,15 @@ export default function Gallery() {
           <h1 className="mb-4">Photos from our previous events</h1>
         </div>
         <div className="row">
-          <div className="col-12 text-center mb-2">
-            <ul className="list-inline mb-4" id="portfolio-flters">
-                <li className={`btm btn-outline-primary m-1 ${selectedYear === 'all' ? 'active' : ''}`} onClick={() => handleYearChange('all')}>
+          <div className="tablns col-lg-8">
+            <ul style={{ cursor: 'pointer'}}>
+                <li className={`${selectedYear === 'all' ? 'active' : ''}`} onClick={() => handleYearChange('all')}>
                   All
                 </li>
-              <li className={`btm btn-outline-primary m-1 ${selectedYear === 'solfest22' ? 'active' : ''}`} onClick={() => handleYearChange('solfest22')}>
+              <li className={`${selectedYear === 'solfest22' ? 'active' : ''}`} onClick={() => handleYearChange('solfest22')}>
                   Solfest '22
                 </li>
-                <li className={`btm btn-outline-primary m-1 ${selectedYear === 'solfest23' ? 'active' : ''}`} onClick={() => handleYearChange('solfest23')}>
+                <li className={`${selectedYear === 'solfest23' ? 'active' : ''}`} onClick={() => handleYearChange('solfest23')}>
                   Solfest '23
                 </li>
             </ul>
