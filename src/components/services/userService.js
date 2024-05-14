@@ -7,6 +7,7 @@ export const getUser = () =>
 
 export const login = async (email, password, isAdmin ) => {
   const { data } = await axios.post('https://solserve.vercel.app/users/login', { email, password, isAdmin });
+  console.log(data)
   localStorage.setItem('user', JSON.stringify(data));
   return data;
 };

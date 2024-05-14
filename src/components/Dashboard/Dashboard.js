@@ -8,7 +8,6 @@ import userIcon from "../../Assets/icons/users.svg"
 
 export default function Dashboard() {
   const { user } = useAuth();
-  console.log(user)
 
   return (
     <>
