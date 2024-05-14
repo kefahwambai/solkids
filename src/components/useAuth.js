@@ -13,7 +13,7 @@ export const AuthProvider = ({ children }) => {
       const timer = setTimeout(() => {
         logout();
         toast.info('You have been logged out due to inactivity.');
-      }, 10 * 60 * 1000); 
+      }, 20 * 60 * 1000); 
       setLogoutTimer(timer);
     };
 
