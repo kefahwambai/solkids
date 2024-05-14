@@ -1,5 +1,6 @@
 import React , {useState} from 'react'
 import "./gallery.css"
+import "../Events/events.css"
 import solfest2 from "../../Assets/slideshow/DSC02924.jpg"
 import solfest3 from "../../Assets/slideshow/DSC02941.jpg"
 import solfest4 from "../../Assets/slideshow/DSC02942.jpg"
@@ -33,20 +34,16 @@ export default function Gallery() {
       <div className="container">
         <div className="text-center pb-2">         
           <h1 className="mb-4">Photos from our previous events</h1>
-        </div>
-        <div className="row">
-          <div className="tablns col-lg-8">
-            <ul style={{ cursor: 'pointer'}}>
-                <li className={`${selectedYear === 'all' ? 'active' : ''}`} onClick={() => handleYearChange('all')}>
-                  All
-                </li>
-              <li className={`${selectedYear === 'solfest22' ? 'active' : ''}`} onClick={() => handleYearChange('solfest22')}>
-                  Solfest '22
-                </li>
-                <li className={`${selectedYear === 'solfest23' ? 'active' : ''}`} onClick={() => handleYearChange('solfest23')}>
-                  Solfest '23
-                </li>
-            </ul>
+        </div>             
+      <div className="heading-tabs center">      
+          <div className="row">
+              <div className="tablns col-lg-8">
+                <ul style={{ cursor: 'pointer', display: 'flex', justifyContent: 'center' }}>
+                    <li style={{padding: '1rem'}}><a  className={`${selectedYear === 'all' ? 'active' : ''}`} onClick={() => handleYearChange('all')}>All</a></li>
+                    <li style={{padding: '1rem'}}> <a className={`${selectedYear === 'solfest22' ? 'active' : ''}`} onClick={() => handleYearChange('solfest22')}> Solfest '22</a></li>
+                    <li style={{padding: '1rem'}}><a className={`${selectedYear === 'solfest23' ? 'active' : ''}`} onClick={() => handleYearChange('solfest23')}>Solfest '23</a></li>
+                </ul>
+              </div>
           </div>
         </div>
         <div className="row portfolio-container">

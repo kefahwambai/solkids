@@ -58,22 +58,22 @@ const Events = () => {
           </div>
         </div>
       </div>
-      <div class="breadcrumbs" style={{marginBottom: '4rem'}}>
-        <div class="container">
-          <div class="row">
-              <div class="col">
-                  <p class="bread"><span><Link to="/">Home</Link></span> /<span>Fomo Section</span></p>
-              </div>
-          </div>
-        </div>
-      </div>
       <div className="shows-events-tabs">
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
               <div className="row" id="tabs">
-                <div className="col-lg-12">
-                  <div className="heading-tabs">
+              <div class="breadcrumbs" >
+                <div class="container">
+                  <div class="row">
+                      <div class="col">
+                          <p class="bread"><span><Link to="/">Home</Link></span> /<span>Fomo Section</span></p>
+                      </div>
+                  </div>
+                </div>
+              </div>
+                <div className="col-lg-12" style={{marginTop: '3rem'}}>
+                  <div className="heading-tabs">                    
                     <div className="row">
                       <div className="tablns col-lg-8">
                         <ul style={{ cursor: 'pointer'}}>
