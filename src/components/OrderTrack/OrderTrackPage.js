@@ -13,7 +13,7 @@ export default function OrderTrackPage() {
   useEffect(() => {
     orderId  && trackOrderById(orderId ).then(order => {
       setOrder(order);
-      console.log(order)
+      
     });
   }, []);
 
@@ -66,7 +66,7 @@ export default function OrderTrackPage() {
             </div>
 
             <div className="col-lg-6">
-              <Map location={{ lat: order.addressLat, lng: order.addressLng }} readonly={true} />
+              <Map location={{ lat: order.address_lat, lng: order.address_lng }} readonly={true} />
             </div>
           </div>
 
