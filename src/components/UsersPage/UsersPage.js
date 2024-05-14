@@ -16,6 +16,7 @@ export default function UsersPage() {
 
   const loadUsers = async () => {
     const users = await getAll(searchTerm);
+    console.log(users);
     setUsers(users);
   };
 
