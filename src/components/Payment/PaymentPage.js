@@ -11,6 +11,7 @@ export default function PaymentPage() {
   const dispatch = useDispatch(); 
   useEffect(() => {
     getNewOrderForCurrentUser().then((data) => {
+      console.log(data)
       setOrder(data);
     });
   }, []);
