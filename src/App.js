@@ -73,7 +73,7 @@ function App({ cart, addToCart }) {
           <Route path="/success" element={<Success/>} />
           <Route path="/payment" element={ <AuthRoute><Payment /></AuthRoute>} />   
           <Route path="/track/:orderId" element={<AuthRoute><OrderTrackPage /></AuthRoute>}   />     
-          <Route path="/admin/users" element={<AdminRoute><UsersPage /></AdminRoute> }  />
+          <Route path="/admin/users/:searchTerm?" element={<AdminRoute><UsersPage /></AdminRoute> }  />
           <Route path="/admin/editUser/:userId"   element={<AdminRoute><UserEditPage /></AdminRoute> }   />  
         </Routes>
         <Backtotop/>
