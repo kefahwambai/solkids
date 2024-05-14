@@ -3,7 +3,7 @@ import { Elements } from "@stripe/react-stripe-js";
 import CheckoutForm from "./CheckoutForm";
 import { loadStripe } from "@stripe/stripe-js";
 
-function Payment({ total_price }) {
+function Payment({ totalPrice }) {
   const [stripePromise, setStripePromise] = useState(null);
   const [clientSecret, setClientSecret] = useState("");
 
@@ -24,13 +24,13 @@ function Payment({ total_price }) {
       headers: {
         "Content-Type": "application/json", 
       },
-      body: JSON.stringify({ amount: total_price }), 
+      body: JSON.stringify({ amount: totalPrice }), 
 
     }).then(async (result) => {
       const { clientSecret } = await result.json();
       setClientSecret(clientSecret);
     });
-  },  [total_price]);
+  },  [totalPrice]);
   
 
   return (
