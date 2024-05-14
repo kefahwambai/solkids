@@ -7,17 +7,17 @@ import { useSelector } from 'react-redux';
 
 export default function OrderTrackPage() {
   const cart = useSelector((state) => state.todoProduct.Carts);
-  const { id } = useParams();
+  const { orderId } = useParams();
   const [order, setOrder] = useState();
 
   useEffect(() => {
-    id && trackOrderById(id).then(order => {
+    orderId  && trackOrderById(orderId ).then(order => {
       setOrder(order);
       console.log(order)
     });
   }, []);
 
-  if (!id)
+  if (!orderId )
     return <NotFound message="Order Not Found" linkText="Go To Home Page" />;
 
   return (
