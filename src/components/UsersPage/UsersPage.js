@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { useAuth } from '../useAuth';
 import { getAll, toggleBlock } from '../services/userService';
 import classes from './usersPage.module.css';
+import Search from '../Search/Search';
 
 export default function UsersPage() {
   const [users, setUsers] = useState();
@@ -30,12 +31,12 @@ export default function UsersPage() {
     <div className={classes.container}>
       <div className={classes.list}>
         {/* <Title title="Manage Users" /> */}
-        {/* <Search
+        <Search
           searchRoute="/admin/users/"
           defaultRoute="/admin/users"
           placeholder="Search Users"
           margin="1rem 0"
-        /> */}
+        />
         <div className={classes.list_item}>
           <h3>Name</h3>
           <h3>Email</h3>
