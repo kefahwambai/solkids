@@ -113,7 +113,7 @@ export default function PaymentPage() {
               </h2>
               <div id="collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                 <div className="accordion-body">
-                  <Payment totalPrice={order.totalPrice} />
+                  <Payment totalPrice={order.total_price} />
                 </div>
               </div>
             </div>
