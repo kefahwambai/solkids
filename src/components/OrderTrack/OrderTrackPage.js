@@ -32,16 +32,6 @@ export default function OrderTrackPage() {
           </div>
         </div>
       </div>
-        <div className="page-heading-shows-events">
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-12">
-                <h2 className="conhead">Order Details</h2>
-              </div>
-            </div>
-          </div>
-        </div>
-
         <div className="container mt-4">
           <div className="row">
             <div className="col-lg-6">
