@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { getAll, getAllStatus } from '../services/orderService';
 import classes from './ordersPage.module.css';
 import NotFound from '../../components/NotFound/NotFound';
-
+import Price from "../Price/Price"
 const initialState = {};
 const reducer = (state, action) => {
   const { type, payload } = action;
@@ -86,20 +86,13 @@ export default function OrdersPage() {
               </span>
               <span>{order.status}</span>
             </div>
-            {/* <div className={classes.items}>
-              {order.items.map(item => (
-                <Link key={item.food.id} to={`/food/${item.food.id}`}>
-                  <img src={item.food.imageUrl} alt={item.food.name} />
-                </Link>
-              ))}
-            </div> */}
             <div className={classes.footer}>
               <div>
                 <Link to={`/track/${order.id}`}>Show Order</Link>
               </div>
               <div>
                 <span className={classes.price}>
-                  {/* <Price price={order.totalPrice} /> */}
+                  <Price price={order.total_price} />
                 </span>
               </div>
             </div>
