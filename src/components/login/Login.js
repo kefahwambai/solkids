@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import {  useEffect } from "react";
 import { useForm } from 'react-hook-form';
 import { useNavigate, useSearchParams, Link } from 'react-router-dom';
 import { useAuth } from '../useAuth';
@@ -30,17 +30,8 @@ export default function Login() {
 
   return (
     <>
-      <div className="page-heading-shows-events">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12">
-              <h2 className='conhead'>Login</h2>
-            </div>
-          </div>
-        </div>
-      </div>
       <div className="login">
-        <span className="loginTitle">Login</span>
+        <span className="mt-5 loginTitle">Login</span>
         <form className="loginForm" onSubmit={handleSubmit(submit)}>
           <label>Email</label>
           <input className="form-control" type="email" name="email" placeholder="Enter your email..." {...register('email', { required: true, pattern: EMAIL })} />

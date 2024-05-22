@@ -1,6 +1,6 @@
 import "./register.css"
 import { useForm } from 'react-hook-form';
-import { useState, useEffect } from "react"
+import {  useEffect } from "react"
 import { Link } from "react-router-dom";
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { useAuth } from '../useAuth';
@@ -17,7 +17,8 @@ export default function Register() {
   useEffect(() => {
     if (!user) return;
     returnUrl ? navigate(returnUrl) : navigate('/');
-  }, [user]);
+  }, [user, navigate, returnUrl]);
+  
 
   const {
     handleSubmit,
@@ -33,17 +34,9 @@ export default function Register() {
 
     return (
       <>
-       <div className="page-heading-shows-events">
-        <div className="container">
-            <div className="row">
-            <div className="col-lg-12">
-            <h2 className='conhead '>Signup</h2>
-            </div>
-        </div>
-    </div>
-    </div> 
-         <div className="register"> 
-      <form className="registerForm" onSubmit={handleSubmit(submit)}>
+      <div className="register"> 
+      <span className="mt-5 loginTitle">Login</span>
+      <form className="mt-5 registerForm" onSubmit={handleSubmit(submit)}>
         <label>Username</label>
         <input className="form-control" type="text" placeholder="Enter your username..." id="name"  label="Name"   {...register('name', {required: true, minLength: 5,})} error={errors.name} />
         <label>Email</label>

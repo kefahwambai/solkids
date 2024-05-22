@@ -94,9 +94,55 @@ font-weight: 400;
   
 }
 
-.introsection{
+.introsection {
   height: 80vh;
+  background-image: url("../../Assets/slideshow/WITS-7.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
+
+@media (min-width: 1200px) {
+  .introsection {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .introsection {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .introsection {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .introsection {
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll; 
+  }
+}
+
+@media (max-width: 575px) {
+  .introsection {
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll; 
+  }
+}
+
 
 .mySlide {
   position: relative;

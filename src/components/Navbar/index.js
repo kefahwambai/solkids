@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 import { AiOutlineShoppingCart, AiOutlineUser, AiOutlineLogin, AiOutlineLogout } from 'react-icons/ai';
 import logo from '../../Assets/Logo/SOL_KIDS_Official_Logo__5_-1-removebg-preview.png';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../useAuth'; // Import useAuth hook
+import { useAuth } from '../useAuth'; 
 import './Nav.css';
 import '../login/login.css';
 
 const NavBar = ({ numberCart }) => {
-  const [expand, setExpand] = useState(false);
+  const [setExpand] = useState(false);
   const [navColour, setNavColour] = useState(false);
   const { user, logout } = useAuth(); 
   const navigate = useNavigate();

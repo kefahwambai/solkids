@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { IncreaseQuantity, DecreaseQuantity, DeleteCart } from '../../actions/actions';
@@ -20,19 +20,19 @@ function CartComponent({ products, cart, IncreaseQuantity, DecreaseQuantity, Del
         return;
     }
 
-    const updatedCart = cart.map(cartItem => {
-        if (cartItem.id === item.id) {
-            const newQuantity = Math.max(1, quantity);
-            return { ...cartItem, quantity: newQuantity };
-        }
-        return cartItem;
-    });
+    // const updatedCart = cart.map(cartItem => {
+    //     if (cartItem.id === item.id) {
+    //         const newQuantity = Math.max(1, quantity);
+    //         return { ...cartItem, quantity: newQuantity };
+    //     }
+    //     return cartItem;
+    // });
 
     updateTotalPrice();
 };
     
        
-const updateTotalPrice = () => {
+const updateTotalPrice = useCallback(() => {
     let total = 0;
     if (Array.isArray(cart)) {
         cart.forEach(item => {
@@ -51,12 +51,12 @@ const updateTotalPrice = () => {
         console.log("Cart is not an array or is empty.");
     }
     setTotalPrice(total);
-};
+}, [cart]);
  
     
     useEffect(() => {
         updateTotalPrice();
-    }, [cart]);
+    }, [cart, updateTotalPrice]);
 
     useEffect(() => {
     }, [totalPrice]);
@@ -176,7 +176,7 @@ const updateTotalPrice = () => {
                                         )}
                                         <hr />
                                         {cart.length > 0 && (
-                                            <Link to="/checkout" className="btn btn-primary checkout-btn">CHECKOUT</Link>
+                                            <Link to="/checkout" className="btn btn-primary checkout-btn">PROCEED TO CHECKOUT</Link>
                                         )}
                                     </div>
                                 </div>

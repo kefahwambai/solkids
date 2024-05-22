@@ -1,4 +1,4 @@
-import { useState, useEffect, createContext, useContext } from 'react';
+import { useState, useEffect, createContext, useContext, useRef } from 'react';
 import * as userService from './services/userService';
 import { toast } from 'react-toastify';
 
@@ -6,7 +6,7 @@ const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(userService.getUser());
-  const [logoutTimer, setLogoutTimer] = useState(null);
+  const logoutTimerRef = useRef(null);
 
   useEffect(() => {
     const startLogoutTimer = () => {
@@ -14,11 +14,13 @@ export const AuthProvider = ({ children }) => {
         logout();
         toast.info('You have been logged out due to inactivity.');
       }, 20 * 60 * 1000); 
-      setLogoutTimer(timer);
+      logoutTimerRef.current = timer;
     };
 
     const resetLogoutTimer = () => {
-      clearTimeout(logoutTimer);
+      if (logoutTimerRef.current) {
+        clearTimeout(logoutTimerRef.current);
+      }
       startLogoutTimer();
     };
 
@@ -34,9 +36,11 @@ export const AuthProvider = ({ children }) => {
     return () => {
       window.removeEventListener('mousemove', handleUserActivity);
       window.removeEventListener('keypress', handleUserActivity);
-      clearTimeout(logoutTimer);
+      if (logoutTimerRef.current) {
+        clearTimeout(logoutTimerRef.current);
+      }
     };
-  }, [logoutTimer]);
+  }, []);
 
   const login = async (email, password) => {
     try {
@@ -61,8 +65,9 @@ export const AuthProvider = ({ children }) => {
   const logout = () => {
     userService.logout();
     setUser(null);
-    clearTimeout(logoutTimer);
-    setLogoutTimer(null);
+    if (logoutTimerRef.current) {
+      clearTimeout(logoutTimerRef.current);
+    }
     toast.success('Logout Successful');
   };
 

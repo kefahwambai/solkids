@@ -17,7 +17,7 @@ color: #000000;
   font-size: 14px;
   margin-bottom: 0px; 
 }
-.ftco-footer .ftco-footer-widget ul li a {
+.ftco-footer .ftco-footer-widget ul li a  {
   color: #000000; 
 }
 .ftco-footer .ftco-footer-widget .btn-primary {
@@ -32,14 +32,14 @@ list-style: none;
 margin: 0 10px 0 0;
 display: inline-block; 
 }
-.ftco-footer-social li a {
-height: 50px;
-width: 50px;
-display: block;
-float: left;
-background: rgba(0, 0, 0, 0.02);
-border-radius: 50%;
-position: relative; 
+.ftco-footer-social li p {
+  height: 50px;
+  width: 50px;
+  display: block;
+  float: left;
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 50%;
+  position: relative; 
 }
 .ftco-footer-social li a span {
   position: absolute;
