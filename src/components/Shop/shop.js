@@ -48,7 +48,7 @@ export class Shop extends Component {
                                     <div className="col-md-6 col-lg-3 ftco-animate" key={product.id}>
                                         <div className="product">
                                             <a href="#" className="img-prod">
-                                                <img className="img-fluid" src={product.image} alt={product.name} />
+                                                <img className="img-fluid" src={product.image} alt={product.name}  loading='lazy' />
                                                 <div className="overlay"></div>
                                             </a>
                                             <div className="text py-3 pb-4 px-3 text-center">

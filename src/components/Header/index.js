@@ -1,7 +1,11 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect} from 'react';
 import "./header.css"
 import { Link } from 'react-router-dom';
 import sol1 from "../../Assets/Homepage/sol1.png"
+import sol2 from "../../Assets/Homepage/sol2.png"
+import sol3 from "../../Assets/Homepage/sol3.png"
+import sol5 from "../../Assets/Homepage/sol5.png"
+import sol8 from "../../Assets/Homepage/sol8.png"
 import oak from "../../Assets/Books/Oak.png"
 import twiga from "../../Assets/Books/Twiga.png"
 import fisi from "../../Assets/Books/fisi.png"
@@ -34,10 +38,39 @@ export default function CalendarComponent({ handleClick }) {
     setSelectedProduct(product);
   };
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const images = [sol1, sol3, sol5, sol8]; 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5500);
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+
 
   return (
 
     <div>  
+      <section>
+        <div className='overlay'></div>
+        <div className='header-container'>
+          <div className="headerTitles">
+          </div>
+          <div className="slidez">
+            {images.map((image, index) => (
+              <img
+                key={index}
+                className={`mySlide ${index === currentIndex ? 'active' : ''}`}
+                alt={`slider${index + 1}img`}
+                src={image}
+                loading="lazy"
+              />
+            ))}
+          </div>
+        </div>
+      </section>
       <div className="colorlib-intro">
         <div className="container">
           <div className="row">
@@ -101,7 +134,7 @@ export default function CalendarComponent({ handleClick }) {
                           <div class="modal-body">
                             <div class="row">
                               <div class="col-md-6">
-                                <img style={{ height: '15vh' }} src={selectedProduct.image} alt={selectedProduct.name} />
+                                <img style={{ height: '15vh' }} src={selectedProduct.image} alt={selectedProduct.name} loading='lazy' />
                                 <h3>{selectedProduct.name}</h3>
                               </div>
                               <div class="col-md-6">
@@ -182,7 +215,7 @@ export default function CalendarComponent({ handleClick }) {
           </div> 
           <div className="col-lg-6 align-self-center">
             <div className="videoo">
-              <a href="#" rel="noreferrer" target="_blank"><img src={solmic} alt="" /></a>
+              <a href="#" rel="noreferrer" target="_blank"><img src={solmic} alt="baldman" loading='lazy'/></a>
             </div>
           </div>
         </div>

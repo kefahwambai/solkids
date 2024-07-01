@@ -31,8 +31,8 @@ const NavBar = ({ numberCart }) => {
   }, []);
 
   return (
-    <div className={`container-fluid bg-light position-relative shadow ${navColour ? 'nav-colour' : ''}`}>
-      <nav className="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
+    <div className={`container-fluid bg-light position-relative shadow ${navColour ? 'sticky' : ''}`}>
+      <nav className="navbar navbar-expand-lg navbar-light py-3 py-lg-0 px-0 px-lg-5">
         <a href="/" className="navbar-brand font-weight-bold text-secondary" style={{ fontSize: '50px' }}>
           <img src={logo} alt="Logo" className="logo" as={Link} to="/" />
         </a>
