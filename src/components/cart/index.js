@@ -8,58 +8,46 @@ import NotFound from '../NotFound/NotFound';
 function CartComponent({ products, cart, IncreaseQuantity, DecreaseQuantity, DeleteCart }) {
     const [totalPrice, setTotalPrice] = useState(0);
 
-    let ListCart = [];
-    let TotalCart=0;
-    Object.keys(products.Carts).forEach(function(item){
-        TotalCart+=products.Carts[item].quantity * products.Carts[item].price;
-        ListCart.push(products.Carts[item]);
-    });
-    const handleQuantityChange = (item, quantity) => {
-    if (!Array.isArray(cart)) {
-        console.error("Cart is not an array:", cart);
-        return;
-    }
-
-    // const updatedCart = cart.map(cartItem => {
-    //     if (cartItem.id === item.id) {
-    //         const newQuantity = Math.max(1, quantity);
-    //         return { ...cartItem, quantity: newQuantity };
-    //     }
-    //     return cartItem;
-    // });
-
-    updateTotalPrice();
-};
-    
-       
-const updateTotalPrice = useCallback(() => {
-    let total = 0;
-    if (Array.isArray(cart)) {
-        cart.forEach(item => {
-            const price = parseFloat(item.price?.replace(/[^\d.-]/g, ''));
-            if (item.hasOwnProperty('quantity')) {
-                const itemTotal = price * item.quantity;
-                if (!isNaN(price) && typeof item.quantity === 'number' && !isNaN(item.quantity)) {
-                    total += itemTotal;
-                }
-            } else {
-                console.log("Quantity property is missing for this item.");
-                handleQuantityChange(item, 1);
-            }
-        });
-    } else {
-        console.log("Cart is not an array or is empty.");
-    }
-    setTotalPrice(total);
-}, [cart]);
- 
-    
     useEffect(() => {
         updateTotalPrice();
-    }, [cart, updateTotalPrice]);
+    }, [cart]);
 
-    useEffect(() => {
-    }, [totalPrice]);
+    const updateTotalPrice = useCallback(() => {
+        let total = 0;
+        if (Array.isArray(cart)) {
+            cart.forEach(item => {
+                const price = parseFloat(item.price?.replace(/[^\d.-]/g, ''));
+                if (item.hasOwnProperty('quantity')) {
+                    const itemTotal = price * item.quantity;
+                    if (!isNaN(price) && typeof item.quantity === 'number' && !isNaN(item.quantity)) {
+                        total += itemTotal;
+                    }
+                } else {
+                    console.log("Quantity property is missing for this item.");
+                }
+            });
+        } else {
+            console.log("Cart is not an array or is empty.");
+        }
+        setTotalPrice(total);
+    }, [cart]);
+
+    const handleQuantityChange = (item, quantity) => {
+        if (!Array.isArray(cart)) {
+            console.error("Cart is not an array:", cart);
+            return;
+        }
+
+        const updatedCart = cart.map(cartItem => {
+            if (cartItem.id === item.id) {
+                const newQuantity = Math.max(1, quantity);
+                return { ...cartItem, quantity: newQuantity };
+            }
+            return cartItem;
+        });
+
+        updateTotalPrice();
+    };
 
     const roundPrice = (price) => {
         const roundedPrice = Math.round(price * 100) / 100;
@@ -77,15 +65,15 @@ const updateTotalPrice = useCallback(() => {
                     </div>
                 </div>
             </div>
-            <div class="breadcrumbs">
-                <div class="container">
-                        <div class="row">
-                            <div class="col">
-                                <p class="bread"><span><Link to="/">Home</Link></span> / <span><Link to="/shop">Shop</Link></span> /<span>Cart</span></p>
-                            </div>
+            <div className="breadcrumbs">
+                <div className="container">
+                    <div className="row">
+                        <div className="col">
+                            <p className="bread"><span><Link to="/">Home</Link></span> / <span><Link to="/shop">Shop</Link></span> /<span>Cart</span></p>
                         </div>
                     </div>
                 </div>
+            </div>
             <div className="row">
                 <div className="col-md-8 shoppingcartt">
                     <div className="cart-box-main">
@@ -109,7 +97,7 @@ const updateTotalPrice = useCallback(() => {
                                                         <NotFound message="Cart Is Empty!" />
                                                     </div>
                                                 ) : (
-                                                    ListCart.map((item, key) => (
+                                                    cart.map((item, key) => (
                                                         <tr key={key}>
                                                             <td className="thumbnail-img">
                                                                 <a href="#">
@@ -121,12 +109,9 @@ const updateTotalPrice = useCallback(() => {
                                                                     {item.name}
                                                                 </a>
                                                             </td>
-                                                            {/* <td className="price-pr">
-                                                                <p>{item.price}</p>
-                                                            </td> */}
                                                             <td className="quantity-box">
                                                                 <span style={{ margin: '2px', marginRight: '1rem', cursor: 'pointer' }} onClick={() => DecreaseQuantity(key)}>-</span>
-                                                                <input type="number" value={item.quantity} min="1" step="1" className="c-input-text qty text" readOnly onChange={(e) => handleQuantityChange(item, parseInt(e.target.value))}  />
+                                                                <input type="number" value={item.quantity} min="1" step="1" className="c-input-text qty text" readOnly onChange={(e) => handleQuantityChange(item, parseInt(e.target.value))} />
                                                                 <span style={{ margin: '2px', marginLeft: '1rem', cursor: 'pointer' }} onClick={() => IncreaseQuantity(key)}>+</span>
                                                             </td>
                                                             <td className="total-pr">
@@ -148,7 +133,6 @@ const updateTotalPrice = useCallback(() => {
                             <div className="row my-5">
                                 <div className="col-lg-6 col-sm-6">
                                     <div className="coupon-box">
-                                        
                                         <div className="input-group input-group-sm">
                                             <input className="form-control" placeholder="Enter your coupon code" aria-label="Coupon code" type="text" />
                                             <div className="input-group-append">
