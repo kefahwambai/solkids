@@ -90,10 +90,12 @@ function Checkout({ setCart }) {
       await createOrder({
         ...order,
         id: user.id,
-        name: data.name,
-        address: data.address,
+        name: user.name,
+        // address: data.address,
         totalPrice: totalPriceWithShipping,
       });
+
+      console.log(createOrder)
 
       navigate('/payment');
       toast.success('Order placed successfully!');
