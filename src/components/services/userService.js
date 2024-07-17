@@ -39,19 +39,25 @@ export const getUser = () => {
 
 export const login = async (email, password) => {
   const { data } = await axiosInstance.post('/login', { email, password });
-  localStorage.setItem('user', JSON.stringify(data));
+  localStorage.setItem('user', JSON.stringify(data.user));
+  localStorage.setItem('token', JSON.stringify(data.token));
+  console.log(data.user)
+  console.log(data.token)
   return data;
 };
 
 export const register = async (registerData) => {
   const { data } = await axiosInstance.post('/signup', registerData);
+  console.log(registerData)
   localStorage.setItem('user', JSON.stringify(data));
   return data;
 };
 
 export const logout = () => {
   localStorage.removeItem('user');
+  localStorage.removeItem('token');
 };
+
 
 export const updateProfile = async (user) => {
   const { data } = await axiosInstance.put('/users/updateProfile', user);

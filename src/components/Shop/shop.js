@@ -14,13 +14,12 @@ export class Shop extends Component {
 
     handleClick = (product) => {
         const { AddCart } = this.props;
-        AddCart(product); 
-        // console.log(product)
+        AddCart(product);
     };
 
     render() {
         const { products } = this.props;
-        if (products.length > 0) {
+        if (products && products.length > 0) {
             return (
                 <section>
                     <div className="page-heading-shows-events">
@@ -32,11 +31,11 @@ export class Shop extends Component {
                             </div>
                         </div>
                     </div>
-                    <div class="breadcrumbs">
-                    <div class="container">
-                            <div class="row">
-                                <div class="col">
-                                    <p class="bread"><span><Link to="/">Home</Link></span> / <span>Shop</span></p>
+                    <div className="breadcrumbs">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col">
+                                    <p className="bread"><span><Link to="/">Home</Link></span> / <span>Shop</span></p>
                                 </div>
                             </div>
                         </div>
@@ -48,7 +47,7 @@ export class Shop extends Component {
                                     <div className="col-md-6 col-lg-3 ftco-animate" key={product.id}>
                                         <div className="product">
                                             <a href="#" className="img-prod">
-                                                <img className="img-fluid" src={product.image} alt={product.name}  loading='lazy' />
+                                                <img className="img-fluid" src={product.image} alt={product.name} loading='lazy' />
                                                 <div className="overlay"></div>
                                             </a>
                                             <div className="text py-3 pb-4 px-3 text-center">
@@ -88,7 +87,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = {
     actFetchProductsRequest,
-     AddCart,
+    AddCart,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Shop);

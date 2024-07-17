@@ -63,7 +63,11 @@ function App({ cart, addToCart }) {
           <Route path="/cart" element={<Cart cart={cart} user={user}   />} />     
           <Route path="/contact" element={ <Contact/>} />
           <Route path="/ticket" element={ <Tickets  cart={cart} />} /> 
-          <Route path="/checkout" element={<AuthRoute><Checkout cart={cart} user={user} /></AuthRoute>} />          
+          <Route path="/checkout" element={
+            // <AuthRoute>
+            <Checkout cart={cart} user={user} />
+            // </AuthRoute>
+          } />          
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />      
           <Route path="/profile" element={<AuthRoute><ProfilePage /></AuthRoute>}   />
@@ -71,7 +75,11 @@ function App({ cart, addToCart }) {
           <Route path="/user" element={<AuthRoute><Profile user={user}  /></AuthRoute> } />
           <Route path="/orders" element={<AuthRoute><Orders user={user}  /></AuthRoute>} />
           <Route path="/success" element={<Success/>} />
-          <Route path="/payment" element={ <AuthRoute><Payment /></AuthRoute>} />   
+          <Route path="/payment" element={
+            //  <AuthRoute>
+              <Payment />
+              // </AuthRoute>
+            } />   
           <Route path="/track/:orderId" element={<AuthRoute><OrderTrackPage /></AuthRoute>}   />     
           <Route path="/admin/users/:searchTerm?" element={<AdminRoute><UsersPage /></AdminRoute> }  />
           <Route path="/admin/editUser/:userId"   element={<AdminRoute><UserEditPage /></AdminRoute> }   />  

@@ -19,6 +19,7 @@ export default function Login() {
 
   useEffect(() => {
     if (user) {
+      console.log(user)
       returnUrl ? navigate(returnUrl) : navigate('/');
     }
   }, [user, navigate, returnUrl]);

@@ -44,11 +44,12 @@ export default function ProfilePage() {
             <div className="mt-4">
               <form onSubmit={handleSubmit(submit)}>
                 <div className="mb-3">
-                  <label htmlFor="name" className="form-label">Name</label>
+                  <label htmlFor="name">Name</label>
                   <input
                     defaultValue={user.name}
                     type="text"
                     className="form-control"
+                    style={{ width: '25rem', marginLeft: '7rem'}}
                     id="name"
                     {...register('name', {
                       required: true,
@@ -58,9 +59,10 @@ export default function ProfilePage() {
                   {errors.name && <span className="text-danger">Name is required (min 5 characters).</span>}
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="address" className="form-label">Address</label>
+                  <label htmlFor="address" >Address</label>
                   <input
                     defaultValue={user.address}
+                    style={{ width: '25rem', marginLeft: '7rem'}}
                     type="text"
                     className="form-control"
                     id="address"
