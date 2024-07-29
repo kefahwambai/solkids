@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 export const INCREASE_QUANTITY = 'INCREASE_QUANTITY';
 export const DECREASE_QUANTITY = 'DECREASE_QUANTITY';
 export const GET_ALL_PRODUCT = 'GET_ALL_PRODUCT';
@@ -10,17 +8,18 @@ export const DELETE_CART = 'DELETE_CART';
 export const CLEAR_CART = 'CLEAR_CART';
 
 export const actFetchProductsRequest = () => {
-    return (dispatch) => {
-        return axios.get('http://localhost:3000/products')
-            .then(response => {
-                dispatch({
-                    type: GET_ALL_PRODUCT,
-                    products: response.data
-                });
-            })
-            .catch(error => {
-                console.error("There was an error fetching the products!", error);
-            });
+    return {
+        type: GET_ALL_PRODUCT,
+        products: [
+            { id: 1, name: "Hibiscus Oak", price: "Kshs 700", image: require("../Assets/Books/Oak.png") },
+            { id: 2, name: "Towering Twiga", price: "Kshs 700", image: require("../Assets/Books/Twiga.png") },
+            { id: 3, name: "Funny fisi", price: "Kshs 700", image: require("../Assets/Books/fisi.png") },
+            { id: 4, name: "Written in the Stars", price: "Kshs 950", image: require("../Assets/Books/written in stars.png") },
+            { id: 5, name: "Lala land", price: "Kshs 950", image: require("../Assets/Books/Lalaland.png") },
+            { id: 6, name: "Pipo and the Poop Pile", price: "Kshs 950", image: require("../Assets/Books/Pipo.png") },
+            { id: 7, name: "Papas Fingers", price: "Kshs 950", image: require("../Assets/Books/Papafingers.png") },
+            { id: 8, name: "Budubas The Colombus Monkey", price: "Kshs 950", image: require("../Assets/Books/BududasM.png") }
+        ]
     };
 };
 
